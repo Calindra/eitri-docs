@@ -1,0 +1,123 @@
+site_name: Eitri Docs
+theme:
+  logo: assets/eitri-logo.svg
+  favicon: assets/android-chrome-192x192.png
+  language: pt-BR
+  # Tema visual utilizado
+  name: material
+  custom_dir: eitritheme
+  # Features à serem ativadas
+  icon:
+    annotation: material/plus-circle
+    admonition:
+      note: fontawesome/solid/note-sticky
+      failure: octicons/x-circle-fill-16
+  features:
+  - navigation.tabs
+  - navigation.tabs.sticky
+  - navigation.sections
+  - navigation.expand
+  - navigation.path
+  - navigation.instant
+  - navigation.tracking
+  - toc.follow
+  - navigation.top
+  - search.suggest
+  - search.highlight
+  - search.share
+  - content.tabs.link
+  - content.code.copy
+  - content.code.annotate
+  - content.tooltips
+
+
+  palette:
+    # Palette toggle for automatic mode
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/brightness-auto
+        name: Switch to light mode
+      primary: blue grey
+      accent: lime
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default 
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: blue grey
+      accent: lime
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to system preference
+      primary: blue grey
+      accent: lime
+  
+extra:
+  homepage: https://eitri.calindra.com.br
+  # Ícones de redes sociais no rodapé
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/Calindra
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/calindra/
+    - icon: fontawesome/brands/instagram
+      link: https://www.instagram.com/calindraoficial/
+  analytics:
+    provider: google
+    property: G-5TBP36VV2F
+    feedback:
+      title: Esta página te ajudou?
+      ratings:
+        - icon: material/emoticon-happy-outline
+          name: Esta página foi útil
+          data: 1
+          note: >-
+            Obrigado pelo feedback!
+        - icon: material/emoticon-sad-outline
+          name: Esta página pode melhorar
+          data: 0
+          note: >- 
+            Obrigado pelo feedback! Nos ajude a melhorar respondendo <a href="#" target="_blank" rel="noopener">nosso formulário</a>.
+
+copyright:
+  © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
+
+# Extensões para features markdown
+markdown_extensions:
+  - footnotes
+  - md_in_html
+  - attr_list
+  - admonition
+  - pymdownx.superfences:
+      custom_fences:
+      - name: mermaid
+        class: mermaid
+        format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.tilde
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+  - search
+  - tags:
+      enabled: true
