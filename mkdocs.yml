@@ -15,10 +15,10 @@ theme:
   features:
   - navigation.tabs
   - navigation.tabs.sticky
-  - navigation.sections
   - navigation.expand
   - navigation.path
   - navigation.instant
+  - navigation.instant.progress
   - navigation.tracking
   - toc.follow
   - navigation.top
@@ -84,6 +84,8 @@ extra:
           data: 0
           note: >- 
             Obrigado pelo feedback! Nos ajude a melhorar respondendo <a href="#" target="_blank" rel="noopener">nosso formulário</a>.
+  version:
+    provider: mike
 
 copyright:
   © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
