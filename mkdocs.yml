@@ -15,13 +15,12 @@ theme:
   features:
   - navigation.tabs
   - navigation.tabs.sticky
-  - navigation.expand
-  - navigation.path
   - navigation.instant
   - navigation.instant.progress
   - navigation.tracking
-  - toc.follow
   - navigation.top
+  - toc.follow
+  - toc.integrate
   - search.suggest
   - search.highlight
   - search.share
