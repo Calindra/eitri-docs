@@ -30,6 +30,9 @@ Para rodar o projeto você precisará:
 
 `mkdocs serve`
 
+> Para buildar a versão estática para publicação rode: `mkdocs build`. A versão estática será gerada na pasta `site`
+
+
 
 ## Informações importantes:
 
