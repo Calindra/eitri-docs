@@ -33,31 +33,96 @@ Existem algumas formas de integrar um repositório à plataforma Eitri para faze
 
 Com este par de chaves você poderá integrar serviços como Github Actions, Bitbucket Pipelines, entre outros.
 
-### Configurando a integração
+### Configurando a integração com Github
 
-=== "Github Actions"
+Siga os passos descritos em cada aba para configurar sua integração.
 
-    1. Acesse o GitHub vá até o menu de configuração das Settings do projeto Eitri-App;
+=== "No Github Actions"
 
-    2. No menu lateral, no sub-menu Security, acesse a opção Secrets and variables > Actions;
+    1. Acesse o repositório de seu Eitri-app no [GitHub](https://github.com) e clique na aba **Settings**
 
-    3. Clique na opção Actions;
+        ![Image title](https://dummyimage.com/600x400/eee/aaa)
 
-    4. Clique em “New repository secret” para adicionar uma nova chave secreta;
+    2. No sub-menu **Security**, acesse a opção **Secrets and variables** e em seguida **Actions**
 
-    5. No campo “name” insira obrigatoriamente o nome EITRI_CLI_CLIENT_ID e no campo “secret” insira o valor da chave ClientID gerada anteriormente no Console;
+    3. Na aba **Secrets**, clique em **New repository secret** para adicionar uma nova chave secreta
 
-    7.  Clique no botão “Add secret” para salvar;
+        ![Image title](https://dummyimage.com/600x400/eee/aaa)
 
-    8.  No campo “name” insira obrigatoriamente o nome EITRI_CLI_CLIENT_SECRET e no campo “secret” insira o valor da chave Chave Secreta gerada anteriormente no Console;
+    4. No campo **name** insira o nome ==EITRI_CLI_CLIENT_ID==
 
-    9.  Clique no botão “Add secret” para salvar;
+    5. No campo **secret**: insira o valor da chave **ClientID** gerada no Console
 
-    10. Agora, vamos configurar o GitHub Actions no projeto Eitri.
-    - Abra o projeto Eitri-App;
-    - Na raíz do projeto crie a seguinte estrutura de pasta .github/workflows;
-    - Dentro de workflows crie o arquivo `<nome_do_pipeline>.yml`;
-    - Cole o exemplo da configuração abaixo em seu arquivo recém criado:
+    6.  Clique no botão **Add secret** para salvar
+
+        ![Image title](https://dummyimage.com/600x400/eee/aaa)
+
+=== "No seu Eitri-app"
+
+    1.  Para configurar a integração com o Github em seu Eitri-app, crie uma pasta `.github/workflows` na pasta raiz de seu projeto
+    
+    2. Dentro de workflows crie o arquivo `<nome_do_pipeline>.yml`
+    
+        ![Image title](https://dummyimage.com/600x400/eee/aaa)
+
+    3. Cole o exemplo da configuração abaixo em seu arquivo recém criado:
+
+    ```
+    name: GitHub Actions Eitri-Push-Version
+    on: [push]
+
+    env:
+    EITRI_CLI_CLIENT_ID: ${{secrets.EITRI_CLI_CLIENT_ID}}
+    EITRI_CLI_CLIENT_SECRET: ${{secrets.EITRI_CLI_CLIENT_SECRET}}
+
+    jobs:
+    Eitri-Push-Version:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+        - run: cd ~
+        - run: npm i -g eitri-cli@1.4.0-beta.2
+        - run: mkdir -p ~/.eitri/
+        - run: eitri workspace use --name CI 
+        - run: cd ~
+        - run: eitri push-version 
+    
+    ```
+
+### Configurando a integração com Bitbucket
+
+Siga os passos descritos em cada aba para configurar sua integração.
+
+=== "No Bitbucket Pipelines"
+
+    1. Acesse o repositório de seu Eitri-app no [GitHub](https://github.com) e clique na aba **Settings**
+
+        ![Image title](https://dummyimage.com/600x400/eee/aaa)
+
+    2. No sub-menu **Security**, acesse a opção **Secrets and variables** e em seguida **Actions**
+
+    3. Na aba **Secrets**, clique em **New repository secret** para adicionar uma nova chave secreta
+
+        ![Image title](https://dummyimage.com/600x400/eee/aaa)
+
+    4. No campo **name** insira o nome ==EITRI_CLI_CLIENT_ID==
+
+    5. No campo **secret**: insira o valor da chave **ClientID** gerada no Console
+
+    6.  Clique no botão **Add secret** para salvar
+
+        ![Image title](https://dummyimage.com/600x400/eee/aaa)
+
+=== "No seu Eitri-app"
+
+    1.  Para configurar a integração com o Github em seu Eitri-app, crie uma pasta `.github/workflows` na pasta raiz de seu projeto
+    
+    2. Dentro de workflows crie o arquivo `<nome_do_pipeline>.yml`
+    
+        ![Image title](https://dummyimage.com/600x400/eee/aaa)
+
+    3. Cole o exemplo da configuração abaixo em seu arquivo recém criado:
+
     ```
     name: GitHub Actions Eitri-Push-Version
     on: [push]
@@ -81,24 +146,14 @@ Com este par de chaves você poderá integrar serviços como Github Actions, Bit
     ```
 
 
-=== "Bitbucket Pipelines"
-
-    Texto
-
+!!! warning
+    Você deve exportar as variáveis ambientes para que o processo automatizado de push-version funcione corretamente.
 
 !!! tip
-    Recomendamos utilizar o versionamento semântico [semver](https://semver.org/lang/pt-BR/) e [conventional commits](https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/) para automatizar tambem a numeração de versões de maneira adequada e cômoda em seu pipeline.
+    É altamente recomendado utilizar o versionamento semântico [semver](https://semver.org/lang/pt-BR/) e [conventional commits](https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/) para automatizar tambem a numeração de versões de maneira adequada e cômoda em seu pipeline.
 
 !!! info
-    Ao executar o pipeline, uma nova versão será enviada ao Console de forma automática;
-
-!!! warning
-    Você deve exportar as variáveis ambientes para que o processo automatizado de push-version funcione corretamente;
-
-!!! warning
-    Caso exista uma versão igual a outra publicada anteriormente, um erro será retornado.
-
-
+    Ao executar o pipeline, uma nova versão será enviada ao Console de forma automática. Caso exista uma versão de mesma numeração publicada anteriormente será retornado um erro na publicação.
 
 
 ## Quanto custa?
