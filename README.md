@@ -24,6 +24,8 @@ Para rodar o projeto você precisará:
 
 `pip install mkdocs-exclude-search`
 
+`pip install mkdocs-glightbox`
+
 5. Rodar o projeto
 
 `mkdocs serve`
