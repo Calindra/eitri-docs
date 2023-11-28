@@ -55,6 +55,12 @@ Siga os passos descritos em cada aba para configurar sua integração.
 
     6.  Clique no botão **Add secret** para salvar
 
+    7. No campo **name** insira o nome ==EITRI_CLI_CLIENT_SECRET==
+
+    8. No campo **secret**: insira o valor da chave **Chave Secreta** gerada no Console
+
+    9.  Clique no botão **Add secret** para salvar
+
         ![Image title](https://dummyimage.com/600x400/eee/aaa)
 
 === "No seu Eitri-app"
@@ -91,59 +97,56 @@ Siga os passos descritos em cada aba para configurar sua integração.
 
 === "No Bitbucket Pipelines"
 
-    1. Acesse o repositório de seu Eitri-app no [GitHub](https://github.com) e clique na aba **Settings**
+    1. Acesse o repositório de seu Eitri-app no [Bitbucket](https://bitbucket.org) e clique em **Repository Settings** e em seguida em **Repository Variables**
 
         ![Image title](https://dummyimage.com/600x400/eee/aaa)
 
-    2. No sub-menu **Security**, acesse a opção **Secrets and variables** e em seguida **Actions**
+    !!! warning
 
-    3. Na aba **Secrets**, clique em **New repository secret** para adicionar uma nova chave secreta
+        É necessário que as configurações de Pipelines já estejam ativadas (em `Repository Settings > Configurações > Enable Pipelines`)
 
-        ![Image title](https://dummyimage.com/600x400/eee/aaa)
+    !!! warning
 
-    4. No campo **name** insira o nome ==EITRI_CLI_CLIENT_ID==
+        Se o item `Repository Settings` não aparece para você, pode faltar alguma permissão no bitbucket
 
-    5. No campo **secret**: insira o valor da chave **ClientID** gerada no Console
+    2. No campo **name** insira o nome ==EITRI_CLI_CLIENT_ID==
 
-    6.  Clique no botão **Add secret** para salvar
+    3. No campo **value**: insira o valor da chave **ClientID** gerada no Console
+
+    4.  Clique no botão **Add** para adicionar
+
+    5. No campo **name** insira o nome ==EITRI_CLI_CLIENT_SECRET==
+
+    6. No campo **value**: insira o valor da chave **Chave Secreta** gerada no Console
+
+    7.  Clique no botão **Add** para adicionar
 
         ![Image title](https://dummyimage.com/600x400/eee/aaa)
 
 === "No seu Eitri-app"
 
-    1.  Para configurar a integração com o Github em seu Eitri-app, crie uma pasta `.github/workflows` na pasta raiz de seu projeto
-    
-    2. Dentro de workflows crie o arquivo `<nome_do_pipeline>.yml`
+    1.  Para configurar a integração com o Github em seu Eitri-app, crie o arquivo `bitbucket-pipelines.yml` na pasta raiz de seu projeto (a mesma pasta onde está o arquivo `eitri.conf.js`)
     
         ![Image title](https://dummyimage.com/600x400/eee/aaa)
 
-    3. Cole o exemplo da configuração abaixo em seu arquivo recém criado:
+    2. Cole o exemplo da configuração abaixo em seu arquivo recém criado:
 
-    ```
-    name: GitHub Actions Eitri-Push-Version
-    on: [push]
+    ```yml
+        image: node:20
 
-    env:
-    EITRI_CLI_CLIENT_ID: ${{secrets.EITRI_CLI_CLIENT_ID}}
-    EITRI_CLI_CLIENT_SECRET: ${{secrets.EITRI_CLI_CLIENT_SECRET}}
-
-    jobs:
-    Eitri-Push-Version:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v4
-        - run: cd ~
-        - run: npm i -g eitri-cli@1.4.0-beta.2
-        - run: mkdir -p ~/.eitri/
-        - run: eitri workspace use --name CI 
-        - run: cd ~
-        - run: eitri push-version 
-    
+        pipelines:
+        branches:
+            'main':
+            - step: 
+                name: Push Version
+                script:
+                    - npm i -g eitri-cli@1.4.0-beta.4
+                    - eitri push-version
     ```
 
 
-!!! warning
-    Você deve exportar as variáveis ambientes para que o processo automatizado de push-version funcione corretamente.
+!!! note
+    A versão do Node.js deverá ser igual ou superior a 16.
 
 !!! tip
     É altamente recomendado utilizar o versionamento semântico [semver](https://semver.org/lang/pt-BR/) e [conventional commits](https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/) para automatizar tambem a numeração de versões de maneira adequada e cômoda em seu pipeline.
