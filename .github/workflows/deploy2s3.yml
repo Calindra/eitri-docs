@@ -29,9 +29,6 @@ jobs:
       - run: pip install mkdocs-glightbox 
       - run: mkdocs build
 
-      - name: Checkout
-        uses: actions/checkout@v1
-
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -41,3 +38,6 @@ jobs:
 
       - name: Deploy static site to S3 bucket
         run: aws s3 sync ./site/ s3://docs.eitri.tech --delete
+
+      - name: Checkout
+        uses: actions/checkout@v1
