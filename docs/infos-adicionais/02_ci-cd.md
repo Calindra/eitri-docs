@@ -68,24 +68,20 @@ Siga os passos descritos em cada aba para configurar sua integração.
     3. Cole o exemplo da configuração abaixo em seu arquivo recém criado:
 
     ```
-    name: GitHub Actions Eitri-Push-Version
-    on: [push]
+        name: GitHub Actions Eitri-Push-Version
+        on: [push]
 
-    env:
-    EITRI_CLI_CLIENT_ID: ${{secrets.EITRI_CLI_CLIENT_ID}}
-    EITRI_CLI_CLIENT_SECRET: ${{secrets.EITRI_CLI_CLIENT_SECRET}}
+        env:
+        EITRI_CLI_CLIENT_ID: ${{secrets.EITRI_CLI_CLIENT_ID}}
+        EITRI_CLI_CLIENT_SECRET: ${{secrets.EITRI_CLI_CLIENT_SECRET}}
 
-    jobs:
-    Eitri-Push-Version:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v4
-        - run: cd ~
-        - run: npm i -g eitri-cli@1.4.0-beta.2
-        - run: mkdir -p ~/.eitri/
-        - run: eitri workspace use --name CI 
-        - run: cd ~
-        - run: eitri push-version 
+        jobs:
+        Eitri-Push-Version:
+            runs-on: ubuntu-latest
+            steps:
+            - uses: actions/checkout@v4
+            - run: npm i -g eitri-cli@1.4.0-beta.4
+            - run: eitri push-version 
     
     ```
 
