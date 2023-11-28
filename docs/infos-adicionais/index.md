@@ -22,6 +22,6 @@ A quantidade de Eitri-apps para cada aplicação é virtualmente ilimitada.
 
 ## Usuário
 
-As organizações podem fornecer usuários Eitri cujas permissões vão depender da [Role/Função](console-eitri.md#rolesfuncoes) assumida.
+As organizações podem fornecer usuários Eitri cujas permissões vão depender da [Role/Função](03_console-eitri.md#rolesfuncoes) assumida.
 
 A quantidade de usuários disponível para uma organização vai depender da licensa contratada.
