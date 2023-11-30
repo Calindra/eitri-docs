@@ -1,8 +1,9 @@
 nav:
     - index.md
+    - eitri-cli
     - eitri-luminus
     - eitri-bifrost
     - eitri-hugin
-    - eitri-mugin
+    - eitri-munin
     - guias-rapidos
     - ...
