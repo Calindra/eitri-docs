@@ -1,7 +1,7 @@
 ---
-status: new
+draft: true
 ---
 
 # Incidentes
 
-Texto
+Em breve

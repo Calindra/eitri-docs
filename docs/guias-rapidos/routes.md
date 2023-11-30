@@ -1,4 +1,10 @@
+---
+status: new
+---
+
 # Roteamento
+
+
 
 ## Rotas dinâmicas
 
@@ -6,7 +12,7 @@ Para utilizar as rotas dinâmicas, basta seguir o pattern de estar em um diretó
 
 Por exemplo, tenho uma listagem de produtos e quero acessar uma página específica do produto.
 
-```
+``` title="Estrutura de arquivos"
 src/views/
 ├── Product
 │   ├── [id].js
@@ -16,9 +22,9 @@ src/views/
     └── Products.jsx
 ```
 
-Onde o id será nosso parâmetro, e para navegar para o produto de id igual a 12345, basta seguir o formado /(Caminho relativo na view)/:PARAMETRO, no nosso exemplo a nossa rota será`/Product/:id`
+Onde o id será nosso parâmetro, e para navegar para o produto de id igual a 12345, basta seguir o formato `/(Caminho relativo na view)/:PARAMETRO`, no nosso exemplo a nossa rota será `/Product/:id`
 
-```js
+```js title="Chamada no Eitri-app"
 Eitri.navigation.navigate({
   path: "/Product/12345",
 });

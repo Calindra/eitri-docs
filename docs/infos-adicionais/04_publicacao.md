@@ -1,3 +1,0 @@
-# Publicação
-
-Texto

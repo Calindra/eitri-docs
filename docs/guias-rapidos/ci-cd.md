@@ -1,6 +1,6 @@
 # CI/CD
 
-CI/CD é a abreviação de Continuous Integration/Continuous Delivery, traduzindo para o português: integração e entrega contínuas.
+CI/CD é a abreviação de **Continuous Integration/Continuous Delivery**, traduzindo para o português: integração e entrega contínuas.
 
 Trata-se de uma prática de desenvolvimento de software que visa tornar a integração de código mais eficiente por meio de builds e testes automatizados.
 
@@ -11,15 +11,9 @@ Com a abordagem CI/CD é possível entregar aplicações com mais frequência ao
 CI/CD são conceitos englobados nas práticas de DevOps e você pode integrar seus repositórios para publicar de maneira contínua e integrada seus Eitri-apps.
 
 
-## Como configurar?
+## Como configurar minha CI/CD?
 
 Existem algumas formas de integrar um repositório à plataforma Eitri para fazer publicações de Eitri-apps de maneira contínua e automatizada. A mais comum delas envolve as seguintes etapas:
-
-## Requisitos mínimos
-- Versão mínima da CLI (BETA): 1.4.0-beta.2
-- Para instalar: `npm i -g eitri-cli@1.4.0-beta.2`
-
-## Passo-a-passo
 
 ### Gerando seu par de chaves
 
@@ -33,7 +27,7 @@ Existem algumas formas de integrar um repositório à plataforma Eitri para faze
 
 Com este par de chaves você poderá integrar serviços como Github Actions, Bitbucket Pipelines, entre outros.
 
-### Configurando a integração com Github
+### Configurando a integração com **Github**
 
 Siga os passos descritos em cada aba para configurar sua integração.
 
@@ -86,12 +80,12 @@ Siga os passos descritos em cada aba para configurar sua integração.
             runs-on: ubuntu-latest
             steps:
             - uses: actions/checkout@v4
-            - run: npm i -g eitri-cli@1.4.0-beta.4
-            - run: eitri push-version 
+            - run: npm i -g eitri-cli
+            - run: eitri push-version
     
     ```
 
-### Configurando a integração com Bitbucket
+### Configurando a integração com **Bitbucket**
 
 Siga os passos descritos em cada aba para configurar sua integração.
 
@@ -140,7 +134,7 @@ Siga os passos descritos em cada aba para configurar sua integração.
             - step: 
                 name: Push Version
                 script:
-                    - npm i -g eitri-cli@1.4.0-beta.4
+                    - npm i -g eitri-cli
                     - eitri push-version
     ```
 

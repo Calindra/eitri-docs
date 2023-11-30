@@ -1,10 +1,14 @@
-# Componentes
+---
+status: new
+---
 
-## Como desenvolver componentes funcionais
+# Programação Funcional
 
-### Requisitos:
+## Como desenvolver componentes funcionais?
 
-- Arquivos .(js)x .(js)
+### Requisitos
+
+- Possuir arquivos .(js)x .(js)
 - Exportar função no seguinte padrão somente:
   ```js
   export default function MEU_COMPONENT_FUNCIONAL(props) {}
@@ -12,13 +16,11 @@
 - Uso e recebimento de props somente no formato igual acima
 - Providers (hooks) personalizados somente na pasta `/providers/*` e obrigatoriamente precisa exportar como default um provider
 
-### Como utilizar:
+### Como utilizar
 
 Para utilizar componentes funcionais basta seguir os seguintes formatos:
 
-Arquivo JS|TS:
-
-```js
+```js title="Arquivo JS | TS"
 export default function Products(props) {
   const [products, setProducts] = useState([]);
   const { location } = props;
@@ -38,9 +40,7 @@ export default function Products(props) {
 }
 ```
 
-Arquivo JSX|TSX:
-
-```jsx
+```jsx title="Arquivo JSX | TSX"
 <Window>
   {products?.map((product) => (
     <View key={product.id} display="flex" direction="column" marginTop="big">
