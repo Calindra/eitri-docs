@@ -8,23 +8,29 @@ Para rodar o projeto você precisará:
 
 `python -m venv venv`
 
-3. Ativar o virtual environment do Python:
+3. Ativar o virtual environment do Python (O caminho vai depender do seu SO e da versão do Python):
 
 `source venv/Scripts/activate`
 
+ou
+
+`source venv/bin/activate`
+
 > **OBS1**: isso fará com que este venv seja a instância do python usada para as instalações de dependencias e não a instalação global do python, similar ao node_modules no JS
 
-> **OBS2**: para desativar o uso do venv para o python use o "deactivate" voltando a considerar a instalação global do python como padrão
+> **OBS2**: para desativar o uso do venv para o python use o `deactivate` voltando a considerar a instalação global do python como padrão
 
 > **OBS3**: Você pode fornecer outro nome no segundo parâmetro do comando como "python -m venv nomedapasta" mas não esqueça de incluí-la no gitignore
 
-4. Instalar mkdocs e plugins
+1. Instalar mkdocs e plugins
 
 `pip install mkdocs-material`
 
 `pip install mkdocs-exclude-search`
 
 `pip install mkdocs-glightbox`
+
+`pip install mkdocs-awesome-pages-plugin`
 
 5. Rodar o projeto
 
@@ -43,3 +49,11 @@ Para rodar o projeto você precisará:
 - Para mais informações sobre personalização do MkDocs [clique aqui](https://squidfunk.github.io/mkdocs-material/setup/)
 
 - Para informações sobre recursos adicionais do MkDocs ao escrever seus MDs, acesse [este link](https://squidfunk.github.io/mkdocs-material/reference/)
+
+### Navegação
+
+A construção dos menus para navegação é configurada a partir do plugin [awesome pages](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) para mkdocs.
+
+Com ela você pode incluir um arquivo `.pages` dentro de uma pasta e este arquivo passa a reger a forma como o mkdocs irá gerar os menus para aquele nível de dados.
+
+Para mais informações, consulte o [repositório do plugin awesome pages](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin).
