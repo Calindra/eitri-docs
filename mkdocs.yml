@@ -96,6 +96,9 @@ markdown_extensions:
   - md_in_html
   - attr_list
   - admonition
+  - def_list
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.superfences:
       custom_fences:
       - name: mermaid
