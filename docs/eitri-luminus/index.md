@@ -6,4 +6,4 @@ Com estes componentes você pode montar outros componentes mais complexos para a
 
 Alem disso, é possível determinar paletas de cores personalizadas para cada uma das aplicações usando Eitri para que seu Design System seja respeitado em todos os Eitri-apps.
 
-Para consultar os componentes dispoíveis [clique aqui](https://cdn.83io.com.br/library/luminus-ui/docs/)
+Para consultar os componentes dispoíveis [clique aqui](https://cdn.83io.com.br/library/luminus-ui/doc/latest/)
