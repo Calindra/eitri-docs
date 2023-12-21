@@ -6,7 +6,7 @@ Trata-se de uma prática de desenvolvimento de software que visa tornar a integr
 
 Com a abordagem CI/CD é possível entregar aplicações com mais frequência aos clientes. Para tanto, regras de automação são aplicadas nas etapas de desenvolvimento de apps.
 
-(Fonte: [RedHat](https://www.redhat.com/pt-br/topics/devops/what-is-ci-cd))
+(Fonte: [RedHat](https://www.redhat.com/pt-br/topics/devops/what-is-ci-cd){:target="_blank"})
 
 CI/CD são conceitos englobados nas práticas de DevOps e você pode integrar seus repositórios para publicar de maneira contínua e integrada seus Eitri-apps.
 
@@ -17,7 +17,7 @@ Existem algumas formas de integrar um repositório à plataforma Eitri para faze
 
 ### Gerando seu par de chaves
 
-1. Faça o login no [Console Eitri](https://console.eitri.tech/) e acesse o item **Identificação Pessoal (Gerenciando suas credenciais)** clicando em seu nome no canto superior direito
+1. Faça o login no [Console Eitri](https://console.eitri.tech/){:target="_blank"} e acesse o item **Identificação Pessoal (Gerenciando suas credenciais)** clicando em seu nome no canto superior direito
 
     ![Image title](https://dummyimage.com/600x400/eee/aaa)
 
@@ -33,7 +33,7 @@ Siga os passos descritos em cada aba para configurar sua integração.
 
 === "No Github Actions"
 
-    1. Acesse o repositório de seu Eitri-app no [GitHub](https://github.com) e clique na aba **Settings**
+    1. Acesse o repositório de seu Eitri-app no [GitHub](https://github.com){:target="_blank"} e clique na aba **Settings**
 
         ![Image title](https://dummyimage.com/600x400/eee/aaa)
 
@@ -91,7 +91,7 @@ Siga os passos descritos em cada aba para configurar sua integração.
 
 === "No Bitbucket Pipelines"
 
-    1. Acesse o repositório de seu Eitri-app no [Bitbucket](https://bitbucket.org) e clique em **Repository Settings** e em seguida em **Repository Variables**
+    1. Acesse o repositório de seu Eitri-app no [Bitbucket](https://bitbucket.org){:target="_blank"} e clique em **Repository Settings** e em seguida em **Repository Variables**
 
         ![Image title](https://dummyimage.com/600x400/eee/aaa)
 
@@ -143,7 +143,7 @@ Siga os passos descritos em cada aba para configurar sua integração.
     A versão do Node.js deverá ser igual ou superior a 16.
 
 !!! tip
-    É altamente recomendado utilizar o versionamento semântico [semver](https://semver.org/lang/pt-BR/) e [conventional commits](https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/) para automatizar tambem a numeração de versões de maneira adequada e cômoda em seu pipeline.
+    É altamente recomendado utilizar o versionamento semântico [semver](https://semver.org/lang/pt-BR/){:target="_blank"} e [conventional commits](https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/){:target="_blank"} para automatizar tambem a numeração de versões de maneira adequada e cômoda em seu pipeline.
 
 !!! info
     Ao executar o pipeline, uma nova versão será enviada ao Console de forma automática. Caso exista uma versão de mesma numeração publicada anteriormente será retornado um erro na publicação.

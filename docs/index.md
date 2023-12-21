@@ -2,7 +2,7 @@
 
 Eitri é uma plataforma para desenvolvimento mobile que facilita e agiliza o desenvolvimento e publicação de novas features em seu app. Com o Eitri você diminui seus custos, aumenta a produtividade e potencializa suas entregas focando no produto com métricas inteligentes que favorecem o desempenho do produto.
 
-O Eitri surgiu a partir da vasta experiência da [Calindra](https://calindra.com.br) no desenvolvimento de aplicativos móveis, sobretudo para e-commerce para tornar esse processo mais escalável, flexível, ágil, seguro e modular.
+O Eitri surgiu a partir da vasta experiência da [Calindra](https://calindra.com.br){:target="_blank"} no desenvolvimento de aplicativos móveis, sobretudo para e-commerce para tornar esse processo mais escalável, flexível, ágil, seguro e modular.
 
 Seu nome deriva do anão da mitologia nórdica que forjou Mjölnir e outros artefatos mágicos para os deuses, demonstrando habilidades excepcionais como ferreiro e construtor e é uma analogia com o fato de que construir aplicativos por meio do Eitri é tão rápido e prático que chega a parecer mágica.
 
@@ -25,6 +25,10 @@ Os Eitri-apps possuem codebase isolados uns dos outros, bem como fluxo de desenv
 
 O SDK do Eitri oferece diversas ferramentas para permitir que seus Eitri-apps realizem coisas incríveis:
 
+#### `Eitri CLI`
+
+:   A linha de comando do Eitri é o ponto de partida para os desenvolvedores. A partir dela é possível criar Eitri-apps, desenvolve-los e executar diversas outras funções.
+
 #### `Eitri Luminus`
 
 :   A ponte luminosa que representa um caminho para a conexão entre os mundos na mitologia nórdica originou o nome da biblioteca de componentes do Eitri que os componentes base para a criação dos Eitri-apps e tambem funções de personalização da interface para customização das cores dos componentes base e criação de componentes personalizados para sua organização.
@@ -32,10 +36,6 @@ O SDK do Eitri oferece diversas ferramentas para permitir que seus Eitri-apps re
 #### `Eitri Bifrost`
 
 :   Bifrost é um misto de tecnologia e magia que conecta de fato os mundos na mitologia nórdica e que representa bem a API do Eitri que viabiliza a conexão entre seu app e o universo dos Eitri-apps, potencializando ambos à medida que permite que seu app usufrua das funcionalidades Eitri e ao mesmo tempo podendo habilitar seus Eitri-apps a usar funções que seriam nativamente do seu app.
-
-#### `Eitri CLI`
-
-:   A linha de comando do Eitri é o ponto de partida para os desenvolvedores. A partir dela é possível criar Eitri-apps, desenvolve-los e executar diversas outras funções.
 
 #### `Eitri Hugin`
 
@@ -52,3 +52,7 @@ O SDK do Eitri oferece diversas ferramentas para permitir que seus Eitri-apps re
 Você pode por exemplo configurar uma paleta de cores para uso em diferentes áreas dos Eitri-apps ou criar componentes comuns que ficarão disponíveis para uso nos Eitri-apps de maneira que eles mantenham a unidade e o looking feel do restante do seu app, o que mantem uma experiência fluida e transparente para o usuário final.
 
 Uma vez configurado o DS de seu app para o Eitri todos os Eitri-apps desenvolvidos para ele já nascerão e serão desenvolvidos respeitando as diretrizes visuais definidas, garantindo uniformidade entre diferentes times e produtos.
+
+## Por onde eu começo?
+
+Para começar a usar o Eitri em sua organização entre em contato conosco [clicando aqui](https://www.site.eitri.calindra.com.br/#comp-lmam48kn5){:target="_blank"}.
