@@ -2,7 +2,7 @@
 
 Eitri é uma plataforma para desenvolvimento mobile que facilita e agiliza o desenvolvimento e publicação de novas features em seu app. Com o Eitri você diminui seus custos, aumenta a produtividade e potencializa suas entregas focando no produto com métricas inteligentes que favorecem o desempenho do produto.
 
-O Eitri surgiu a partir da vasta experiência da [Calindra](https://calindra.com.br) no desenvolvimento de aplicativos móveis, sobretudo para e-commerce para tornar esse processo mais escalável, flexível, ágil, seguro e modular.
+O Eitri surgiu a partir da vasta experiência da [Calindra](https://calindra.com.br){:target="_blank"} no desenvolvimento de aplicativos móveis, sobretudo para e-commerce para tornar esse processo mais escalável, flexível, ágil, seguro e modular.
 
 Seu nome deriva do anão da mitologia nórdica que forjou Mjölnir e outros artefatos mágicos para os deuses, demonstrando habilidades excepcionais como ferreiro e construtor e é uma analogia com o fato de que construir aplicativos por meio do Eitri é tão rápido e prático que chega a parecer mágica.
 
