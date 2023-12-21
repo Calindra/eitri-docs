@@ -58,7 +58,7 @@ theme:
       accent: lime
   
 extra:
-  homepage: https://eitri.calindra.com.br
+  homepage: https://docs.eitri.tech
   # Ícones de redes sociais no rodapé
   social:
     - icon: fontawesome/brands/github-alt
