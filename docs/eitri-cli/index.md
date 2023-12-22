@@ -1,7 +1,5 @@
 # Introdução
 
-==Versão atual: 1.5.1==
-
 A Eitri CLI é o ponto de partida para desenvolver Eitri-apps. Com ela você pode criar, desenvolver e publicar Eitri-apps para as aplicações de sua organização.
 
 ## Requisitos
