@@ -1,7 +1,5 @@
 # Introdução
 
-==Versão atual: 1.5.1==
-
 A Eitri CLI é o ponto de partida para desenvolver Eitri-apps. Com ela você pode criar, desenvolver e publicar Eitri-apps para as aplicações de sua organização.
 
 ## Requisitos
@@ -59,7 +57,7 @@ Você precisará fornecer algumas informações ao criar um Eitri-app:
 :   Nome do produto, utilizado na divulgação e em pontos de contato com o usuário ou cliente final. Este nome poderá ser visualizado pelos usuários.
 
 `Nome único`
-:   Nome utilizado para identificação única do Eitri-app na plataforma Eitri e utilizado para encontrar seu Eitri-app e referencia-lo em diversas circunstâncias. Este nome não pode ser repetido entre Eitri-apps e não deve conter espaços ou caracteres especiais.
+:   Tambem chamado de slug, é o nome utilizado para identificação única do Eitri-app na plataforma Eitri, para encontrar seu Eitri-app, referencia-lo em diversas circunstâncias e tambem na montagem de deeplinks. Este nome não pode ser repetido entre Eitri-apps e não deve conter espaços ou caracteres especiais.
 
 ### start
 
