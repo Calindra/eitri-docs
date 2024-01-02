@@ -32,6 +32,8 @@ ou
 
 `pip install mkdocs-awesome-pages-plugin`
 
+`pip install mkdocs-with-pdf`
+
 5. Rodar o projeto
 
 `mkdocs serve`
