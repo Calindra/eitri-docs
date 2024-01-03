@@ -1,9 +1,9 @@
-# Introdução
+# Introduction
 
-O Eitri luminus é a lib do eitri que contem os componentes básicos para a montagem das telas de Eitri-apps.
+Eitri Luminus is the Eitri library that contains the basic components for assembling the screens of Eitri-apps.
 
-Com estes componentes você pode montar outros componentes mais complexos para as experiências de seus Eitri-apps e extender ainda mais as possibilidades do Eitri em seu app.
+With these components, you can create more complex components for your Eitri-apps' experiences and further extend the possibilities of Eitri in your app.
 
-Alem disso, é possível determinar paletas de cores personalizadas para cada uma das aplicações usando Eitri para que seu Design System seja respeitado em todos os Eitri-apps.
+In addition, it's possible to set custom color palettes for each application using Eitri, ensuring that your Design System is respected in all Eitri-apps.
 
-Para consultar os componentes dispoíveis [clique aqui](https://cdn.83io.com.br/library/luminus-ui/doc/latest/){:target="_blank"}
+To know better the available components, [click here](https://cdn.83io.com.br/library/luminus-ui/doc/latest/){:target="_blank"}.

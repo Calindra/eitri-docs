@@ -1,7 +1,7 @@
-# Introdução
+# Introduction
 
-Hugin (que significa "pensamento") é um dos dois corvos de Odin que na mitologia nórdica vooam por todo o mundo trazendo informações à Odin.
+Hugin (which means "thought") is one of the two ravens of Odin who, in Norse mythology, fly all over the world bringing information to Odin.
 
-Assim como na mitologia, o recurso de funções serverless do Eitri permitem que você crie e execute um bff ou backend para seu Eitri-app para as mais variadas funções sem que seja necessário criar ou configurar infra-estrutura para isso.
+Just like in mythology, Eitri's serverless functions feature allows you to create and run a BFF (backend for frontend) or backend for your Eitri-app for a variety of functions without the need to create or configure infrastructure for this purpose.
 
-Em breve o Hugin estará disponível para uso em seus Eitri-apps.
+Hugin will soon be available for use in your Eitri-apps.

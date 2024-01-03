@@ -1,98 +1,98 @@
-# Introdução
+# Introduction
 
-A Eitri CLI é o ponto de partida para desenvolver Eitri-apps. Com ela você pode criar, desenvolver e publicar Eitri-apps para as aplicações de sua organização.
+Eitri CLI is the starting point for developing Eitri-apps. With it, you can create, develop, and publish Eitri-apps for your organization's applications.
 
-## Requisitos
+## Requirements
 
-Para utilizar a Eitri CLI você precisará ter instalado em sua máquina:
+To use the Eitri CLI, you will need to have installed on your machine:
 
-* [Node](https://nodejs.org/){:target="_blank"} 18 ou superior
+* [Node](https://nodejs.org/){:target="_blank"} 18 or higher
 * [NPM](https://www.npmjs.com/){:target="_blank"}
 * [Git](https://git-scm.com/){:target="_blank"}
 
 
-## Instalação
+## Installation
 
-Para instalar a CLI utilize o comando `npm install -g eitri-cli` em seu terminal.
+To install the CLI, use the command `npm install -g eitri-cli` in your terminal.
 
 !!! info
 
-    Caso obtenha algum erro de permissão durante a instalação, verifique se o nível de privilégios de seu usuário são adequados/suficientes para realizar esta instalação.
+    If you encounter any permission errors during installation, check if your user's privilege level is adequate/sufficient to carry out this installation.
 
-## Atualização
+## Update
 
-Para atualizar a versão de sua CLI basta utilizar o comando [eitri self-update](#self-update).
+To update your CLI version, simply use the command [eitri self-update](#self-update).
 
-## Comandos disponíveis
+## Available Commands
 
-Você pode utilizar `--help` ou `-h` no final de qualquer comando para saber como utiliza-lo e conhecer suas opções.
+You can use `--help` or `-h` at the end of any command to learn how to use it and to know its options.
 
-Muitas das funções complementares do Eitri estão disponíveis como opções dos comandos principais.
+Many of Eitri's complementary functions are available as options in the main commands.
 
 ### login
 
-Utilização: `eitri login [options]`
+Usage: `eitri login [options]`
 
-Efetua o login na plataforma Eitri, criando as credenciais de sua conta em sua máquina e vinculando sua ferramenta de linha de comando à sua conta de desenvolvedor Eitri.
+Performs the login to the Eitri platform, creating your account credentials on your machine and linking your command line tool to your Eitri developer account.
 
 !!! info
 
-    A maioria dos demais comandos só podem ser executados após efetuado o login.
+    Most other commands can only be executed after logging in.
 
 ### create
 
-Utilização: `eitri create [options] <project-name>`
+Usage: `eitri create [options] <project-name>`
 
-Cria um novo projeto de Eitri-app em sua máquina e o registra na plataforma Eitri.
+Creates a new Eitri-app project on your machine and registers it on the Eitri platform.
 
-Você precisará fornecer algumas informações ao criar um Eitri-app:
+You will need to provide some information when creating an Eitri-app:
 
-`Aplicação`
-:   (Aplicação na qual seu Eitri-app irá rodar)
+`Application`
+:   (The application in which your Eitri-app will run)
 
-`Nome legível`
-:   Nome utilizado na listagem do console. Não é exibido ao cliente final ou ao usuário utilizador do Eitri-app. Este nome é utilizado internamente e não será visualizado pelos usuários.
+`Readable Name`
+:   Name used in the console listing. It is not displayed to the end customer or the user using the Eitri-app. This name is used internally and will not be seen by users.
 
-`Nome para divulgação`
-:   Nome do produto, utilizado na divulgação e em pontos de contato com o usuário ou cliente final. Este nome poderá ser visualizado pelos usuários.
+`Promotional Name`
+:   Name of the product, used in advertising and in contact points with the user or end customer. This name will be visible to users.
 
-`Nome único`
-:   Tambem chamado de slug, é o nome utilizado para identificação única do Eitri-app na plataforma Eitri, para encontrar seu Eitri-app, referencia-lo em diversas circunstâncias e tambem na montagem de deeplinks. Este nome não pode ser repetido entre Eitri-apps e não deve conter espaços ou caracteres especiais.
+`Unique Name`
+:   Also called a slug, it is the name used for the unique identification of the Eitri-app on the Eitri platform, to find your Eitri-app, refer to it in various circumstances, and also in the assembly of deeplinks. This name cannot be repeated among Eitri-apps and should not contain spaces or special characters.
 
 ### start
 
-Utilização: `eitri start [options]`
+Usage: `eitri start [options]`
 
-O comando `eitri start` inicializa o Eitri-app para desenvolvimento, gerando um QrCode que deverá ser scaneado com o app de sua organização no qual o Eitri foi integrado.
+The `eitri start` command initializes the Eitri-app for development, generating a QR Code that must be scanned with your organization's app in which Eitri has been integrated.
 
-À medida que você vai desenvolvendo e salvando seus arquivos localmente, seu Eitri-app contará com um hotreload que mostrará em tempo real as alterações na tela de seu aparelho, permitindo que você veja o resultado final de maneira rápida e fácil.
+As you develop and save your files locally, your Eitri-app will have a hotreload that shows real-time changes on your device's screen, allowing you to see the final result quickly and easily.
 
 ### push-version
 
-Utilização: `eitri push-version [options]`
+Usage: `eitri push-version [options]`
 
-Envia uma versão de seu Eitri-app para o Console, possibilitando a publicação. Ao executar este comando uma versão de seu Eitri-app será incluída no console e ficará disponível para publicação nos ambientes cadastrados para a aplicação.
+Sends a version of your Eitri-app to the Console, enabling publication. When you execute this command, a version of your Eitri-app will be included in the console and will be available for publication in the environments registered for the application.
 
 !!! info
 
-    Esteja atento à versão de seu Eitri-app (no arquivo eitri-app.conf.js) já que não é possível enviar uma versão já existente no console.
+    Pay attention to your Eitri-app's version (in the eitri-app.conf.js file) since it is not possible to send a version that already exists in the console.
 
 ### self-update
 
-Utilização: `eitri self-update [options]`
+Usage: `eitri self-update [options]`
 
-Atualiza sua versão da Eitri CLI, desinstalando versões anteriores e instalando a versão estável mais recente.
+Updates your version of the Eitri CLI, uninstalling previous versions and installing the most recent stable version.
 
-É recomendado manter sempre a versão mais recente da Eitri CLI para garantir o melhor desempenho, compatibilidade, estabilidade e a melhor experiência de desenvolvimento.
+It is recommended to always keep the latest version of the Eitri CLI to ensure the best performance, compatibility, stability, and the best development experience.
 
 ### workspace
 
-Utilização: `eitri workspace [options] [command]`
+Usage: `eitri workspace [options] [command]`
 
-Gerencia e permite a utilização de múltiplos workspaces. Para conhecer tudo que é possível fazer com o comando workspace, utilize `eitri workspace --help`.
+Manages and allows the use of multiple workspaces. To know everything that can be done with the workspace command, use `eitri workspace --help`.
 
 ### clean
 
-Utilização: `eitri clean [options]`
+Usage: `eitri clean [options]`
 
-Realiza uma limpeza em seu workspace remoto. Ao rodar o `eitri start` seu workspace é montado com o código que está em sua máquina e é atualizado automaticamente à medida que você desenvolve e salva seus arquivos. Caso haja algum problema com seu workspace, o comando `eitri clean` pode ajudar a reestabelecer seu workspace.
+Performs a cleaning in your remote workspace. When running `eitri start`, your workspace is set up with the code on your machine and is automatically updated as you develop and save your files. If there is any problem with your workspace, the `eitri clean` command can help reestablish it.

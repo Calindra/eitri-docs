@@ -1,9 +1,7 @@
 # Introduction
 
-Eitri Bifrost is responsible for allowing devs to use navigation methods from Eitri-apps and giving Eitri-apps access to mobile native resources like GPS, Camera and other hardware features.
+Eitri Bifrost is responsible for allowing developers to use navigation methods from Eitri-apps and giving Eitri-apps access to mobile native resources like GPS, Camera, and other hardware features.
 
-Alem dos métodos default disponíveis no Eitri super-app você tambem pode ampliar as funcionalidades de seus Eitri-apps expondo métodos personalizados de seu app para que seus Eitri-apps utilizem.
+Besides the default methods available on Eitri Bifrost, you can amplify the functions of your Eitri-apps by exposing custom methods from your app, so Eitri-apps in it can use them too.
 
-Para consultar os métodos disponíveis [clique aqui](https://cdn.83io.com.br/library/eitri-app-client/doc/latest/){:target="_blank"}
-
---8<-- "../../includes/teste.md"
+To know more about the available methods, [click here](https://cdn.83io.com.br/library/eitri-app-client/doc/latest/){:target="_blank"}.

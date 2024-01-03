@@ -1,5 +1,5 @@
 # Introduction
 
-Nesta página você encontrará guias rápidos para ajudar a aproveitar os principais recursos do Eitri e seguir recomendações de boas práticas de desenvolvimento.
+On this page, you will find quick guides to help you make the most of Eitri's key features and follow recommendations for best development practices.
 
-Você pode enviar sugestões de temas e assuntos para nossa equipe [clicando aqui](https://forms.gle/7ompyzJQBAxpptUd9){:target="_blank"}.
+You can send suggestions for topics and subjects to our team [by clicking here](https://forms.gle/7ompyzJQBAxpptUd9){:target="_blank"}.

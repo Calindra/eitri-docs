@@ -1,7 +1,7 @@
-# Introdução
+# Introduction
 
-Munin (que significa "memória" ou "mente") é um dos dois corvos de Odin e originou o nome de nosso recurso de persistência de dados.
+Munin (which means "memory" or "mind") is one of the two ravens of Odin and inspired the name of our data persistence feature.
 
-Com ele você pode armazenar informações relacionadas com um Eitri-app de maneira fácil, rápida e prática dipondo de um banco de dados para armazenamento e consulta de informações sem a necessidade de se preocupar com infra-estrutura para tal.
+With it, you can store information related to an Eitri-app in an easy, quick, and practical manner, having a database at your disposal for storing and querying information without the need to worry about the infrastructure for it.
 
-Em breve o Munin estará disponível para uso em seus Eitri-apps.
+Munin will soon be available for use in your Eitri-apps.
