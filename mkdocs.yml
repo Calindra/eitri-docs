@@ -85,7 +85,7 @@ extra:
           name: This page wasn't helpful
           data: 0
           note: >- 
-            Thank you for your feedback! Help us get better <a href="#" target="_blank" rel="noopener">clicking here</a>.
+            Thank you for your feedback! Help us get better <a href="https://forms.gle/7ompyzJQBAxpptUd9" target="_blank" rel="noopener">clicking here</a>.
   # version:
   #   provider: mike
   alternate:  
