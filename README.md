@@ -34,23 +34,26 @@ ou
 
 `pip install mkdocs-with-pdf`
 
+`pip install mkdocs-redirects`
+
 5. Rodar o projeto
 
 `mkdocs serve`
 
 > Para buildar a versão estática para publicação rode: `mkdocs build`. A versão estática será gerada na pasta `site`
 
-
-
 ## Informações importantes:
 
-- A pasta eitritheme serve para sobrepor estruturas padrão do mkdocs material e pastas ou arquivos dentro deste diretório devem ser referenciados sem mencionar o diretório especificamente. Por exemplo....para apontar para o arquivo `eitri-logo.svg` dentro da pasta `eitritheme/assets` você deve chamar apenas `assets/eitri-logo.svg` visto que durante a compilação tudo que está em eitritheme irá sobrepor o tema original.
+- A pasta `overrides` serve para sobrepor estruturas padrão do mkdocs material e pastas ou arquivos dentro deste diretório devem ser referenciados sem mencionar o diretório especificamente. Por exemplo....para apontar para o arquivo `eitri-logo.svg` dentro da pasta `overrides/assets` você deve chamar apenas `assets/eitri-logo.svg` visto que durante a compilação tudo que está em eitritheme irá sobrepor o tema original.
 
 - Para mais informações sobre esta sobreposição do tema Eitri [acesse este link](https://squidfunk.github.io/mkdocs-material/customization/#extending-the-theme)
 
 - Para mais informações sobre personalização do MkDocs [clique aqui](https://squidfunk.github.io/mkdocs-material/setup/)
 
 - Para informações sobre recursos adicionais do MkDocs ao escrever seus MDs, acesse [este link](https://squidfunk.github.io/mkdocs-material/reference/)
+
+- Para informações adicionais sobre redirecionamentos no mkdocs acesse [este link](https://github.com/mkdocs/mkdocs-redirects)
+
 
 ### Navegação
 
