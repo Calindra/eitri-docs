@@ -1,5 +1,5 @@
-# Olá
+# Seja bem vindo / Welcome
 
-[english](en/index.md)
+[english version](en/index.md)
 
-[BR portuguese](pt-BR/index.md)
+[versão em português](pt-BR/index.md)
