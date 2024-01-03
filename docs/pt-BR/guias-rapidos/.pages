@@ -1,0 +1,5 @@
+nav:
+    - index.md
+    - ci-cd.md
+    - functional.md
+    - routes.md
