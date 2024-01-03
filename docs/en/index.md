@@ -1,59 +1,53 @@
 # What is Eitri?
 
-Eitri is a mobile development platform that makes easier and faster to develop and publish new features in your app. With Eitri you can lower your costs, raise your productivity and amplify your delivery focusing on your product with intelligent metrics that help product performance.
+Eitri is a mobile development platform that makes it easier and faster to develop and publish new features in your app. With Eitri, you can lower your costs and raise your productivity focusing on your product with intelligent metrics that enhance performance.
 
-Eitri came out from [Calindra's](https://calindra.com.br){:target="_blank"} experience of years developing mobile apps mainly for some of the biggests players in Brazil to make their processes scalable, flexible, agile, safer and modular.
+Everything started out from [Calindra's](https://calindra.com.br) experience of years developing mobile apps, mainly for some of the biggest players in Brazil, to make their processes scalable, flexible, agile, safer and modular.
 
-It's name comes from the mythological dwarf that forged Mjölnir (Thor's Hammer) and other magical artifacts for the gods, showing incredible habilities as blacksmith and builder and it's an analogy with the fact that building apps using Eitri can be so fast and practical that can even look like magic.
+Its name comes from the mythological dwarf that forged Mjölnir (Thor's Hammer) and other magical artifacts for the gods, showing incredible abilities as a blacksmith and builder. It's an analogy to the fact that building apps using Eitri can be so fast and practical that it can even seem like magic.
 
 ## Advantages
 
-Com o Eitri você pode desenvolver cada feature de maneira independente e paralela sem afetar as demais nem o app como um todo pois cada Eitri-app tem seu fluxo de desenvolvimento e publicação isolados.
+With Eitri, you can develop each feature in an independent and parallel way without interfering with other features or the mobile app where it's placed. Each Eitri-app has its own development and publish flow and they do not depend on app stores to be released, making it possible to publish changes instantly.
 
-Alem disso, você não dependerá das agendas de publicação das tradicionais lojas de apps (Como o Google Play e App Store) e pode publicar alterações nas features de maneira instantânea.
+At least, to develop Eitri-apps, it's not necessary to work with native languages or hard-to-find professionals, so you can form developer teams in an easier and cheaper way.
 
-Por fim, para desenvolver Eitri-apps não é necessário conhecimentos específicos de linguagens nativas, o que torna a mão de obra para trabalhar com o Eitri mais acessível e abundante.
+## What are Eitri-apps?
 
-## O que são Eitri-apps?
+Eitri-apps are small, independent applications that are integrated within your app once you install and configure Eitri in your mobile project.
 
-Os Eitri-apps são pequenas aplicações independentes que passam a abrir de maneira integrada no seu app após a instalação e configuração do Eitri.
-
-Os Eitri-apps possuem codebase isolados uns dos outros, bem como fluxo de desenvolvimento e publicação independentes tanto uns dos outros quanto do próprio app. Isso permite por exemplo que um Eitri-app X evolua num ritmo diferente de um Eitri-app Y sem que um afete o outro e sem que eles dependam de publicações do app pai.
+These Eitri-apps have isolated codebases from each other and independent development and publish flows from each other and from the mobile app that hosts them. This allows each feature or product to be created as an Eitri-app and evolve at a different rhythm than the others, and without the need to do a mobile release on app stores.
 
 ### Eitri SDK
 
-O SDK do Eitri oferece diversas ferramentas para permitir que seus Eitri-apps realizem coisas incríveis:
+Eitri SDK offers a lot of tools to allow your Eitri-apps to do amazing things:
 
-#### `Eitri CLI`
+#### [`Eitri CLI`](/en/eitri-cli/)
 
-:   A linha de comando do Eitri é o ponto de partida para os desenvolvedores. A partir dela é possível criar Eitri-apps, desenvolve-los e executar diversas outras funções.
+:   Eitri Command Line Interface is the starting point for those who want to develop Eitri-apps. From it, you can create and develop new Eitri-apps and run a lot of other cool functions.
 
-#### `Eitri Luminus`
+#### [`Eitri Luminus`](/en/eitri-luminus/)
 
-:   A ponte luminosa que representa um caminho para a conexão entre os mundos na mitologia nórdica originou o nome da biblioteca de componentes do Eitri que os componentes base para a criação dos Eitri-apps e tambem funções de personalização da interface para customização das cores dos componentes base e criação de componentes personalizados para sua organização.
+:   The luminous bridge that represents a path to the door connecting the worlds in Nordic mythology has originated Eitri's components lib name. It packs the base components to create Eitri-apps and customization for the interface using your own color pallets and custom components for your organization.
 
-#### `Eitri Bifrost`
+#### [`Eitri Bifrost`](/en/eitri-bifrost/)
 
-:   Bifrost é um misto de tecnologia e magia que conecta de fato os mundos na mitologia nórdica e que representa bem a API do Eitri que viabiliza a conexão entre seu app e o universo dos Eitri-apps, potencializando ambos à medida que permite que seu app usufrua das funcionalidades Eitri e ao mesmo tempo podendo habilitar seus Eitri-apps a usar funções que seriam nativamente do seu app.
+:   Bifrost is a mix of technology and magic that effectively connects the worlds in Nordic mythology and represents well what Eitri API does between your mobile app and the Eitri-apps universe. It empowers both of them, allowing your app to use Eitri features while making it possible to use functions of your app inside Eitri-apps.
 
-#### `Eitri Hugin`
+#### [`Eitri Hugin`](/en/eitri-hugin/)
 
-:   Hugin (que significa "pensamento") é um dos dois corvos de Odin que na mitologia nórdica vooam por todo o mundo trazendo informações à Odin. Assim como na mitologia, o recurso de funções serverless do Eitri permitem que você crie e execute um bff ou backend para seu Eitri-app para as mais variadas funções sem que seja necessário criar ou configurar infra-estrutura para isso.
+:   Hugin (means "thought") is one of the two ravens of Odin and in Nordic mythology flies all over the world bringing Odin information that he needs. In the same way, Eitri Hugin offers serverless functions to Eitri, allowing to create and run BFFs or backends for Eitri-apps for a variety of uses without needing to create or configure any infrastructure.
 
-#### `Eitri Munin`
+#### [`Eitri Munin`](/en/eitri-munin/)
 
-:   Munin (que significa "memória" ou "mente") é um dos dois corvos de Odin e originou o nome de nosso recurso de persistência de dados. Com ele você pode armazenar informações relacionadas com um Eitri-app de maneira fácil, rápida e prática dipondo de um banco de dados para armazenamento e consulta de informações sem a necessidade de se preocupar com infra-estrutura para tal.
+:   Munin (means "memory" or "mind") is the other raven of Odin and gives the name to our data persistency feature. With it, you can store information related to an Eitri-app in an easy, fast, and reliable way with a database, without the need to worry about infrastructure for it.
 
-## E o meu Design System?
+## How about my Design System?
 
-É provável que seu app já possua uma identidade ou características visuais a serem respeitadas e por isso o Eitri permite que você configure algumas características básicas de Design System para que os Eitri-apps possam oferecer um aspecto condizente com seu app.
+You probably already have an app identity or visual characteristics that need to be followed by features inside your app, and that's why Eitri allows you to configure some of the basic Design System as a theme. This ensures your Eitri-apps look and feel exactly like your native experience, assuring consistency and a comfortable user experience.
 
-Você pode por exemplo configurar uma paleta de cores para uso em diferentes áreas dos Eitri-apps ou criar componentes comuns que ficarão disponíveis para uso nos Eitri-apps de maneira que eles mantenham a unidade e o looking feel do restante do seu app, o que mantem uma experiência fluida e transparente para o usuário final.
+It is possible to configure a color palette, create custom components that can be used while developing Eitri-apps, and once it's configured, all of your Eitri-apps will be created and developed respecting those visual definitions. This makes it easier to maintain visual consistency even between different teams and products.
 
-Uma vez configurado o DS de seu app para o Eitri todos os Eitri-apps desenvolvidos para ele já nascerão e serão desenvolvidos respeitando as diretrizes visuais definidas, garantindo uniformidade entre diferentes times e produtos.
+## Perfect, but how can I start?
 
-## Por onde eu começo?
-
-Para começar a usar o Eitri em sua organização entre em contato conosco [clicando aqui](https://www.site.eitri.calindra.com.br/#comp-lmam48kn5){:target="_blank"}.
-
---8<-- "../../includes/teste.md"
+To start using Eitri in your organization, [click here to contact us](https://www.site.eitri.calindra.com.br/#comp-lmam48kn5).

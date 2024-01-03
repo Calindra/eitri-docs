@@ -25,23 +25,23 @@ Os Eitri-apps possuem codebase isolados uns dos outros, bem como fluxo de desenv
 
 O SDK do Eitri oferece diversas ferramentas para permitir que seus Eitri-apps realizem coisas incríveis:
 
-#### `Eitri CLI`
+#### [`Eitri CLI`](/pt-BR/eitri-cli/)
 
 :   A linha de comando do Eitri é o ponto de partida para os desenvolvedores. A partir dela é possível criar Eitri-apps, desenvolve-los e executar diversas outras funções.
 
-#### `Eitri Luminus`
+#### [`Eitri Luminus`](/pt-BR/eitri-luminus/)
 
 :   A ponte luminosa que representa um caminho para a conexão entre os mundos na mitologia nórdica originou o nome da biblioteca de componentes do Eitri que os componentes base para a criação dos Eitri-apps e tambem funções de personalização da interface para customização das cores dos componentes base e criação de componentes personalizados para sua organização.
 
-#### `Eitri Bifrost`
+#### [`Eitri Bifrost`](/pt-BR/eitri-bifrost/)
 
 :   Bifrost é um misto de tecnologia e magia que conecta de fato os mundos na mitologia nórdica e que representa bem a API do Eitri que viabiliza a conexão entre seu app e o universo dos Eitri-apps, potencializando ambos à medida que permite que seu app usufrua das funcionalidades Eitri e ao mesmo tempo podendo habilitar seus Eitri-apps a usar funções que seriam nativamente do seu app.
 
-#### `Eitri Hugin`
+#### [`Eitri Hugin`](/pt-BR/eitri-hugin/)
 
 :   Hugin (que significa "pensamento") é um dos dois corvos de Odin que na mitologia nórdica vooam por todo o mundo trazendo informações à Odin. Assim como na mitologia, o recurso de funções serverless do Eitri permitem que você crie e execute um bff ou backend para seu Eitri-app para as mais variadas funções sem que seja necessário criar ou configurar infra-estrutura para isso.
 
-#### `Eitri Munin`
+#### [`Eitri Munin`](/pt-BR/eitri-munin/)
 
 :   Munin (que significa "memória" ou "mente") é um dos dois corvos de Odin e originou o nome de nosso recurso de persistência de dados. Com ele você pode armazenar informações relacionadas com um Eitri-app de maneira fácil, rápida e prática dipondo de um banco de dados para armazenamento e consulta de informações sem a necessidade de se preocupar com infra-estrutura para tal.
 
@@ -56,6 +56,3 @@ Uma vez configurado o DS de seu app para o Eitri todos os Eitri-apps desenvolvid
 ## Por onde eu começo?
 
 Para começar a usar o Eitri em sua organização entre em contato conosco [clicando aqui](https://www.site.eitri.calindra.com.br/#comp-lmam48kn5){:target="_blank"}.
-
-
---8<-- "../../includes/teste.md"
