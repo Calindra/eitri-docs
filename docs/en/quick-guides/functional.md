@@ -2,25 +2,25 @@
 status: new
 ---
 
-# Programação Funcional
+# Functional Programming
 
-## Como desenvolver componentes funcionais?
+## How to develop functional components?
 
-### Requisitos
+### Requirements
 
-- Possuir arquivos .(js)x .(js)
-- Exportar função no seguinte padrão somente:
+- Must have .(js)x .(js) files
+- Export function in the following standard only:
   ```js
-  export default function MEU_COMPONENT_FUNCIONAL(props) {}
+  export default function MY_FUNCTIONAL_COMPONENT(props) {}
   ```
-- Uso e recebimento de props somente no formato igual acima
-- Providers (hooks) personalizados somente na pasta `/providers/*` e obrigatoriamente precisa exportar como default um provider
+- Use and receive props only in the format shown above
+- Custom providers (hooks) only in the `/providers/*` folder and must export a provider as default
 
-### Como utilizar
+### How to use
 
-Para utilizar componentes funcionais basta seguir os seguintes formatos:
+To use functional components, just follow the formats below:
 
-```js title="Arquivo JS | TS"
+```js title="JS | TS File"
 export default function Products(props) {
   const [products, setProducts] = useState([]);
   const { location } = props;
@@ -40,7 +40,7 @@ export default function Products(props) {
 }
 ```
 
-```jsx title="Arquivo JSX | TSX"
+```jsx title="JSX | TSX File"
 <Window>
   {products?.map((product) => (
     <View key={product.id} display="flex" direction="column" marginTop="big">
@@ -52,11 +52,11 @@ export default function Products(props) {
 </Window>
 ```
 
-Acima o arquivo .jsx|.tsx identifica como se os estados e métodos estivesse no mesmo nível, diferente do formato de classe que é necessário usar o `this` para acessar uma propriedade ou método daquele componente.
+Above, the .jsx|.tsx file identifies as if the states and methods were at the same level, unlike the class format where it is necessary to use `this` to access a property or method of that component.
 
-### Provider(Hook) com contexto global
+### Provider(Hook) with global context
 
-Para ter um provider(Hook) customizado com estado global, basta ter dentro de `src` a pasta `providers` com o arquivo do provider com o nome começando com letra maiúscula e extensão .jsx|.tsx, exemplo: `User.jsx`.
+To have a customized provider(Hook) with global state, just have inside `src` the `providers` folder with the provider file named with a capital letter and .jsx|.tsx extension, example: `User.jsx`.
 
 ```jsx
 const UserContext = createContext({});
@@ -83,17 +83,17 @@ export function useAuth() {
 }
 ```
 
-Como mostrado acima, nos criamos um contexto de usuário, a partir desse contexto geramos a função `UserProvider` que é exportada como default, e um hook que utiliza esse contexto e podemos acessar o estado gerado no provider.
-Para utilizar esse hook basta importar o provider, da seguinte forma:
+As shown above, we create a user context, from this context we generate the `UserProvider` function which is exported as default, and a hook that uses this context and we can access the state generated in the provider.
+To use this hook, just import the provider, as follows:
 
 ```js
-// Da forma abaixo podemos utilizar o @ para entrar dentro da src independente do nível que você esteja
+// In the way below we can use the @ to enter inside the src regardless of the level you are at
 import { useAuth } from "@/providers/User";
 
-// Ou no formato padrão, caso esteja em /view/Login.js
+// Or in the standard format, if you are in /view/Login.js
 import { useAuth } from "../providers/User";
 
 const { login, user } = useAuth();
 ```
 
-Dessa forma podemos acessar o método login e o estado de usuário criado no provider de forma global.
+In this way, we can access the login method and the user state created in the provider globally.

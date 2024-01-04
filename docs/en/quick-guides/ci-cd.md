@@ -1,71 +1,71 @@
 # CI/CD
 
-CI/CD é a abreviação de **Continuous Integration/Continuous Delivery**, traduzindo para o português: integração e entrega contínuas.
+CI/CD stands for **Continuous Integration/Continuous Delivery**, which translates to continuous integration and delivery in Portuguese.
 
-Trata-se de uma prática de desenvolvimento de software que visa tornar a integração de código mais eficiente por meio de builds e testes automatizados.
+It is a software development practice aimed at making code integration more efficient through automated builds and tests.
 
-Com a abordagem CI/CD é possível entregar aplicações com mais frequência aos clientes. Para tanto, regras de automação são aplicadas nas etapas de desenvolvimento de apps.
+With the CI/CD approach, it is possible to deliver applications more frequently to customers. To achieve this, automation rules are applied in the app development stages.
 
-(Fonte: [RedHat](https://www.redhat.com/pt-br/topics/devops/what-is-ci-cd){:target="_blank"})
+(Source: [RedHat](https://www.redhat.com/en/topics/devops/what-is-ci-cd){:target="_blank"})
 
-CI/CD são conceitos englobados nas práticas de DevOps e você pode integrar seus repositórios para publicar de maneira contínua e integrada seus Eitri-apps.
+CI/CD are concepts encompassed in DevOps practices and you can integrate your repositories to continuously and integratedly publish your Eitri-apps.
 
 
-## Como configurar minha CI/CD?
+## How to configure my CI/CD?
 
-Existem algumas formas de integrar um repositório à plataforma Eitri para fazer publicações de Eitri-apps de maneira contínua e automatizada. A mais comum delas envolve as seguintes etapas:
+There are several ways to integrate a repository with the Eitri platform for continuous and automated publishing of Eitri-apps. The most common of them involves the following steps:
 
-### Gerando seu par de chaves
+### Generating your key pair
 
-1. Faça o login no [Console Eitri](https://console.eitri.tech/){:target="_blank"} e acesse o item **Identificação Pessoal (Gerenciando suas credenciais)** clicando em seu nome no canto superior direito
-
-    <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
-
-2. Clique no botão **Gerar nova credencial** e baixe e/ou copie as chaves;
+1. Log in to the [Eitri Console](https://console.eitri.tech/){:target="_blank"} and access the item **Personal Identification (Managing your credentials)** by clicking on your name in the top right corner
 
     <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
-Com este par de chaves você poderá integrar serviços como Github Actions, Bitbucket Pipelines, entre outros.
+2. Click on the **Generate new credential** button and download and/or copy the keys;
 
-### Configurando a integração com **Github**
+    <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
-Siga os passos descritos em cada aba para configurar sua integração.
+With this key pair, you can integrate services like Github Actions, Bitbucket Pipelines, among others.
 
-=== "No Github Actions"
+### Configuring integration with **Github**
 
-    1. Acesse o repositório de seu Eitri-app no [GitHub](https://github.com){:target="_blank"} e clique na aba **Settings**
+Follow the steps described in each tab to configure your integration.
 
-        <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
+=== "In Github Actions"
 
-    2. No sub-menu **Security**, acesse a opção **Secrets and variables** e em seguida **Actions**
-
-    3. Na aba **Secrets**, clique em **New repository secret** para adicionar uma nova chave secreta
+    1. Access your Eitri-app repository on [GitHub](https://github.com){:target="_blank"} and click on the **Settings** tab
 
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
-    4. No campo **name** insira o nome ==EITRI_CLI_CLIENT_ID==
+    2. In the **Security** submenu, access the **Secrets and variables** option and then **Actions**
 
-    5. No campo **secret**: insira o valor da chave **ClientID** gerada no Console
-
-    6.  Clique no botão **Add secret** para salvar
-
-    7. No campo **name** insira o nome ==EITRI_CLI_CLIENT_SECRET==
-
-    8. No campo **secret**: insira o valor da chave **Chave Secreta** gerada no Console
-
-    9.  Clique no botão **Add secret** para salvar
+    3. In the **Secrets** tab, click on **New repository secret** to add a new secret key
 
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
-=== "No seu Eitri-app"
+    4. In the **name** field, enter the name ==EITRI_CLI_CLIENT_ID==
 
-    1.  Para configurar a integração com o Github em seu Eitri-app, crie uma pasta `.github/workflows` na pasta raiz de seu projeto
+    5. In the **secret** field: enter the value of the **ClientID** key generated in the Console
+
+    6.  Click the **Add secret** button to save
+
+    7. In the **name** field, enter the name ==EITRI_CLI_CLIENT_SECRET==
+
+    8. In the **secret** field: enter the value of the **Secret Key** generated in the Console
+
+    9.  Click the **Add secret** button to save
+
+        <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
+
+=== "In your Eitri-app"
+
+    1.  To configure integration with Github in your Eitri-app, create a `.github/workflows` folder in the root folder of your project
     
-    2. Dentro de workflows crie o arquivo `<nome_do_pipeline>.yml`
+    2. Inside workflows create the file `<name_of_pipeline>.yml`
     
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
-    3. Cole o exemplo da configuração abaixo em seu arquivo recém criado:
+    3. Paste the example configuration below into your newly created file:
 
     ```
         name: GitHub Actions Eitri-Push-Version
@@ -85,45 +85,45 @@ Siga os passos descritos em cada aba para configurar sua integração.
     
     ```
 
-### Configurando a integração com **Bitbucket**
+### Configuring integration with **Bitbucket**
 
-Siga os passos descritos em cada aba para configurar sua integração.
+Follow the steps described in each tab to configure your integration.
 
-=== "No Bitbucket Pipelines"
+=== "In Bitbucket Pipelines"
 
-    1. Acesse o repositório de seu Eitri-app no [Bitbucket](https://bitbucket.org){:target="_blank"} e clique em **Repository Settings** e em seguida em **Repository Variables**
+    1. Access your Eitri-app repository on [Bitbucket](https://bitbucket.org){:target="_blank"} and click on **Repository Settings** and then on **Repository Variables**
 
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
     !!! warning
 
-        É necessário que as configurações de Pipelines já estejam ativadas (em `Repository Settings > Configurações > Enable Pipelines`)
+        Pipelines settings must already be activated (in `Repository Settings > Settings > Enable Pipelines`)
 
     !!! warning
 
-        Se o item `Repository Settings` não aparece para você, pode faltar alguma permissão no bitbucket
+        If the item `Repository Settings` does not appear for you, you may lack some permission on bitbucket
 
-    2. No campo **name** insira o nome ==EITRI_CLI_CLIENT_ID==
+    2. In the **name** field, enter the name ==EITRI_CLI_CLIENT_ID==
 
-    3. No campo **value**: insira o valor da chave **ClientID** gerada no Console
+    3. In the **value** field: enter the value of the **ClientID** key generated in the Console
 
-    4.  Clique no botão **Add** para adicionar
+    4.  Click the **Add** button to add
 
-    5. No campo **name** insira o nome ==EITRI_CLI_CLIENT_SECRET==
+    5. In the **name** field, enter the name ==EITRI_CLI_CLIENT_SECRET==
 
-    6. No campo **value**: insira o valor da chave **Chave Secreta** gerada no Console
+    6. In the **value** field: enter the value of the **Secret Key** generated in the Console
 
-    7.  Clique no botão **Add** para adicionar
+    7.  Click the **Add** button to add
 
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
-=== "No seu Eitri-app"
+=== "In your Eitri-app"
 
-    1.  Para configurar a integração com o Github em seu Eitri-app, crie o arquivo `bitbucket-pipelines.yml` na pasta raiz de seu projeto (a mesma pasta onde está o arquivo `eitri.conf.js`)
+    1.  To configure integration with Github in your Eitri-app, create the file `bitbucket-pipelines.yml` in the root folder of your project (the same folder where the `eitri.conf.js` file is located)
     
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
-    2. Cole o exemplo da configuração abaixo em seu arquivo recém criado:
+    2. Paste the example configuration below into your newly created file:
 
     ```yml
         image: node:20
@@ -140,15 +140,15 @@ Siga os passos descritos em cada aba para configurar sua integração.
 
 
 !!! note
-    A versão do Node.js deverá ser igual ou superior a 16.
+    The version of Node.js should be 16 or higher.
 
 !!! tip
-    É altamente recomendado utilizar o versionamento semântico [semver](https://semver.org/lang/pt-BR/){:target="_blank"} e [conventional commits](https://www.conventionalcommits.org/pt-br/v1.0.0-beta.4/){:target="_blank"} para automatizar tambem a numeração de versões de maneira adequada e cômoda em seu pipeline.
+    It is highly recommended to use semantic versioning [semver](https://semver.org/lang/en/){:target="_blank"} and [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.4/){:target="_blank"} to also automate version numbering appropriately and comfortably in your pipeline.
 
 !!! info
-    Ao executar o pipeline, uma nova versão será enviada ao Console de forma automática. Caso exista uma versão de mesma numeração publicada anteriormente será retornado um erro na publicação.
+    When running the pipeline, a new version will be sent to the Console automatically. If there is a previously published version with the same number, an error will be returned in the publication.
 
 
-## Quanto custa?
+## How much does it cost?
 
-Não há custos adicionais no Eitri para configuração ou uso de CI/CD, no entanto, podem haver custos de seu provedor de serviços. Muitos dos principais fornecedores deste tipo de serviço cobram por tempo de execução do pipeline.
+There are no additional costs in Eitri for setting up or using CI/CD, however, there may be costs from your service provider. Many major providers of this type of service charge for pipeline runtime.
