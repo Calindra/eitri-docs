@@ -28,8 +28,10 @@ jobs:
       - run: pip install mkdocs-exclude-search
       - run: pip install mkdocs-glightbox
       - run: pip install mkdocs-awesome-pages-plugin
+      - run: pip install mkdocs-with-pdf
+      - run: pip install mkdocs-redirects
       - run: mkdocs build
-
+      
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
