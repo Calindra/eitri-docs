@@ -4,4 +4,4 @@ Eitri Bifrost is responsible for allowing developers to use navigation methods f
 
 Besides the default methods available on Eitri Bifrost, you can amplify the functions of your Eitri-apps by exposing custom methods from your app, so Eitri-apps in it can use them too.
 
-To know more about the available methods, [click here](https://cdn.83io.com.br/library/eitri-app-client/doc/latest/){:target="_blank"}.
+To know more about the available methods, [click here](https://cdn.83io.com.br/library/eitri-bifrost/doc/latest/){:target="_blank"}.
