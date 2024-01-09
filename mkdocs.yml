@@ -61,7 +61,7 @@ theme:
       accent: lime
   
 extra:
-  homepage: https://docs.eitri.tech
+  homepage: https://docs.eitri.tech/en/
   # Ícones de redes sociais no rodapé
   social:
     - icon: fontawesome/brands/github-alt
