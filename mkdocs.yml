@@ -1,11 +1,13 @@
 site_name: Eitri Docs
+docs_dir: 'docs/'
+site_dir: 'site/'  
 theme:
   logo: assets/eitri-logo.svg
   favicon: assets/android-chrome-192x192.png
-  language: pt-BR
+  language: en
   # Tema visual utilizado
   name: material
-  custom_dir: eitritheme
+  custom_dir: 'overrides/'
   # Features à serem ativadas
   icon:
     annotation: material/plus-circle
@@ -28,6 +30,7 @@ theme:
   - content.code.copy
   - content.code.annotate
   - content.tooltips
+  - announce.dismiss
 
 
   palette:
@@ -71,20 +74,30 @@ extra:
     provider: google
     property: G-5TBP36VV2F
     feedback:
-      title: Esta página te ajudou?
+      title: Was this page useful?
       ratings:
         - icon: material/emoticon-happy-outline
-          name: Esta página foi útil
+          name: This page was helpful
           data: 1
           note: >-
-            Obrigado pelo feedback!
+            Thank you for your feedback!
         - icon: material/emoticon-sad-outline
-          name: Esta página pode melhorar
+          name: This page wasn't helpful
           data: 0
           note: >- 
-            Obrigado pelo feedback! Nos ajude a melhorar respondendo <a href="#" target="_blank" rel="noopener">nosso formulário</a>.
-  version:
-    provider: mike
+            Thank you for your feedback! Help us get better <a href="https://forms.gle/7ompyzJQBAxpptUd9" target="_blank" rel="noopener">clicking here</a>.
+  # version:
+  #   provider: mike
+  alternate:  
+      # Switch to English
+    - name: English
+      link: '/en/'
+      lang: en
+
+    # Switch to BR Portuguese
+    - name: Português
+      link: '/pt-BR/'
+      lang: pt-BR
 
 copyright:
   © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
@@ -127,6 +140,52 @@ markdown_extensions:
 plugins:
   - awesome-pages
   - glightbox
-  - search
+  - search:
+      lang: 
+        - en
+        - pt
+  - redirects:
+      redirect_maps:
+        # 'old.md': 'new.md'
+        # 'old/file.md': 'new/file.md'
+        # 'some_file.md': 'http://external.url.com/foobar'
+        'index.md': 'en/index.md'
   - tags:
       enabled: true
+  # - with-pdf
+      #author: Calindra
+      #copyright: Calindra
+      #
+      #cover: false
+      #back_cover: true
+      #cover_title: Eitri Docs
+      #cover_subtitle: SUBTITLE TEXT
+      #custom_template_path: TEMPLATES PATH
+      #
+      #toc_title: TOC TITLE TEXT
+      #heading_shift: false
+      #toc_level: 3
+      #ordered_chapter_level: 2
+      #excludes_children:
+      #    - 'release-notes/:upgrading'
+      #    - 'release-notes/:changelog'
+      #
+      #exclude_pages:
+      #    - 'bugs/'
+      #    - 'appendix/contribute/'
+      #convert_iframe:
+      #    - src: IFRAME SRC
+      #      img: POSTER IMAGE URL
+      #      text: ALTERNATE TEXT
+      #    - src: ...
+      #two_columns_level: 3
+      #
+      #render_js: true
+      #headless_chrome_path: headless-chromium
+      #
+      #output_path: any-place/document.pdf
+      #enabled_if_env: ENABLE_PDF_EXPORT
+      #
+      #debug_html: true
+      #show_anchors: true
+      #verbose: true
