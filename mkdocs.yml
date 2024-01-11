@@ -149,7 +149,7 @@ plugins:
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'
-        'index.md': 'en/index.md'
+        'index.md': 'https://docs.eitri.tech/en/'
   - tags:
       enabled: true
   # - with-pdf
