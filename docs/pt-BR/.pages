@@ -1,8 +1,0 @@
-nav:
-  - Início: index.md
-  - Eitri CLI: 'eitri-cli'
-  - Eitri Luminus: 'eitri-luminus'
-  - Eitri Bifrost: 'eitri-bifrost'
-  - Eitri Hugin: 'eitri-hugin'
-  - Eitri Munin: 'eitri-munin'
-  - Guias Rápidos: 'guias-rapidos'

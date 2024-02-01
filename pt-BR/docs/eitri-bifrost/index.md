@@ -1,4 +1,4 @@
-# Introdução
+# Eitri Bifrost
 
 O Eitri Bifrost é a lib responsável por disponibilizar métodos comuns de navegação do Eitri-app e dar aos Eitri-apps acesso à informações e recursos do dispositivo como GPS, Câmera e outros elementos de hardware.
 
