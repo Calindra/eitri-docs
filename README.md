@@ -1,5 +1,7 @@
 # eitri-docs
 
+Os projetos em inglês e em português são 2 projetos completamente separados e a única coisa que compartilham são os assets da pasta `override`. Sendo assim, qualquer 
+
 Para rodar o projeto você precisará:
 
 1. instalar o python (De preferencia 3.11 ou superior)
