@@ -1,6 +1,6 @@
 site_name: Eitri Docs
 docs_dir: 'docs/'
-site_dir: 'site/'  
+site_dir: 'site/'
 theme:
   logo: ../overrides/assets/eitri-logo.svg
   favicon: ../overrides/assets/android-chrome-192x192.png
@@ -91,12 +91,12 @@ extra:
   alternate:  
       # Switch to English
     - name: English
-      link: 'https://en.docs.eitri.tech'
+      link: 'https://docs.eitri.tech/en'
       lang: en
 
     # Switch to BR Portuguese
     - name: Português
-      link: 'https://pt.docs.eitri.tech'
+      link: 'https://docs.eitri.tech/pt'
       lang: pt-BR
 
 copyright:
@@ -148,7 +148,7 @@ plugins:
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'
-        'index.md': 'home/index.md'
+        'index.md': 'introduction/index.md'
   - tags:
       enabled: true
   # - with-pdf

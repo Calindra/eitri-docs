@@ -61,7 +61,7 @@ theme:
       accent: lime
   
 extra:
-  homepage: https://docs.eitri.tech/en/
+  homepage: https://docs.eitri.tech/pt/
   # Ícones de redes sociais no rodapé
   social:
     - icon: fontawesome/brands/github-alt
@@ -96,7 +96,7 @@ extra:
 
     # Switch to BR Portuguese
     - name: Português
-      link: 'https://pt.docs.eitri.tech'
+      link: 'https://docs.eitri.tech/pt'
       lang: pt-BR
 
 copyright:
@@ -141,8 +141,7 @@ plugins:
   - awesome-pages
   - glightbox
   - search:
-      lang: 
-        - en
+      lang:
         - pt
   - redirects:
       redirect_maps:

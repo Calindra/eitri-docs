@@ -30,7 +30,7 @@ jobs:
       - run: pip install mkdocs-awesome-pages-plugin
       - run: pip install mkdocs-with-pdf
       - run: pip install mkdocs-redirects
-      - run: bash -c 'cd pt-BR && mkdocs build'
+      - run: bash -c 'cd pt && mkdocs build'
       
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
@@ -40,7 +40,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./pt-BR/site/ s3://docs.eitri.tech/pt --delete
+        run: aws s3 sync ./pt/site/ s3://docs.eitri.tech/pt --delete
 
       - name: Checkout
         uses: actions/checkout@v1
