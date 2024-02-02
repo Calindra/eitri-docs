@@ -17,12 +17,12 @@ theme:
   features:
   # - navigation.tabs
   # - navigation.tabs.sticky
+  # - toc.integrate
   - navigation.instant
   - navigation.instant.progress
   - navigation.tracking
   - navigation.top
   - toc.follow
-  # - toc.integrate
   - search.suggest
   - search.highlight
   - search.share
@@ -148,7 +148,7 @@ plugins:
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'
-        'index.md': 'introduction/index.md'
+        # 'index.md': 'introduction/index.md'
   - tags:
       enabled: true
   # - with-pdf
