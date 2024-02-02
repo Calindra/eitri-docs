@@ -1,4 +1,4 @@
-# Introduction
+# Eitri Munin
 
 Munin (which means "memory" or "mind") is one of the two ravens of Odin and inspired the name of our data persistence feature.
 

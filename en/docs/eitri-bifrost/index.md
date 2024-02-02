@@ -1,4 +1,4 @@
-# Introduction
+# Eitri Bifrost
 
 Eitri Bifrost is responsible for allowing developers to use navigation methods from Eitri-apps and giving Eitri-apps access to mobile native resources like GPS, Camera, and other hardware features.
 

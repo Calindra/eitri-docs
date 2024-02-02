@@ -1,4 +1,4 @@
-# Introduction
+# Eitri Luminus
 
 Eitri Luminus is the Eitri library that contains the basic components for assembling the screens of Eitri-apps.
 
