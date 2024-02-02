@@ -1,4 +1,4 @@
-# Introduction
+# Eitri Hugin
 
 Hugin (which means "thought") is one of the two ravens of Odin who, in Norse mythology, fly all over the world bringing information to Odin.
 

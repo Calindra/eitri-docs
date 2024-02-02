@@ -1,4 +1,4 @@
-# Introduction
+# Eitri CLI
 
 Eitri CLI is the starting point for developing Eitri-apps. With it, you can create, develop, and publish Eitri-apps for your organization's applications.
 
