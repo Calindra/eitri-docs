@@ -30,8 +30,7 @@ jobs:
       - run: pip install mkdocs-awesome-pages-plugin
       - run: pip install mkdocs-with-pdf
       - run: pip install mkdocs-redirects
-      - run: cd en
-      - run: mkdocs build
+      - run: bash -c 'cd en && mkdocs build'
       
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
