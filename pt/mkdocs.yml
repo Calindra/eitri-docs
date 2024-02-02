@@ -91,7 +91,7 @@ extra:
   alternate:  
       # Switch to English
     - name: English
-      link: 'https://en.docs.eitri.tech'
+      link: 'https://docs.eitri.tech/en'
       lang: en
 
     # Switch to BR Portuguese
