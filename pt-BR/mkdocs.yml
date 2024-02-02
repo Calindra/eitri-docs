@@ -2,8 +2,8 @@ site_name: Eitri Docs
 docs_dir: 'docs/'
 site_dir: 'site/'  
 theme:
-  logo: ../assets/eitri-logo.svg
-  favicon: ../assets/android-chrome-192x192.png
+  logo: ../overrides/assets/eitri-logo.svg
+  favicon: ../overrides/assets/android-chrome-192x192.png
   language: pt-BR
   # Tema visual utilizado
   name: material
