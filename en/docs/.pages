@@ -1,0 +1,8 @@
+nav:
+  - Introduction: 'introduction'
+  - Command Line Interface: 'eitri-cli'
+  - Components and DS: 'eitri-luminus'
+  - API: 'eitri-bifrost'
+  - Serverless Backend: 'eitri-hugin'
+  - Database and Persistence: 'eitri-munin'
+  - Quick Guides: 'quick-guides'

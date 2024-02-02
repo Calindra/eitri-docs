@@ -1,4 +1,4 @@
-name: Deploy To S3 
+name: Portuguese - Deploy To S3
 on:
   push:
     branches:
@@ -30,6 +30,7 @@ jobs:
       - run: pip install mkdocs-awesome-pages-plugin
       - run: pip install mkdocs-with-pdf
       - run: pip install mkdocs-redirects
+      - run: cd pt-BR
       - run: mkdocs build
       
       - name: Configure AWS Credentials
@@ -40,7 +41,7 @@ jobs:
           aws-region: us-east-1
 
       - name: Deploy static site to S3 bucket
-        run: aws s3 sync ./site/ s3://docs.eitri.tech --delete
+        run: aws s3 sync ./pt-BR/site/ s3://docs.eitri.tech/pt --delete
 
       - name: Checkout
         uses: actions/checkout@v1

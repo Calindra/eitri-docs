@@ -18,29 +18,33 @@ Eitri-apps are small, independent applications that are integrated within your a
 
 These Eitri-apps have isolated codebases from each other and independent development and publish flows from each other and from the mobile app that hosts them. This allows each feature or product to be created as an Eitri-app and evolve at a different rhythm than the others, and without the need to do a mobile release on app stores.
 
+## What can I do with Eitri?
+
+You can build faster and easier with Eitri SDK. Take a look at our tools and resources and find out everything that Eitri can unlock for your teams. 
+
 ### Eitri SDK
 
 Eitri SDK offers a lot of tools to allow your Eitri-apps to do amazing things:
 
-#### [`Eitri CLI`](/en/eitri-cli/)
+#### [`Command Line Interface`](../eitri-cli/)
 
-:   Eitri Command Line Interface is the starting point for those who want to develop Eitri-apps. From it, you can create and develop new Eitri-apps and run a lot of other cool functions.
+:   `Eitri CLI` is the starting point for those who want to develop Eitri-apps. From it, you can create and develop new Eitri-apps and run a lot of other cool functions.
 
-#### [`Eitri Luminus`](/en/eitri-luminus/)
+#### [`Components and DS`](../eitri-luminus/)
 
-:   The luminous bridge that represents a path to the door connecting the worlds in Nordic mythology has originated Eitri's components lib name. It packs the base components to create Eitri-apps and customization for the interface using your own color pallets and custom components for your organization.
+:   The luminous bridge that represents a path to the door connecting the worlds in Nordic mythology has originated Eitri's components lib name `Eitri Luminus`. It packs the base components to create Eitri-apps and customization for the interface using your own color pallets and custom components for your organization.
 
-#### [`Eitri Bifrost`](/en/eitri-bifrost/)
+#### [`API`](../eitri-bifrost/)
 
-:   Bifrost is a mix of technology and magic that effectively connects the worlds in Nordic mythology and represents well what Eitri API does between your mobile app and the Eitri-apps universe. It empowers both of them, allowing your app to use Eitri features while making it possible to use functions of your app inside Eitri-apps.
+:   Bifrost is a mix of technology and magic that effectively connects the worlds in Nordic mythology and represents well what `Eitri Bifrost` does between your mobile app and the Eitri-apps universe. It empowers both of them, allowing your app to use Eitri features while making it possible to use functions of your app inside Eitri-apps.
 
-#### [`Eitri Hugin`](/en/eitri-hugin/)
+#### [`Serverless Backend`](../eitri-hugin/)
 
-:   Hugin (means "thought") is one of the two ravens of Odin and in Nordic mythology flies all over the world bringing Odin information that he needs. In the same way, Eitri Hugin offers serverless functions to Eitri, allowing to create and run BFFs or backends for Eitri-apps for a variety of uses without needing to create or configure any infrastructure.
+:   Hugin (means "thought") is one of the two ravens of Odin and in Nordic mythology flies all over the world bringing Odin information that he needs. Our serverless backend feature called `Eitri Hugin` offers serverless functions to Eitri, allowing to create and run BFFs or backends for Eitri-apps for a variety of uses without needing to create or configure any infrastructure and making your Eitri-apps as powerfull as Odin itself.
 
-#### [`Eitri Munin`](/en/eitri-munin/)
+#### [`Database and Persistence`](../eitri-munin/)
 
-:   Munin (means "memory" or "mind") is the other raven of Odin and gives the name to our data persistency feature. With it, you can store information related to an Eitri-app in an easy, fast, and reliable way with a database, without the need to worry about infrastructure for it.
+:   Munin (means "memory" or "mind") is the other raven of Odin and gives the name to our data persistency feature, `Eitri Munin`. With it, you can store information related to an Eitri-app in an easy, fast, and reliable way with a database, without the need to worry about infrastructure for it.
 
 ## How about my Design System?
 

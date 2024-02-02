@@ -1,4 +1,4 @@
-# Introdução
+# Eitri Hugin
 
 Hugin (que significa "pensamento") é um dos dois corvos de Odin que na mitologia nórdica vooam por todo o mundo trazendo informações à Odin.
 
