@@ -99,6 +99,9 @@ extra:
       link: 'https://docs.eitri.tech/pt'
       lang: pt-BR
 
+extra_css:
+  - stylesheets/extra.css
+
 copyright:
   © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
 
