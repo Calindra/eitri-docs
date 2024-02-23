@@ -42,5 +42,9 @@ jobs:
       - name: Deploy static site to S3 bucket
         run: aws s3 sync ./en/site/ s3://docs.eitri.tech/en --delete
 
+      # Novo passo para invalidar o cache do CloudFront
+      - name: Invalidate CloudFront cache
+        run: aws cloudfront create-invalidation --distribution-id E3TLZV8VLD19BP --paths "/*"
+
       - name: Checkout
         uses: actions/checkout@v1
