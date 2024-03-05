@@ -1,8 +1,13 @@
+# Guia Rápido para o Eitri
+
+Se você quer começar rapidamente a utilizar o Eitri, este guia é para você. Aqui você encontrará os principais comandos e instruções para começar a desenvolver rapidamente usando o [Eitri](https://www.eitri.tech/){:target="_blank"}.
+
+
 # Requisitos para desenvolver com Eitri
 
 Você precisará do seguinte para desenvolver usando o Eitri:
 
-1. Instalar o [Node](https://nodejs.org/) (versão 18 ou superior), o [NPM](https://www.npmjs.com/) e [Git](https://git-scm.com/) em seu computador
+1. Instalar o [Node](https://nodejs.org/){:target="_blank"} (versão 18 ou superior), o [NPM](https://www.npmjs.com/){:target="_blank"} e [Git](https://git-scm.com/){:target="_blank"} em seu computador
 2. Instalar a nossa ferramenta de linha de comando usando o comando `npm install -g eitri-cli`
 3. Fazer o login como desenvolvedor com sua conta digitando `eitri login` no terminal e seguindo os passos propostos
 
@@ -21,4 +26,4 @@ Agora que você tem sua conta no Eitri configurada e a CLI instalada, é hora de
 # Administrando Eitri-Apps
 Para gerenciar a versão publicada, efetuar o rollback para versões anteriores e administrar as permissões de seu Eitri-App, você pode acessar o painel de admin do Eitri, logando com sua conta de desenvolvedor:
 
-- [Eitri Console](https://console.eitri.tech/)
+- [Eitri Console](https://console.eitri.tech/){:target="_blank"}

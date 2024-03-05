@@ -55,4 +55,4 @@ Uma vez configurado o DS de seu app para o Eitri todos os Eitri-apps desenvolvid
 
 ## Por onde eu começo?
 
-Para começar a usar o Eitri em sua organização entre em contato conosco [clicando aqui](https://www.site.eitri.calindra.com.br/#comp-lmam48kn5){:target="_blank"}.
+Para começar a usar o Eitri em sua organização entre em contato conosco [clicando aqui](https://www.eitri.tech/#comp-lmam48kn5){:target="_blank"}.

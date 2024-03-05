@@ -54,4 +54,4 @@ It is possible to configure a color palette, create custom components that can b
 
 ## Perfect, but how can I start?
 
-To start using Eitri in your organization, [click here to contact us](https://www.site.eitri.calindra.com.br/#comp-lmam48kn5){:target="_blank"}.
+To start using Eitri in your organization, [click here to contact us](https://www.eitri.tech/#comp-lmam48kn5){:target="_blank"}.
