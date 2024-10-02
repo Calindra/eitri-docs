@@ -82,7 +82,7 @@ export default function Home() {
 }
 ```
 
-#### Notes
-
-* **Retrieving parameters:** Initialization parameters are retrieved through the `Eitri.getInitializationInfos()` method.
-* **Value format:** Currently, only **query-string** format values are accepted for initialization parameters.
+!!! note
+    **Retrieving parameters:** Initialization parameters are retrieved through the `Eitri.getInitializationInfos()` method.
+    
+    **Value format:** Currently, only **query-string** format values are accepted for initialization parameters.

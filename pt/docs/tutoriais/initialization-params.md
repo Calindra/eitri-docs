@@ -84,8 +84,7 @@ export default function Home() {
 }
 ```
 
-#### Observações
-
-* **Obtendo os parâmetros:** Os parâmetros de inicialização são recuperados através do método `Eitri.getInitializationInfos()`.
-* **Formato dos valores:** Atualmente, apenas valores no formato **query-string** são aceitos para os parâmetros de inicialização.
-
+!!! note
+    **Obtendo os parâmetros:** Os parâmetros de inicialização são recuperados através do método `Eitri.getInitializationInfos()`.
+    
+    **Formato dos valores:** Atualmente, apenas valores no formato **query-string** são aceitos para os parâmetros de inicialização.
