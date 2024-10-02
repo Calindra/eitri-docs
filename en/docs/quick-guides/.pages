@@ -3,3 +3,4 @@ nav:
     - ci-cd.md
     - functional.md
     - routes.md
+    - initialization-params.md
