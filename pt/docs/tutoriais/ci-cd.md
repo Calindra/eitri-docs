@@ -33,7 +33,7 @@ Siga os passos descritos em cada aba para configurar sua integração.
 
 === "No Github Actions"
 
-    1. Acesse o repositório de seu Eitri-app no [GitHub](https://github.com){:target="_blank"} e clique na aba **Settings**
+    1. Acesse o repositório de seu Eitri-App no [GitHub](https://github.com){:target="_blank"} e clique na aba **Settings**
 
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
@@ -57,9 +57,9 @@ Siga os passos descritos em cada aba para configurar sua integração.
 
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
-=== "No seu Eitri-app"
+=== "No seu Eitri-App"
 
-    1.  Para configurar a integração com o Github em seu Eitri-app, crie uma pasta `.github/workflows` na pasta raiz de seu projeto
+    1.  Para configurar a integração com o Github em seu Eitri-App, crie uma pasta `.github/workflows` na pasta raiz de seu projeto
     
     2. Dentro de workflows crie o arquivo `<nome_do_pipeline>.yml`
     
@@ -91,7 +91,7 @@ Siga os passos descritos em cada aba para configurar sua integração.
 
 === "No Bitbucket Pipelines"
 
-    1. Acesse o repositório de seu Eitri-app no [Bitbucket](https://bitbucket.org){:target="_blank"} e clique em **Repository Settings** e em seguida em **Repository Variables**
+    1. Acesse o repositório de seu Eitri-App no [Bitbucket](https://bitbucket.org){:target="_blank"} e clique em **Repository Settings** e em seguida em **Repository Variables**
 
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
@@ -117,9 +117,9 @@ Siga os passos descritos em cada aba para configurar sua integração.
 
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 
-=== "No seu Eitri-app"
+=== "No seu Eitri-App"
 
-    1.  Para configurar a integração com o Github em seu Eitri-app, crie o arquivo `bitbucket-pipelines.yml` na pasta raiz de seu projeto (a mesma pasta onde está o arquivo `eitri.conf.js`)
+    1.  Para configurar a integração com o Github em seu Eitri-App, crie o arquivo `bitbucket-pipelines.yml` na pasta raiz de seu projeto (a mesma pasta onde está o arquivo `eitri.conf.js`)
     
         <!-- ![Image title](https://dummyimage.com/600x400/eee/aaa) -->
 

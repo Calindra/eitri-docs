@@ -51,26 +51,26 @@ Efetua o login na plataforma Eitri, criando as credenciais de sua conta em sua m
 
 Utilização: `eitri create [options] <project-name>`
 
-Cria um novo projeto de Eitri-app em sua máquina e o registra na plataforma Eitri.
+Cria um novo projeto de Eitri-App em sua máquina e o registra na plataforma Eitri.
 
-Você precisará fornecer algumas informações ao criar um Eitri-app:
+Você precisará fornecer algumas informações ao criar um Eitri-App:
 
 `Aplicação`
-:   (Aplicação na qual seu Eitri-app irá rodar)
+:   (Aplicação na qual seu Eitri-App irá rodar)
 
 `Nome legível`
-:   Nome utilizado na listagem do console. Não é exibido ao cliente final ou ao usuário utilizador do Eitri-app. Este nome é utilizado internamente e não será visualizado pelos usuários.
+:   Nome utilizado na listagem do console. Não é exibido ao cliente final ou ao usuário utilizador do Eitri-App. Este nome é utilizado internamente e não será visualizado pelos usuários.
 
 `Nome para divulgação`
 :   Nome do produto, utilizado na divulgação e em pontos de contato com o usuário ou cliente final. Este nome poderá ser visualizado pelos usuários.
 
 `Nome único`
-:   Também chamado de slug, é o nome utilizado para identificação única do Eitri-app na plataforma Eitri, para encontrar seu Eitri-app, referencia-lo em diversas circunstâncias e também na montagem de deeplinks. Este nome não pode ser repetido entre Eitri-apps e não deve conter espaços ou caracteres especiais.
+:   Também chamado de slug, é o nome utilizado para identificação única do Eitri-App na plataforma Eitri, para encontrar seu Eitri-App, referencia-lo em diversas circunstâncias e também na montagem de deeplinks. Este nome não pode ser repetido entre Eitri-apps e não deve conter espaços ou caracteres especiais.
 
 #### Opções disponíveis
 
 - `yes` Utiliza os valores padrão para nome, título e organização.
-- `--application <aplicativo>` Permite definir o aplicativo do Eitri-app.
+- `--application <aplicativo>` Permite definir o aplicativo do Eitri-App.
 - `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando.`
 
 ---
@@ -79,21 +79,21 @@ Você precisará fornecer algumas informações ao criar um Eitri-app:
 
 Utilização: `eitri start [options]`
 
-O comando `eitri start` inicializa o Eitri-app para desenvolvimento, gerando um QrCode que deverá ser scaneado com o app de sua organização no qual o Eitri foi integrado.
+O comando `eitri start` inicializa o Eitri-App para desenvolvimento, gerando um QrCode que deverá ser scaneado com o app de sua organização no qual o Eitri foi integrado.
 
-À medida que você vai desenvolvendo e salvando seus arquivos localmente, seu Eitri-app contará com um hotreload que mostrará em tempo real as alterações na tela de seu aparelho, permitindo que você veja o resultado final de maneira rápida e fácil.
+À medida que você vai desenvolvendo e salvando seus arquivos localmente, seu Eitri-App contará com um hotreload que mostrará em tempo real as alterações na tela de seu aparelho, permitindo que você veja o resultado final de maneira rápida e fácil.
 
 #### Opções disponíveis
 
-- `--initialization-params` Permite enviar parâmetros de inicialização para o Eitri-app. Facilita o desenvolvimento e testes de seu Eitri-app.
+- `--initialization-params` Permite enviar parâmetros de inicialização para o Eitri-App. Facilita o desenvolvimento e testes de seu Eitri-App.
 
 - `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando.
 
-- `-p, --playground` Inicializa o Eitri-app em modo playground, com QrCode de abertura para o Eitri Playground.
+- `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Playground.
 
-- `-e, --emulator` Inicializa o Eitri-app em modo emulador, com QrCode de abertura para o Eitri Emulator.
+- `-e, --emulator` Inicializa o Eitri-App em modo emulador, com QrCode de abertura para o Eitri Emulator.
 
-- `-sh, --shared` Inicializa o Eitri-app em modo compartilhado, com QrCode de abertura para o Eitri Shared.
+- `-sh, --shared` Inicializa o Eitri-App em modo compartilhado, com QrCode de abertura para o Eitri Shared.
 
 ---
 
@@ -101,19 +101,19 @@ O comando `eitri start` inicializa o Eitri-app para desenvolvimento, gerando um 
 
 Utilização: `eitri push-version [options]`
 
-Envia uma versão de seu Eitri-app para o Console, possibilitando a publicação. Ao executar este comando uma versão de seu Eitri-app será incluída no console e ficará disponível para publicação nos ambientes cadastrados para a aplicação.
+Envia uma versão de seu Eitri-App para o Console, possibilitando a publicação. Ao executar este comando uma versão de seu Eitri-App será incluída no console e ficará disponível para publicação nos ambientes cadastrados para a aplicação.
 
 #### Opções disponíveis
 
 - `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando.
 
-- `-s, --shared` Envia a versão de seu Eitri-app compartilhado.
+- `-s, --shared` Envia a versão de seu Eitri-App compartilhado.
 
-- `-m, --message <version-message>` Adiciona uma mensagem à versão de seu Eitri-app.
+- `-m, --message <version-message>` Adiciona uma mensagem à versão de seu Eitri-App.
 
 !!! info
 
-    Esteja atento à versão de seu Eitri-app (no arquivo eitri-app.conf.js) já que não é possível enviar uma versão já existente no console.
+    Esteja atento à versão de seu Eitri-App (no arquivo eitri-app.conf.js) já que não é possível enviar uma versão já existente no console.
 
 ---
 
@@ -189,7 +189,7 @@ Publica a versão atual no ambiente selecionado.
 
 #### Opções disponíveis
 
-- `-e, --environment <ambiente>` Define o ambiente que irá publicar a versão atual do Eitri-app definida no *eitri-app.conf.js*.
+- `-e, --environment <ambiente>` Define o ambiente que irá publicar a versão atual do Eitri-App definida no *eitri-app.conf.js*.
 - `-m, --message <mensagem>` Adiciona comentários na publicação.
 
 ---
@@ -198,7 +198,7 @@ Publica a versão atual no ambiente selecionado.
 
 Utilização: `eitri test [options]`
 
-Executa os testes de seu Eitri-app.
+Executa os testes de seu Eitri-App.
 
 #### Opções disponíveis
 
@@ -217,7 +217,7 @@ Gerencia a execução de Eitri-Apps do aplicativo, declarado no arquivo app-conf
 #### Comandos disponíveis
 
 - `start [options]` Inicializa todos os Eitri-Apps do arquivo de configuração app-config.yaml.
-    - `-p, --playground` Inicializa o Eitri-app em modo playground, com QrCode de abertura para o Eitri Playground.
+    - `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Playground.
 - `logs` Exibe os logs dos Eitri-Apps em execução do comando `eitri app start`.
 - `clean` Realiza a limpeza dos workspaces remoto.
 

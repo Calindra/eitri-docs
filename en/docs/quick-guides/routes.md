@@ -24,7 +24,7 @@ src/views/
 
 Where the id will be our parameter, and to navigate to the product with id 12345, just follow the format `/(Relative path in the view)/:PARAMETER`, in our example our route will be `/Product/:id`
 
-```js title="Call in Eitri-app"
+```js title="Call in Eitri-App"
 Eitri.navigation.navigate({
   path: "/Product/12345",
 });
