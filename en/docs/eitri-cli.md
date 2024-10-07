@@ -6,9 +6,9 @@ The Eitri CLI is the starting point for developing Eitri-Apps. With it, you can 
 
 To use the Eitri CLI, you will need to have the following installed on your machine:
 
-* [Node](https://nodejs.org/) 18 or higher
-* [NPM](https://www.npmjs.com/)
-* [Git](https://git-scm.com/)
+* [Node](https://nodejs.org/){:target="_blank"} 18 or higher
+* [NPM](https://www.npmjs.com/){:target="_blank"}
+* [Git](https://git-scm.com/){:target="_blank"}
 
 ## Installation
 
