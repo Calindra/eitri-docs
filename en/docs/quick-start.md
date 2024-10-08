@@ -16,7 +16,7 @@ This is what you'll need to develop using Eitri:
 Once you have installed Eitri CLI and logged in, it's time to create your first project:
 
 1. Use the command `eitri create <project_name>` inside the folder where you want your project to be created
-2. You will need to provide a few information about your Eitri-app like *Application*, *Name*, *Public name* e *Slug*
+2. You will need to provide a few information about your Eitri-App like *Application*, *Name*, *Public name* e *Slug*
 3. When confirmed, you will have a new directory created with your project. You can enter it and use `eitri start` to start developing your eitri-app
 4. Eitri will generate a QrCode that needs to be scanned with your organization app where Eitri was integrated, the same one that you declared on "Application" step before.
 5. You can publish your first version using `eitri push-version` inside your eitri-app folder
