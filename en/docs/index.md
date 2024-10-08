@@ -8,7 +8,7 @@ Its name comes from the mythological dwarf that forged Mjölnir (Thor's Hammer) 
 
 ## Advantages
 
-With Eitri, you can develop each feature in an independent and parallel way without interfering with other features or the mobile app where it's placed. Each Eitri-app has its own development and publish flow and they do not depend on app stores to be released, making it possible to publish changes instantly.
+With Eitri, you can develop each feature in an independent and parallel way without interfering with other features or the mobile app where it's placed. Each Eitri-App has its own development and publish flow and they do not depend on app stores to be released, making it possible to publish changes instantly.
 
 At least, to develop Eitri-apps, it's not necessary to work with native languages or hard-to-find professionals, so you can form developer teams in an easier and cheaper way.
 
@@ -16,7 +16,7 @@ At least, to develop Eitri-apps, it's not necessary to work with native language
 
 Eitri-apps are small, independent applications that are integrated within your app once you install and configure Eitri in your mobile project.
 
-These Eitri-apps have isolated codebases from each other and independent development and publish flows from each other and from the mobile app that hosts them. This allows each feature or product to be created as an Eitri-app and evolve at a different rhythm than the others, and without the need to do a mobile release on app stores.
+These Eitri-apps have isolated codebases from each other and independent development and publish flows from each other and from the mobile app that hosts them. This allows each feature or product to be created as an Eitri-App and evolve at a different rhythm than the others, and without the need to do a mobile release on app stores.
 
 ## What can I do with Eitri?
 
@@ -44,7 +44,7 @@ Eitri SDK offers a lot of tools to allow your Eitri-apps to do amazing things:
 
 #### [`Database and Persistence`](eitri-munin)
 
-:   Munin (means "memory" or "mind") is the other raven of Odin and gives the name to our data persistency feature, `Eitri Munin`. With it, you can store information related to an Eitri-app in an easy, fast, and reliable way with a database, without the need to worry about infrastructure for it.
+:   Munin (means "memory" or "mind") is the other raven of Odin and gives the name to our data persistency feature, `Eitri Munin`. With it, you can store information related to an Eitri-App in an easy, fast, and reliable way with a database, without the need to worry about infrastructure for it.
 
 ## How about my Design System?
 
