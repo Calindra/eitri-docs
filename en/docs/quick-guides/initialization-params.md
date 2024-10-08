@@ -8,10 +8,10 @@ This approach allows testing behavior variations, dynamically configuring inform
 
 ### Single Eitri-App
 
-To pass initialization parameters when starting the Eitri-App, the developer can use the `--initializationParams` command in the CLI:
+To pass initialization parameters when starting the Eitri-App, the developer can use the [`--initialization-params`](https://docs.eitri.tech/en/eitri-cli/#start) command in the CLI:
 
 ```bash
-eitri start --initializationParams "productId=e4386d93-d6a7-4212-8501-2a99fc9a3f12&email=developer@eitri.tech"
+eitri start --initialization-params "productId=e4386d93-d6a7-4212-8501-2a99fc9a3f12&email=developer@eitri.tech"
 ```
 
 Within the Eitri-App code, the internal Eitri API method (Eitri.getInitializationInfos) is used to obtain the parameters passed when the Eitri-App starts.
@@ -36,6 +36,8 @@ export default function Home() {
 ```
 
 ### Eitri-App Start
+
+Read more about [`eitri app start`](https://docs.eitri.tech/en/quick-guides/initialization-params/).
 
 #### Requirements
 * CLI version 1.18.0 or higher
