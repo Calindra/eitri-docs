@@ -4,3 +4,4 @@ nav:
     - functional.md
     - routes.md
     - initialization-params.md
+    - multiple-shared.md
