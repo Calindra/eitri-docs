@@ -5,3 +5,4 @@ nav:
     - routes.md
     - initialization-params.md
     - multiple-shared.md
+    - eitri-app-start.md
