@@ -19,7 +19,7 @@ Allows the developer to simultaneously run more than one Eitri-App in their resp
     ```
 
 2. Create an `app-config.yaml` file at the root of the project with the following structure:
-    - **application-id**: Application ID;
+    - **application-id**:  Application ID For more information, see the section [How to obtain the application ID](#get-application-id).;
     - **eitri-apps**: List of Eitri-Apps to be started;
     - **alias**: Eitri-App alias;
     - **path**: Eitri-App path;
@@ -42,6 +42,9 @@ eitri-apps:
       workspace: logic
       shared: true
 ```
+
+<a id="get-application-id"></a>
+2.1 **application-id**: Application ID (obtained via the [Console](https://console.eitri.tech)). To get the application ID, go to the [Console](https://console.eitri.tech), click on the desired application, and copy the Application ID from the **Application ID** field.
 
 3. Run the command **`eitri app start`** at the root of the project.
 ```bash

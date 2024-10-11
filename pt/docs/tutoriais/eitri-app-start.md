@@ -19,7 +19,7 @@ Permite que o desenvolvedor possa executar simultaneamente mais de um Eitri-App,
 ```
 
 2. Crie um arquivo `app-config.yaml` na raiz do projeto, com a seguinte estrutura:
-    - **application-id**: ID do aplicativo;
+    - **application-id**: ID do aplicativo *Para maiores informações, veja a seção [Como obter o ID do aplicativo](#obter-id-do-aplicativo).*;
     - **eitri-apps**: Lista de Eitri-Apps que serão iniciados;
     - **alias**: Alias do Eitri-App;
     - **path**: Caminho do Eitri-App;
@@ -42,6 +42,9 @@ eitri-apps:
       workspace: logic
       shared: true
 ```
+
+<a id="obter-id-do-aplicativo"></a>
+2.1 **application-id**: ID do aplicativo (obtido através do [Console](https://console.eitri.tech)). Para obter o ID do aplicativo, acesse o [Console](https://console.eitri.tech), clique no aplicativo desejado e copie o ID do aplicativo no campo **ID do Aplicativo**.
 
 3. Execute o comando **`eitri app start`** na raiz do projeto.
 ```bash
