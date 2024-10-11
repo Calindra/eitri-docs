@@ -1,4 +1,4 @@
-# Eitri-App Start
+# Developing multiple Eitri-apps
 
 Allows the developer to simultaneously run more than one Eitri-App in their respective workspaces. This is useful for developing and testing integration between different Eitri-Apps.
 
@@ -24,7 +24,7 @@ Allows the developer to simultaneously run more than one Eitri-App in their resp
     - **alias**: Eitri-App alias;
     - **path**: Eitri-App path;
     - **workspace**: Eitri-App workspace;
-    - **focus**: Defines if the Eitri-App will be opened in the foreground;
+    - **focus**: Defines which the Eitri-App will be opened in the foreground;
     - **shared**: Defines if the Eitri-App is shared between other Eitri-Apps.
 ```yaml
 application-id: 'bd9b96af-ac33-492e-876c-6755b3aefaef'
@@ -60,5 +60,5 @@ components-logic | Building Eitri-App
 shared-logic | Building Eitri-App
 berserk | Starting Eitri builder
     
-// further information hidden
+// unnecessary log code in hidden example
 ```
