@@ -6,3 +6,4 @@ nav:
     - initialization-params.md
     - multiple-shared.md
     - eitri-app-start.md
+    - tests.md
