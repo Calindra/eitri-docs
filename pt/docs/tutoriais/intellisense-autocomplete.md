@@ -9,18 +9,18 @@ O IntelliSense é uma funcionalidade presente em diversas ferramentas de desenvo
 
 Essas funcionalidades tornam a codificação mais rápida e menos propensa a erros, proporcionando uma experiência de desenvolvimento mais eficiente.
 
-#### Start
+## Start
 
-Requisitos:
+### Requisitos
 
 - [Eitri-Luminus](/eitri-luminus)
 - [Eitri-Bifrost](/eitri-bifrost)
 
 Será gerado automaticamente um arquivo `jsconfig.json`. Somente leitura, qualquer alteração feita manualmente nele não funcionará e será perdida a cada start.
 
-#### [App Start](/tutoriais/eitri-app-start)
+## [App Start](/tutoriais/eitri-app-start)
 
-Requisitos:
+### Requisitos
 
     * Ter na raiz todos os shared Eitri-Apps na estrutura do projeto.
     * Declarar no App-Config os campos eitri-bifrost e eitri-luminus com as respectivas versões em comum dos Eitri-Apps, para ser gerado o link com o autocomplete e intelliSense das bibliotecas do Eitri.
@@ -30,17 +30,22 @@ Exemplo de como deve ficar no `app-config.yaml`:
 _Lembre-se de as versões estarem de acordo com as dos Eitri-Apps para evitar auto-complete inconsistente entre as versões_
 <br/>
 <br/>
-<img src="https://docs.eitri.tech/assets/intellisense/app-config.png" />
+![image](https://docs.eitri.tech/assets/intellisense/app-config.png)
 
 Será gerado automaticamente um arquivo `jsconfig.json`. Somente leitura, qualquer alteração feita manualmente nele não funcionará e será perdida a cada app start. No caso dos shared Eitri-Apps será gerando um link de acordo com o slug do Eitri-App que é shared, assim gerando auto complete, sugestões de import do shared.
 
 _Em alguns casos pode ser que não funcione o auto complete e intelliSense de primeira mas basta dar reload no VSCode com `command + shift + p` e selecionando Reload Window._
 
-#### Resultado Final
+## Resultado Final
 
-Import:
-<img src="https://docs.eitri.tech/assets/intellisense/import.png" />
-Eitri-Bifrost:
-<img src="https://docs.eitri.tech/assets/intellisense/bifrost.png" />
-Eitri-Luminus:
-<img src="https://docs.eitri.tech/assets/intellisense/luminus.png" />
+### Import
+
+![image](https://docs.eitri.tech/assets/intellisense/import.png)
+
+### Eitri-Bifrost
+
+![image](https://docs.eitri.tech/assets/intellisense/bifrost.png)
+
+### Eitri-Luminus
+
+![image](https://docs.eitri.tech/assets/intellisense/luminus.png)
