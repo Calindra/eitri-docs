@@ -7,3 +7,4 @@ nav:
     - multiple-shared.md
     - eitri-app-start.md
     - tests.md
+    - intellisense-autocomplete.md
