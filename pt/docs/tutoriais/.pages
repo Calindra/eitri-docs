@@ -8,3 +8,4 @@ nav:
     - eitri-app-start.md
     - tests.md
     - intellisense-autocomplete.md
+    - semantic-release.md
