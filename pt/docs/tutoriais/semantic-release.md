@@ -20,12 +20,12 @@ O Semantic Release utiliza mensagens de commit padronizadas, como:
 - `fix`: para correções de bugs, liberando uma versão _patch_.
 - `BREAKING CHANGE`: indica uma alteração que quebra compatibilidade, liberando uma versão _major_.
 
-Essas convenções são seguidas pelo [Conventional Commits](https://www.conventionalcommits.org/), que torna o versionamento previsível e estruturado.
+Essas convenções são seguidas pelo [Conventional Commits](https://www.conventionalcommits.org/){:target="\_blank"}, que torna o versionamento previsível e estruturado.
 
 ## Requisitos
 
 1. [**Configuração de CI/CD do Eitri**](/tutoriais/ci-cd)
-2. [**Commits com Padrão de Conventional Commits**](https://www.conventionalcommits.org/)
+2. [**Commits com Padrão de Conventional Commits**](https://www.conventionalcommits.org/){:target="\_blank"}
 
 ## Como executar
 
@@ -39,4 +39,4 @@ Dessa forma a versão do **Eitri-App** será atualizada automaticamente conforme
 
 ### Importante
 
-Caso seu Eitri-App tenha uma versão acima de 1.x.x, será necessário gerar uma tag git para a última versão, pois poderá ter conflito entre as versões pré existentes do seu **Eitri-App**. [Como criar a tag manualmente](https://git-scm.com/book/en/v2/Git-Basics-Tagging).
+Caso seu Eitri-App tenha uma versão acima de 1.x.x, será necessário gerar uma tag git para a última versão, pois poderá ter conflito entre as versões pré existentes do seu **Eitri-App**. [Como criar a tag manualmente](https://git-scm.com/book/en/v2/Git-Basics-Tagging){:target="\_blank"}.
