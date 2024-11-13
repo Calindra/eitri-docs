@@ -38,13 +38,6 @@ Eitri SDK offers a lot of tools to allow your Eitri-apps to do amazing things:
 
 :   Bifrost is a mix of technology and magic that effectively connects the worlds in Nordic mythology and represents well what `Eitri Bifrost` does between your mobile app and the Eitri-apps universe. It empowers both of them, allowing your app to use Eitri features while making it possible to use functions of your app inside Eitri-apps.
 
-#### [`Serverless Backend`](eitri-hugin)
-
-:   Hugin (means "thought") is one of the two ravens of Odin and in Nordic mythology flies all over the world bringing Odin information that he needs. Our serverless backend feature called `Eitri Hugin` offers serverless functions to Eitri, allowing to create and run BFFs or backends for Eitri-apps for a variety of uses without needing to create or configure any infrastructure and making your Eitri-apps as powerfull as Odin itself.
-
-#### [`Database and Persistence`](eitri-munin)
-
-:   Munin (means "memory" or "mind") is the other raven of Odin and gives the name to our data persistency feature, `Eitri Munin`. With it, you can store information related to an Eitri-App in an easy, fast, and reliable way with a database, without the need to worry about infrastructure for it.
 
 ## How about my Design System?
 
