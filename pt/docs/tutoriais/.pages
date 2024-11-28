@@ -9,3 +9,4 @@ nav:
     - tests.md
     - intellisense-autocomplete.md
     - semantic-release.md
+    - i18n.md
