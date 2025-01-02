@@ -175,9 +175,12 @@ Usage: `eitri publish [options]`
 
 Publishes the current version in the selected environment.
 
-#### Available Options
+### Requirements
 
 - `-e, --environment <environment>` Defines the environment to publish the current version of the Eitri-App defined in *eitri-app.conf.js*.
+
+#### Available Options
+
 - `-m, --message <message>` Adds comments to the publication.
 
 ---
