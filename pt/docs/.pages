@@ -4,6 +4,5 @@ nav:
   - Linha de comando: 'eitri-cli.md'
   - Componentes e DS: 'eitri-luminus.md'
   - API: 'eitri-bifrost.md'
-  - Serverless Backend: 'eitri-hugin.md'
   - Banco de dados: 'eitri-munin.md'
   - Tutoriais: 'tutoriais'
