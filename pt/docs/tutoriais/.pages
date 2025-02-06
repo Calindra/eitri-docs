@@ -1,5 +1,13 @@
 nav:
     - index.md
+    - create-eitri-app.md
     - ci-cd.md
     - functional.md
     - routes.md
+    - initialization-params.md
+    - multiple-shared.md
+    - eitri-app-start.md
+    - tests.md
+    - intellisense-autocomplete.md
+    - semantic-release.md
+    - i18n.md
