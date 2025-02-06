@@ -23,8 +23,8 @@ Os usuários do Eitri podem assumir diferentes funções no sistema, cada uma de
     { .annotate }
 
     1.  Os usuários com esta permissão conseguem criar Eitri-apps vinculados às aplicações da organização.
-    2.  Usuários com esta permissão conseguem rodar Eitri-apps a partir do código local, gerar e compartilhar o qr-code de seu Eitri-app em desenvolvimento e contam com o uso do hotreload em tempo de desenvolvimento.
-    3.  A permissão para publicação de Eitri-apps permite que o usuário defina e altere qual a versão publicada de um Eitri-app para cada um dos ambientes de uma aplicação. Esta permissão tambem capacita um usuário a fazer rollbacks para versões anteriores de um Eitri-app.
+    2.  Usuários com esta permissão conseguem rodar Eitri-apps a partir do código local, gerar e compartilhar o qr-code de seu Eitri-App em desenvolvimento e contam com o uso do hotreload em tempo de desenvolvimento.
+    3.  A permissão para publicação de Eitri-apps permite que o usuário defina e altere qual a versão publicada de um Eitri-App para cada um dos ambientes de uma aplicação. Esta permissão tambem capacita um usuário a fazer rollbacks para versões anteriores de um Eitri-App.
     4.  A gestão de usuários inclui adicionar, remover e modificar a role dos usuários da organização.
 
 === "GESTOR"
@@ -42,8 +42,8 @@ Os usuários do Eitri podem assumir diferentes funções no sistema, cada uma de
     { .annotate }
 
     1.  Os usuários com esta permissão conseguem criar Eitri-apps vinculados às aplicações da organização.
-    2.  Usuários com esta permissão conseguem rodar Eitri-apps a partir do código local, gerar e compartilhar o qr-code de seu Eitri-app em desenvolvimento e contam com o uso do hotreload em tempo de desenvolvimento.
-    3.  A permissão para publicação de Eitri-apps permite que o usuário defina e altere qual a versão publicada de um Eitri-app para cada um dos ambientes de uma aplicação. Esta permissão tambem capacita um usuário a fazer rollbacks para versões anteriores de um Eitri-app.
+    2.  Usuários com esta permissão conseguem rodar Eitri-apps a partir do código local, gerar e compartilhar o qr-code de seu Eitri-App em desenvolvimento e contam com o uso do hotreload em tempo de desenvolvimento.
+    3.  A permissão para publicação de Eitri-apps permite que o usuário defina e altere qual a versão publicada de um Eitri-App para cada um dos ambientes de uma aplicação. Esta permissão também capacita um usuário a fazer rollbacks para versões anteriores de um Eitri-App.
     4.  A gestão de usuários inclui adicionar, remover e modificar a role dos usuários da organização.
 
 ## Como criar um usuário?
@@ -58,6 +58,6 @@ Em breve
 
 Em breve
 
-## Como publicar um Eitri-app?
+## Como publicar um Eitri-App?
 
 Em breve
