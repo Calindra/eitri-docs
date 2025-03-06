@@ -26,6 +26,7 @@ Permite que o desenvolvedor possa executar simultaneamente mais de um Eitri-App,
     - **workspace**: Workspace do Eitri-App;
     - **focus**: Define qual Eitri-App será aberto em primeiro plano;
     - **shared**: Define se o Eitri-App é compartilhado entre outros Eitri-Apps.
+    - **bottom-tab-view-simulation**: Informa a Eitri Machine as abas de simulação que serão abertas quando o App for iniciado.
 ```yaml
 application-id: 'bd9b96af-ac33-492e-876c-6755b3aefaef'
 eitri-apps:
@@ -41,6 +42,14 @@ eitri-apps:
       path: "./shared-logic"
       workspace: logic
       shared: true
+bottom-tab-view-simulation:
+  eitri-apps:
+    - slug: berserk
+      title: Berserk
+    - slug: components-logic
+      title: Components Logic
+    - slug: shared-logic
+      title: Shared Logic
 ```
 
 <a id="obter-id-do-aplicativo"></a>
