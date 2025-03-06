@@ -44,12 +44,12 @@ eitri-apps:
       shared: true
 bottom-tab-view-simulation:
   eitri-apps:
-    - slug: berserk
-      title: Berserk
-    - slug: components-logic
-      title: Components Logic
-    - slug: shared-logic
-      title: Shared Logic
+    - slug: "berserk"
+      title: "Berserk"
+    - slug: "components-logic"
+      title: "Components Logic"
+    - slug: "shared-logic"
+      title: "Shared Logic"
 ```
 
 <a id="get-application-id"></a>
