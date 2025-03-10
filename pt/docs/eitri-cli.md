@@ -215,7 +215,7 @@ Utilização: `eitri app [options] [command]`
 
 Gerencia a execução de Eitri-Apps do aplicativo, declarado no arquivo app-config.yaml.
 
-*Veja [eitri app start](https://eitri.com/docs/eitri-cli#app) para mais informações.*
+*Veja [eitri app start](https://docs.eitri.tech/en/quick-guides/eitri-app-start/) para mais informações.*
 
 #### Comandos disponíveis
 

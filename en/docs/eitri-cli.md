@@ -203,7 +203,7 @@ Usage: `eitri app [options] [command]`
 
 Manages the execution of Eitri-Apps from the application declared in the app-config.yaml file.
 
-*See [eitri app start](https://eitri.com/docs/eitri-cli#app) for more information.*
+*See [eitri app start](https://docs.eitri.tech/en/docs/eitri-cli#app) for more information.*
 
 #### Available Commands
 
