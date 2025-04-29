@@ -154,9 +154,14 @@ Gerencia e permite a utilização de múltiplos workspaces. Para conhecer tudo q
 
 Utilização: `eitri clean [options]`
 
-Realiza uma limpeza em seu workspace remoto. Ao rodar o `eitri start` seu workspace é montado com o código que está em sua máquina e é atualizado automaticamente à medida que você desenvolve e salva seus arquivos. Caso haja algum problema com seu workspace, o comando `eitri clean` pode ajudar a reestabelecer seu workspace.
+Realiza uma limpeza completa dos workspaces remotos e locais do desenvolvedor. Ao rodar este comando, tanto os workspaces remotos quanto as pastas `.workspaces/` locais e arquivos de workspace são removidos, garantindo uma limpeza total do ambiente de desenvolvimento.
 
-- `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando.
+#### Opções disponíveis
+
+- `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando, incluindo logs de cada ação de limpeza.
+
+!!! info
+    A limpeza é realizada por completo, removendo todos os dados de workspace tanto remotos quanto locais. Isso é útil para resolver problemas de compilação em nuvem ou conflitos de workspace.
 
 ---
 
@@ -222,6 +227,7 @@ Gerencia a execução de Eitri-Apps do aplicativo, declarado no arquivo app-conf
 - `start [options]` Inicializa todos os Eitri-Apps do arquivo de configuração app-config.yaml.
     - `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Playground.
 - `logs` Exibe os logs dos Eitri-Apps em execução do comando `eitri app start`.
-- `clean` Realiza a limpeza dos workspaces remoto.
+- `clean` Realiza a limpeza completa dos workspaces, removendo tanto os workspaces remotos quanto as pastas `.workspaces/` locais de todos os apps definidos no arquivo app-config.yaml. Útil para resolver problemas de conflitos ou dados inválidos em workspaces.
+    - `-v, --verbose` Exibe mensagens detalhadas durante o processo de limpeza.
 
 ---
