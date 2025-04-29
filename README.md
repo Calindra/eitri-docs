@@ -56,6 +56,7 @@ ou
 
 - Para informações adicionais sobre redirecionamentos no mkdocs acesse [este link](https://github.com/mkdocs/mkdocs-redirects)
 
+
 ### Navegação
 
 A construção dos menus para navegação é configurada a partir do plugin [awesome pages](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) para mkdocs.

@@ -146,6 +146,8 @@ Cleans your remote workspace. When you run `eitri start`, your workspace is buil
 
 - `-v, --verbose` Displays detailed messages during command execution.
 
+---
+
 ### libs
 
 Usage: `eitri libs [lib]`
