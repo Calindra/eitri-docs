@@ -56,12 +56,6 @@ ou
 
 - Para informações adicionais sobre redirecionamentos no mkdocs acesse [este link](https://github.com/mkdocs/mkdocs-redirects)
 
-## Atualizações recentes da documentação:
-
-- Atualização da documentação do comando `clean` da Eitri CLI, que agora realiza limpeza completa tanto dos workspaces remotos quanto locais, incluindo a remoção das pastas `.workspaces/` e arquivos de workspace.
-
-- Atualização da documentação do comando `app clean` da Eitri CLI, detalhando sua funcionalidade de limpeza total dos workspaces de todos os apps definidos no arquivo app-config.yaml.
-
 ### Navegação
 
 A construção dos menus para navegação é configurada a partir do plugin [awesome pages](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin) para mkdocs.
