@@ -1,10 +1,10 @@
 # eitri-docs
 
-Os projetos em inglês e em português são 2 projetos completamente separados e a única coisa que compartilham são os assets da pasta `override`. Sendo assim, qualquer 
+Os projetos em inglês e em português são 2 projetos completamente separados e a única coisa que compartilham são os assets da pasta `override`. 
 
 Para rodar o projeto você precisará:
 
-1. instalar o python (De preferencia 3.11 ou superior)
+1. instalar o python (De preferência 3.11 ou superior)
 
 2. Criar o virtual environment do python para a instalação:
 
@@ -18,13 +18,13 @@ ou
 
 `source venv/bin/activate`
 
-> **OBS1**: isso fará com que este venv seja a instância do python usada para as instalações de dependencias e não a instalação global do python, similar ao node_modules no JS
+> **OBS1**: isso fará com que este venv seja a instância do python usada para as instalações de dependências e não a instalação global do python, similar ao node_modules no JS
 
 > **OBS2**: para desativar o uso do venv para o python use o `deactivate` voltando a considerar a instalação global do python como padrão
 
 > **OBS3**: Você pode fornecer outro nome no segundo parâmetro do comando como "python -m venv nomedapasta" mas não esqueça de incluí-la no gitignore
 
-1. Instalar mkdocs e plugins
+4. Instalar mkdocs e plugins
 
 `pip install mkdocs-material`
 
@@ -56,6 +56,11 @@ ou
 
 - Para informações adicionais sobre redirecionamentos no mkdocs acesse [este link](https://github.com/mkdocs/mkdocs-redirects)
 
+## Atualizações recentes da documentação:
+
+- Atualização da documentação do comando `clean` da Eitri CLI, que agora realiza limpeza completa tanto dos workspaces remotos quanto locais, incluindo a remoção das pastas `.workspaces/` e arquivos de workspace.
+
+- Atualização da documentação do comando `app clean` da Eitri CLI, detalhando sua funcionalidade de limpeza total dos workspaces de todos os apps definidos no arquivo app-config.yaml.
 
 ### Navegação
 
