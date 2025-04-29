@@ -156,6 +156,10 @@ Utilização: `eitri clean [options]`
 
 Realiza uma limpeza em seu workspace remoto. Ao rodar o `eitri start` seu workspace é montado com o código que está em sua máquina e é atualizado automaticamente à medida que você desenvolve e salva seus arquivos. Caso haja algum problema com seu workspace, o comando `eitri clean` pode ajudar a reestabelecer seu workspace.
 
+- `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando.
+
+---
+
 ### libs
 
 Utilização: `eitri libs [lib]`
