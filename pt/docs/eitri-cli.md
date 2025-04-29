@@ -154,16 +154,7 @@ Gerencia e permite a utilização de múltiplos workspaces. Para conhecer tudo q
 
 Utilização: `eitri clean [options]`
 
-Realiza uma limpeza completa dos workspaces remotos e locais do desenvolvedor. Ao rodar este comando, tanto os workspaces remotos quanto as pastas `.workspaces/` locais e arquivos de workspace são removidos, garantindo uma limpeza total do ambiente de desenvolvimento.
-
-#### Opções disponíveis
-
-- `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando, incluindo logs de cada ação de limpeza.
-
-!!! info
-    A limpeza é realizada por completo, removendo todos os dados de workspace tanto remotos quanto locais. Isso é útil para resolver problemas de compilação em nuvem ou conflitos de workspace.
-
----
+Realiza uma limpeza em seu workspace remoto. Ao rodar o `eitri start` seu workspace é montado com o código que está em sua máquina e é atualizado automaticamente à medida que você desenvolve e salva seus arquivos. Caso haja algum problema com seu workspace, o comando `eitri clean` pode ajudar a reestabelecer seu workspace.
 
 ### libs
 
