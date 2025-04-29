@@ -1,6 +1,6 @@
 # Eitri CLI
 
-The Eitri CLI is the starting point for developing Eitri-Apps. With it, you can create, develop, and publish Eitri-Apps for your organization’s applications.
+The Eitri CLI is the starting point for developing Eitri-Apps. With it, you can create, develop, and publish Eitri-Apps for your organization's applications.
 
 ## Requirements
 
@@ -142,9 +142,14 @@ Manages and allows the use of multiple workspaces. To learn everything that can 
 
 Usage: `eitri clean [options]`
 
-Cleans your remote workspace. When you run `eitri start`, your workspace is built with the code on your machine and is automatically updated as you develop and save your files. If there is an issue with your workspace, the `eitri clean` command can help reestablish it.
+Performs a complete cleaning of both remote and local workspaces. When running this command, both remote workspaces and local `.workspaces/` folders and workspace files are removed, ensuring a total cleanup of the development environment.
 
-- `-v, --verbose` Displays detailed messages during command execution.
+#### Available Options
+
+- `-v, --verbose` Displays detailed messages during command execution, including logs for each cleaning action.
+
+!!! info
+    The cleanup is performed completely, removing all workspace data both remotely and locally. This is useful for resolving cloud compilation issues or workspace conflicts.
 
 ---
 
@@ -210,5 +215,6 @@ Manages the execution of Eitri-Apps from the application declared in the app-con
 - `start [options]` Initializes all Eitri-Apps from the app-config.yaml configuration file.
     - `-p, --playground` Initializes the Eitri-App in playground mode, with an opening QR code for the Eitri Playground.
 - `logs` Displays the logs of Eitri-Apps running from the `eitri app start` command.
-- `clean` Cleans remote workspaces.
+- `clean` Performs a complete cleaning of workspaces, removing both remote workspaces and local `.workspaces/` folders for all apps defined in the app-config.yaml file. Useful for resolving workspace conflicts or invalid data issues.
+    - `-v, --verbose` Displays detailed messages during the cleaning process.
 ---
