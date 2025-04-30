@@ -222,6 +222,7 @@ Gerencia a execução de Eitri-Apps do aplicativo, declarado no arquivo app-conf
 - `start [options]` Inicializa todos os Eitri-Apps do arquivo de configuração app-config.yaml.
     - `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Playground.
 - `logs` Exibe os logs dos Eitri-Apps em execução do comando `eitri app start`.
-- `clean` Realiza a limpeza dos workspaces remoto.
+- `clean` Realiza a limpeza completa dos workspaces, removendo tanto os workspaces remotos quanto as pastas `.workspaces/` locais de todos os apps definidos no arquivo app-config.yaml. Útil para resolver problemas de conflitos ou dados inválidos em workspaces.
+    - `-v, --verbose` Exibe mensagens detalhadas durante o processo de limpeza.
 
 ---

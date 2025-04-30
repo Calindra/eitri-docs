@@ -1,6 +1,6 @@
 # Eitri CLI
 
-The Eitri CLI is the starting point for developing Eitri-Apps. With it, you can create, develop, and publish Eitri-Apps for your organization’s applications.
+The Eitri CLI is the starting point for developing Eitri-Apps. With it, you can create, develop, and publish Eitri-Apps for your organization's applications.
 
 ## Requirements
 
@@ -210,5 +210,6 @@ Manages the execution of Eitri-Apps from the application declared in the app-con
 - `start [options]` Initializes all Eitri-Apps from the app-config.yaml configuration file.
     - `-p, --playground` Initializes the Eitri-App in playground mode, with an opening QR code for the Eitri Playground.
 - `logs` Displays the logs of Eitri-Apps running from the `eitri app start` command.
-- `clean` Cleans remote workspaces.
+- `clean` Performs a complete cleaning of workspaces, removing both remote workspaces and local `.workspaces/` folders for all apps defined in the app-config.yaml file. Useful for resolving workspace conflicts or invalid data issues.
+    - `-v, --verbose` Displays detailed messages during the cleaning process.
 ---
