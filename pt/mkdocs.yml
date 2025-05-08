@@ -18,6 +18,8 @@ theme:
   # - navigation.tabs
   # - navigation.tabs.sticky
   # - toc.integrate
+  # - navigation.sections
+  # - navigation.expand
   - navigation.instant
   - navigation.instant.progress
   - navigation.tracking
