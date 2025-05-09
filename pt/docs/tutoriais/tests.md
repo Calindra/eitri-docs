@@ -1,7 +1,3 @@
----
-status: new
----
-
 # Executando Testes no Eitri-App
 
 É possível escrever e executar testes que verificam se cada parte do seu código está funcionando corretamente, desde testes unitários que avaliam funções isoladas até testes de integração que validam a combinação dos módulos do seu Eitri-App.

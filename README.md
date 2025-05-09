@@ -8,14 +8,14 @@ Para rodar o projeto você precisará:
 
 2. Criar o virtual environment do python para a instalação:
 
-`python -m venv venv`
+`python3 -m venv venv`
 
 3. Ativar o virtual environment do Python (O caminho vai depender do seu SO e da versão do Python):
 
+- No windows:
 `source venv/Scripts/activate`
 
-ou
-
+- No Linux:
 `source venv/bin/activate`
 
 > **OBS1**: isso fará com que este venv seja a instância do python usada para as instalações de dependências e não a instalação global do python, similar ao node_modules no JS
@@ -26,17 +26,7 @@ ou
 
 4. Instalar mkdocs e plugins
 
-`pip install mkdocs-material`
-
-`pip install mkdocs-exclude-search`
-
-`pip install mkdocs-glightbox`
-
-`pip install mkdocs-awesome-pages-plugin`
-
-`pip install mkdocs-with-pdf`
-
-`pip install mkdocs-redirects`
+`pip install mkdocs-material mkdocs-exclude-search mkdocs-glightbox mkdocs-awesome-pages-plugin mkdocs-with-pdf mkdocs-redirects`
 
 5. Rodar o projeto
 

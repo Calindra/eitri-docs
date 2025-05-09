@@ -33,7 +33,7 @@ Muitas das funções complementares do Eitri estão disponíveis como opções d
 
 ### login
 
-Utilização: `eitri login [options]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri login [opções]`
 
 Efetua o login na plataforma Eitri, criando as credenciais de sua conta em sua máquina e vinculando sua ferramenta de linha de comando à sua conta de desenvolvedor Eitri.
 
@@ -49,7 +49,7 @@ Efetua o login na plataforma Eitri, criando as credenciais de sua conta em sua m
 
 ### create
 
-Utilização: `eitri create [options] <project-name>`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri create [opções] <nome-do-projeto>`
 
 Cria um novo projeto de Eitri-App em sua máquina e o registra na plataforma Eitri.
 
@@ -77,7 +77,7 @@ Você precisará fornecer algumas informações ao criar um Eitri-App:
 
 ### start
 
-Utilização: `eitri start [options]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri start [opções]`
 
 O comando `eitri start` inicializa o Eitri-App para desenvolvimento, gerando um QrCode que deverá ser scaneado com o app de sua organização no qual o Eitri foi integrado.
 
@@ -89,7 +89,7 @@ O comando `eitri start` inicializa o Eitri-App para desenvolvimento, gerando um 
 
 - `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando.
 
-- `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Playground.
+- `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Play.
 
 - `-e, --emulator` Inicializa o Eitri-App em modo emulador, com QrCode de abertura para o Eitri Emulator.
 
@@ -99,7 +99,7 @@ O comando `eitri start` inicializa o Eitri-App para desenvolvimento, gerando um 
 
 ### push-version
 
-Utilização: `eitri push-version [options]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri push-version [opções]`
 
 Envia uma versão de seu Eitri-App para o Console, possibilitando a publicação. Ao executar este comando uma versão de seu Eitri-App será incluída no console e ficará disponível para publicação nos ambientes cadastrados para a aplicação.
 
@@ -119,7 +119,7 @@ Envia uma versão de seu Eitri-App para o Console, possibilitando a publicação
 
 ### self-update
 
-Utilização: `eitri self-update [options]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri self-update`
 
 Atualiza sua versão da Eitri CLI, desinstalando versões anteriores e instalando a versão estável mais recente.
 
@@ -129,15 +129,15 @@ Atualiza sua versão da Eitri CLI, desinstalando versões anteriores e instaland
 
 ### workspace
 
-Utilização: `eitri workspace [options] [command]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri workspace [opções]`
 
-Gerencia e permite a utilização de múltiplos workspaces. Para conhecer tudo que é possível fazer com o comando workspace, utilize `eitri workspace --help`.
+Gerencia e permite a utilização de múltiplos workspaces.
 
 #### Opções disponíveis
 
 - `list` Lista os workspaces do usuário.
 
-- `use [options]` Seleciona um workspace para ser utilizado.
+- `use [opções]` Seleciona um workspace para ser utilizado.
 
     - `--local` Seleciona um workspace para um diretório Eitri-App.
     - `--name` Seleciona um workspace criado previamente pelo nome.
@@ -152,9 +152,15 @@ Gerencia e permite a utilização de múltiplos workspaces. Para conhecer tudo q
 
 ### clean
 
-Utilização: `eitri clean [options]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri clean [opções]`
 
-Realiza uma limpeza em seu workspace remoto. Ao rodar o `eitri start` seu workspace é montado com o código que está em sua máquina e é atualizado automaticamente à medida que você desenvolve e salva seus arquivos. Caso haja algum problema com seu workspace, o comando `eitri clean` pode ajudar a reestabelecer seu workspace.
+Realiza uma limpeza em seu workspace remoto.
+
+Ao rodar o `eitri start` seu workspace é montado com o código que está em sua máquina e é atualizado automaticamente à medida que você desenvolve e salva seus arquivos.
+
+Caso haja algum problema com seu workspace, o comando `eitri clean` pode ajudar a reestabelecer seu workspace.
+
+#### Opções disponíveis
 
 - `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando.
 
@@ -162,11 +168,11 @@ Realiza uma limpeza em seu workspace remoto. Ao rodar o `eitri start` seu worksp
 
 ### libs
 
-Utilização: `eitri libs [lib]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri libs [opções]`
 
 Listagem das versões das bibliotecas Eitri.
 
-#### Bibliotecas disponíveis
+#### Opções disponíveis
 
 - `--luminus` Lista as versões da biblioteca de componente Eitri Luminus.
 - `--bifrost` Lista as versões do SDK Eitri Bifrost.
@@ -175,7 +181,7 @@ Listagem das versões das bibliotecas Eitri.
 
 ### doctor
 
-Utilização: `eitri doctor`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri doctor`
 
 Verifica as dependências e configurações de sua máquina para garantir que tudo está correto para o desenvolvimento de Eitri-apps.
 
@@ -183,13 +189,13 @@ Verifica as dependências e configurações de sua máquina para garantir que tu
 
 ### publish
 
-Utilização: `eitri publish [options]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri publish -e [id-do-ambiente] [opções]`
 
 Publica a versão atual no ambiente selecionado.
 
-### Requisitos
+#### Id do ambiente
 
-- `-e, --environment <ambiente>` Define o ambiente que irá publicar a versão atual do Eitri-App definida no *eitri-app.conf.js*.
+- `-e, --environment <id-do-ambiente>` Define o ambiente que irá publicar a versão atual do Eitri-App definida no *eitri-app.conf.js*. Para saber o id de seu ambiente acesse o [Console Eitri](https://console.eitri.tech/) e clique em **"Aplicativos"**, selecione seu aplicativo e em seguida clique em **"Seus ambientes"**.
 
 #### Opções disponíveis
 
@@ -199,7 +205,7 @@ Publica a versão atual no ambiente selecionado.
 
 ### test
 
-Utilização: `eitri test [options]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri test [opções]`
 
 Executa os testes de seu Eitri-App.
 
@@ -211,18 +217,25 @@ Executa os testes de seu Eitri-App.
 
 ### app
 
-Utilização: `eitri app [options] [command]`
+:fontawesome-solid-terminal:{ .lg .middle }  `eitri app [opções]`
 
 Gerencia a execução de Eitri-Apps do aplicativo, declarado no arquivo app-config.yaml.
 
-*Veja [eitri app start](https://docs.eitri.tech/pt/tutoriais/eitri-app-start/) para mais informações.*
+!!! info
+    Veja [Desenvolvendo vários Eitri-apps](https://docs.eitri.tech/pt/tutoriais/eitri-app-start/) para mais informações.
 
-#### Comandos disponíveis
+#### Opções disponíveis
 
-- `start [options]` Inicializa todos os Eitri-Apps do arquivo de configuração app-config.yaml.
-    - `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Playground.
-- `logs` Exibe os logs dos Eitri-Apps em execução do comando `eitri app start`.
+- `start [opções]` Inicializa todos os Eitri-Apps do arquivo de configuração app-config.yaml.
+    - `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Play.
+    - `-v, --verbose` Exibe mais logs.
+
 - `clean` Realiza a limpeza completa dos workspaces, removendo tanto os workspaces remotos quanto as pastas `.workspaces/` locais de todos os apps definidos no arquivo app-config.yaml. Útil para resolver problemas de conflitos ou dados inválidos em workspaces.
     - `-v, --verbose` Exibe mensagens detalhadas durante o processo de limpeza.
+
+- `create [opções] <nome-do-app>`  Cria uma aplicação Eitri com Eitri-apps baseado em um template selecionado.
+  - `-v, --verbose` Exibe mais logs.
+
+- `logs` Exibe os logs dos Eitri-Apps em execução do comando `eitri app start`.
 
 ---

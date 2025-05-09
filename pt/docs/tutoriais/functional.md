@@ -1,7 +1,3 @@
----
-status: new
----
-
 # Programação Funcional
 
 ## Como desenvolver componentes funcionais?

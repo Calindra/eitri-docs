@@ -1,7 +1,3 @@
----
-status: new
----
-
 # Semantic Release no Push-Version
 
 O **Semantic Release** é uma ferramenta que automatiza o processo de versionamento e publicação de um projeto com base nas mudanças de código e nas mensagens de commit, seguindo o conceito de **versionamento semântico** (ou _semantic versioning_). Com ele, versões novas são geradas automaticamente, e o processo de publicação é desencadeado conforme o conteúdo dos commits, simplificando o fluxo de CI/CD.

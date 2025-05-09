@@ -1,7 +1,3 @@
----
-status: new
----
-
 # Running Tests in Eitri-App
 
 It is possible to write and run tests to verify that each part of your code is working correctly, from unit tests that evaluate isolated functions to integration tests that validate the combination of modules in your Eitri-App.
