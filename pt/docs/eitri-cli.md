@@ -89,7 +89,7 @@ O comando `eitri start` inicializa o Eitri-App para desenvolvimento, gerando um 
 
 - `-v, --verbose` Exibe mensagens detalhadas durante a execução do comando.
 
-- `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Playground.
+- `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Play.
 
 - `-e, --emulator` Inicializa o Eitri-App em modo emulador, com QrCode de abertura para o Eitri Emulator.
 
@@ -227,7 +227,7 @@ Gerencia a execução de Eitri-Apps do aplicativo, declarado no arquivo app-conf
 #### Opções disponíveis
 
 - `start [opções]` Inicializa todos os Eitri-Apps do arquivo de configuração app-config.yaml.
-    - `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Playground.
+    - `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Play.
     - `-v, --verbose` Exibe mais logs.
 
 - `clean` Realiza a limpeza completa dos workspaces, removendo tanto os workspaces remotos quanto as pastas `.workspaces/` locais de todos os apps definidos no arquivo app-config.yaml. Útil para resolver problemas de conflitos ou dados inválidos em workspaces.
