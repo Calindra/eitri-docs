@@ -18,6 +18,8 @@ theme:
   # - navigation.tabs
   # - navigation.tabs.sticky
   # - toc.integrate
+  # - navigation.sections
+  # - navigation.expand
   - navigation.instant
   - navigation.instant.progress
   - navigation.tracking
@@ -148,6 +150,8 @@ plugins:
         - en
   - redirects:
       redirect_maps:
+        'eitri-luminus.md': 'design-system.md' # for compatibility reasons to ensure that old links won't break
+        'theme.md': 'design-system.md' # for compatibility reasons to ensure that old links won't break
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'

@@ -1,7 +1,3 @@
----
-status: new
----
-
 # Functional Programming
 
 ## How to develop functional components?
