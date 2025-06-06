@@ -4,11 +4,9 @@ status: new
 
 # Simulação de Bottom Tab View
 
-A chave `bottom-tab-view-simulation` permite simular uma navegação por **abas inferiores** (bottom tabs), muito comum em aplicativos mobile nativos. Essa funcionalidade serve para testar múltiplos **Eitri-Apps** simultaneamente como se fossem seções de um mesmo app, facilitando a visualização do comportamento integrado entre eles.
+A chave `bottom-tab-view-simulation` permite simular uma interface de **navegação por abas inferiores** (bottom tab), semelhante aos aplicativos mobile nativos. Essa funcionalidade possibilita rodar múltiplos **Eitri-Apps** em paralelo, cada um exibido como uma aba, facilitando os testes e a visualização de apps como se fossem seções de um único aplicativo.
 
-### 🔧 Requisitos Mínimos
-
-- Versão da CLI : 1.44.0 ou superior
+---
 
 ### 🔧 Estrutura YAML
 
@@ -19,23 +17,30 @@ bottom-tab-view-simulation:
   eitri-apps:
     - slug: "slug-do-eitri-app"
       title: "Título da Aba"
-      initialization-params: "chave1=valor1&chave2=valor2"
-      init-params: { "chave": "valor" }
+      initialization-params:
+        type: "string" | "json"
+        value: "<valor de inicialização>"
 ```
+
+---
 
 ### 🧩 Campos disponíveis
 
-| Campo                   | Tipo     | Obrigatório | Descrição                                                   |
-| ----------------------- | -------- | ----------- | ----------------------------------------------------------- |
-| `slug`                  | `string` | ✅ Sim      | Identificador do Eitri-App que será carregado.              |
-| `title`                 | `string` | ✅ Sim      | Nome da aba que aparecerá na bottom bar.                    |
-| `initialization-params` | `string` | ❌ Não      | Query string de inicialização no formato `chave=valor&...`. |
-| `init-params`           | `object` | ❌ Não      | Parâmetros de inicialização no formato objeto JSON.         |
+| Campo                   | Tipo     | Obrigatório | Descrição                                              |
+| ----------------------- | -------- | ----------- | ------------------------------------------------------ |
+| `slug`                  | `string` | ✅ Sim      | Identificador (slug) do Eitri-App a ser carregado.     |
+| `title`                 | `string` | ✅ Sim      | Nome da aba exibida na bottom bar.                     |
+| `initialization-params` | `objeto` | ❌ Não      | Objeto de configuração de inicialização (veja abaixo). |
 
-> **Obs:** Os campos `initialization-params` e `init-params` são **equivalentes**, mas apenas um deles deve ser usado por aba. O comportamento é o mesmo, mas os formatos são diferentes:
->
-> - `initialization-params`: útil para testes rápidos, via string de URL.
-> - `init-params`: útil para estruturas mais complexas, com objetos ou arrays.
+#### Objeto `initialization-params`
+
+| Campo   | Tipo     | Obrigatório | Descrição                                                                  |
+| ------- | -------- | ----------- | -------------------------------------------------------------------------- |
+| `type`  | `string` | ✅ Sim      | Pode ser `"string"` (formato query string) ou `"json"` (formato JSON).     |
+| `value` | `string` | ✅ Sim      | Valor a ser passado para inicialização. O formato depende do campo `type`. |
+
+> O campo `initialization-params` é opcional e deve ser usado **somente se for necessário passar dados de entrada** ao app no momento da inicialização.
+> Ambos os campos `type` e `value` são obrigatórios caso você deseje usá-lo.
 
 ---
 
@@ -46,11 +51,15 @@ bottom-tab-view-simulation:
   eitri-apps:
     - slug: "power-rune"
       title: "Primeira"
-      initialization-params: "var1=xpto&var2=foobar"
+      initialization-params:
+        type: "string"
+        value: "var1=xpto&var2=foobar"
 
     - slug: "eihwaz-rune"
       title: "Segunda"
-      init-params: { "foo": "bar" }
+      initialization-params:
+        type: "json"
+        value: '{ "foo": "bar" }'
 
     - slug: "eitri-doctor"
       title: "Terceira"
@@ -63,6 +72,8 @@ bottom-tab-view-simulation:
 
 ### 💡 Dicas
 
-- Utilize `initialization-params` se quiser passar rapidamente dados simulando query strings.
-- Prefira `init-params` caso o app consuma um payload estruturado via JSON.
-- Títulos iguais ou diferentes são permitidos; o controle visual é baseado na ordem de declaração.
+- Use `type: "string"` para entradas rápidas no estilo de query string (`chave=valor`).
+- Use `type: "json"` para passar dados estruturados como string JSON (ex: `'{ "foo": "bar" }'`).
+- O valor do campo `value` **deve sempre ser uma string válida**, mesmo no caso de JSON.
+- As abas são exibidas na ordem em que são declaradas no YAML.
+- Você pode repetir o mesmo `slug` com títulos ou parâmetros diferentes.

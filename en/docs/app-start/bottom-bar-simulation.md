@@ -4,11 +4,9 @@ status: new
 
 # Bottom Tab View Simulation
 
-The `bottom-tab-view-simulation` key allows you to simulate a **bottom tab navigation** interface, similar to native mobile apps. This feature enables you to run multiple **Eitri-Apps** side by side, as if they were different sections of the same app, making it easier to test and visualize integrated behavior.
+The `bottom-tab-view-simulation` key allows you to simulate a **bottom tab navigation** interface, similar to those found in native mobile apps. This feature enables running multiple **Eitri-Apps** in parallel, each shown as a tab, making it easier to test apps as if they were sections of a single application.
 
-## Minimum Requirements
-
-- CLI Version: 1.44.0 or higher
+---
 
 ### 🔧 YAML Structure
 
@@ -19,23 +17,30 @@ bottom-tab-view-simulation:
   eitri-apps:
     - slug: "eitri-app-slug"
       title: "Tab Title"
-      initialization-params: "key1=value1&key2=value2"
-      init-params: { "key": "value" }
+      initialization-params:
+        type: "string" | "json"
+        value: "<initialization payload>"
 ```
+
+---
 
 ### 🧩 Available Fields
 
-| Field                   | Type     | Required | Description                                                |
-| ----------------------- | -------- | -------- | ---------------------------------------------------------- |
-| `slug`                  | `string` | ✅ Yes   | The identifier (slug) of the Eitri-App to load.            |
-| `title`                 | `string` | ✅ Yes   | The title shown on the bottom tab for this app.            |
-| `initialization-params` | `string` | ❌ No    | Initialization query string in the format `key=value&...`. |
-| `init-params`           | `object` | ❌ No    | Initialization parameters in JSON object format.           |
+| Field                   | Type     | Required | Description                                     |
+| ----------------------- | -------- | -------- | ----------------------------------------------- |
+| `slug`                  | `string` | ✅ Yes   | The identifier (slug) of the Eitri-App to load. |
+| `title`                 | `string` | ✅ Yes   | The title shown on the bottom tab for this app. |
+| `initialization-params` | `object` | ❌ No    | Initialization config object (see below).       |
 
-> **Note:** You should use **either** `initialization-params` **or** `init-params`, not both. They serve the same purpose but support different formats:
->
-> - `initialization-params`: ideal for quick testing with URL-style query strings.
-> - `init-params`: better suited for more complex structured data, like nested objects.
+#### `initialization-params` object
+
+| Field   | Type     | Required | Description                                                                          |
+| ------- | -------- | -------- | ------------------------------------------------------------------------------------ |
+| `type`  | `string` | ✅ Yes   | Must be either `"string"` (for query string format) or `"json"` (for JSON payloads). |
+| `value` | `string` | ✅ Yes   | The actual initialization value, format depends on `type`.                           |
+
+> Only include `initialization-params` if you need to pass input to the app at startup.
+> You **must** set both `type` and `value` if using this field.
 
 ---
 
@@ -46,11 +51,15 @@ bottom-tab-view-simulation:
   eitri-apps:
     - slug: "power-rune"
       title: "First"
-      initialization-params: "var1=xpto&var2=foobar"
+      initialization-params:
+        type: "string"
+        value: "var1=xpto&var2=foobar"
 
     - slug: "eihwaz-rune"
       title: "Second"
-      init-params: { "foo": "bar" }
+      initialization-params:
+        type: "json"
+        value: '{ "foo": "bar" }'
 
     - slug: "eitri-doctor"
       title: "Third"
@@ -63,7 +72,7 @@ bottom-tab-view-simulation:
 
 ### 💡 Tips
 
-- Use `initialization-params` when you want to simulate query strings quickly.
-- Use `init-params` when you need to pass structured JSON payloads to the app.
-- You can repeat the same app (`slug`) with different tab titles or parameters.
-- Tab order follows the order defined in the YAML list.
+- Use `type: "string"` for quick query-style inputs like `key=value&key2=value2`.
+- Use `type: "json"` to pass structured data as a JSON string (e.g., `{ "foo": "bar" }`).
+- The `value` must always be a **valid string**, even when the type is `json`.
+- The tabs appear in the order they're listed.
