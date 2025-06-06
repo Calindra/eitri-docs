@@ -18,7 +18,7 @@ bottom-tab-view-simulation:
     - slug: "eitri-app-slug"
       title: "Tab Title"
       initialization-params:
-        type: "string" | "json"
+        type: "string"
         value: "<initialization payload>"
 ```
 
@@ -30,9 +30,9 @@ bottom-tab-view-simulation:
 | ----------------------- | -------- | -------- | ----------------------------------------------- |
 | `slug`                  | `string` | ✅ Yes   | The identifier (slug) of the Eitri-App to load. |
 | `title`                 | `string` | ✅ Yes   | The title shown on the bottom tab for this app. |
-| `initialization-params` | `json`   | ❌ No    | Initialization params as JSON (see below).      |
+<!-- | `initialization-params` | `json`   | ❌ No    | Initialization params as JSON (see below).      | -->
 
-#### `initialization-params` JSON
+<!-- #### `initialization-params` JSON
 
 | Field   | Type     | Required | Description                                                                          |
 | ------- | -------- | -------- | ------------------------------------------------------------------------------------ |
@@ -40,7 +40,7 @@ bottom-tab-view-simulation:
 | `value` | `string` | ✅ Yes   | The actual initialization value, format depends on `type`.                           |
 
 > Only include `initialization-params` if you need to pass input to the app at startup.
-> You **must** set both `type` and `value` if using this field.
+> You **must** set both `type` and `value` if using this field. -->
 
 ---
 
@@ -73,6 +73,6 @@ bottom-tab-view-simulation:
 ### 💡 Tips
 
 - Use `type: "string"` for quick query-style inputs like `key=value&key2=value2`.
-- Use `type: "json"` to pass structured data as a JSON string (e.g., `{ "foo": "bar" }`).
-- The `value` must always be a **valid string**, even when the type is `json`.
+<!-- - Use `type: "json"` to pass structured data as a JSON string (e.g., `{ "foo": "bar" }`). -->
+<!-- - The `value` must always be a **valid string**, even when the type is `json`. -->
 - The tabs appear in the order they're listed.

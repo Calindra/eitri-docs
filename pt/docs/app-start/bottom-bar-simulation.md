@@ -18,7 +18,7 @@ bottom-tab-view-simulation:
     - slug: "slug-do-eitri-app"
       title: "Título da Aba"
       initialization-params:
-        type: "string" | "json"
+        type: "string"
         value: "<valor de inicialização>"
 ```
 
@@ -29,10 +29,10 @@ bottom-tab-view-simulation:
 | Campo                   | Tipo     | Obrigatório | Descrição                                            |
 | ----------------------- | -------- | ----------- | ---------------------------------------------------- |
 | `slug`                  | `string` | ✅ Sim      | Identificador (slug) do Eitri-App a ser carregado.   |
-| `title`                 | `string` | ✅ Sim      | Nome da aba exibida na bottom bar.                   |
-| `initialization-params` | `json`   | ❌ Não      | Parâmetros de inicialização como JSON (veja abaixo). |
+| `title`                 | `string` | ✅ Sim      | Nome da aba exibida na bottom bar.            
+<!-- | `initialization-params` | `json`   | ❌ Não      | Parâmetros de inicialização como JSON (veja abaixo). | -->
 
-#### JSON `initialization-params`
+<!-- #### JSON `initialization-params`
 
 | Campo   | Tipo     | Obrigatório | Descrição                                                                  |
 | ------- | -------- | ----------- | -------------------------------------------------------------------------- |
@@ -40,7 +40,7 @@ bottom-tab-view-simulation:
 | `value` | `string` | ✅ Sim      | Valor a ser passado para inicialização. O formato depende do campo `type`. |
 
 > O campo `initialization-params` é opcional e deve ser usado **somente se for necessário passar dados de entrada** ao app no momento da inicialização.
-> Ambos os campos `type` e `value` são obrigatórios caso você deseje usá-lo.
+> Ambos os campos `type` e `value` são obrigatórios caso você deseje usá-lo. -->
 
 ---
 
@@ -73,7 +73,7 @@ bottom-tab-view-simulation:
 ### 💡 Dicas
 
 - Use `type: "string"` para entradas rápidas no estilo de query string (`chave=valor`).
-- Use `type: "json"` para passar dados estruturados como string JSON (ex: `'{ "foo": "bar" }'`).
+<!-- - Use `type: "json"` para passar dados estruturados como string JSON (ex: `'{ "foo": "bar" }'`).
 - O valor do campo `value` **deve sempre ser uma string válida**, mesmo no caso de JSON.
-- As abas são exibidas na ordem em que são declaradas no YAML.
+- As abas são exibidas na ordem em que são declaradas no YAML. -->
 - Você pode repetir o mesmo `slug` com títulos ou parâmetros diferentes.
