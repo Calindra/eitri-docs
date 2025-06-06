@@ -26,13 +26,13 @@ bottom-tab-view-simulation:
 
 ### 🧩 Campos disponíveis
 
-| Campo                   | Tipo     | Obrigatório | Descrição                                              |
-| ----------------------- | -------- | ----------- | ------------------------------------------------------ |
-| `slug`                  | `string` | ✅ Sim      | Identificador (slug) do Eitri-App a ser carregado.     |
-| `title`                 | `string` | ✅ Sim      | Nome da aba exibida na bottom bar.                     |
-| `initialization-params` | `objeto` | ❌ Não      | Objeto de configuração de inicialização (veja abaixo). |
+| Campo                   | Tipo     | Obrigatório | Descrição                                            |
+| ----------------------- | -------- | ----------- | ---------------------------------------------------- |
+| `slug`                  | `string` | ✅ Sim      | Identificador (slug) do Eitri-App a ser carregado.   |
+| `title`                 | `string` | ✅ Sim      | Nome da aba exibida na bottom bar.                   |
+| `initialization-params` | `json`   | ❌ Não      | Parâmetros de inicialização como JSON (veja abaixo). |
 
-#### Objeto `initialization-params`
+#### JSON `initialization-params`
 
 | Campo   | Tipo     | Obrigatório | Descrição                                                                  |
 | ------- | -------- | ----------- | -------------------------------------------------------------------------- |

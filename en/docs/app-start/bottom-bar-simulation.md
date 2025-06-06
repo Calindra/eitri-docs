@@ -30,9 +30,9 @@ bottom-tab-view-simulation:
 | ----------------------- | -------- | -------- | ----------------------------------------------- |
 | `slug`                  | `string` | ✅ Yes   | The identifier (slug) of the Eitri-App to load. |
 | `title`                 | `string` | ✅ Yes   | The title shown on the bottom tab for this app. |
-| `initialization-params` | `object` | ❌ No    | Initialization config object (see below).       |
+| `initialization-params` | `json`   | ❌ No    | Initialization params as JSON (see below).      |
 
-#### `initialization-params` object
+#### `initialization-params` JSON
 
 | Field   | Type     | Required | Description                                                                          |
 | ------- | -------- | -------- | ------------------------------------------------------------------------------------ |
