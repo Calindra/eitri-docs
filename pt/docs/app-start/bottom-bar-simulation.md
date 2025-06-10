@@ -57,9 +57,6 @@ bottom-tab-view-simulation:
 
     - slug: "eihwaz-rune"
       title: "Segunda"
-      initialization-params:
-        type: "json"
-        value: '{ "foo": "bar" }'
 
     - slug: "eitri-doctor"
       title: "Terceira"
