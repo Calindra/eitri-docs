@@ -2,9 +2,9 @@
 status: new
 ---
 
-# Simulação de Bottom Tab View
+# Simulação da Bottom Bar
 
-A chave `bottom-tab-view-simulation` permite simular uma interface de **navegação por abas inferiores** (bottom tab), semelhante aos aplicativos mobile nativos. Essa funcionalidade possibilita rodar múltiplos **Eitri-Apps** em paralelo, cada um exibido como uma aba, facilitando os testes e a visualização de apps como se fossem seções de um único aplicativo.
+Enquanto desenvolve seu app Eitri, a chave `bottom-tab-view-simulation`  no arquivo `app-config.yaml` permite simular uma interface de **navegação por abas inferiores** (bottom tab), semelhante aos aplicativos mobile nativos. Essa funcionalidade possibilita rodar múltiplos **Eitri-Apps** em paralelo, cada um exibido como uma aba, facilitando os testes e a visualização de apps como se fossem seções de um único aplicativo.
 
 ---
 
@@ -71,6 +71,6 @@ bottom-tab-view-simulation:
 
 - Use `type: "string"` para entradas rápidas no estilo de query string (`chave=valor`).
 <!-- - Use `type: "json"` para passar dados estruturados como string JSON (ex: `'{ "foo": "bar" }'`).
-- O valor do campo `value` **deve sempre ser uma string válida**, mesmo no caso de JSON.
-- As abas são exibidas na ordem em que são declaradas no YAML. -->
+- O valor do campo `value` **deve sempre ser uma string válida**, mesmo no caso de JSON. -->
+- As abas são exibidas na ordem em que são declaradas no YAML.
 - Você pode repetir o mesmo `slug` com títulos ou parâmetros diferentes.
