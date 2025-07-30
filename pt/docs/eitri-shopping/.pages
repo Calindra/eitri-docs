@@ -1,3 +1,4 @@
 nav:
     - index.md
     - exposed-apis.md
+    - recaptcha.md

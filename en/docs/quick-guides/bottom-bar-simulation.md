@@ -2,9 +2,9 @@
 status: new
 ---
 
-# Bottom Tab View Simulation
+# Bottom Tab Bar Simulation
 
-The `bottom-tab-view-simulation` key allows you to simulate a **bottom tab navigation** interface, similar to those found in native mobile apps. This feature enables running multiple **Eitri-Apps** in parallel, each shown as a tab, making it easier to test apps as if they were sections of a single application.
+While developing your app using Eitri, the `bottom-tab-view-simulation` key in your `app-config.yaml` file allows you to simulate a **bottom tab navigation** interface, similar to those found in native mobile apps. This feature enables running multiple **Eitri-Apps** in parallel, each shown as a tab, making it easier to test apps as if they were sections of a single application.
 
 ---
 
@@ -73,3 +73,4 @@ bottom-tab-view-simulation:
 <!-- - Use `type: "json"` to pass structured data as a JSON string (e.g., `{ "foo": "bar" }`). -->
 <!-- - The `value` must always be a **valid string**, even when the type is `json`. -->
 - The tabs appear in the order they're listed.
+- You can repeat the same `slug` with different titles or parameters.

@@ -152,6 +152,7 @@ plugins:
       redirect_maps:
         'eitri-luminus.md': 'design-system.md' # por questões de compatibilidade para garantir que não quebre links antigos da página removida
         'theme.md': 'design-system.md' # por questões de compatibilidade para garantir que não quebre links antigos da página removida
+        'app-start/index.md': 'eitri-cli.md' # por questões de compatibilidade para garantir que não quebre links antigos da página removida
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'

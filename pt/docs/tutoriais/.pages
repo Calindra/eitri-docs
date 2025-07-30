@@ -11,3 +11,4 @@ nav:
     - intellisense-autocomplete.md
     - semantic-release.md
     - i18n.md
+    - bottom-bar-simulation.md

@@ -10,13 +10,14 @@ It's possible to define custom color palettes for each application using Eitri, 
 
 Eitri Luminus is Eitri's basic components library for building Eitri-app screens. With it, you can create more complex components for your Eitri-app experiences and further extend Eitri's possibilities in your app.
 
-!!! tip
-    Eitri Luminus now includes [Tailwind 3](https://v3.tailwindcss.com/){:target="_blank"} and [DaisyUI 4](https://v4.daisyui.com/){:target="_blank"}
+Eitri Luminus now includes [Tailwind 3](https://v3.tailwindcss.com/){:target="_blank"} and [DaisyUI 4](https://v4.daisyui.com/){:target="_blank"}
 
-!!! abstract "Previous Versions"
-    For documentation of previous versions [click here](https://cdn.83io.com.br/library/luminus-ui/doc/latest/){:target="_blank"}
+[:octicons-arrow-right-24: Eitri Luminus Documentation ( 2.x.x )](https://cdn.83io.com.br/library/luminus-ui/doc/2.3.6/){:target="_blank" .md-button .md-button--primary }
 
-[:octicons-arrow-right-24: Luminus Daisy Documentation ( 2.x.x )](https://cdn.83io.com.br/library/luminus-ui/storybook/latest/){:target="_blank" .md-button .md-button--primary }
+
+
+> For documentation of previous versions [click here](https://cdn.83io.com.br/library/luminus-ui/doc/latest/){:target="_blank"}
+
 
 ## Theme
 

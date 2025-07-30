@@ -74,3 +74,7 @@ berserk | Iniciando Eitri builder
 
 // código de log desnecessário no exemplo oculto
 ```
+
+##### Simulação da Bottom Bar
+
+Enquanto desenvolve com o [Eitri Play](eitri-play.md) você pode simular a Bottom Bar e seus comportamentos. [Confira aqui](quick-guides/bottom-bar-simulation.md) para saber mais sobre como simular a Bottom Bar.

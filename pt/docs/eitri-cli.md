@@ -222,7 +222,7 @@ Executa os testes de seu Eitri-App.
 Gerencia a execução de Eitri-Apps do aplicativo, declarado no arquivo app-config.yaml.
 
 !!! info
-    Veja [Desenvolvendo vários Eitri-apps](https://docs.eitri.tech/pt/tutoriais/eitri-app-start/) para mais informações.
+    Veja [Desenvolvendo vários Eitri-apps](tutoriais/eitri-app-start.md) para mais informações.
 
 #### Opções disponíveis
 
@@ -238,4 +238,7 @@ Gerencia a execução de Eitri-Apps do aplicativo, declarado no arquivo app-conf
 
 - `logs` Exibe os logs dos Eitri-Apps em execução do comando `eitri app start`.
 
----
+
+##### Simulação da Bottom Bar
+
+Enquanto desenvolve com o [Eitri Play](eitri-play.md) você pode simular a Bottom Bar e seus comportamentos. [Confira aqui](quick-guides/bottom-bar-simulation.md) para saber mais sobre como simular a Bottom Bar.
