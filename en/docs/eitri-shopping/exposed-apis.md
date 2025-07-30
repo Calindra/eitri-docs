@@ -1,7 +1,3 @@
----
-status: new
----
-
 # Exposed APIs
 
 The Exposed APIs of Eitri Shopping are complementary methods to those available in [Eitri Bifrost](../../eitri-bifrost) for invoking code in the native layer of Eitri Shopping applications.
