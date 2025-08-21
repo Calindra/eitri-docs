@@ -34,9 +34,9 @@ They need an specific setup in your website to be bound to your domain. Once it'
 
 To use deeplinks with Eitri you will need:
 
-- A [deeplink resolver addon](https://github.com/eitri-tech/eitri-shopping-addons) setup ready in you Eitri App.
-- If you are using [default deeplink resolver](https://github.com/eitri-tech/eitri-shopping-addons-deeplink-resolver?tab=readme-ov-file#ativando-o-deeplink-resolver-padr%C3%A3o-para-vtex), you need to ask for activation to Eitri team.
-- If you plan to use Universal Links (iOS) or App Links (Android) you need to setup your website well-know files as explained [here](#universal-link-ios--app-link-android).
+- A [deeplink resolver addon](https://github.com/eitri-tech/eitri-shopping-addons){:target="_blank"} setup ready in you Eitri App.
+- If you are using [default deeplink resolver](https://github.com/eitri-tech/eitri-shopping-addons-deeplink-resolver?tab=readme-ov-file#ativando-o-deeplink-resolver-padr%C3%A3o-para-vtex){:target="_blank"}, you need to ask for activation to Eitri team.
+- If you plan to use Universal Links (iOS) or App Links (Android) you need to setup your website well-know files as explained [here](#universal-link-ios--app-link-android){:target="_blank"}.
 
 
 ## Structure
