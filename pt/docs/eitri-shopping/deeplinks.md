@@ -8,7 +8,18 @@ Deeplinks são links especiais que permitem abrir páginas ou seções específi
 
 Eitri App Shopping vem com uma solução integrada para resolver os deeplinks mais comuns utilizados nos principais sistemas de ecommerce de mercado permitindo ainda personalizar com suas próprias regras, rotas e caminhos.
 
-Existem 2 tipos de deeplinks:
+Existem 2 tipos de deeplinks que serão descritos nesta documentação:
+
+- Deeplinks tradicionais
+- Universal links (iOS) ou App Links (Android)
+
+## Requerimentos
+
+Para usar deeplinks com Eitri você vai precisar:
+
+- Um [deeplink resolver addon](https://github.com/eitri-tech/eitri-shopping-addons){:target="_blank"} configurado em seu App Eitri.
+- Se você estiver usando o [deeplink resolver padrão](https://github.com/eitri-tech/eitri-shopping-addons-deeplink-resolver?tab=readme-ov-file#ativando-o-deeplink-resolver-padr%C3%A3o-para-vtex){:target="_blank"}, você deverá ter solicitado a ativação à equipe Eitri.
+- Se você pretende utilizar Universal Links (iOS) ou App Links (Android) você deve configurar os arquivos well-know conforme explicado nesta documentação.
 
 ## Deeplinks tradicionais
 
@@ -21,22 +32,78 @@ Deeplinks tradicionais utilizam um protocolo específico para abrir o app no dis
 
 Precisam de uma configuração específica no seu website para ser vinculado ao seu domínio. Uma vez configurado, usuários que tem o aplicativo instalado no dispositivo serão redirecionados do website diretamente para o app na respectiva página.
 
+Você precisará configurar seu website para ter 2 arquivos hospedados em caminhos específicos para iOS e Android. Estes arquivos serão fornecidos pela Eitri.
 
-**Exemplo:**
-`https://www.mywebsite.com.br/female/jeans`
+Na maioria dos casos você precisará abrir um ticket para seu sistema de e-commerce solicitando a criação/atualização destes arquivos.
 
-[:simple-apple: Universal Link (iOS)](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app){:target="_blank"}
+### [:simple-android: App Link (Android)](https://developer.android.com/training/app-links){:target="_blank"}
+**Caminho do arquivo:**
 
-[:simple-android: App Link (Android)](https://developer.android.com/training/app-links){:target="_blank"}
+`https://www.mywebsite.com/.well-known/assetlinks.json`
+
+**Exemplo do arquivo:**
+```json
+[{
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target" : { 
+        "namespace": "android_app", 
+        "package_name": "app_bundle_id",
+        "sha256_cert_fingerprints": ["app_bundle_fingerprint"] 
+    }
+}]
+```
+
+**Onde:**
+
+`app_bundle_id` é o nome do bundle de seu app, utilizado na loja Google Play.
+
+> Exemplo: com.myapp.store
+
+`app_bundle_fingerprint` é o fingerprint sha256 fornecido para seu app.
+
+> Exemplo: F8:57:A0:0C:AB:8B:B2:59:92:F7:3D:1D:38:6C:05:17:A8:3F:B1:19:B5:E7:05:5F:ED:B5:B8:27:EA:0C:E3:57
 
 
-## Requerimentos
+### [:simple-apple: Universal Link (iOS)](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app){:target="_blank"}
 
-Para usar deeplinks com Eitri você vai precisar:
+**Caminho do arquivo:** `https://www.mywebsite.com/.well-known/apple-app-site-association`
 
-- Um [deeplink resolver addon](https://github.com/eitri-tech/eitri-shopping-addons){:target="_blank"} configurado em seu App Eitri.
-- Se você estiver usando o [deeplink resolver padrão](https://github.com/eitri-tech/eitri-shopping-addons-deeplink-resolver?tab=readme-ov-file#ativando-o-deeplink-resolver-padr%C3%A3o-para-vtex){:target="_blank"}, você deverá ter solicitado a ativação à equipe Eitri.
-- Se você pretende utilizar Universal Links (iOS) ou App Links (Android) você deve configurar os arquivos well-know conforme explicado [aqui](#universal-link-ios--app-link-android){:target="_blank"}
+**Exemplo do arquivo:**
+```json
+{
+    "activitycontinuation": {
+        "apps": [
+            "app_bundle_id"
+        ]
+    },
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "app_bundle_id",
+                "paths": [
+                    "*/p",
+                    "/*",
+                    "/",
+                    "*/cart",
+                    "/wishlist",
+                    "/login"
+                ]
+            }
+        ]
+    }
+}
+```
+
+**Onde:**
+
+`app_bundle_id` é o nome do bundle de seu app, utilizado na loja Apple App Store.
+
+> Exemplo: com.myapp.store
+
+`paths` são os padrões de url que você deseja redirecionar para o app
+
+> Exemplo: "*/p" direciona todas as urls que terminem com "/p" para o app pois em geral são links de páginas de produto.
 
 
 ## Estrutura
