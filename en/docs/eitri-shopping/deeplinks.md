@@ -14,7 +14,7 @@ There are two types of deeplinks:
 
 Deeplinks that use an specific opening protocol to open your app in user's device.
 
-Example:
+**Example:**
 `myapp://category/female/jeans`
 
 ## Universal Link (iOS) / App Link (Android)
@@ -29,16 +29,26 @@ They need an specific setup in your website to be bound to your domain. Once it'
 
 [:simple-android: App Link (Android)](https://developer.android.com/training/app-links){:target="_blank"}
 
+
+## Requirements
+
+To use deeplinks with Eitri you will need:
+
+- A [deeplink resolver addon](https://github.com/eitri-tech/eitri-shopping-addons) setup ready in you Eitri App.
+- If you are using [default deeplink resolver](https://github.com/eitri-tech/eitri-shopping-addons-deeplink-resolver?tab=readme-ov-file#ativando-o-deeplink-resolver-padr%C3%A3o-para-vtex), you need to ask for activation to Eitri team.
+- If you plan to use Universal Links (iOS) or App Links (Android) you need to setup your website well-know files as explained [here](#universal-link-ios--app-link-android).
+
+
 ## Structure
 
-Deeplinks have basically 3 parts in it's structure:
+Deeplinks may have different structures based on what they do but they have basically 3 main parts:
 
 `prefix`://`action`/`params`
 
 
 ## Supported actions
 
-Eitri App Shopping supports the following a lot of actions for deeplinks by default.
+Eitri App Shopping supports the following a lot of actions for deeplinks by default:
 
 ??? note "Open Product"
 
@@ -57,7 +67,7 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     <br>
     `product_slug` = product slug to open (you can get it from your vtex website for example)
 
-    > Vtex website product pages usually ends with "/p". You need to remove it since it's not part of product slug 
+    > Vtex website product pages usually ends with "/p". You need to remove it since it's not part of product slug.
 
     **Examples:**
     ```
@@ -123,23 +133,23 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     **Order options:**
 
-    OrderByPriceDESC:  Higher price
+    OrderByPriceDESC:  Higher price first
     <br>
-    OrderByPriceASC:  Lower price
+    OrderByPriceASC:  Lower price first
     <br>
-    OrderByTopSaleDESC:  Top sales
+    OrderByTopSaleDESC:  Top sales first
     <br>
-    OrderByReviewRateDESC:  Better reviews
+    OrderByReviewRateDESC:  Better reviews first
     <br>
     OrderByNameDESC:  Z-A
     <br>
     OrderByNameASC:  A-Z
     <br>
-    OrderByReleaseDateDESC:  Release date
+    OrderByReleaseDateDESC:  Release date first
     <br>
-    OrderByBestDiscountDESC:  Better discount
+    OrderByBestDiscountDESC:  Better discount first
     <br>
-    OrderByScoreDESC: Score
+    OrderByScoreDESC: Better score first
 
     **Examples:**
     ```
@@ -187,9 +197,9 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     `url` = prefix used for your app
     <br>
-    'inapp' (optional) = if used, it will open the url inside internal app webview
+    'inapp' (optional) = if used, it will open the URL inside internal app webview
 
-    > We recommend that you uri encode the url content to ensure your special characters and spaces are correctly readed. Example: "https://www.mywebsite.com.br/male/shirts" should be passed as "https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts".
+    > We recommend that you uri encode the URL content to ensure your special characters are correctly readed. Example: "https://www.mywebsite.com.br/male/shirts" should be passed as "https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts".
 
     **Examples:**
     ```
