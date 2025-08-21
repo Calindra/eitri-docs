@@ -28,11 +28,11 @@ Deeplinks tradicionais utilizam um protocolo específico para abrir o app no dis
 **Exemplo:**
 `myapp://category/female/jeans`
 
-## Universal Link (iOS) / App Link (Android)
+## App Link (Android) / Universal Link (iOS)
 
 Precisam de uma configuração específica no seu website para ser vinculado ao seu domínio. Uma vez configurado, usuários que tem o aplicativo instalado no dispositivo serão redirecionados do website diretamente para o app na respectiva página.
 
-Você precisará configurar seu website para ter 2 arquivos hospedados em caminhos específicos para iOS e Android. Estes arquivos serão fornecidos pela Eitri.
+Você precisará configurar seu website para ter 2 arquivos hospedados em caminhos específicos para Android e iOS. Estes arquivos serão fornecidos pela Eitri.
 
 Na maioria dos casos você precisará abrir um ticket para seu sistema de e-commerce solicitando a criação/atualização destes arquivos.
 

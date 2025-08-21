@@ -28,11 +28,11 @@ Deeplinks that use an specific opening protocol to open your app in user's devic
 **Example:**
 `myapp://category/female/jeans`
 
-## Universal Link (iOS) / App Link (Android)
+## App Link (Android) / Universal Link (iOS)
 
 They need an specific setup in your website to be bound to your domain. Once it's configured, users that have your app installed will be redirected from web site pages directly to your app in respective app pages.
 
-You will need to configure your website to have 2 files hosted in specific paths to work with iOS and Android. Those files will be provided by Eitri.
+You will need to configure your website to have 2 files hosted in specific paths to work with Android and iOS. Those files will be provided by Eitri.
 
 With most e-commerce providers you can create/update those files by opening a ticket asking for it.
 
