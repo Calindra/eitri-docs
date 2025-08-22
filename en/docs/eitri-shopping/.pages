@@ -3,3 +3,4 @@ nav:
     - exposed-apis.md
     - recaptcha.md
     - deeplinks.md
+    - push-notification.md
