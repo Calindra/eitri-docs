@@ -69,27 +69,17 @@ With most e-commerce providers you can create/update those files by opening a ti
 **File example:**
 ```json
 {
-    "activitycontinuation": {
-        "apps": [
-            "app_bundle_id"
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "app_bundle_id",
+        "paths": [
+          "*"
         ]
-    },
-    "applinks": {
-        "apps": [],
-        "details": [
-            {
-                "appID": "app_bundle_id",
-                "paths": [
-                    "*/p",
-                    "/*",
-                    "/",
-                    "*/cart",
-                    "/wishlist",
-                    "/login"
-                ]
-            }
-        ]
-    }
+      }
+    ]
+  }
 }
 ```
 

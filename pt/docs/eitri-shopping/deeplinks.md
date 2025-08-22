@@ -71,27 +71,17 @@ Na maioria dos casos você precisará abrir um ticket para seu sistema de e-comm
 **Exemplo do arquivo:**
 ```json
 {
-    "activitycontinuation": {
-        "apps": [
-            "app_bundle_id"
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "app_bundle_id",
+        "paths": [
+          "*"
         ]
-    },
-    "applinks": {
-        "apps": [],
-        "details": [
-            {
-                "appID": "app_bundle_id",
-                "paths": [
-                    "*/p",
-                    "/*",
-                    "/",
-                    "*/cart",
-                    "/wishlist",
-                    "/login"
-                ]
-            }
-        ]
-    }
+      }
+    ]
+  }
 }
 ```
 
