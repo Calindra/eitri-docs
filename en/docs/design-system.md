@@ -14,8 +14,6 @@ Eitri Luminus now includes [Tailwind 3](https://v3.tailwindcss.com/){:target="_b
 
 [:octicons-arrow-right-24: Eitri Luminus Documentation ( 2.x.x )](https://cdn.83io.com.br/library/luminus-ui/doc/2.3.6/){:target="_blank" .md-button .md-button--primary }
 
-
-
 > For documentation of previous versions [click here](https://cdn.83io.com.br/library/luminus-ui/doc/1.83.0/){:target="_blank"}
 
 
