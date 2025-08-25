@@ -12,9 +12,9 @@ O Eitri Luminus é a biblioteca de componentes básicos do Eitri para a montagem
 
 O Eitri Luminus agora conta com [Tailwind 3](https://v3.tailwindcss.com/){:target="_blank"} e [DaisyUI 4](https://v4.daisyui.com/){:target="_blank"}
 
-> Para documentação de versões anteriores [clique aqui](https://cdn.83io.com.br/library/luminus-ui/doc/1.83.0/){:target="_blank"}
-
 [:octicons-arrow-right-24: Eitri Luminus Documentation ( 2.x.x )](https://cdn.83io.com.br/library/luminus-ui/doc/2.3.6/){:target="_blank" .md-button .md-button--primary }
+
+> Para documentação de versões anteriores [clique aqui](https://cdn.83io.com.br/library/luminus-ui/doc/1.83.0/){:target="_blank"}
 
 ## Tema
 
