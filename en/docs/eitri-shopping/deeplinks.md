@@ -216,7 +216,7 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     `url` = prefix used for your app
     <br>
-    'inapp' (optional) = if used, it will open the URL inside internal app webview
+    `inapp` (optional) = if used, it will open the URL inside internal app webview
 
     > We recommend that you uri encode the URL content to ensure your special characters are correctly readed. Example: "https://www.mywebsite.com.br/male/shirts" should be passed as "https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts". To encode a content use a lib or website like [urlencoder.org](https://www.urlencoder.org/){:target="_blank"}
 
