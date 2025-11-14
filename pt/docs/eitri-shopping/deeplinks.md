@@ -223,7 +223,7 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     <br>
     `url` = endereço a ser aberto
     <br>
-    'inapp' *(optional)* = se utilizado, irá abrir a URL dentro da webview interna do app ao invés de chamar um browser externo
+    `inapp` *(optional)* = se utilizado, irá abrir a URL dentro da webview interna do app ao invés de chamar um browser externo
 
     > Recomandamos que você use encode uri na URL para garantir que caracteres especiais sejam lidos corretamente. Exemplo: "https://www.mywebsite.com.br/male/shirts" deve ser passado como "https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts". Para encodar conteúdos você pode utilizar uma biblioteca ou website como o [urlencoder.org](https://www.urlencoder.org/pt/){:target="_blank"}
 
