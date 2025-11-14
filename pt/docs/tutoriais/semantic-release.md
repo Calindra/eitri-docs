@@ -20,7 +20,7 @@ Essas convenções são seguidas pelo [Conventional Commits](https://www.convent
 
 ## Requisitos
 
-1. [**Configuração de CI/CD do Eitri**](/tutoriais/ci-cd)
+1. [**Configuração de CI/CD do Eitri**](ci-cd.md)
 2. [**Commits com Padrão de Conventional Commits**](https://www.conventionalcommits.org/){:target="\_blank"}
 
 ## Como executar

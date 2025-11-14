@@ -13,12 +13,12 @@ Essas funcionalidades tornam a codificação mais rápida e menos propensa a err
 
 ### Requisitos
 
-- [Eitri-Luminus](/eitri-luminus)
-- [Eitri-Bifrost](/eitri-bifrost)
+- [Eitri-Luminus](../design-system.md#eitri-luminus)
+- [Eitri-Bifrost](../eitri-bifrost.md)
 
 Será gerado automaticamente um arquivo `jsconfig.json`. Somente leitura, qualquer alteração feita manualmente nele não funcionará e será perdida a cada start.
 
-## [App Start](/tutoriais/eitri-app-start)
+## [App Start](eitri-app-start.md)
 
 ### Requisitos
 
