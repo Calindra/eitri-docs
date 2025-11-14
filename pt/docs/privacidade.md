@@ -35,9 +35,26 @@ This Privacy Notice for EITRI DESENVOLVIMENTO DE APLICATIVOS LTDA (doing busin
 
 Want to learn more about what we do with any information we collect? [Review the Privacy Notice in full](#toc).
 
-## 1. WHAT INFORMATION DO WE COLLECT?
+## Table of contents {#toc}
 
-### Personal information you disclose to us
+- [1. What information do we collect?](#infocollect)
+- [2. How do we process your information?](#infouse)
+- [3. What legal bases do we rely on to process your information?](#legalbases)
+- [4. When and with whom do we share your personal information?](#whoshare)
+- [5. Do we use cookies and other tracking technologies?](#cookies)
+- [6. How long do we keep your information?](#retention)
+- [7. How do we keep your information safe?](#infosafe)
+- [8. Do we collect information from minors?](#minors)
+- [9. What are your privacy rights?](#privacyrights)
+- [10. Controls for Do-Not-Track features](#dnt)
+- [11. Do United States residents have specific privacy rights?](#uslaws)
+- [12. Do we make updates to this notice?](#updates)
+- [13. How can you contact us about this notice?](#contact)
+- [14. How can you review, update, or delete the data we collect from you?](#reviewdata)
+
+## 1. WHAT INFORMATION DO WE COLLECT? {#infocollect}
+
+### Personal information you disclose to us {#personalinfo}
 
 ****_In Short:_** _We collect personal information that you provide to us._
 
@@ -79,7 +96,7 @@ The information we collect includes:
 
 
 
-## 2. HOW DO WE PROCESS YOUR INFORMATION?
+## 2. HOW DO WE PROCESS YOUR INFORMATION? {#infouse}
 
 ****_In Short:_** _We process your information to provide, improve, and administer our Services, communicate with you, for security and fraud prevention, and to comply with law. We may also process your information for other purposes with your consent._
 
@@ -91,7 +108,7 @@ The information we collect includes:
 - **To save or protect an individual's vital interest.** We may process your information when necessary to save or protect an individual’s vital interest, such as to prevent harm.
 
 
-## 3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION?
+## 3. WHAT LEGAL BASES DO WE RELY ON TO PROCESS YOUR INFORMATION? {#legalbases}
 
 **_**In Short:** We only process your personal information when we believe it is necessary and we have a valid legal reason (i.e., legal basis) to do so under applicable law, like with your consent, to comply with laws, to provide you with services to enter into or fulfill our contractual obligations, to protect your rights, or to fulfill our legitimate business interests._
 
@@ -137,7 +154,7 @@ In some exceptional cases, we may be legally permitted under applicable law to p
 
 - If the information is publicly available and is specified by the regulations
 
-## 4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION?
+## 4. WHEN AND WITH WHOM DO WE SHARE YOUR PERSONAL INFORMATION? {#whoshare}
 
 ****_In Short:_** _We may share information in specific situations described in this section and/or with the following third parties._
 
@@ -145,7 +162,7 @@ We may need to share your personal information in the following situations:
 
 - **Business Transfers.** We may share or transfer your information in connection with, or during negotiations of, any merger, sale of company assets, financing, or acquisition of all or a portion of our business to another company.
 
-## 5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES?
+## 5. DO WE USE COOKIES AND OTHER TRACKING TECHNOLOGIES? {#cookies}
 
 ****_In Short:_** _We may use cookies and other tracking technologies to collect and store your information._
 
@@ -169,7 +186,7 @@ Specific information about how we use such technologies and how you can refuse c
 
   
 
-## 6. HOW LONG DO WE KEEP YOUR INFORMATION?
+## 6. HOW LONG DO WE KEEP YOUR INFORMATION? {#retention}
 
 ****_In Short:_** _We keep your information for as long as necessary to fulfill the purposes outlined in this Privacy Notice unless otherwise required by law._
 
@@ -183,7 +200,7 @@ When we have no ongoing legitimate business need to process your personal inform
 
   
 
-## 7. HOW DO WE KEEP YOUR INFORMATION SAFE?
+## 7. HOW DO WE KEEP YOUR INFORMATION SAFE? {#infosafe}
 
 ****_In Short:_** _We aim to protect your personal information through a system of organizational and technical security measures._
 
@@ -193,7 +210,7 @@ We have implemented appropriate and reasonable technical and organizational se
 
   
 
-## 8. DO WE COLLECT INFORMATION FROM MINORS?
+## 8. DO WE COLLECT INFORMATION FROM MINORS? {#minors}
 
 ****_In Short:_** _We do not knowingly collect data from or market to children under 18 years of age._
 
@@ -203,7 +220,7 @@ We do not knowingly collect, solicit data from, or market to children under 18 y
 
   
 
-## 9. WHAT ARE YOUR PRIVACY RIGHTS?
+## 9. WHAT ARE YOUR PRIVACY RIGHTS? {#privacyrights}
 
 ****_In Short:_** _Depending on your state of residence in the US or in some regions, such as the European Economic Area (EEA), United Kingdom (UK), Switzerland, and Canada, you have rights that allow you greater access to and control over your personal information. You may review, change, or terminate your account at any time, depending on your country, province, or state of residence._
 
@@ -223,7 +240,9 @@ If you are located in Switzerland, you may contact the [Federal Data Protection
 
   
 
-**Withdrawing your consent:** If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS NOTICE?](#contact)" below.
+### Withdrawing your consent {#withdrawconsent}
+
+If we are relying on your consent to process your personal information, which may be express and/or implied consent depending on the applicable law, you have the right to withdraw your consent at any time. You can withdraw your consent at any time by contacting us by using the contact details provided in the section "[HOW CAN YOU CONTACT US ABOUT THIS NOTICE?](#contact)" below.
 
   
 
@@ -235,7 +254,7 @@ If you have questions or comments about your privacy rights, you may email us at
 
   
 
-## 10. CONTROLS FOR DO-NOT-TRACK FEATURES
+## 10. CONTROLS FOR DO-NOT-TRACK FEATURES {#dnt}
 
 **Most web browsers and some mobile operating systems and mobile applications include a Do-Not-Track ("DNT") feature or setting you can activate to signal your privacy preference not to have data about your online browsing activities monitored and collected. At this stage, no uniform technology standard for recognizing and implementing DNT signals has been finalized. As such, we do not currently respond to DNT browser signals or any other mechanism that automatically communicates your choice not to be tracked online. If a standard for online tracking is adopted that we must follow in the future, we will inform you about that practice in a revised version of this Privacy Notice.
 
@@ -245,7 +264,7 @@ California law requires us to let you know how we respond to web browser DNT sig
 
   
 
-## 11. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS?
+## 11. DO UNITED STATES RESIDENTS HAVE SPECIFIC PRIVACY RIGHTS? {#uslaws}
 
 ****_In Short:_** _If you are a resident of California, Colorado, Connecticut, Delaware, Florida, Indiana, Iowa, Kentucky, Minnesota, Montana, Nebraska, New Hampshire, New Jersey, Oregon, Tennessee, Texas, Utah, or Virginia, you may have the right to request access to and receive details about the personal information we maintain about you and how we have processed it, correct inaccuracies, get a copy of, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. More information is provided below._**
 
@@ -369,7 +388,7 @@ If you submit the request through an authorized agent, we may need to collect 
 
   
 
-## 12. DO WE MAKE UPDATES TO THIS NOTICE?
+## 12. DO WE MAKE UPDATES TO THIS NOTICE? {#updates}
 
 **_**In Short:** Yes, we will update this notice as necessary to stay compliant with relevant laws._
 
@@ -379,7 +398,7 @@ We may update this Privacy Notice from time to time. The updated version will be
 
   
 
-## 13. HOW CAN YOU CONTACT US ABOUT THIS NOTICE?
+## 13. HOW CAN YOU CONTACT US ABOUT THIS NOTICE? {#contact}
 
 **If you have questions or comments about this notice, you may email us at contato@eitri.tech or contact us by post at:
 
@@ -396,6 +415,6 @@ Rio de Janeiro, Rio de Janeiro 22290-160
 Brazil
 
   
-## 14. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU?
+## 14. HOW CAN YOU REVIEW, UPDATE, OR DELETE THE DATA WE COLLECT FROM YOU? {#reviewdata}
 
 **Based on the applicable laws of your country or state of residence in the US, you may have the right to request access to the personal information we collect from you, details about how we have processed it, correct inaccuracies, or delete your personal information. You may also have the right to withdraw your consent to our processing of your personal information. These rights may be limited in some circumstances by applicable law. To request to review, update, or delete your personal information, please visit: [https://www.eitri.tech](https://www.eitri.tech).
