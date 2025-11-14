@@ -117,7 +117,7 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     ### Abrir Busca
 
-    `prefixo`://search/`termo_buscado`**?**filter=`filtros`**&**order=`order`
+    `prefixo`://search/`termo_buscado`**?**filter=`filtros`**&**order=`ordenação`
 
     **Onde:**
 
@@ -125,9 +125,9 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     <br>
     `termo_buscado` = termo(s) que será buscado(s)
     <br>
-    `filter` *(opcional)* = filtros para considerar na exibição da vitrine
+    `filtros` *(opcional)* = filtros para considerar na exibição da vitrine
     <br>
-    `order` *(opcional)* = ordem para exibição dos itens
+    `ordenação` *(opcional)* = ordem para exibição dos itens
 
     **Opções de ordenação:**
 
