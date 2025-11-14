@@ -271,8 +271,8 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     **Exemplos:**
     ```
-    myapp://collection?filter=55678&O=OrderByPriceASC
-    myapp://collection?filter=55739&O=OrderByBestDiscountDESC
+    myapp://collection?filter=55678&order=OrderByPriceASC
+    myapp://collection?filter=55739&order=OrderByBestDiscountDESC
     ```
 
 

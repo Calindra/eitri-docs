@@ -263,8 +263,8 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     **Examples:**
     ```
-    myapp://collection?filter=55678&O=OrderByPriceASC
-    myapp://collection?filter=55739&O=OrderByBestDiscountDESC
+    myapp://collection?filter=55678&order=OrderByPriceASC
+    myapp://collection?filter=55739&order=OrderByBestDiscountDESC
     ```
 
 ## App Link (Android) / Universal Link (iOS)
