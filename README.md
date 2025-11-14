@@ -28,7 +28,7 @@ Para rodar o projeto você precisará:
 
 `pip install mkdocs-material mkdocs-exclude-search mkdocs-glightbox mkdocs-awesome-pages-plugin mkdocs-with-pdf mkdocs-redirects`
 
-5. Rodar o projeto
+5. Entrar na pasta "*pt*" ou "*en*" e rodar o projeto
 
 `mkdocs serve`
 
