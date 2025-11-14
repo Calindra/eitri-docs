@@ -18,4 +18,4 @@ You can also customize Eitri Shopping’s default deeplinks to change how your a
 To know more about sending push-notifications using [Firebase Documentation](https://firebase.google.com/docs/cloud-messaging/android/send-with-console){:target="_blank"}
 
 ## Push-notification na Insider
-Use “URL Scheme” deeplinks to configure and send push notifications via Insider, providing the full deeplink you want to open as explained in [our deeplinks documentation](deeplinks.md)
+Use `URL Scheme` deeplinks to configure and send push notifications via Insider, providing the full deeplink you want to open as explained in [our deeplinks documentation](deeplinks.md)

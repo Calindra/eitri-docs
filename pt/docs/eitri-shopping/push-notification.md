@@ -16,4 +16,4 @@ Tambem é possível personalizar os deeplinks padrão do Eitri Shopping para mod
 Para saber mais sobre como disparar push-notifications confira a [Documentação do Firebase](https://firebase.google.com/docs/cloud-messaging/android/send-with-console){:target="_blank"}
 
 ## Push-notification na Insider
-Para fazer a configuração e disparo de push-notification via insider, utilize deeplinks do tipo "URL Scheme" e forneça o deeplink completo que deseja abrir conforme [nossa documentação de deeplinks](deeplinks.md)
+Para fazer a configuração e disparo de push-notification via insider, utilize deeplinks do tipo `URL Scheme` e forneça o deeplink completo que deseja abrir conforme [nossa documentação de deeplinks](deeplinks.md)
