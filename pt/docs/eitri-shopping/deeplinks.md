@@ -28,6 +28,254 @@ Deeplinks tradicionais utilizam um protocolo específico para abrir o app no dis
 **Exemplo:**
 `myapp://category/female/jeans`
 
+
+### Estrutura
+
+A estrutura dos deeplinks pode variar de acordo com a finalidade, mas de maneira geral ela contem 3 partes:
+
+`prefixo`://`ação`?`params`
+
+
+### Ações globais suportadas
+
+Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
+
+??? note "Abrir Produto"
+
+    ### Abrir Produto
+
+    `prefixo`://product/id/`product_id`
+    <br>or<br>
+    `prefixo`://product/slug/`product_slug`
+
+
+    Onde:
+
+    `prefixo` = prefixo utilizado pelo seu app
+    <br>
+    `product_id` = id do produto à ser aberto (você deve usar o id do produto e não sku ou variação)
+    <br>
+    `product_slug` = slug do produto à ser aberto (você pode obter na url de seu site)
+
+    > VTEX: A URL das páginas de produto em sites Vtex normalmente terminam com "/p". Você precisa remove-lo pois ele não faz parte do slug.
+
+    **Exemplos:**
+    ```
+    myapp://product/id/348764
+    myapp://product/slug/altra-lone-peak-9-trail-running-shoe-mens-10595101
+    ```
+
+
+??? note "Abrir Vitrine (PLP) (Categorias Vtex / Hotsites Wake)"
+
+    ### Abrir Vitrine (PLP)
+
+    `prefixo`://category/`caminho_da_categoria`**?**filter=`filtros`**&**order=`ordenação`
+
+    **Onde:**
+
+    `prefixo` = prefixo utilizado pelo seu app
+    <br>
+    `caminho_da_categoria` = caminho completo para a categirua (exemplo: female/jeans)
+    <br>
+    `filtros` *(opcional)* = filtros para considerar na exibição da vitrine
+    <br>
+    `ordenação` *(opcional)* = ordem para exibição dos itens
+
+    **Opções de ordenação:**
+
+    OrderByPriceDESC:  Preço mais ALTO primeiro
+    <br>
+    OrderByPriceASC:  Preço mais BAIXO primeiro
+    <br>
+    OrderByTopSaleDESC:  Mais vendidos primeiro
+    <br>
+    OrderByReviewRateDESC:  Melhores avaliações primeiro
+    <br>
+    OrderByNameDESC:  Ordem alfabética de Z-A
+    <br>
+    OrderByNameASC:  Ordem alfabética de A-Z
+    <br>
+    OrderByReleaseDateDESC:  Mais recentes primeiro
+    <br>
+    OrderByBestDiscountDESC:  Melhores descontos primeiro
+    <br>
+    OrderByScoreDESC: Melhor pontuação primeiro
+
+    > ATENÇÃO: Recomendamos que você faça um uri encode nos filtros para garantir que os caracteres especiais e espaços serão lidos corretamente. Exemplo: "{"cor": "preta"}" deve ser enviado como "%7B%22cor%22%3A%20%22preta%22%7D". Para encodar conteúdos você pode utilizar uma biblioteca ou website como o [urlencoder.org](https://www.urlencoder.org/pt/){:target="_blank"}
+
+    **Exemplos:**
+    ```
+    myapp://category/male
+    myapp://category/female/jeans
+    myapp://category/kids/clothes/pants?filters=%7B%22cor%22%3A%20%22preta%22%7D&order=OrderByNameASC
+    ```
+
+
+
+??? note "Abrir Busca"
+
+    ### Abrir Busca
+
+    `prefixo`://search/`termo_buscado`**?**filter=`filtros`**&**order=`ordenação`
+
+    **Onde:**
+
+    `prefixo` = prefixo utilizado pelo seu app
+    <br>
+    `termo_buscado` = termo(s) que será buscado(s)
+    <br>
+    `filtros` *(opcional)* = filtros para considerar na exibição da vitrine
+    <br>
+    `ordenação` *(opcional)* = ordem para exibição dos itens
+
+    **Opções de ordenação:**
+
+    OrderByPriceDESC:  Preço mais ALTO primeiro
+    <br>
+    OrderByPriceASC:  Preço mais BAIXO primeiro
+    <br>
+    OrderByTopSaleDESC:  Mais vendidos primeiro
+    <br>
+    OrderByReviewRateDESC:  Melhores avaliações primeiro
+    <br>
+    OrderByNameDESC:  Ordem alfabética de Z-A
+    <br>
+    OrderByNameASC:  Ordem alfabética de A-Z
+    <br>
+    OrderByReleaseDateDESC:  Mais recentes primeiro
+    <br>
+    OrderByBestDiscountDESC:  Melhores descontos primeiro
+    <br>
+    OrderByScoreDESC: Melhor pontuação primeiro
+
+    > ATENÇÃO: Recomendamos que você faça um uri encode nos termos buscados e nos filtros para garantir que os caracteres especiais e espaços serão lidos corretamente. Exemplo: "jeans masculino" deve ser enviado como "jeans%20masculino". Para encodar conteúdos você pode utilizar uma biblioteca ou website como o [urlencoder.org](https://www.urlencoder.org/pt/){:target="_blank"}
+
+    **Exemplos:**
+    ```
+    myapp://search/shirts
+    myapp://search/leather%20jackets
+    myapp://search/kids%eletronic%20toys?filter=%7B%22age%22%3A%20%2210-12%22%7D&order=OrderByReleaseDateDESC
+    ```
+
+
+
+??? note "Abrir Carrinho"
+
+    ### Abrir Carrinho
+
+    `prefixo`://cart/`cart_id`
+
+    **Onde:**
+
+    `prefixo` = prefixo utilizado pelo seu app
+    <br>
+    `cart_id` *(opcional)* = id de um carrinho específico. Quando utilizado, carrega um carrinho específico ao invés do carrinho atual do usuário.
+
+    > ATENÇÃO: Ao usar um cart_id o carrinho atual do usuário poderá ser substituido pelo carrinho que será aberto **SOBRESCREVENDO** os itens anteriores.
+
+    **Exemplos:**
+    ```
+    myapp://cart
+    myapp://cart/364265434904
+    ```
+
+
+??? note "Abrir Perfil"
+
+    ### Abrir Perfil
+    
+    `prefixo`://account
+
+    **Onde:**
+
+    `prefixo` = prefixo utilizado pelo seu app
+
+    **Exemplos:**
+    ```
+    myapp://account
+    ```
+
+??? note "Abrir Home"
+
+    ### Abrir Home
+
+    `prefixo`://home
+
+    **Onde:**
+
+    `prefixo` = prefixo utilizado pelo seu app
+
+    **Exemplos:**
+    ```
+    myapp://home
+    ```
+
+??? note "Abrir Browser/URL"
+
+    ### Abrir Browser/URL
+
+    `prefixo`://webview/inapp/`url`
+
+    **Onde:**
+
+    `prefixo` = prefixo utilizado pelo seu app
+    <br>
+    `url` = endereço a ser aberto
+    <br>
+    'inapp' *(optional)* = se utilizado, irá abrir a URL dentro da webview interna do app ao invés de chamar um browser externo
+
+    > Recomandamos que você use encode uri na URL para garantir que caracteres especiais sejam lidos corretamente. Exemplo: "https://www.mywebsite.com.br/male/shirts" deve ser passado como "https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts". Para encodar conteúdos você pode utilizar uma biblioteca ou website como o [urlencoder.org](https://www.urlencoder.org/pt/){:target="_blank"}
+
+    **Exemplos:**
+    ```
+    myapp://webview/https%3A%2F%2Fwww.mywebsite.com.br%2terms
+    myapp://webview/inapp/https%3A%2F%2Fwww.mywebsite.com.br%2privacy
+    ```
+
+### Ações exclusivas Vtex
+
+??? note "Abrir Coleção"
+
+    ### Abrir Coleção
+
+    `prefixo`://collection**?**filter=`collection_id`**&**O=`order`
+
+    **Onde:**
+
+    `prefixo` = prefixo utilizado pelo seu app
+    <br>
+    `collection_id` = id numérico da coleção
+    <br>
+    `order` = ordem para exibição dos itens
+
+    **Order options:**
+
+    OrderByPriceDESC:  Preço mais alto primeiro
+    <br>
+    OrderByPriceASC:  Menor preço primeiro
+    <br>
+    OrderByTopSaleDESC:  Mais vendidos primeiro
+    <br>
+    OrderByReviewRateDESC:  Melhores avaliações primeiro
+    <br>
+    OrderByNameDESC:  Ordem alfabética de Z-A
+    <br>
+    OrderByNameASC:  Ordem alfabética de A-Z
+    <br>
+    OrderByReleaseDateDESC:  Mais recentes primeiro
+    <br>
+    OrderByBestDiscountDESC:  Melhores descontos primeiro
+    <br>
+    OrderByScoreDESC: Melhor pontuação primeiro
+
+    **Exemplos:**
+    ```
+    myapp://collection?filter=55678&O=OrderByPriceASC
+    myapp://collection?filter=55739&O=OrderByBestDiscountDESC
+    ```
+
+
 ## App Link (Android) / Universal Link (iOS)
 
 Precisam de uma configuração específica no seu website para ser vinculado ao seu domínio. Uma vez configurado, usuários que tem o aplicativo instalado no dispositivo serão redirecionados do website diretamente para o app na respectiva página.
@@ -95,171 +343,4 @@ Na maioria dos casos você precisará abrir um ticket para seu sistema de e-comm
 
 > Exemplo: "*/p" direciona todas as urls que terminem com "/p" para o app pois em geral são links de páginas de produto.
 
-
-## Estrutura
-
-A estrutura dos deeplinks pode variar de acordo com a finalidade, mas de maneira geral ela contem 3 partes:
-
-`prefixo`://`ação`/`params`
-
-
-## Ações suportadas
-
-Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
-
-??? note "Abrir Produto"
-
-    ### Abrir Produto
-
-    `prefixo`://product/id/`product_id`
-    <br>or<br>
-    `prefixo`://product/slug/`product_slug`
-
-
-    Onde:
-
-    `prefixo` = prefixo utilizado pelo seu app
-    <br>
-    `product_id` = id do produto à ser aberto (você deve usar o id do produto e não do sku)
-    <br>
-    `product_slug` = slug do produto à ser aberto (você pode obter do seu site vtex)
-
-    > A URL das páginas de produto em sites Vtex normalmente terminam com "/p". Você precisa remove-lo pois ele não faz parte do slug.
-
-    **Exemplos:**
-    ```
-    myapp://product/id/348764
-    myapp://product/slug/altra-lone-peak-9-trail-running-shoe-mens-10595101
-    ```
-
-
-??? note "Abrir Categoria"
-
-    ### Abrir Categoria
-
-    `prefixo`://category/`caminho_da_categoria`
-
-    **Onde:**
-
-    `prefixo` = prefixo utilizado pelo seu app
-    <br>
-    `caminho_da_categoria` = caminho completo para a categirua (exemplo: female/jeans)
-
-    **Exemplos:**
-    ```
-    myapp://category/male
-    myapp://category/female/jeans
-    myapp://category/kids/clothes/pants
-    ```
-
-??? note "Abrir Busca"
-
-    ### Abrir Busca
-
-    `prefixo`://search/`termo_buscado`
-
-    **Onde:**
-
-    `prefixo` = prefixo utilizado pelo seu app
-    <br>
-    `termo_buscado` = termo(s) que será buscado(s)
-
-    > Recomendamos que você faça um uri encode no conteúdo da busca para garantir que os caracteres especiais e espaços serão lidos corretamente. Exemplo: "jeans masculino" deve ser enviado como "jeans%20masculino".
-
-    **Exemplos:**
-    ```
-    myapp://search/shirts
-    myapp://search/leather%20jackets
-    myapp://search/kids%eletronic%20toys
-    ```
-
-
-??? note "Abrir Coleção"
-
-    ### Abrir Coleção
-
-    `prefixo`://collection**?**filter=`collection_id`**&**O=`order`
-
-    **Onde:**
-
-    `prefixo` = prefixo utilizado pelo seu app
-    <br>
-    `collection_id` = id numérico da coleção
-    <br>
-    `order` = ordem para exibição dos itens
-
-    **Order options:**
-
-    OrderByPriceDESC:  Preço mais alto primeiro
-    <br>
-    OrderByPriceASC:  Menor preço primeiro
-    <br>
-    OrderByTopSaleDESC:  Mais vendidos primeiro
-    <br>
-    OrderByReviewRateDESC:  Melhores avaliações primeiro
-    <br>
-    OrderByNameDESC:  Z-A
-    <br>
-    OrderByNameASC:  A-Z
-    <br>
-    OrderByReleaseDateDESC:  Mais recentes primeiro
-    <br>
-    OrderByBestDiscountDESC:  Melhores descontos primeiro
-    <br>
-    OrderByScoreDESC: Melhor pontuação primeiro
-
-    **Exemplos:**
-    ```
-    myapp://collection?filter=55678&O=OrderByPriceASC
-    myapp://collection?filter=55739&O=OrderByBestDiscountDESC
-    ```
-
-<!--
-??? note "Abrir Marca"
-
-    ### Abrir Marca
-
-    Marca
-
-
-??? note "Abrir Carrinho"
-
-    ### Abrir Carrinho
-
-    Carrinho
-
-
-??? note "Abrir Perfil"
-
-    ### Abrir Perfil
-    
-    Perfil
-
-??? note "Abrir Home"
-
-    ### Abrir Home
-
-    Home
-
--->
-
-
-??? note "Abrir Browser/URL"
-
-    ### Abrir Browser/URL
-
-    `prefixo`://webview/inapp/`url`
-
-    **Onde:**
-
-    `url` = prefixo utilizado pelo seu app
-    <br>
-    'inapp' (optional) = se utilizado, irá abrir a URL dentro da webview interna do app
-
-    > Recomandamos que você use encode uri na URL para garantir que caracteres especiais sejam lidos corretamente. Exemplo: "https://www.mywebsite.com.br/male/shirts" deve ser passado como "https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts".
-
-    **Exemplos:**
-    ```
-    myapp://webview/https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts
-    ```
 
