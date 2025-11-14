@@ -239,7 +239,7 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     <br>
     `collection_id` = numeric id to collection
     <br>
-    `order` = order used to show items from collection
+    `order` *(optional)* = order used to show items from collection
 
     **Order options:**
 

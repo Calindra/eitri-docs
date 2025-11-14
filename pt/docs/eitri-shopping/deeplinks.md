@@ -239,17 +239,17 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     ### Abrir Coleção
 
-    `prefixo`://collection**?**filter=`collection_id`**&**O=`order`
+    `prefixo`://collection**?**filter=`id_da_coleção`**&**order=`ordenação`
 
     **Onde:**
 
     `prefixo` = prefixo utilizado pelo seu app
     <br>
-    `collection_id` = id numérico da coleção
+    `id_da_coleção` = id numérico da coleção
     <br>
-    `order` = ordem para exibição dos itens
+    `ordenação` *(opcional)* = ordem para exibição dos itens
 
-    **Order options:**
+    **Opções de ordenação:**
 
     OrderByPriceDESC:  Preço mais alto primeiro
     <br>
