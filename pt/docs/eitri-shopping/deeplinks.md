@@ -66,11 +66,11 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     ```
 
 
-??? note "Abrir Vitrine (Categorias Vtex / Hotsites Wake)"
+??? note "Abrir Vitrine (PLP) (Categorias Vtex / Hotsites Wake)"
 
-    ### Abrir Vitrine
+    ### Abrir Vitrine (PLP)
 
-    `prefixo`://category/`caminho_da_categoria`**?**filter=`filtros`**&**order=`order`
+    `prefixo`://category/`caminho_da_categoria`**?**filter=`filtros`**&**order=`ordenação`
 
     **Onde:**
 
@@ -78,9 +78,9 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     <br>
     `caminho_da_categoria` = caminho completo para a categirua (exemplo: female/jeans)
     <br>
-    `filter` *(opcional)* = filtros para considerar na exibição da vitrine
+    `filtros` *(opcional)* = filtros para considerar na exibição da vitrine
     <br>
-    `order` *(opcional)* = ordem para exibição dos itens
+    `ordenação` *(opcional)* = ordem para exibição dos itens
 
     **Opções de ordenação:**
 
