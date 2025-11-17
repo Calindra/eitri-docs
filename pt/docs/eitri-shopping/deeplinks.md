@@ -84,25 +84,27 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     **Opções de ordenação:**
 
-    OrderByPriceDESC:  Preço mais ALTO primeiro
+    **OrderByPriceDESC:** **Preço mais ALTO primeiro**
     <br>
-    OrderByPriceASC:  Preço mais BAIXO primeiro
+    **OrderByPriceASC:** **Preço mais BAIXO primeiro**
     <br>
-    OrderByTopSaleDESC:  Mais vendidos primeiro
+    **OrderByTopSaleDESC:** **Mais vendidos primeiro**
     <br>
-    OrderByReviewRateDESC:  Melhores avaliações primeiro
+    **OrderByReviewRateDESC:** **Melhores avaliações primeiro**
     <br>
-    OrderByNameDESC:  Ordem alfabética de Z-A
+    **OrderByNameDESC:** **Ordem alfabética de Z-A**
     <br>
-    OrderByNameASC:  Ordem alfabética de A-Z
+    **OrderByNameASC:** **Ordem alfabética de A-Z**
     <br>
-    OrderByReleaseDateDESC:  Mais recentes primeiro
+    **OrderByReleaseDateDESC:** **Mais recentes primeiro**
     <br>
-    OrderByBestDiscountDESC:  Melhores descontos primeiro
+    **OrderByBestDiscountDESC:** **Melhores descontos primeiro**
     <br>
-    OrderByScoreDESC: Melhor pontuação primeiro
+    **OrderByScoreDESC:** **Melhor pontuação primeiro**
 
     > ATENÇÃO: Recomendamos que você faça um uri encode nos filtros para garantir que os caracteres especiais e espaços serão lidos corretamente. Exemplo: "{"cor": "preta"}" deve ser enviado como "%7B%22cor%22%3A%20%22preta%22%7D". Para encodar conteúdos você pode utilizar uma biblioteca ou website como o [urlencoder.org](https://www.urlencoder.org/pt/){:target="_blank"}
+
+   > INFO: Em apps usando Wake Commerce você pode copiar e colar os filtros de seu website. Examplo: `prefix://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
 
     **Exemplos:**
     ```
@@ -131,25 +133,27 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     **Opções de ordenação:**
 
-    OrderByPriceDESC:  Preço mais ALTO primeiro
+    **OrderByPriceDESC:** **Preço mais ALTO primeiro**
     <br>
-    OrderByPriceASC:  Preço mais BAIXO primeiro
+    **OrderByPriceASC:** **Preço mais BAIXO primeiro**
     <br>
-    OrderByTopSaleDESC:  Mais vendidos primeiro
+    **OrderByTopSaleDESC:** **Mais vendidos primeiro**
     <br>
-    OrderByReviewRateDESC:  Melhores avaliações primeiro
+    **OrderByReviewRateDESC:** **Melhores avaliações primeiro**
     <br>
-    OrderByNameDESC:  Ordem alfabética de Z-A
+    **OrderByNameDESC:** **Ordem alfabética de Z-A**
     <br>
-    OrderByNameASC:  Ordem alfabética de A-Z
+    **OrderByNameASC:** **Ordem alfabética de A-Z**
     <br>
-    OrderByReleaseDateDESC:  Mais recentes primeiro
+    **OrderByReleaseDateDESC:** **Mais recentes primeiro**
     <br>
-    OrderByBestDiscountDESC:  Melhores descontos primeiro
+    **OrderByBestDiscountDESC:** **Melhores descontos primeiro**
     <br>
-    OrderByScoreDESC: Melhor pontuação primeiro
+    **OrderByScoreDESC:** **Melhor pontuação primeiro**
 
     > ATENÇÃO: Recomendamos que você faça um uri encode nos termos buscados e nos filtros para garantir que os caracteres especiais e espaços serão lidos corretamente. Exemplo: "jeans masculino" deve ser enviado como "jeans%20masculino". Para encodar conteúdos você pode utilizar uma biblioteca ou website como o [urlencoder.org](https://www.urlencoder.org/pt/){:target="_blank"}
+
+    > INFO: Em apps usando Wake Commerce você pode copiar e colar os filtros de seu website. Examplo: `prefix://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
 
     **Exemplos:**
     ```
@@ -233,13 +237,28 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     myapp://webview/inapp/https%3A%2F%2Fwww.mywebsite.com.br%2privacy
     ```
 
+??? note "Abrir Favoritos"
+
+    ### Open Favoritos
+
+    `prefix`://wishlist
+
+    **Where:**
+
+    `prefixo` = prefixo utilizado pelo seu app
+
+    **Examplos:**
+    ```
+    myapp://wishlist
+    ```
+
 ### Ações exclusivas Vtex
 
 ??? note "Abrir Coleção"
 
     ### Abrir Coleção
 
-    `prefixo`://collection**?**filter=`id_da_coleção`**&**order=`ordenação`
+    `prefixo`://collection**?**filters=`id_da_coleção`**&**order=`ordenação`
 
     **Onde:**
 
@@ -251,23 +270,23 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     **Opções de ordenação:**
 
-    OrderByPriceDESC:  Preço mais alto primeiro
+    **OrderByPriceDESC:** **Preço mais alto primeiro**
     <br>
-    OrderByPriceASC:  Menor preço primeiro
+    **OrderByPriceASC:** **Menor preço primeiro**
     <br>
-    OrderByTopSaleDESC:  Mais vendidos primeiro
+    **OrderByTopSaleDESC:** **Mais vendidos primeiro**
     <br>
-    OrderByReviewRateDESC:  Melhores avaliações primeiro
+    **OrderByReviewRateDESC:** **Melhores avaliações primeiro**
     <br>
-    OrderByNameDESC:  Ordem alfabética de Z-A
+    **OrderByNameDESC:** **Ordem alfabética de Z-A**
     <br>
-    OrderByNameASC:  Ordem alfabética de A-Z
+    **OrderByNameASC:** **Ordem alfabética de A-Z**
     <br>
-    OrderByReleaseDateDESC:  Mais recentes primeiro
+    **OrderByReleaseDateDESC:** **Mais recentes primeiro**
     <br>
-    OrderByBestDiscountDESC:  Melhores descontos primeiro
+    **OrderByBestDiscountDESC:** **Melhores descontos primeiro**
     <br>
-    OrderByScoreDESC: Melhor pontuação primeiro
+    **OrderByScoreDESC:** **Melhor pontuação primeiro**
 
     **Exemplos:**
     ```
@@ -342,5 +361,4 @@ Na maioria dos casos você precisará abrir um ticket para seu sistema de e-comm
 `paths` são os padrões de url que você deseja redirecionar para o app
 
 > Exemplo: "*/p" direciona todas as urls que terminem com "/p" para o app pois em geral são links de páginas de produto.
-
 

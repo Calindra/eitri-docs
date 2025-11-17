@@ -83,31 +83,34 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     **Order options:**
 
-    OrderByPriceDESC:  Higher price first
+    **OrderByPriceDESC:**  Higher price first
     <br>
-    OrderByPriceASC:  Lower price first
+    **OrderByPriceASC:**  Lower price first
     <br>
-    OrderByTopSaleDESC:  Top sales first
+    **OrderByTopSaleDESC:**  Top sales first
     <br>
-    OrderByReviewRateDESC:  Better reviews first
+    **OrderByReviewRateDESC:**  Better reviews first
     <br>
-    OrderByNameDESC:  Alphabetical from Z-A
+    **OrderByNameDESC:**  Alphabetical from Z-A
     <br>
-    OrderByNameASC:  Alphabetical from A-Z
+    **OrderByNameASC:**  Alphabetical from A-Z
     <br>
-    OrderByReleaseDateDESC:  Release date first
+    **OrderByReleaseDateDESC:**  Release date first
     <br>
-    OrderByBestDiscountDESC:  Better discount first
+    **OrderByBestDiscountDESC:**  Better discount first
     <br>
-    OrderByScoreDESC: Better score first
+    **OrderByScoreDESC:** Better score first
 
     > WARNING: We recommend that you encode filters to ensure that special characters will be recognized correctly. Example: "{"color": "black"}" should be sent as "%7B%22color%22%3A%20%22black%22%7D". To encode a content use a lib or website like [urlencoder.org](https://www.urlencoder.org/){:target="_blank"}
+
+   > INFO: In apps using Wake Commerce system you can just copy-paste the filters from your website. Example: `prefix://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
 
     **Examples:**
     ```
     myapp://category/male
     myapp://category/female/jeans
     myapp://category/kids/clothes/pants?filters=%7B%22cor%22%3A%20%22preta%22%7D&order=OrderByNameASC
+    myapp://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P    (Wake Commerce)
     ```
 
 ??? note "Open Search"
@@ -128,31 +131,34 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     **Order options:**
 
-    OrderByPriceDESC:  Higher price first
+    **OrderByPriceDESC:**  Higher price first
     <br>
-    OrderByPriceASC:  Lower price first
+    **OrderByPriceASC:**  Lower price first
     <br>
-    OrderByTopSaleDESC:  Top sales first
+    **OrderByTopSaleDESC:**  Top sales first
     <br>
-    OrderByReviewRateDESC:  Better reviews first
+    **OrderByReviewRateDESC:**  Better reviews first
     <br>
-    OrderByNameDESC:  Alphabetical from Z-A
+    **OrderByNameDESC:**  Alphabetical from Z-A
     <br>
-    OrderByNameASC:  Alphabetical from A-Z
+    **OrderByNameASC:**  Alphabetical from A-Z
     <br>
-    OrderByReleaseDateDESC:  Release date first
+    **OrderByReleaseDateDESC:**  Release date first
     <br>
-    OrderByBestDiscountDESC:  Better discount first
+    **OrderByBestDiscountDESC:**  Better discount first
     <br>
-    OrderByScoreDESC: Better score first
+    **OrderByScoreDESC:** Better score first
 
     > WARNING: We recommend that you encode search terms and filters to ensure that special characters will be recognized correctly. Example: "female tshirts" should be sent as "female%20tshirts". To encode a content use a lib or website like [urlencoder.org](https://www.urlencoder.org/){:target="_blank"}
+
+    > INFO: In apps using Wake Commerce system you can just copy-paste the filters from your website. Example: `prefix://search/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
 
     **Examples:**
     ```
     myapp://search/shirts
     myapp://search/leather%20jackets
     myapp://search/kids%eletronic%20toys?filter=%7B%22age%22%3A%20%2210-12%22%7D&order=OrderByReleaseDateDESC
+    myapp://search/blusas?filtro=FiltroCor__PRETO&filtro=Tamanho__M
     ```
 
 ??? note "Open cart"
@@ -214,7 +220,9 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     **Where:**
 
-    `url` = prefix used for your app
+    `prefix` = prefix used for your app
+    <br>
+    `url` = url address to open
     <br>
     `inapp` (optional) = if used, it will open the URL inside internal app webview
 
@@ -224,6 +232,21 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     ```
     myapp://webview/https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts
     ```
+    
+??? note "Open Wishlist"
+
+    ### Open Wishlist
+
+    `prefix`://wishlist
+
+    **Where:**
+
+    `prefix` = prefix used for your app
+
+    **Examples:**
+    ```
+    myapp://wishlist
+    ```
 
 ### Exclusive Vtex actions
 
@@ -231,7 +254,7 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     ### Open Collection
 
-    `prefix`://collection**?**filter=`collection_id`**&**O=`order`
+    `prefix`://collection**?**filters=`collection_id`**&**O=`order`
 
     **Where:**
 
@@ -243,23 +266,23 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     **Order options:**
 
-    OrderByPriceDESC:  Higher price first
+    **OrderByPriceDESC:**  Higher price first
     <br>
-    OrderByPriceASC:  Lower price first
+    **OrderByPriceASC:**  Lower price first
     <br>
-    OrderByTopSaleDESC:  Top sales first
+    **OrderByTopSaleDESC:**  Top sales first
     <br>
-    OrderByReviewRateDESC:  Better reviews first
+    **OrderByReviewRateDESC:**  Better reviews first
     <br>
-    OrderByNameDESC:  Alphabetical from Z-A
+    **OrderByNameDESC:**  Alphabetical from Z-A
     <br>
-    OrderByNameASC:  Alphabetical from A-Z
+    **OrderByNameASC:**  Alphabetical from A-Z
     <br>
-    OrderByReleaseDateDESC:  Release date first
+    **OrderByReleaseDateDESC:**  Release date first
     <br>
-    OrderByBestDiscountDESC:  Better discount first
+    **OrderByBestDiscountDESC:**  Better discount first
     <br>
-    OrderByScoreDESC: Better score first
+    **OrderByScoreDESC:** Better score first
 
     **Examples:**
     ```
