@@ -104,7 +104,7 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     > ATENÇÃO: Recomendamos que você faça um uri encode nos filtros para garantir que os caracteres especiais e espaços serão lidos corretamente. Exemplo: "{"cor": "preta"}" deve ser enviado como "%7B%22cor%22%3A%20%22preta%22%7D". Para encodar conteúdos você pode utilizar uma biblioteca ou website como o [urlencoder.org](https://www.urlencoder.org/pt/){:target="_blank"}
 
-   > INFO: Em apps usando Wake Commerce você pode copiar e colar os filtros de seu website. Examplo: `prefix://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
+    > INFO: Em apps usando Wake Commerce você pode copiar e colar os filtros de seu website. Examplo: `prefix://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
 
     **Exemplos:**
     ```
