@@ -239,17 +239,53 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
 ??? note "Abrir Favoritos"
 
-    ### Open Favoritos
+    ### Abrir Favoritos
 
-    `prefix`://wishlist
+    `prefixo`://account/favorites
 
-    **Where:**
+    **Onde:**
+
+    `prefixo` = prefixo usado pelo seu app
+
+    **Examplo:**
+    ```
+    myapp://account/favorites
+    ```
+
+??? note "Abrir Meus Pedidos"
+
+    ### Abrir Meus Pedidos
+
+    `prefixo`://account/orderlist
+
+    **Onde:**
+
+    `prefixo` = prefixo usado pelo seu app
+
+    **Examplo:**
+    ```
+    myapp://account/orderlist
+    ```
+
+??? note "Abrir Páginas da Conta (Favoritos, Pedidos e outras)"
+
+    As páginas do módulo de conta podem ser abertas usando os enums listados em seu módulo/eitri-app de account. Para saber a lista completa de enums disponíveis para seu app, consulte seu time de desenvolvimento. 
+
+    ### Abrir Páginas da Conta
+
+    `prefixo`://account/`page_enum`
+
+    **Onde:**
 
     `prefixo` = prefixo utilizado pelo seu app
+    <br>
+    `page_enum` = enum listado no seu módulo/eitri-app de account
 
     **Examplos:**
     ```
-    myapp://wishlist
+    myapp://account/about_us
+    myapp://account/our_stores
+    myapp://account/policies
     ```
 
 ### Ações exclusivas Vtex

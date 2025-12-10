@@ -232,20 +232,56 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     ```
     myapp://webview/https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts
     ```
-    
+
 ??? note "Open Wishlist"
 
     ### Open Wishlist
 
-    `prefix`://wishlist
+    `prefix`://account/favorites
 
     **Where:**
 
     `prefix` = prefix used for your app
 
+    **Example:**
+    ```
+    myapp://account/favorites
+    ```
+
+??? note "Open Orders List"
+
+    ### Open Orders List
+
+    `prefix`://account/orderlist
+
+    **Where:**
+
+    `prefix` = prefix used for your app
+
+    **Example:**
+    ```
+    myapp://account/orderlist
+    ```
+
+??? note "Open Account Pages (Wishlist, Orders and others)"
+
+    Account module pages can be opened using page enums listed in account eitri-app module. To know all avaliable enums for your app check your developer team.
+
+    ### Open Account Pages
+
+    `prefix`://account/`page_enum`
+
+    **Where:**
+
+    `prefix` = prefix used for your app
+    <br>
+    `page_enum` = enum listed on your account eitri-app module
+
     **Examples:**
     ```
-    myapp://wishlist
+    myapp://account/about_us
+    myapp://account/our_stores
+    myapp://account/policies
     ```
 
 ### Exclusive Vtex actions
