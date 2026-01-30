@@ -4,8 +4,8 @@ docs_dir: "docs/"
 site_dir: "site/"
 theme:
   name: shadcn
-  logo: assets/eitri-logo.svg
-  favicon: assets/android-chrome-192x192.png
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
   language: pt-BR
   show_stargazers: false
   pygments_style:

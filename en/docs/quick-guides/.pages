@@ -7,6 +7,7 @@ nav:
     # Development
     - Initialization Parameters: initialization-params.md
     - Internationalization: i18n.md
+    - Managing Dependencies: dependencies.md
     - Tests: tests.md
     # Advanced
     - Multiple Shareds: multiple-shared.md
