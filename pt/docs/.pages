@@ -1,10 +1,7 @@
 nav:
   - Introdução: 'index.md'
   - Guia Rápido: 'guia-rapido.md'
-  - Linha de comando: 'eitri-cli.md'
-  - Design System: 'design-system.md'
-  - API: 'eitri-bifrost.md'
-  - Eitri Play: 'eitri-play.md'
+  - Conceitos: 'conceitos'
   - Eitri Shopping: 'eitri-shopping'
   - Tutoriais: 'tutoriais'
   - Comunidade e suporte: 'community-and-support.md'

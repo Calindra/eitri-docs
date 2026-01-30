@@ -1,15 +1,17 @@
 title: Tutoriais
 nav:
-    - index.md
-    - create-eitri-app.md
-    - ci-cd.md
-    - functional.md
-    - routes.md
-    - initialization-params.md
-    - multiple-shared.md
-    - eitri-app-start.md
-    - tests.md
-    - intellisense-autocomplete.md
-    - semantic-release.md
-    - i18n.md
-    - bottom-bar-simulation.md
+    # Introdução
+    - Introdução: index.md
+    - Criar um Eitri-App: create-eitri-app.md
+    - IntelliSense e Autocomplete: intellisense-autocomplete.md
+    # Desenvolvimento
+    - Parâmetros de Inicialização: initialization-params.md
+    - Internacionalização: i18n.md
+    - Testes: tests.md
+    # Avançado
+    - Múltiplos Shareds: multiple-shared.md
+    - Desenvolvendo vários Eitri-Apps: eitri-app-start.md
+    - Simulação da Barra Inferior: bottom-bar-simulation.md
+    # Deploy
+    - CI/CD: ci-cd.md
+    - Semantic Release: semantic-release.md

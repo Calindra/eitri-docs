@@ -1,15 +1,17 @@
 title: Quick Guides
 nav:
-    - index.md
-    - create-eitri-app.md
-    - ci-cd.md
-    - functional.md
-    - routes.md
-    - initialization-params.md
-    - multiple-shared.md
-    - eitri-app-start.md
-    - tests.md
-    - intellisense-autocomplete.md
-    - semantic-release.md
-    - i18n.md
-    - bottom-bar-simulation.md
+    # Getting Started
+    - Introduction: index.md
+    - Create an Eitri-App: create-eitri-app.md
+    - IntelliSense and Autocomplete: intellisense-autocomplete.md
+    # Development
+    - Initialization Parameters: initialization-params.md
+    - Internationalization: i18n.md
+    - Tests: tests.md
+    # Advanced
+    - Multiple Shareds: multiple-shared.md
+    - Developing Multiple Eitri-Apps: eitri-app-start.md
+    - Bottom Bar Simulation: bottom-bar-simulation.md
+    # Deploy
+    - CI/CD: ci-cd.md
+    - Semantic Release: semantic-release.md

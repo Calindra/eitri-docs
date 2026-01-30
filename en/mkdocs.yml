@@ -84,9 +84,15 @@ plugins:
         - en
   - redirects:
       redirect_maps:
-        'eitri-luminus.md': 'design-system.md' # for compatibility reasons to ensure that old links won't break
-        'theme.md': 'design-system.md' # for compatibility reasons to ensure that old links won't break
-        'app-start/index.md': 'eitri-cli.md' # for compatibility reasons to ensure that old links won't break
+        'eitri-luminus.md': 'concepts/eitri-luminus.md' # for compatibility reasons to ensure that old links won't break
+        'theme.md': 'concepts/design-system.md' # for compatibility reasons to ensure that old links won't break
+        'app-start/index.md': 'concepts/eitri-cli.md' # for compatibility reasons to ensure that old links won't break
+        'design-system.md': 'concepts/design-system.md'
+        'eitri-bifrost.md': 'concepts/eitri-bifrost.md'
+        'eitri-cli.md': 'concepts/eitri-cli.md'
+        'eitri-play.md': 'concepts/eitri-play.md'
+        'quick-guides/routes.md': 'concepts/eitri-app.md'
+        'quick-guides/functional.md': 'concepts/eitri-app.md'
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'

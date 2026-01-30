@@ -175,3 +175,65 @@ header [data-orientation="vertical"][role="none"]:has(+ a[target="_blank"]) {
   visibility: visible;
   font-size: 0.875rem;
 }
+
+/* ===========================================
+   Botões .md-button
+   =========================================== */
+
+.md-button {
+  display: inline-block;
+  padding: 0.625rem 1.25rem;
+  border-radius: var(--radius);
+  font-weight: 500;
+  text-decoration: none !important;
+  transition: all 0.15s ease;
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Botão primário - modo claro */
+:root:not(.dark) .md-button--primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground) !important;
+  border: 1px solid var(--primary);
+}
+
+:root:not(.dark) .md-button--primary:hover {
+  background-color: #4a7a12;
+  border-color: #4a7a12;
+}
+
+/* Botão primário - modo escuro */
+.dark .md-button--primary {
+  background-color: var(--primary);
+  color: var(--primary-foreground) !important;
+  border: 1px solid var(--primary);
+}
+
+.dark .md-button--primary:hover {
+  background-color: #b5f545;
+  border-color: #b5f545;
+}
+
+/* Botão secundário (sem --primary) */
+:root:not(.dark) .md-button:not(.md-button--primary) {
+  background-color: transparent;
+  color: var(--primary) !important;
+  border: 1px solid var(--primary);
+}
+
+:root:not(.dark) .md-button:not(.md-button--primary):hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground) !important;
+}
+
+.dark .md-button:not(.md-button--primary) {
+  background-color: transparent;
+  color: var(--primary) !important;
+  border: 1px solid var(--primary);
+}
+
+.dark .md-button:not(.md-button--primary):hover {
+  background-color: var(--primary);
+  color: var(--primary-foreground) !important;
+}

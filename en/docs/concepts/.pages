@@ -1,0 +1,8 @@
+title: Concepts
+nav:
+    - Eitri-App: eitri-app.md
+    - Design System: design-system.md
+    - Eitri Bifrost: eitri-bifrost.md
+    - Eitri CLI: eitri-cli.md
+    - Eitri Luminus: eitri-luminus.md
+    - Eitri Play: eitri-play.md

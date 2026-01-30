@@ -83,9 +83,15 @@ plugins:
         - pt
   - redirects:
       redirect_maps:
-        "eitri-luminus.md": "design-system.md" # por questões de compatibilidade para garantir que não quebre links antigos da página removida
-        "theme.md": "design-system.md" # por questões de compatibilidade para garantir que não quebre links antigos da página removida
-        "app-start/index.md": "eitri-cli.md" # por questões de compatibilidade para garantir que não quebre links antigos da página removida
+        "eitri-luminus.md": "conceitos/eitri-luminus.md" # por questões de compatibilidade para garantir que não quebre links antigos da página removida
+        "theme.md": "conceitos/design-system.md" # por questões de compatibilidade para garantir que não quebre links antigos da página removida
+        "app-start/index.md": "conceitos/eitri-cli.md" # por questões de compatibilidade para garantir que não quebre links antigos da página removida
+        "design-system.md": "conceitos/design-system.md"
+        "eitri-bifrost.md": "conceitos/eitri-bifrost.md"
+        "eitri-cli.md": "conceitos/eitri-cli.md"
+        "eitri-play.md": "conceitos/eitri-play.md"
+        "tutoriais/routes.md": "conceitos/eitri-app.md"
+        "tutoriais/functional.md": "conceitos/eitri-app.md"
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'
