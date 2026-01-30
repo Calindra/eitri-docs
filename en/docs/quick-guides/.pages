@@ -1,5 +1,6 @@
 title: Quick Guides
 nav:
+    - index.md
     - create-eitri-app.md
     - ci-cd.md
     - functional.md

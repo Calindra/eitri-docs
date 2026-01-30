@@ -1,5 +1,6 @@
 title: Eitri Shopping
 nav:
+    - index.md
     - exposed-apis.md
     - recaptcha.md
     - deeplinks.md

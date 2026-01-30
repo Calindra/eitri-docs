@@ -1,4 +1,5 @@
 site_name: Eitri Docs
+site_url: https://docs.eitri.tech/pt/
 docs_dir: "docs/"
 site_dir: "site/"
 theme:
@@ -52,6 +53,9 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/language-selector.js
 
 copyright: © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
 

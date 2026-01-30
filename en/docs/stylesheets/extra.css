@@ -140,6 +140,21 @@
 }
 
 /* ===========================================
+   Navbar customizada - esconde GitHub
+   =========================================== */
+
+/* Esconde o link do GitHub na navbar */
+header a[href*="github"],
+header a[target="_blank"][rel="noreferrer"] {
+  display: none !important;
+}
+
+/* Esconde o separador antes do GitHub */
+header [data-orientation="vertical"][role="none"]:has(+ a[target="_blank"]) {
+  display: none !important;
+}
+
+/* ===========================================
    Footer customizado - esconde créditos do tema
    =========================================== */
 

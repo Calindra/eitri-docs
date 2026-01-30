@@ -1,11 +1,13 @@
 site_name: Eitri Docs
+site_url: https://docs.eitri.tech/en/
 docs_dir: 'docs/'
 site_dir: 'site/'
 theme:
   name: shadcn
-  logo: assets/eitri-logo.svg
+  # icon: assets/eitri-logo.svg
   favicon: assets/android-chrome-192x192.png
   language: en
+  show_stargazers: false
   pygments_style:
     light: shadcn-light
     dark: github-dark
@@ -51,6 +53,9 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/language-selector.js
 
 copyright:
   © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
