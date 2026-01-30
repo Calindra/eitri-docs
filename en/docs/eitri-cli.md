@@ -32,7 +32,7 @@ Many of the additional functions of Eitri are available as options for the main 
 
 ### login
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri login [options]`
+⌨️  `eitri login [options]`
 
 Logs into the Eitri platform, creating account credentials on your machine and linking your command-line tool to your Eitri developer account.
 
@@ -48,7 +48,7 @@ Logs into the Eitri platform, creating account credentials on your machine and l
 
 ### create
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri create [options] <project-name>`
+⌨️  `eitri create [options] <project-name>`
 
 Creates a new Eitri-App project on your machine and registers it on the Eitri platform.
 
@@ -76,7 +76,7 @@ You will need to provide some information when creating an Eitri-App:
 
 ### start
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri start [options]`
+⌨️  `eitri start [options]`
 
 The `eitri start` command initializes the Eitri-App for development, generating a QR Code that should be scanned with the app of your organization in which Eitri was integrated.
 
@@ -94,7 +94,7 @@ As you develop and save your files locally, your Eitri-App will have a hot-reloa
 
 ### push-version
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri push-version [options]`
+⌨️  `eitri push-version [options]`
 
 Uploads a version of your Eitri-App to the Console, enabling publication. When this command is executed, a version of your Eitri-App will be added to the console and will be available for publication in the registered environments for the application.
 
@@ -112,7 +112,7 @@ Uploads a version of your Eitri-App to the Console, enabling publication. When t
 
 ### self-update
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri self-update`
+⌨️  `eitri self-update`
 
 Updates your version of the Eitri CLI by uninstalling previous versions and installing the latest stable version.
 
@@ -122,7 +122,7 @@ It is recommended to always keep the latest version of the Eitri CLI to ensure t
 
 ### workspace
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri workspace [options]`
+⌨️  `eitri workspace [options]`
 
 Manages and allows the use of multiple workspaces.
 
@@ -145,7 +145,7 @@ Manages and allows the use of multiple workspaces.
 
 ### clean
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri clean [options]`
+⌨️  `eitri clean [options]`
 
 Cleans your remote workspace.
 
@@ -161,7 +161,7 @@ If there is an issue with your workspace, the `eitri clean` command can help ree
 
 ### libs
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri libs [options]`
+⌨️  `eitri libs [options]`
 
 Lists the versions of Eitri libraries.
 
@@ -174,7 +174,7 @@ Lists the versions of Eitri libraries.
 
 ### doctor
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri doctor`
+⌨️  `eitri doctor`
 
 Checks the dependencies and settings of your machine to ensure everything is correct for Eitri-App development.
 
@@ -182,7 +182,7 @@ Checks the dependencies and settings of your machine to ensure everything is cor
 
 ### publish
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri publish -e [environment-id] [options]`
+⌨️  `eitri publish -e [environment-id] [options]`
 
 Publishes the current version in the selected environment.
 
@@ -198,7 +198,7 @@ Publishes the current version in the selected environment.
 
 ### test
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri test [options]`
+⌨️  `eitri test [options]`
 
 Runs the tests of your Eitri-App.
 
@@ -210,7 +210,7 @@ Runs the tests of your Eitri-App.
 
 ### app
 
-:fontawesome-solid-terminal:{ .lg .middle }  `eitri app [options]`
+⌨️  `eitri app [options]`
 
 Manages the execution of Eitri-Apps from the application declared in the app-config.yaml file.
 

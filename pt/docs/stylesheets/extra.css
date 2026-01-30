@@ -1,3 +1,162 @@
-code {
-    color: var(--md-accent-fg-color) !important;
+/* Eitri Design System - Tema Customizado */
+
+:root {
+  /* Cores do DS Eitri */
+  --eitri-lime: #9de82b;
+  --eitri-lime-dark: #6ba31e;
+  --eitri-light-gray: #f0f0f0;
+  --eitri-charcoal: #292929;
+  --eitri-charcoal-light: #3a3a3a;
+
+  /* Ring (focus) */
+  --ring: #9de82b;
+
+  /* Border radius */
+  --radius: 0.5rem;
+}
+
+/* Modo claro */
+:root:not(.dark) {
+  --background: #ffffff;
+  --foreground: #292929;
+
+  /* Primária */
+  --primary: #5a9216;
+  --primary-foreground: #ffffff;
+
+  /* Accent */
+  --accent: #e8e8e8;
+  --accent-foreground: #292929;
+
+  --card: #ffffff;
+  --card-foreground: #292929;
+
+  --popover: #ffffff;
+  --popover-foreground: #292929;
+
+  --secondary: #f0f0f0;
+  --secondary-foreground: #292929;
+
+  --muted: #f0f0f0;
+  --muted-foreground: #5a5a5a;
+
+  --border: #e0e0e0;
+  --input: #e0e0e0;
+
+  /* Sidebar */
+  --sidebar: #fafafa;
+  --sidebar-foreground: #292929;
+  --sidebar-accent: #e8e8e8;
+  --sidebar-accent-foreground: #292929;
+
+  /* Code */
+  --code: #f5f5f5;
+  --code-foreground: #292929;
+  --code-highlight: rgba(157, 232, 43, 0.25);
+}
+
+/* Modo escuro */
+.dark {
+  --background: #1a1a1a;
+  --foreground: #f0f0f0;
+
+  /* Primária */
+  --primary: #9de82b;
+  --primary-foreground: #1a1a1a;
+
+  /* Accent - fundo sutil ao invés de lime */
+  --accent: #3a3a3a;
+  --accent-foreground: #f0f0f0;
+
+  --card: #292929;
+  --card-foreground: #f0f0f0;
+
+  --popover: #292929;
+  --popover-foreground: #f0f0f0;
+
+  --secondary: #3a3a3a;
+  --secondary-foreground: #f0f0f0;
+
+  --muted: #3a3a3a;
+  --muted-foreground: #a8a8a8;
+
+  --border: #404040;
+  --input: #404040;
+
+  /* Sidebar - fundos sutis, texto claro */
+  --sidebar: #1f1f1f;
+  --sidebar-foreground: #f0f0f0;
+  --sidebar-accent: #3a3a3a;
+  --sidebar-accent-foreground: #f0f0f0;
+
+  /* Code */
+  --code: #1f1f1f;
+  --code-foreground: #f0f0f0;
+  --code-highlight: rgba(157, 232, 43, 0.2);
+}
+
+/* Links - modo claro */
+:root:not(.dark) a {
+  color: #5a9216;
+  transition: color 0.15s ease;
+}
+
+:root:not(.dark) a:hover,
+:root:not(.dark) a:active {
+  color: #292929;
+}
+
+/* Links - modo escuro */
+.dark a {
+  color: #9de82b;
+  transition: color 0.15s ease;
+}
+
+.dark a:hover,
+.dark a:active {
+  color: #f0f0f0;
+}
+
+/* Sidebar - item ativo com borda lime */
+.dark [data-active="true"],
+.dark [aria-current="page"] {
+  border-left: 3px solid #9de82b !important;
+}
+
+:root:not(.dark) [data-active="true"],
+:root:not(.dark) [aria-current="page"] {
+  border-left: 3px solid #5a9216 !important;
+}
+
+/* Seleção de texto */
+::selection {
+  background-color: rgba(157, 232, 43, 0.35);
+  color: #292929;
+}
+
+.dark ::selection {
+  background-color: rgba(157, 232, 43, 0.3);
+  color: #1a1a1a;
+}
+
+/* ===========================================
+   Footer customizado - esconde créditos do tema
+   =========================================== */
+
+/* Esconde o texto original do footer shadcn */
+.text-muted-foreground.w-full.text-center.text-xs {
+  font-size: 0 !important;
+  visibility: hidden;
+}
+
+/* Esconde os links do asiffer */
+.text-muted-foreground.w-full.text-center.text-xs a {
+  display: none !important;
+}
+
+/* Adiciona conteúdo customizado no footer */
+.text-muted-foreground.w-full.text-center.text-xs::after {
+  content: "© 2025 Eitri · https://linkedin.com/company/eitritech";
+  visibility: visible;
+  font-size: 0.875rem;
 }

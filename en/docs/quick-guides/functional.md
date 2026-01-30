@@ -16,7 +16,11 @@
 
 To use functional components, just follow the formats below:
 
-```js title="JS | TS File"
+```jsx
+import { useEffect, useState } from "react";
+import { View, Window, Text, Image } from "@eitri/react";
+import Eitri from "eitri-bifrost";
+
 export default function Products(props) {
   const [products, setProducts] = useState([]);
   const { location } = props;
@@ -26,26 +30,31 @@ export default function Products(props) {
   }, []);
 
   const getProducts = async () => {
-    const response = await fetch(
-      "https://calindra.tech/eitri/product_list.json"
+    const response = await Eitri.http.get(
+      "https://calindra.tech/eitri/product_list.json",
     );
 
-    const data = await response.json();
+    const data = response.data;
     setProducts(data.resultItems);
   };
-}
-```
 
-```jsx title="JSX | TSX File"
-<Window>
-  {products?.map((product) => (
-    <View key={product.id} display="flex" direction="column" marginTop="big">
-      <Image src={product.imageUrl} width={320} height={320} />
-      <Text fontSize="large">{product.title}</Text>
-      <Text>{product.description}</Text>
-    </View>
-  ))}
-</Window>
+  return (
+    <Window>
+      {products?.map((product) => (
+        <View
+          key={product.id}
+          display="flex"
+          direction="column"
+          marginTop="big"
+        >
+          <Image src={product.imageUrl} width={320} height={320} />
+          <Text fontSize="large">{product.title}</Text>
+          <Text>{product.description}</Text>
+        </View>
+      ))}
+    </Window>
+  );
+}
 ```
 
 Above, the .jsx|.tsx file identifies as if the states and methods were at the same level, unlike the class format where it is necessary to use `this` to access a property or method of that component.
