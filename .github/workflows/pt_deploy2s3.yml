@@ -24,13 +24,10 @@ jobs:
           path: .cache
           restore-keys: |
             mkdocs-material-
-      - run: pip install mkdocs-material
-      - run: pip install mkdocs-exclude-search
-      - run: pip install mkdocs-glightbox
-      - run: pip install mkdocs-awesome-pages-plugin
-      - run: pip install mkdocs-with-pdf
-      - run: pip install mkdocs-redirects
-      - run: bash -c 'cd pt && mkdocs build'
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Build site
+        run: cd pt && mkdocs build
       
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1

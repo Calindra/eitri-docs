@@ -1,67 +1,16 @@
 site_name: Eitri Docs
-docs_dir: 'docs/'
-site_dir: 'site/'  
+docs_dir: "docs/"
+site_dir: "site/"
 theme:
-  logo: assets/eitri-logo.svg
+  name: shadcn
+  # icon: assets/eitri-logo.svg
   favicon: assets/android-chrome-192x192.png
   language: pt-BR
-  # Tema visual utilizado
-  name: material
-  custom_dir: '../overrides/'
-  # Features à serem ativadas
-  icon:
-    annotation: material/plus-circle
-    admonition:
-      note: fontawesome/solid/note-sticky
-      failure: octicons/x-circle-fill-16
-  features:
-  # - navigation.tabs
-  # - navigation.tabs.sticky
-  # - toc.integrate
-  # - navigation.sections
-  # - navigation.expand
-  - navigation.instant
-  - navigation.instant.progress
-  - navigation.tracking
-  - navigation.top
-  - toc.follow
-  - search.suggest
-  - search.highlight
-  - search.share
-  - content.tabs.link
-  - content.code.copy
-  - content.code.annotate
-  - content.tooltips
-  - announce.dismiss
+  show_stargazers: false
+  pygments_style:
+    light: shadcn-light
+    dark: github-dark
 
-
-  palette:
-    # Palette toggle for automatic mode
-    - media: "(prefers-color-scheme)"
-      toggle:
-        icon: material/brightness-auto
-        name: Switch to light mode
-      primary: blue grey
-      accent: lime
-
-    # Palette toggle for light mode
-    - media: "(prefers-color-scheme: light)"
-      scheme: default 
-      toggle:
-        icon: material/brightness-7
-        name: Switch to dark mode
-      primary: blue grey
-      accent: lime
-
-    # Palette toggle for dark mode
-    - media: "(prefers-color-scheme: dark)"
-      scheme: slate
-      toggle:
-        icon: material/brightness-4
-        name: Switch to system preference
-      primary: blue grey
-      accent: lime
-  
 extra:
   homepage: https://docs.eitri.tech/pt/
   # Ícones de redes sociais no rodapé
@@ -86,61 +35,41 @@ extra:
         - icon: material/emoticon-sad-outline
           name: This page wasn't helpful
           data: 0
-          note: >- 
+          note: >-
             Thank you for your feedback! Help us get better <a href="https://forms.gle/7ompyzJQBAxpptUd9" target="_blank" rel="noopener">clicking here</a>.
   # version:
   #   provider: mike
-  alternate:  
-      # Switch to English
+  alternate:
+    # Switch to English
     - name: English
-      link: 'https://docs.eitri.tech/en'
+      link: "https://docs.eitri.tech/en"
       lang: en
 
     # Switch to BR Portuguese
     - name: Português
-      link: 'https://docs.eitri.tech/pt'
+      link: "https://docs.eitri.tech/pt"
       lang: pt-BR
 
 extra_css:
   - stylesheets/extra.css
 
-copyright:
-  © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
+copyright: © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
 
-# Extensões para features markdown
+# Extensões para features markdown (compatíveis com shadcn)
 markdown_extensions:
-  - tables
-  - footnotes
-  - md_in_html
-  - attr_list
   - admonition
-  - def_list
-  - pymdownx.tasklist:
-      custom_checkbox: true
-  - pymdownx.superfences:
-      custom_fences:
-      - name: mermaid
-        class: mermaid
-        format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
-  - pymdownx.inlinehilite
-  - pymdownx.snippets
-  - pymdownx.details
-  - pymdownx.mark
-  - pymdownx.critic
-  - pymdownx.caret
-  - pymdownx.keys
-  - pymdownx.tilde
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
+  - attr_list
+  - codehilite
+  - fenced_code
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.details
 
 plugins:
   - awesome-pages
@@ -150,49 +79,49 @@ plugins:
         - pt
   - redirects:
       redirect_maps:
-        'eitri-luminus.md': 'design-system.md' # por questões de compatibilidade para garantir que não quebre links antigos da página removida
-        'theme.md': 'design-system.md' # por questões de compatibilidade para garantir que não quebre links antigos da página removida
-        'app-start/index.md': 'eitri-cli.md' # por questões de compatibilidade para garantir que não quebre links antigos da página removida
+        "eitri-luminus.md": "design-system.md" # por questões de compatibilidade para garantir que não quebre links antigos da página removida
+        "theme.md": "design-system.md" # por questões de compatibilidade para garantir que não quebre links antigos da página removida
+        "app-start/index.md": "eitri-cli.md" # por questões de compatibilidade para garantir que não quebre links antigos da página removida
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'
         # 'index.md': 'introducao/index.md'
-  - tags:
-      enabled: true
+  # - tags:
+  #     enabled: true
   # - with-pdf
-      #author: Calindra
-      #copyright: Calindra
-      #
-      #cover: false
-      #back_cover: true
-      #cover_title: Eitri Docs
-      #cover_subtitle: SUBTITLE TEXT
-      #custom_template_path: TEMPLATES PATH
-      #
-      #toc_title: TOC TITLE TEXT
-      #heading_shift: false
-      #toc_level: 3
-      #ordered_chapter_level: 2
-      #excludes_children:
-      #    - 'release-notes/:upgrading'
-      #    - 'release-notes/:changelog'
-      #
-      #exclude_pages:
-      #    - 'bugs/'
-      #    - 'appendix/contribute/'
-      #convert_iframe:
-      #    - src: IFRAME SRC
-      #      img: POSTER IMAGE URL
-      #      text: ALTERNATE TEXT
-      #    - src: ...
-      #two_columns_level: 3
-      #
-      #render_js: true
-      #headless_chrome_path: headless-chromium
-      #
-      #output_path: any-place/document.pdf
-      #enabled_if_env: ENABLE_PDF_EXPORT
-      #
-      #debug_html: true
-      #show_anchors: true
-      #verbose: true
+  #author: Calindra
+  #copyright: Calindra
+  #
+  #cover: false
+  #back_cover: true
+  #cover_title: Eitri Docs
+  #cover_subtitle: SUBTITLE TEXT
+  #custom_template_path: TEMPLATES PATH
+  #
+  #toc_title: TOC TITLE TEXT
+  #heading_shift: false
+  #toc_level: 3
+  #ordered_chapter_level: 2
+  #excludes_children:
+  #    - 'release-notes/:upgrading'
+  #    - 'release-notes/:changelog'
+  #
+  #exclude_pages:
+  #    - 'bugs/'
+  #    - 'appendix/contribute/'
+  #convert_iframe:
+  #    - src: IFRAME SRC
+  #      img: POSTER IMAGE URL
+  #      text: ALTERNATE TEXT
+  #    - src: ...
+  #two_columns_level: 3
+  #
+  #render_js: true
+  #headless_chrome_path: headless-chromium
+  #
+  #output_path: any-place/document.pdf
+  #enabled_if_env: ENABLE_PDF_EXPORT
+  #
+  #debug_html: true
+  #show_anchors: true
+  #verbose: true

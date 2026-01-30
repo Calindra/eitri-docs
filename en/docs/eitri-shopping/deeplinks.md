@@ -334,7 +334,7 @@ You will need to configure your website to have 2 files hosted in specific paths
 
 With most e-commerce providers you can create/update those files by opening a ticket asking for it.
 
-### [:simple-android: App Link (Android)](https://developer.android.com/training/app-links){:target="_blank"}
+### [🤖 App Link (Android)](https://developer.android.com/training/app-links){:target="_blank"}
 **File path:** `https://www.mywebsite.com/.well-known/assetlinks.json`
 
 **File example:**
@@ -360,7 +360,7 @@ With most e-commerce providers you can create/update those files by opening a ti
 > Example: F8:57:A0:0C:AB:8B:B2:59:92:F7:3D:1D:38:6C:05:17:A8:3F:B1:19:B5:E7:05:5F:ED:B5:B8:27:EA:0C:E3:57
 
 
-### [:simple-apple: Universal Link (iOS)](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app)
+### [🍎 Universal Link (iOS)](https://developer.apple.com/documentation/xcode/supporting-universal-links-in-your-app)
 
 **File path:** `https://www.mywebsite.com/.well-known/apple-app-site-association`
 

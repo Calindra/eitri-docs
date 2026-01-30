@@ -8,7 +8,9 @@ Para utilizar as rotas dinâmicas, basta seguir o pattern de estar em um diretó
 
 Por exemplo, tenho uma listagem de produtos e quero acessar uma página específica do produto.
 
-``` title="Estrutura de arquivos"
+**Estrutura de arquivos:**
+
+```
 src/views/
 ├── Product
 │   ├── [id].js
@@ -20,7 +22,9 @@ src/views/
 
 Onde o id será nosso parâmetro, e para navegar para o produto de id igual a 12345, basta seguir o formato `/(Caminho relativo na view)/:PARAMETRO`, no nosso exemplo a nossa rota será `/Product/:id`
 
-```js title="Chamada no Eitri-App"
+**Chamada no Eitri-App:**
+
+```js
 Eitri.navigation.navigate({
   path: "/Product/12345",
 });
