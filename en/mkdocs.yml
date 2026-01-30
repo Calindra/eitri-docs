@@ -4,7 +4,7 @@ docs_dir: 'docs/'
 site_dir: 'site/'
 theme:
   name: shadcn
-  # icon: assets/eitri-logo.svg
+  logo: assets/eitri-logo.svg
   favicon: assets/android-chrome-192x192.png
   language: en
   show_stargazers: false
