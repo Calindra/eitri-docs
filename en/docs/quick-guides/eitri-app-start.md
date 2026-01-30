@@ -75,6 +75,6 @@ berserk | Starting Eitri builder
 // unnecessary log code in hidden example
 ```
 
-## Bottom Tab Bar Simulation
+##### Bottom Tab Bar Simulation
 
-While developing your app with [Eitri Play](eitri-play.md) you can simulate Eitri Bottom Tab Bar and it's behaviours. [Check here](quick-guides/bottom-bar-simulation.md) to know more about how to simulate a Bottom Tab Bar.
+While developing your app with [Eitri Play](../concepts/eitri-play.md) you can simulate Eitri Bottom Tab Bar and it's behaviours. [Check here](quick-guides/bottom-bar-simulation.md) to know more about how to simulate a Bottom Tab Bar.

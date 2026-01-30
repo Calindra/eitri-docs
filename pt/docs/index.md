@@ -25,15 +25,15 @@ Os Eitri-apps possuem codebase isolados uns dos outros, bem como fluxo de desenv
 
 O SDK do Eitri oferece diversas ferramentas para permitir que seus Eitri-apps realizem coisas incríveis:
 
-#### [`Linha de comando`](eitri-cli.md)
+#### [`Linha de comando`](conceitos/eitri-cli.md)
 
 :   A `Eitri CLI` é o ponto de partida para os desenvolvedores. A partir dela é possível criar Eitri-apps, desenvolve-los e executar diversas outras funções.
 
-#### [`Componentes e DS`](design-system.md#eitri-luminus)
+#### [`Componentes e DS`](conceitos/design-system.md#eitri-luminus)
 
 :   A ponte luminosa que representa um caminho para a conexão entre os mundos na mitologia nórdica originou o nome da biblioteca de componentes `Eitri Luminus` que abrange os componentes base para a criação dos Eitri-apps e também funções de personalização da interface para customização das cores dos componentes base e criação de componentes personalizados para sua organização.
 
-#### [`API`](eitri-bifrost.md)
+#### [`API`](conceitos/eitri-bifrost.md)
 
 :   A Bifrost é um misto de tecnologia e magia que conecta de fato os mundos na mitologia nórdica e que representa bem o que o `Eitri Bifrost` faz na conexão entre seu app e o universo dos Eitri-apps, potencializando ambos à medida que permite que seu app usufrua das funcionalidades Eitri e ao mesmo tempo podendo habilitar seus Eitri-apps a usar funções que seriam nativamente do seu app.
 

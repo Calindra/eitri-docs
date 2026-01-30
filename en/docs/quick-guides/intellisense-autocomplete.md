@@ -13,8 +13,8 @@ These features make coding faster and less error-prone, providing a more efficie
 
 ### Requirements
 
-- [Eitri-Luminus](/eitri-luminus)
-- [Eitri-Bifrost](/eitri-bifrost)
+- [Eitri-Luminus](../concepts/design-system.md#eitri-luminus)
+- [Eitri-Bifrost](../concepts/eitri-bifrost.md)
 
 A `jsconfig.json` file will be automatically generated. This file is read-only; any manual changes made to it will not work and will be lost at each start.
 

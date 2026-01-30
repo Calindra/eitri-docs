@@ -215,7 +215,7 @@ Runs the tests of your Eitri-App.
 Manages the execution of Eitri-Apps from the application declared in the app-config.yaml file.
 
 !!! info
-    Take a look at [Developing multiple Eitri-apps](quick-guides/bottom-bar-simulation.md) for more information.
+    Take a look at [Developing multiple Eitri-apps](../quick-guides/eitri-app-start.md) for more information.
 
 #### Available Options
 
@@ -233,4 +233,4 @@ Manages the execution of Eitri-Apps from the application declared in the app-con
 
 ##### Bottom Tab Bar Simulation
 
-While developing your app with [Eitri Play](eitri-play.md) you can simulate Eitri Bottom Tab Bar and it's behaviours. [Check here](quick-guides/bottom-bar-simulation.md) to know more about how to simulate a Bottom Tab Bar.
+While developing your app with [Eitri Play](eitri-play.md) you can simulate Eitri Bottom Tab Bar and it's behaviours. [Check here](../quick-guides/bottom-bar-simulation.md) to know more about how to simulate a Bottom Tab Bar.

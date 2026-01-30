@@ -77,4 +77,4 @@ berserk | Iniciando Eitri builder
 
 ##### Simulação da Bottom Bar
 
-Enquanto desenvolve com o [Eitri Play](../eitri-play.md) você pode simular a Bottom Bar e seus comportamentos. [Confira aqui](bottom-bar-simulation.md) para saber mais sobre como simular a Bottom Bar.
+Enquanto desenvolve com o [Eitri Play](../conceitos/eitri-play.md) você pode simular a Bottom Bar e seus comportamentos. [Confira aqui](bottom-bar-simulation.md) para saber mais sobre como simular a Bottom Bar.

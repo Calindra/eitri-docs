@@ -26,15 +26,15 @@ You can build faster and easier with Eitri SDK. Take a look at our tools and res
 
 Eitri SDK offers a lot of tools to allow your Eitri-apps to do amazing things:
 
-#### [`Command Line Interface`](eitri-cli)
+#### [`Command Line Interface`](concepts/eitri-cli.md)
 
 :   `Eitri CLI` is the starting point for those who want to develop Eitri-apps. From it, you can create and develop new Eitri-apps and run a lot of other cool functions.
 
-#### [`Components and DS`](eitri-luminus)
+#### [`Components and DS`](concepts/design-system.md#eitri-luminus)
 
 :   The luminous bridge that represents a path to the door connecting the worlds in Nordic mythology has originated Eitri's components lib name `Eitri Luminus`. It packs the base components to create Eitri-apps and customization for the interface using your own color pallets and custom components for your organization.
 
-#### [`API`](eitri-bifrost)
+#### [`API`](concepts/eitri-bifrost.md)
 
 :   Bifrost is a mix of technology and magic that effectively connects the worlds in Nordic mythology and represents well what `Eitri Bifrost` does between your mobile app and the Eitri-apps universe. It empowers both of them, allowing your app to use Eitri features while making it possible to use functions of your app inside Eitri-apps.
 
