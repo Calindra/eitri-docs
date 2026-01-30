@@ -1,11 +1,11 @@
 site_name: Eitri Docs
 site_url: https://docs.eitri.tech/en/
-docs_dir: 'docs/'
-site_dir: 'site/'
+docs_dir: "docs/"
+site_dir: "site/"
 theme:
   name: shadcn
-  logo: assets/eitri-logo.svg
-  favicon: assets/android-chrome-192x192.png
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
   language: en
   show_stargazers: false
   pygments_style:
@@ -36,19 +36,19 @@ extra:
         - icon: material/emoticon-sad-outline
           name: This page wasn't helpful
           data: 0
-          note: >- 
+          note: >-
             Thank you for your feedback! Help us get better <a href="https://forms.gle/7ompyzJQBAxpptUd9" target="_blank" rel="noopener">clicking here</a>.
   # version:
   #   provider: mike
-  alternate:  
-      # Switch to English
+  alternate:
+    # Switch to English
     - name: English
-      link: 'https://docs.eitri.tech/en'
+      link: "https://docs.eitri.tech/en"
       lang: en
 
     # Switch to BR Portuguese
     - name: Português
-      link: 'https://docs.eitri.tech/pt'
+      link: "https://docs.eitri.tech/pt"
       lang: pt-BR
 
 extra_css:
@@ -57,8 +57,7 @@ extra_css:
 extra_javascript:
   - javascripts/language-selector.js
 
-copyright:
-  © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
+copyright: © 2023 <a href="https://github.com/Calindra" target="_blank" rel="noopener">Calindra</a>
 
 # Extensões para features markdown (compatíveis com shadcn)
 markdown_extensions:
@@ -80,19 +79,19 @@ plugins:
   - awesome-pages
   - glightbox
   - search:
-      lang: 
+      lang:
         - en
   - redirects:
       redirect_maps:
-        'eitri-luminus.md': 'concepts/eitri-luminus.md' # for compatibility reasons to ensure that old links won't break
-        'theme.md': 'concepts/design-system.md' # for compatibility reasons to ensure that old links won't break
-        'app-start/index.md': 'concepts/eitri-cli.md' # for compatibility reasons to ensure that old links won't break
-        'design-system.md': 'concepts/design-system.md'
-        'eitri-bifrost.md': 'concepts/eitri-bifrost.md'
-        'eitri-cli.md': 'concepts/eitri-cli.md'
-        'eitri-play.md': 'concepts/eitri-play.md'
-        'quick-guides/routes.md': 'concepts/eitri-app.md'
-        'quick-guides/functional.md': 'concepts/eitri-app.md'
+        "eitri-luminus.md": "concepts/eitri-luminus.md" # for compatibility reasons to ensure that old links won't break
+        "theme.md": "concepts/design-system.md" # for compatibility reasons to ensure that old links won't break
+        "app-start/index.md": "concepts/eitri-cli.md" # for compatibility reasons to ensure that old links won't break
+        "design-system.md": "concepts/design-system.md"
+        "eitri-bifrost.md": "concepts/eitri-bifrost.md"
+        "eitri-cli.md": "concepts/eitri-cli.md"
+        "eitri-play.md": "concepts/eitri-play.md"
+        "quick-guides/routes.md": "concepts/eitri-app.md"
+        "quick-guides/functional.md": "concepts/eitri-app.md"
         # 'old.md': 'new.md'
         # 'old/file.md': 'new/file.md'
         # 'some_file.md': 'http://external.url.com/foobar'
@@ -100,39 +99,39 @@ plugins:
   # - tags:
   #     enabled: true
   # - with-pdf
-      #author: Calindra
-      #copyright: Calindra
-      #
-      #cover: false
-      #back_cover: true
-      #cover_title: Eitri Docs
-      #cover_subtitle: SUBTITLE TEXT
-      #custom_template_path: TEMPLATES PATH
-      #
-      #toc_title: TOC TITLE TEXT
-      #heading_shift: false
-      #toc_level: 3
-      #ordered_chapter_level: 2
-      #excludes_children:
-      #    - 'release-notes/:upgrading'
-      #    - 'release-notes/:changelog'
-      #
-      #exclude_pages:
-      #    - 'bugs/'
-      #    - 'appendix/contribute/'
-      #convert_iframe:
-      #    - src: IFRAME SRC
-      #      img: POSTER IMAGE URL
-      #      text: ALTERNATE TEXT
-      #    - src: ...
-      #two_columns_level: 3
-      #
-      #render_js: true
-      #headless_chrome_path: headless-chromium
-      #
-      #output_path: any-place/document.pdf
-      #enabled_if_env: ENABLE_PDF_EXPORT
-      #
-      #debug_html: true
-      #show_anchors: true
-      #verbose: true
+  #author: Calindra
+  #copyright: Calindra
+  #
+  #cover: false
+  #back_cover: true
+  #cover_title: Eitri Docs
+  #cover_subtitle: SUBTITLE TEXT
+  #custom_template_path: TEMPLATES PATH
+  #
+  #toc_title: TOC TITLE TEXT
+  #heading_shift: false
+  #toc_level: 3
+  #ordered_chapter_level: 2
+  #excludes_children:
+  #    - 'release-notes/:upgrading'
+  #    - 'release-notes/:changelog'
+  #
+  #exclude_pages:
+  #    - 'bugs/'
+  #    - 'appendix/contribute/'
+  #convert_iframe:
+  #    - src: IFRAME SRC
+  #      img: POSTER IMAGE URL
+  #      text: ALTERNATE TEXT
+  #    - src: ...
+  #two_columns_level: 3
+  #
+  #render_js: true
+  #headless_chrome_path: headless-chromium
+  #
+  #output_path: any-place/document.pdf
+  #enabled_if_env: ENABLE_PDF_EXPORT
+  #
+  #debug_html: true
+  #show_anchors: true
+  #verbose: true

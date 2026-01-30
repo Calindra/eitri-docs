@@ -49,16 +49,16 @@ No Eitri, todas as telas (views) e componentes são construídos usando **compon
 Uma view deve exportar uma função como `default` que recebe `props` como parâmetro:
 
 ```jsx
-import { Window, View, Text } from 'eitri-luminus'
+import { Window, View, Text } from "eitri-luminus";
 
 export default function Home(props) {
-    return (
-        <Window>
-            <View padding="medium">
-                <Text fontSize="large">Bem-vindo ao Eitri!</Text>
-            </View>
-        </Window>
-    )
+  return (
+    <Window>
+      <View padding="medium">
+        <Text fontSize="large">Bem-vindo ao Eitri!</Text>
+      </View>
+    </Window>
+  );
 }
 ```
 
@@ -71,56 +71,54 @@ export default function Home(props) {
 ### Exemplo completo com estado e requisições
 
 ```jsx
-import { useEffect, useState } from "react"
-import { Window, View, Text, Image } from "eitri-luminus"
-import Eitri from "eitri-bifrost"
+import { useEffect, useState } from "react";
+import { Window, View, Text, Image } from "eitri-luminus";
+import Eitri from "eitri-bifrost";
 
 export default function Products(props) {
-    const [products, setProducts] = useState([])
-    const [loading, setLoading] = useState(true)
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-    useEffect(() => {
-        loadProducts()
-    }, [])
+  useEffect(() => {
+    loadProducts();
+  }, []);
 
-    const loadProducts = async () => {
-        try {
-            const response = await Eitri.http.get(
-                "https://api.exemplo.com/products"
-            )
-            setProducts(response.data)
-        } catch (error) {
-            console.error("Erro ao carregar produtos:", error)
-        } finally {
-            setLoading(false)
-        }
+  const loadProducts = async () => {
+    try {
+      const response = await Eitri.http.get("https://api.exemplo.com/products");
+      setProducts(response.data);
+    } catch (error) {
+      console.error("Erro ao carregar produtos:", error);
+    } finally {
+      setLoading(false);
     }
+  };
 
-    if (loading) {
-        return (
-            <Window>
-                <Text>Carregando...</Text>
-            </Window>
-        )
-    }
-
+  if (loading) {
     return (
-        <Window>
-            {products.map((product) => (
-                <View
-                    key={product.id}
-                    display="flex"
-                    direction="column"
-                    marginTop="medium"
-                    padding="medium"
-                >
-                    <Image src={product.imageUrl} width={320} height={320} />
-                    <Text fontSize="large">{product.title}</Text>
-                    <Text>{product.description}</Text>
-                </View>
-            ))}
-        </Window>
-    )
+      <Window>
+        <Text>Carregando...</Text>
+      </Window>
+    );
+  }
+
+  return (
+    <Window>
+      {products.map((product) => (
+        <View
+          key={product.id}
+          display="flex"
+          direction="column"
+          marginTop="medium"
+          padding="medium"
+        >
+          <Image src={product.imageUrl} width={320} height={320} />
+          <Text fontSize="large">{product.title}</Text>
+          <Text>{product.description}</Text>
+        </View>
+      ))}
+    </Window>
+  );
 }
 ```
 
@@ -135,19 +133,17 @@ O arquivo `src/providers/__main__.jsx` é o provider principal que envolve toda 
 **Arquivo: `src/providers/__main__.jsx`**
 
 ```jsx
-import { createContext } from "react"
-import AuthProvider from "./Auth"
+import { createContext } from "react";
+import AuthProvider from "./Auth";
 
-const MainContext = createContext({})
+const MainContext = createContext({});
 
 export default function MainProvider({ children }) {
-    return (
-        <MainContext.Provider value={{}}>
-            <AuthProvider>
-                {children}
-            </AuthProvider>
-        </MainContext.Provider>
-    )
+  return (
+    <MainContext.Provider value={{}}>
+      <AuthProvider>{children}</AuthProvider>
+    </MainContext.Provider>
+  );
 }
 ```
 
@@ -158,54 +154,54 @@ Para compartilhar estado entre múltiplas views, crie Providers na pasta `src/pr
 **Exemplo: `src/providers/Auth.jsx`**
 
 ```jsx
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useState } from "react";
 
-const AuthContext = createContext({})
+const AuthContext = createContext({});
 
 export default function AuthProvider({ children }) {
-    const [user, setUser] = useState(null)
+  const [user, setUser] = useState(null);
 
-    const login = async (credentials) => {
-        // Lógica de autenticação
-        const userData = await authenticateUser(credentials)
-        setUser(userData)
-    }
+  const login = async (credentials) => {
+    // Lógica de autenticação
+    const userData = await authenticateUser(credentials);
+    setUser(userData);
+  };
 
-    const logout = () => {
-        setUser(null)
-    }
+  const logout = () => {
+    setUser(null);
+  };
 
-    return (
-        <AuthContext.Provider value={{ user, login, logout }}>
-            {children}
-        </AuthContext.Provider>
-    )
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }
 
 export function useAuth() {
-    return useContext(AuthContext)
+  return useContext(AuthContext);
 }
 ```
 
 #### Usando o Provider em uma View
 
 ```jsx
-import { useAuth } from "@/providers/Auth"
+import { useAuth } from "@/providers/Auth";
 
 export default function Profile(props) {
-    const { user, logout } = useAuth()
+  const { user, logout } = useAuth();
 
-    return (
-        <Window>
-            <Text>Olá, {user?.name}</Text>
-            <Button label="Sair" onPress={logout} />
-        </Window>
-    )
+  return (
+    <Window>
+      <Text>Olá, {user?.name}</Text>
+      <Button label="Sair" onPress={logout} />
+    </Window>
+  );
 }
 ```
 
 !!! tip "Importação com @"
-    Use `@/` para importar arquivos a partir da pasta `src/`, independente do nível de profundidade da sua view atual.
+Use `@/` para importar arquivos a partir da pasta `src/`, independente do nível de profundidade da sua view atual.
 
 ## Navegação
 
@@ -258,13 +254,13 @@ Os dados devem ser desestruturados dentro do corpo do componente a partir do obj
 
 ```jsx
 export default function ProductDetail(props) {
-    // Parâmetros da URL (ex: [id])
-    const { id } = props.match.params
+  // Parâmetros da URL (ex: [id])
+  const { id } = props.match.params;
 
-    // Estado passado (objeto de navegação)
-    const { fromSearch } = props.location.state || {}
+  // Estado passado (objeto de navegação)
+  const { fromSearch } = props.location.state || {};
 
-    // Lógica...
+  // Lógica...
 }
 ```
 
@@ -276,24 +272,22 @@ Para navegar entre telas no seu Eitri-App, utilize o método `Eitri.navigation.n
 // Navegar para a página Home
 Eitri.navigation.navigate({
   path: "/Home",
-})
+});
 
 // Navegar para um produto específico
 Eitri.navigation.navigate({
   path: "/Product/12345",
-})
+});
 
 // Navegar com estado
 Eitri.navigation.navigate({
   path: "/Products",
-  state: { category: "electronics" }
-})
+  state: { category: "electronics" },
+});
 ```
 
 Para mais informações sobre os métodos de navegação disponíveis, consulte a documentação do [Eitri Bifrost](eitri-bifrost.md).
 
-## Shared Eitri-Apps
+## Dependências
 
-Shared Eitri-Apps são Eitri-Apps que podem ser importados e reutilizados por outros Eitri-Apps, permitindo criar soluções modulares e compartilháveis.
-
-Para mais informações, consulte o tutorial [Múltiplos Shareds](../tutoriais/multiple-shared.md).
+Para entender como gerenciar e usar dependências em seu Eitri-App, consulte o guia [Gerenciando Dependências em Eitri-Apps](../tutoriais/dependencias.md).

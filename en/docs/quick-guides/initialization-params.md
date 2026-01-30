@@ -18,20 +18,19 @@ Within the Eitri-App code, the internal Eitri API method (Eitri.getInitializatio
 
 ```jsx
 export default function Home() {
+  useEffect(() => {
+    getStartParams();
+  }, []);
 
-    useEffect(() => {
-        getStartParams()
-    }, []);
+  const getStartParams = async () => {
+    const params = await Eitri.getInitializationInfos();
+    console.log(params);
+  };
 
-    const getStartParams = async () => {
-        const params = await Eitri.getInitializationInfos()
-        console.log(params)
-    }
-
-    /** 
-     * additional code omitted
-     * for readability
-     */
+  /**
+   * additional code omitted
+   * for readability
+   */
 }
 ```
 
@@ -40,7 +39,8 @@ export default function Home() {
 Read more about [`eitri app start`](https://docs.eitri.tech/en/quick-guides/initialization-params/).
 
 #### Requirements
-* CLI version 1.18.0 or higher
+
+- CLI version 1.18.0 or higher
 
 #### How to use
 
@@ -67,24 +67,23 @@ initialization-params:
 
 ```jsx
 export default function Home() {
+  useEffect(() => {
+    getStartParams();
+  }, []);
 
-    useEffect(() => {
-        getStartParams();
-    }, []);
+  const getStartParams = async () => {
+    const params = await Eitri.getInitializationInfos();
+    console.log(params);
+  };
 
-    const getStartParams = async () => {
-        const params = await Eitri.getInitializationInfos();
-        console.log(params);
-    }
-
-    /** 
-     * additional code omitted
-     * for readability
-     */
+  /**
+   * additional code omitted
+   * for readability
+   */
 }
 ```
 
 !!! note
-    **Retrieving parameters:** Initialization parameters are retrieved through the `Eitri.getInitializationInfos()` method.
-    
+**Retrieving parameters:** Initialization parameters are retrieved through the `Eitri.getInitializationInfos()` method.
+
     **Value format:** Currently, only **query-string** format values are accepted for initialization parameters.
