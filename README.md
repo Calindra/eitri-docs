@@ -1,6 +1,6 @@
 # eitri-docs
 
-Os projetos em inglês e em português são 2 projetos completamente separados e a única coisa que compartilham são os assets da pasta `override`. 
+Os projetos em inglês e em português são 2 projetos completamente separados e a única coisa que compartilham são os assets da pasta `override`.
 
 Para rodar o projeto você precisará:
 
@@ -13,10 +13,10 @@ Para rodar o projeto você precisará:
 3. Ativar o virtual environment do Python (O caminho vai depender do seu SO e da versão do Python):
 
 - No windows:
-`source venv/Scripts/activate`
+  `source venv/Scripts/activate`
 
 - No Linux:
-`source venv/bin/activate`
+  `source venv/bin/activate`
 
 > **OBS1**: isso fará com que este venv seja a instância do python usada para as instalações de dependências e não a instalação global do python, similar ao node_modules no JS
 
@@ -26,9 +26,9 @@ Para rodar o projeto você precisará:
 
 4. Instalar mkdocs e plugins
 
-`pip install mkdocs-material mkdocs-exclude-search mkdocs-glightbox mkdocs-awesome-pages-plugin mkdocs-with-pdf mkdocs-redirects`
+`pip install -r requirements.txt`
 
-5. Entrar na pasta "*pt*" ou "*en*" e rodar o projeto
+5. Entrar na pasta "_pt_" ou "_en_" e rodar o projeto
 
 `mkdocs serve --livereload`
 
@@ -45,7 +45,6 @@ Para rodar o projeto você precisará:
 - Para informações sobre recursos adicionais do MkDocs ao escrever seus MDs, acesse [este link](https://squidfunk.github.io/mkdocs-material/reference/)
 
 - Para informações adicionais sobre redirecionamentos no mkdocs acesse [este link](https://github.com/mkdocs/mkdocs-redirects)
-
 
 ### Navegação
 
