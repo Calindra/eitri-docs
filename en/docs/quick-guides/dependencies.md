@@ -8,15 +8,15 @@ Eitri-Apps support a curated list of third-party libraries with strict version c
 
 Here's a sample of commonly used dependencies:
 
-| Library                   | Version | Library            | Version |
-| :------------------------ | :------ | :----------------- | :------ |
-| **dayjs**                 | 1.11.19 | **eitri-i18n**     | 14.1.2  |
-| **qs**                    | 6.13.0  | **uuid**           | 11.1.0  |
-| **@fnando/cpf**           | 1.0.2   | **@fnando/cnpj**   | 1.0.2   |
-| **firebase**              | 11.1.0  | **recaptcha**      | 2       |
-| **react-icons**           | 5.5.0   | **liveshop**       | 1.0.0   |
-| **google-map-react**      | 2.2.5   | **@apollo/client** | 4.1.3   |
-| **@tanstack/react-query** | 4.41.0  |                    |         |
+| Library                   | Version | Library          | Version |
+| :------------------------ | :------ | :--------------- | :------ |
+| **dayjs**                 | 1.11.19 | **eitri-i18n**   | 14.1.2  |
+| **qs**                    | 6.13.0  | **uuid**         | 11.1.0  |
+| **@fnando/cpf**           | 1.0.2   | **@fnando/cnpj** | 1.0.2   |
+| **@apollo/client**        | 4.1.3   | **recaptcha**    | 2       |
+| **react-icons**           | 5.5.0   | **liveshop**     | 1.0.0   |
+| **google-map-react**      | 2.2.5   |                  |         |
+| **@tanstack/react-query** | 4.41.0  |                  |         |
 
 ## Declaring Dependencies (`eitri-app.conf.js`)
 

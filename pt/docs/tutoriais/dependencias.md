@@ -8,15 +8,15 @@ Eitri-Apps suportam uma lista curada de bibliotecas de terceiros com controle de
 
 Aqui está uma amostra de dependências comumente usadas:
 
-| Biblioteca                | Versão  | Biblioteca         | Versão |
-| :------------------------ | :------ | :----------------- | :----- |
-| **dayjs**                 | 1.11.19 | **eitri-i18n**     | 14.1.2 |
-| **qs**                    | 6.13.0  | **uuid**           | 11.1.0 |
-| **@fnando/cpf**           | 1.0.2   | **@fnando/cnpj**   | 1.0.2  |
-| **firebase**              | 11.1.0  | **recaptcha**      | 2      |
-| **react-icons**           | 5.5.0   | **liveshop**       | 1.0.0  |
-| **google-map-react**      | 2.2.5   | **@apollo/client** | 4.1.3  |
-| **@tanstack/react-query** | 4.41.0  |                    |        |
+| Biblioteca                | Versão  | Biblioteca       | Versão |
+| :------------------------ | :------ | :--------------- | :----- |
+| **dayjs**                 | 1.11.19 | **eitri-i18n**   | 14.1.2 |
+| **qs**                    | 6.13.0  | **uuid**         | 11.1.0 |
+| **@fnando/cpf**           | 1.0.2   | **@fnando/cnpj** | 1.0.2  |
+| **@apollo/client**        | 4.1.3   | **recaptcha**    | 2      |
+| **react-icons**           | 5.5.0   | **liveshop**     | 1.0.0  |
+| **google-map-react**      | 2.2.5   |                  |        |
+| **@tanstack/react-query** | 4.41.0  |                  |        |
 
 ## Declarando Dependências (`eitri-app.conf.js`)
 
