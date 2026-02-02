@@ -158,21 +158,8 @@ header [data-orientation="vertical"][role="none"]:has(+ a[target="_blank"]) {
    Footer customizado - esconde créditos do tema
    =========================================== */
 
-/* Esconde o texto original do footer shadcn */
+/* Footer customizado via JS (replace-footer.js) */
 .text-muted-foreground.w-full.text-center.text-xs {
-  font-size: 0 !important;
-  visibility: hidden;
-}
-
-/* Esconde os links do asiffer */
-.text-muted-foreground.w-full.text-center.text-xs a {
-  display: none !important;
-}
-
-/* Adiciona conteúdo customizado no footer */
-.text-muted-foreground.w-full.text-center.text-xs::after {
-  content: "© 2025 Eitri · https://linkedin.com/company/eitritech";
-  visibility: visible;
   font-size: 0.875rem;
 }
 

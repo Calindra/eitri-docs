@@ -20,7 +20,7 @@ These conventions follow [Conventional Commits](https://www.conventionalcommits.
 
 ## Requirements
 
-1. [**Eitri CI/CD Configuration**](/quick-guides/ci-cd)
+1. [**Eitri CI/CD Configuration**](./ci-cd.md)
 2. [**Commits Following the Conventional Commits Standard**](https://www.conventionalcommits.org/){:target="\_blank"}
 
 ## How to Execute
