@@ -60,10 +60,9 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     > VTEX: A URL das páginas de produto em sites Vtex normalmente terminam com "/p". Você precisa remove-lo pois ele não faz parte do slug.
 
     **Exemplos:**
-    ```
-    myapp://product/id/348764
-    myapp://product/slug/altra-lone-peak-9-trail-running-shoe-mens-10595101
-    ```
+
+    - `myapp://product/id/348764`
+    - `myapp://product/slug/altra-lone-peak-9-trail-running-shoe-mens-10595101`
 
 
 ??? note "Abrir Vitrine (PLP) (Categorias Vtex / Hotsites Wake)"
@@ -106,12 +105,13 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     > INFO: Em apps usando Wake Commerce você pode copiar e colar os filtros de seu website. Examplo: `prefix://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
 
+       
     **Exemplos:**
-    ```
-    myapp://category/male
-    myapp://category/female/jeans
-    myapp://category/kids/clothes/pants?filters=%7B%22cor%22%3A%20%22preta%22%7D&order=OrderByNameASC
-    ```
+
+    - `myapp://category/male`
+    - `myapp://category/female/jeans`
+    - `myapp://category/kids/clothes/pants?filters=%7B%22cor%22%3A%20%22preta%22%7D&order=OrderByNameASC`
+    - `myapp://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`    (Wake Commerce)
 
 
 
@@ -156,11 +156,10 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     > INFO: Em apps usando Wake Commerce você pode copiar e colar os filtros de seu website. Examplo: `prefix://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
 
     **Exemplos:**
-    ```
-    myapp://search/shirts
-    myapp://search/leather%20jackets
-    myapp://search/kids%eletronic%20toys?filter=%7B%22age%22%3A%20%2210-12%22%7D&order=OrderByReleaseDateDESC
-    ```
+
+    - `myapp://search/shirts`
+    - `myapp://search/leather%20jackets`
+    - `myapp://search/kids%eletronic%20toys?filter=%7B%22age%22%3A%20%2210-12%22%7D&order=OrderByReleaseDateDESC`
 
 
 
@@ -179,10 +178,9 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     > ATENÇÃO: Ao usar um cart_id o carrinho atual do usuário poderá ser substituido pelo carrinho que será aberto **SOBRESCREVENDO** os itens anteriores.
 
     **Exemplos:**
-    ```
-    myapp://cart
-    myapp://cart/364265434904
-    ```
+
+    - `myapp://cart`
+    - `myapp://cart/364265434904`
 
 
 ??? note "Abrir Perfil"
@@ -196,9 +194,8 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     `prefixo` = prefixo utilizado pelo seu app
 
     **Exemplos:**
-    ```
-    myapp://account
-    ```
+
+    - `myapp://account`
 
 ??? note "Abrir Home"
 
@@ -211,9 +208,8 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     `prefixo` = prefixo utilizado pelo seu app
 
     **Exemplos:**
-    ```
-    myapp://home
-    ```
+
+    - `myapp://home`
 
 ??? note "Abrir Browser/URL"
 
@@ -232,10 +228,9 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     > Recomandamos que você use encode uri na URL para garantir que caracteres especiais sejam lidos corretamente. Exemplo: "https://www.mywebsite.com.br/male/shirts" deve ser passado como "https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts". Para encodar conteúdos você pode utilizar uma biblioteca ou website como o [urlencoder.org](https://www.urlencoder.org/pt/){:target="_blank"}
 
     **Exemplos:**
-    ```
-    myapp://webview/https%3A%2F%2Fwww.mywebsite.com.br%2terms
-    myapp://webview/inapp/https%3A%2F%2Fwww.mywebsite.com.br%2privacy
-    ```
+
+    - `myapp://webview/https%3A%2F%2Fwww.mywebsite.com.br%2terms`
+    - `myapp://webview/inapp/https%3A%2F%2Fwww.mywebsite.com.br%2privacy`
 
 ??? note "Abrir Favoritos"
 
@@ -247,10 +242,9 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     `prefixo` = prefixo usado pelo seu app
 
-    **Examplo:**
-    ```
-    myapp://account/favorites
-    ```
+    **Examplos:**
+
+    - `myapp://account/favorites`
 
 ??? note "Abrir Meus Pedidos"
 
@@ -262,10 +256,9 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
 
     `prefixo` = prefixo usado pelo seu app
 
-    **Examplo:**
-    ```
-    myapp://account/orderlist
-    ```
+    **Examplos:**
+
+    - `myapp://account/orderlist`
 
 ??? note "Abrir Páginas da Conta (Favoritos, Pedidos e outras)"
 
@@ -282,11 +275,10 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     `page_enum` = enum listado no seu módulo/eitri-app de account
 
     **Examplos:**
-    ```
-    myapp://account/about_us
-    myapp://account/our_stores
-    myapp://account/policies
-    ```
+
+    - `myapp://account/about_us`
+    - `myapp://account/our_stores`
+    - `myapp://account/policies`
 
 ### Ações exclusivas Vtex
 
@@ -325,10 +317,25 @@ Eitri App Shopping suporta as seguintes ações em deeplinks por padrão:
     **OrderByScoreDESC:** **Melhor pontuação primeiro**
 
     **Exemplos:**
-    ```
-    myapp://collection?filter=55678&order=OrderByPriceASC
-    myapp://collection?filter=55739&order=OrderByBestDiscountDESC
-    ```
+
+    - `myapp://collection?filter=55678&order=OrderByPriceASC`
+    - `myapp://collection?filter=55739&order=OrderByBestDiscountDESC`
+
+??? note "Abrir Landing Page"
+
+    ### Abrir Landing Page
+
+    `prefixo`://landingpage/`landingpagename`
+
+    **Onde:**
+
+    `prefixo` = prefixo utilizado pelo seu app
+    <br>
+    `landingpagename` = nome da landing page no cms da vtex (precisa ser o nome exato. Evite caracteres especiais nos nomes de landing page.)
+
+    **Examplos:**
+
+    - `myapp://landingpage/ofertasblackfriday`
 
 
 ## App Link (Android) / Universal Link (iOS)

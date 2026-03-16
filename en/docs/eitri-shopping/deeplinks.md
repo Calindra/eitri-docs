@@ -59,10 +59,9 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     > VTEX: Websites product pages url usually ends with "/p". You need to remove it since it's not part of product slug.
 
     **Examples:**
-    ```
-    myapp://product/id/348764
-    myapp://product/slug/altra-lone-peak-9-trail-running-shoe-mens-10595101
-    ```
+
+    - `myapp://product/id/348764`
+    - `myapp://product/slug/altra-lone-peak-9-trail-running-shoe-mens-10595101`
 
 
 ??? note "Open Product List Page (Vtex categories / Wake hotsites)"
@@ -106,12 +105,11 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     > INFO: In apps using Wake Commerce system you can just copy-paste the filters from your website. Example: `prefix://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
 
     **Examples:**
-    ```
-    myapp://category/male
-    myapp://category/female/jeans
-    myapp://category/kids/clothes/pants?filters=%7B%22cor%22%3A%20%22preta%22%7D&order=OrderByNameASC
-    myapp://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P    (Wake Commerce)
-    ```
+
+    - `myapp://category/male`
+    - `myapp://category/female/jeans`
+    - `myapp://category/kids/clothes/pants?filters=%7B%22cor%22%3A%20%22preta%22%7D&order=OrderByNameASC`
+    - `myapp://category/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`    (Wake Commerce)
 
 ??? note "Open Search"
 
@@ -154,12 +152,11 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     > INFO: In apps using Wake Commerce system you can just copy-paste the filters from your website. Example: `prefix://search/blusas?filtro=FiltroCor__AZUL&filtro=Tamanho__P`
 
     **Examples:**
-    ```
-    myapp://search/shirts
-    myapp://search/leather%20jackets
-    myapp://search/kids%eletronic%20toys?filter=%7B%22age%22%3A%20%2210-12%22%7D&order=OrderByReleaseDateDESC
-    myapp://search/blusas?filtro=FiltroCor__PRETO&filtro=Tamanho__M
-    ```
+
+    - `myapp://search/shirts`
+    - `myapp://search/leather%20jackets`
+    - `myapp://search/kids%eletronic%20toys?filter=%7B%22age%22%3A%20%2210-12%22%7D&order=OrderByReleaseDateDESC`
+    - `myapp://search/blusas?filtro=FiltroCor__PRETO&filtro=Tamanho__M`
 
 ??? note "Open cart"
 
@@ -176,10 +173,9 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     > WARNING: When using cart_id, the user's cart items will be **OVERWRITTEN** with the new ones.
 
     **Examples:**
-    ```
-    myapp://cart
-    myapp://cart/364265434904
-    ```
+
+    - `myapp://cart`
+    - `myapp://cart/364265434904`
 
 
 ??? note "Open account"
@@ -193,9 +189,8 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     `prefix` = prefix used for your app
 
     **Examples:**
-    ```
-    myapp://account
-    ```
+
+    - `myapp://account`
 
 ??? note "Open Home"
 
@@ -208,9 +203,8 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     `prefix` = prefix used for your app
 
     **Examples:**
-    ```
-    myapp://home
-    ```
+
+    - `myapp://home`
 
 ??? note "Open Browser/URL"
 
@@ -229,9 +223,8 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     > We recommend that you uri encode the URL content to ensure your special characters are correctly readed. Example: "https://www.mywebsite.com.br/male/shirts" should be passed as "https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts". To encode a content use a lib or website like [urlencoder.org](https://www.urlencoder.org/){:target="_blank"}
 
     **Examples:**
-    ```
-    myapp://webview/https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts
-    ```
+
+    - `myapp://webview/https%3A%2F%2Fwww.mywebsite.com.br%2Fmale%2Fshirts`
 
 ??? note "Open Wishlist"
 
@@ -243,10 +236,9 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     `prefix` = prefix used for your app
 
-    **Example:**
-    ```
-    myapp://account/favorites
-    ```
+    **Examples:**
+
+    - `myapp://account/favorites`
 
 ??? note "Open Orders List"
 
@@ -258,10 +250,9 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
 
     `prefix` = prefix used for your app
 
-    **Example:**
-    ```
-    myapp://account/orderlist
-    ```
+    **Examples:**
+
+    - `myapp://account/orderlist`
 
 ??? note "Open Account Pages (Wishlist, Orders and others)"
 
@@ -278,11 +269,10 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     `page_enum` = enum listed on your account eitri-app module
 
     **Examples:**
-    ```
-    myapp://account/about_us
-    myapp://account/our_stores
-    myapp://account/policies
-    ```
+
+    - `myapp://account/about_us`
+    - `myapp://account/our_stores`
+    - `myapp://account/policies`
 
 ### Exclusive Vtex actions
 
@@ -321,10 +311,25 @@ Eitri App Shopping supports the following a lot of actions for deeplinks by defa
     **OrderByScoreDESC:** Better score first
 
     **Examples:**
-    ```
-    myapp://collection?filter=55678&order=OrderByPriceASC
-    myapp://collection?filter=55739&order=OrderByBestDiscountDESC
-    ```
+
+    - `myapp://collection?filter=55678&order=OrderByPriceASC`
+    - `myapp://collection?filter=55739&order=OrderByBestDiscountDESC`
+
+??? note "Open Landing Page"
+
+    ### Open Landing Page
+
+    `prefix`://landingpage/`landingpagename`
+
+    **Where:**
+
+    `prefix` = prefix used for your app
+    <br>
+    `landingpagename` = landing page name in vtex cms (it must be the exact same name. Avoid using special characters in landing page names.)
+
+    **Examples:**
+
+    - `myapp://landingpage/blackfridayoffers`
 
 ## App Link (Android) / Universal Link (iOS)
 
