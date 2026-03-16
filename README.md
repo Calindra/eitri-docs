@@ -18,6 +18,9 @@ Para rodar o projeto você precisará:
 - No Linux:
   `source venv/bin/activate`
 
+- No Mac:
+  `source venv/bin/activate`
+
 > **OBS1**: isso fará com que este venv seja a instância do python usada para as instalações de dependências e não a instalação global do python, similar ao node_modules no JS
 
 > **OBS2**: para desativar o uso do venv para o python use o `deactivate` voltando a considerar a instalação global do python como padrão
