@@ -11,7 +11,7 @@ Agora, o código pode ser testado diretamente na sua branch, sem travar o desenv
 5. Abra um PR para sua branch principal
 6. Crie o Snapshot para validação usando o comando na pasta raiz do projeto (a mesma do `eitri app start`):
 
-[`eitri app snapshot`](../concepts/eitri-cli.md#app)
+`eitri app snapshot`
 
 !!!info
     Ao final da criação, o Snapshot gera:

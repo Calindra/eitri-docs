@@ -11,7 +11,7 @@ Now, code can be tested directly on your branch without blocking project develop
 5. Open a PR to your main branch
 6. Create the Snapshot for validation using the command in the project root folder (same as `eitri app start`):
 
-[`eitri app snapshot`](../concepts/eitri-cli.md#app)
+`eitri app snapshot`
 
 !!!info
     At the end of creation, the Snapshot generates:
