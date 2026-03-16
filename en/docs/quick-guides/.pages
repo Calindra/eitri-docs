@@ -13,6 +13,7 @@ nav:
     - Multiple Shareds: multiple-shared.md
     - Developing Multiple Eitri-Apps: eitri-app-start.md
     - Bottom Bar Simulation: bottom-bar-simulation.md
+    - Snapshots: snapshots.md
     # Deploy
     - CI/CD: ci-cd.md
     - Semantic Release: semantic-release.md
