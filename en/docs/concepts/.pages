@@ -6,3 +6,4 @@ nav:
     - Eitri CLI: eitri-cli.md
     - Eitri Luminus: eitri-luminus.md
     - Eitri Play: eitri-play.md
+    - Performance Metrics: performance-metrics.md
