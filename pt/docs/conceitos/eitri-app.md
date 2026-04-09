@@ -15,6 +15,7 @@ Eitri-Apps são aplicações construídas com React que podem ser executadas den
 
 ```
 meu-eitri-app/
+├── public/              # Arquivos expostos publicamente
 ├── src/
 │   ├── views/           # Telas do aplicativo
 │   │   └── Home.jsx

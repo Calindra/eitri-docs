@@ -15,6 +15,7 @@ Eitri-Apps are applications built with React that can run inside mobile apps tha
 
 ```
 my-eitri-app/
+├── public/              # Public exposed files
 ├── src/
 │   ├── views/           # App screens
 │   │   └── Home.jsx
