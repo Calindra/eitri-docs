@@ -95,6 +95,10 @@ O comando `eitri start` inicializa o Eitri-App para desenvolvimento, gerando um 
 
 - `-sh, --shared` Inicializa o Eitri-App em modo compartilhado, com QrCode de abertura para o Eitri Shared.
 
+- `-d, --detach` Executa o start em segundo plano e libera o terminal, mantendo o processo Eitri em execução — observando seus arquivos (hotreload) e conectado ao stream de logs.
+
+- `-a, --attach` Reconecta o terminal a um start em execução em segundo plano, reexibindo o workspace e o QrCode, reproduzindo a saída capturada e passando a exibir ao vivo os novos logs de JavaScript e atualizações de hotreload.
+
 ---
 
 ### push-version
@@ -229,6 +233,8 @@ Gerencia a execução de Eitri-Apps do aplicativo, declarado no arquivo app-conf
 - `start [opções]` Inicializa todos os Eitri-Apps do arquivo de configuração app-config.yaml.
     - `-p, --playground` Inicializa o Eitri-App em modo playground, com QrCode de abertura para o Eitri Play.
     - `-v, --verbose` Exibe mais logs.
+    - `-d, --detach` Executa o app start em segundo plano e libera o terminal. Retome com `--attach`.
+    - `-a, --attach` Reconecta ao app start em segundo plano, reexibindo workspaces/QrCodes e os logs. `Ctrl+C` desconecta sem parar o processo.
 
 - `clean` Realiza a limpeza completa dos workspaces, removendo tanto os workspaces remotos quanto as pastas `.workspaces/` locais de todos os apps definidos no arquivo app-config.yaml. Útil para resolver problemas de conflitos ou dados inválidos em workspaces.
     - `-v, --verbose` Exibe mensagens detalhadas durante o processo de limpeza.

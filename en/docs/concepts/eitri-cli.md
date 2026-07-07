@@ -89,6 +89,8 @@ As you develop and save your files locally, your Eitri-App will have a hot-reloa
 - `-p, --playground` Initializes the Eitri-App in playground mode, with an opening QR code for the Eitri Play.
 - `-e, --emulator` Initializes the Eitri-App in emulator mode, with an opening QR code for the Eitri Emulator.
 - `-sh, --shared` Initializes the Eitri-App in shared mode, with an opening QR code for the Eitri Shared.
+- `-d, --detach` Runs `start` in the background and frees up the terminal, keeping the Eitri process running — watching your files (hot-reload) and staying connected to the log stream.
+- `-a, --attach` Reconnects the terminal to a start that is running in the background, re-presenting the workspace and QR Code, replaying the captured output, and then streaming new JavaScript logs and hot-reload updates live.
 
 ---
 
@@ -222,6 +224,8 @@ Manages the execution of Eitri-Apps from the application declared in the app-con
 - `start [options]` Initializes all Eitri-Apps from the app-config.yaml configuration file.
     - `-p, --playground` Initializes the Eitri-App in playground mode, with a QR Code for opening in Eitri Play.
     - `-v, --verbose` Displays more logs.
+    - `-d, --detach` Runs the app start in the background and frees up the terminal. Resume with `--attach`.
+    - `-a, --attach` Reconnects to the app start running in the background, re-presenting workspaces/QR Codes and the logs. `Ctrl+C` disconnects without stopping the process.
 
 - `clean` Performs a complete cleanup of the workspaces, removing both remote workspaces and the local `.workspaces/` folders of all apps defined in the app-config.yaml file. Useful for resolving conflicts or invalid data issues in workspaces.
     - `-v, --verbose` Displays detailed messages during the cleanup process.
