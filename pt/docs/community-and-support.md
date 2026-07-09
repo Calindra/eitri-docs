@@ -12,4 +12,4 @@ Para acessar nosso servidor no discord e interagir com a comunidade Eitri, basta
 
 [→ Baixe o Discord](https://discord.com/download){:target="_blank" .md-button .md-button--primary }
 
-[→ Eitri no discord](https://discord.gg/qmJycBFM){:target="_blank" .md-button .md-button--primary }
+[→ Eitri no discord](https://discord.gg/k4bFBtf6nK){:target="_blank" .md-button .md-button--primary }
