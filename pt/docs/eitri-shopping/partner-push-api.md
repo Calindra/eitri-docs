@@ -4,7 +4,7 @@ status: new
 
 # API de Push para Parceiros
 
-Esta página é destinada a **parceiros do Eitri** que precisam disparar push notifications para os dispositivos de uma loja Eitri Shopping usando a infraestrutura do Eitri (o serviço `push-notification-eitri-shop-api`).
+Esta página é destinada a **parceiros do Eitri** que precisam disparar push notifications para os dispositivos de uma loja Eitri Shopping usando a infraestrutura do Eitri.
 
 O fluxo é padrão OAuth 2.0 *client credentials*:
 
@@ -20,7 +20,7 @@ O fluxo é padrão OAuth 2.0 *client credentials*:
 
 ## 1. Solicitando as credenciais
 
-**As credenciais não são autoatendimento.** Não existe endpoint público de cadastro: a criação é feita por um administrador do Eitri através de uma rota protegida por token de ADMIN.
+**As credenciais não são autoatendimento.** Não existe cadastro público: elas são geradas pelo time do Eitri mediante solicitação.
 
 Abra uma solicitação com o time interno do Eitri (seu contato comercial ou o canal de suporte) informando:
 
@@ -33,17 +33,17 @@ Abra uma solicitação com o time interno do Eitri (seu contato comercial ou o c
 
 Após a criação, **o time do Eitri fornece a você o `client_id` e o `client_secret`** — é esse par que você usará para se autenticar em `POST /v1/oauth/token` e obter o access token do push.
 
-!!! warning "O `clientSecret` é entregue uma única vez"
-    O Eitri armazena apenas um hash do segredo — não é possível recuperá-lo depois. Guarde-o em um cofre de segredos (Vault, AWS Secrets Manager, etc.). Se ele for perdido ou vazar, peça uma **rotação** ao time do Eitri: um novo segredo é gerado e o anterior deixa de funcionar imediatamente.
+!!! warning "O `client_secret` é entregue uma única vez"
+    O segredo não pode ser recuperado depois. Guarde-o em um cofre de segredos (Vault, AWS Secrets Manager, etc.). Se ele for perdido ou vazar, peça uma **rotação** ao time do Eitri: um novo segredo é gerado e o anterior deixa de funcionar imediatamente.
 
 ### Ciclo de vida da credencial
 
-Todas as operações abaixo são executadas pelo time interno do Eitri, mediante solicitação:
+Todas as operações abaixo são feitas pelo time do Eitri, mediante solicitação:
 
-- **Criação** — gera `client_id` e `client_secret` para uma loja.
+- **Criação** — gera o `client_id` e o `client_secret` para uma loja.
 - **Rotação** — gera um novo segredo para o mesmo `client_id` (invalida o anterior).
 - **Atualização de escopos** — altera o conjunto de escopos da credencial.
-- **Revogação** — marca a credencial como `revoked`. Tokens já emitidos param de funcionar na próxima chamada, pois o status da credencial é verificado a cada requisição.
+- **Revogação** — desativa a credencial. Tokens já emitidos deixam de funcionar imediatamente.
 
 Uma credencial é sempre vinculada a **uma única loja**. Se você atende várias lojas, solicite uma credencial por loja.
 
@@ -91,7 +91,7 @@ Resposta:
 }
 ```
 
-O token é um JWT com validade padrão de **900 segundos (15 minutos)** — sempre use o valor retornado em `expires_in` em vez de fixar o tempo no código. Ele carrega a loja (`storeId` / `storeEnvId`) e os escopos da credencial; você não precisa (nem deve) informar a loja manualmente nas chamadas seguintes.
+O token tem validade padrão de **900 segundos (15 minutos)** — sempre use o valor retornado em `expires_in` em vez de fixar o tempo no código. Ele já identifica a loja vinculada à credencial; você não precisa informar a loja nas chamadas seguintes.
 
 Reaproveite o token até ele expirar em vez de pedir um novo a cada push.
 
@@ -154,9 +154,9 @@ curl --request POST \
 }
 ```
 
-O envio é **assíncrono**: o `202` significa que a mensagem foi enfileirada com sucesso, não que a notificação já chegou ao dispositivo. Guarde o `requestId` — é ele que o time do Eitri usa para rastrear o envio nos logs.
+O envio é **assíncrono**: o `202` significa que a solicitação foi aceita, não que a notificação já chegou ao dispositivo. Guarde o `requestId` — é ele que você informa ao suporte do Eitri para rastrear um envio.
 
-Durante o processamento, cada `deviceId` é resolvido e validado contra a loja do token. Dispositivos não encontrados ou pertencentes a outra loja são **descartados silenciosamente** (e registrados para auditoria), portanto `enqueued` reflete o que foi aceito, não o total efetivamente entregue.
+Dispositivos desconhecidos ou que não pertencem à loja da sua credencial são ignorados no processamento. Portanto `enqueued` reflete o que foi aceito, não o total efetivamente entregue.
 
 ### Erros
 
@@ -208,9 +208,9 @@ A loja é sempre a do token — não há campo de loja no corpo e não é possí
 
 ### Resposta — `202 Accepted`
 
-Assim como no push livre, o processamento é assíncrono: o `202` confirma que a solicitação foi aceita e enfileirada, não que a notificação foi entregue. A resposta traz um `requestId` para rastreamento nos logs do Eitri.
+Assim como no push livre, o processamento é assíncrono: o `202` confirma que a solicitação foi aceita, não que a notificação foi entregue. A resposta traz um `requestId` para rastreamento.
 
-O push pode não ser enviado — sem erro para o parceiro — quando o pedido não é encontrado na plataforma, o cliente não possui dispositivos registrados, ou não há mensagem configurada para aquele status. Esses casos ficam registrados nos logs do Eitri e podem ser consultados pelo `requestId`.
+O push pode não ser enviado — sem erro para o parceiro — quando o pedido não é encontrado na plataforma, o cliente não possui dispositivos registrados, ou não há mensagem configurada para aquele status. Nesses casos, informe o `requestId` ao suporte do Eitri para verificação.
 
 ### Erros
 
