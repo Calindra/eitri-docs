@@ -5,3 +5,4 @@ nav:
     - recaptcha.md
     - deeplinks.md
     - push-notification.md
+    - partner-push-api.md

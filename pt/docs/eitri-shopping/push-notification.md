@@ -12,6 +12,9 @@ Se seu aplicativo utiliza a solução de deeplinks padrão do Eitri Shopping, co
 
 Tambem é possível personalizar os deeplinks padrão do Eitri Shopping para modificar o suporte e direcionamento de deeplinks em seu aplicativo. Para saber mais, consulte a [documentação dos nossos addons de deeplinks](https://github.com/eitri-tech/eitri-shopping-addons){:target="_blank"}.
 
+## Push-notification por parceiros via API do Eitri
+Parceiros que precisam disparar pushes usando a infraestrutura do Eitri devem usar a [API de Push para Parceiros](partner-push-api.md), autenticando-se com um `client_id` e `client_secret` gerados pelo time interno do Eitri.
+
 ## Push-notifications no Firebase
 Para saber mais sobre como disparar push-notifications confira a [Documentação do Firebase](https://firebase.google.com/docs/cloud-messaging/android/send-with-console){:target="_blank"}
 
