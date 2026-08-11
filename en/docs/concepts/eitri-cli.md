@@ -188,7 +188,7 @@ Publishes the current version in the selected environment.
 
 ### Environment Id
 
-- `-e, --environment <environment-id>` Set the environment to publishthe actual version of your Eitri-App defined by *eitri-app.conf.js*. To know your environment id, access the [Eitri Console](https://console.eitri.tech/) e go to **"Applications"**, select your app and click **"Your environments"**.
+- `-e, --environment <environment-id>` Set the environment to publish the actual version of your Eitri-App defined by *eitri-app.conf.js*. To know your environment id, access the [Eitri Console](https://console.eitri.tech/) e go to **"Applications"**, select your app and click **"Your environments"**.
 
 #### Available Options
 
