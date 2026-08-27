@@ -20,3 +20,6 @@ Para saber mais sobre como disparar push-notifications confira a [Documentação
 
 ## Push-notifications na Insider
 Para fazer a configuração e disparo de push-notifications via Insider, utilize deeplinks do tipo `URL Scheme` e forneça o deeplink completo que deseja abrir conforme [nossa documentação de deeplinks](deeplinks.md)
+
+## Live Notification (acompanhamento de pedido)
+Para a notificação de acompanhamento que se atualiza sozinha conforme o pedido avança — barra de progresso no Android e Live Activity no iOS, alimentada pelo webhook da Abbiamo —, veja [Live Notification](live-notification.md).

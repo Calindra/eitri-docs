@@ -22,3 +22,6 @@ To know more about sending push-notifications using [Firebase Documentation](htt
 
 ## Push-notifications in Insider
 Use `URL Scheme` deeplinks to configure and send push-notifications via Insider, providing the full deeplink you want to open as explained in [our deeplinks documentation](deeplinks.md)
+
+## Live Notification (order tracking)
+For the tracking notification that updates itself as the order moves forward — a progress bar on Android and a Live Activity on iOS, fed by the Abbiamo webhook — see [Live Notification](live-notification.md).
