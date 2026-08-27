@@ -13,13 +13,13 @@ aparece na tela de bloqueio e na Dynamic Island (iOS 16.2+).
 
 ## Como funciona
 
-A notificação **só pode ser iniciada pelo app** — normalmente na conclusão do pedido, depois que o
+A notificação **só pode ser iniciada pelo app** — normalmente quando o pedido é confirmado, depois que o
 usuário concede a permissão de push. A partir daí ela fica ativa no aparelho e é **atualizada
 remotamente** a cada mudança de status da entrega — pelo webhook da Abbiamo ou por uma chamada do
 seu próprio sistema à API do Eitri.
 
 ```
-app (pedido concluído) ──► inicia a Live Notification no aparelho
+app (pedido confirmado) ──► inicia a Live Notification no aparelho
                                               ▲
 Abbiamo ──webhook──┐                          │
                    ├──► Eitri ──push──────────┘  (atualiza status, texto e progresso)

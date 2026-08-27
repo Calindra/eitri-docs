@@ -13,13 +13,13 @@ iOS it shows up on the lock screen and in the Dynamic Island (iOS 16.2+).
 
 ## How it works
 
-The notification **can only be started by the app** — usually when the order is placed, after the
+The notification **can only be started by the app** — usually when the order is confirmed, after the
 user grants push permission. From then on it stays active on the device and is **updated remotely**
 on every delivery status change — either by the Abbiamo webhook or by a call from your own system
 to the Eitri API.
 
 ```
-app (order placed) ──► starts the Live Notification on the device
+app (order confirmed) ──► starts the Live Notification on the device
                                          ▲
 Abbiamo ──webhook──┐                     │
                    ├──► Eitri ──push─────┘  (updates status, text and progress)
