@@ -86,12 +86,12 @@ Response:
 {
   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "token_type": "Bearer",
-  "expires_in": 900,
+  "expires_in": 21600,
   "scope": "push:send"
 }
 ```
 
-The token is valid for **900 seconds (15 minutes)** by default — always rely on the returned `expires_in` instead of hardcoding the lifetime. It already identifies the store bound to the credential; you do not need to pass the store in the following calls.
+The token is valid for **21600 seconds (6 hours)** by default — always rely on the returned `expires_in` instead of hardcoding the lifetime. It already identifies the store bound to the credential; you do not need to pass the store in the following calls.
 
 Reuse the token until it expires instead of requesting a new one for every push.
 

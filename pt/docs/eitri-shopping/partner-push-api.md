@@ -86,12 +86,12 @@ Resposta:
 {
   "access_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...",
   "token_type": "Bearer",
-  "expires_in": 900,
+  "expires_in": 21600,
   "scope": "push:send"
 }
 ```
 
-O token tem validade padrão de **900 segundos (15 minutos)** — sempre use o valor retornado em `expires_in` em vez de fixar o tempo no código. Ele já identifica a loja vinculada à credencial; você não precisa informar a loja nas chamadas seguintes.
+O token tem validade padrão de **21600 segundos (6 horas)** — sempre use o valor retornado em `expires_in` em vez de fixar o tempo no código. Ele já identifica a loja vinculada à credencial; você não precisa informar a loja nas chamadas seguintes.
 
 Reaproveite o token até ele expirar em vez de pedir um novo a cada push.
 
