@@ -182,7 +182,7 @@ Alternativa ao endpoint anterior para o caso mais comum: avisar o cliente de que
 3. Resolve os dispositivos daquele cliente registrados para a loja.
 4. Monta a notificação a partir da **mensagem configurada para aquele parceiro e aquele status** e dispara o push.
 
-Isso significa que os textos das notificações são definidos na configuração da integração junto ao Eitri, e não a cada requisição — para alterá-los, fale com o time do Eitri.
+Isso significa que os textos das notificações são definidos na configuração da integração junto ao Eitri, e não a cada requisição — para alterá-los, fale com o time do Eitri. O que você pode informar por requisição são os **valores dos placeholders** usados nesses textos (ver abaixo).
 
 Requer o header `Authorization: Bearer <access_token>`, exatamente como o endpoint de push livre.
 
@@ -193,7 +193,10 @@ curl --request POST \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...' \
   --data '{
     "orderId": "123",
-    "orderStatus": "CHANGE"
+    "orderStatus": "CHANGE",
+    "placeholders": {
+      "PICKUP_TOKEN": "A7X9"
+    }
   }'
 ```
 
@@ -203,20 +206,43 @@ curl --request POST \
 | --- | --- | --- | --- |
 | `orderId` | `string` | Sim | Identificador do pedido na plataforma de e-commerce da loja |
 | `orderStatus` | `string` | Sim | Novo status do pedido, conforme a nomenclatura da plataforma da loja |
+| `placeholders` | `objeto` | Não | Valores dos placeholders usados na mensagem configurada, por nome (ver abaixo) |
 
 A loja é sempre a do token — não há campo de loja no corpo e não é possível consultar pedidos de outra loja com a mesma credencial.
+
+### Placeholders
+
+A mensagem configurada para o status pode conter placeholders no formato `<NOME>`. A maioria é
+preenchida pelo Eitri a partir do pedido; alguns só existem do seu lado, e é para eles que serve o
+campo `placeholders`:
+
+| Placeholder | Origem |
+| --- | --- |
+| `PICKUP_TOKEN` | só você informa — token de retirada, código do armário, senha de balcão |
+| `CUSTOMER_NAME` | preenchido pelo pedido; o valor informado prevalece |
+| `PRODUCT_NAME` | preenchido pelo pedido; o valor informado prevalece |
+| `CARRIER_NAME` | preenchido pelo pedido quando já existe transportadora; o valor informado prevalece |
+
+Envie o nome **sem** os sinais `<>` (com eles também é aceito). `ORDER_ID`, `STORE_NAME` e `STATUS`
+são recusados: eles identificam o pedido e a loja e vêm sempre da própria notificação.
+
+!!! warning "Placeholder sem valor não envia a notificação"
+    Se a mensagem configurada usa um placeholder e ele não tem valor — nem no pedido, nem no seu
+    `placeholders` — a notificação **não é enviada**, para o cliente não receber um texto truncado
+    ("Retire com o token "). Se o status precisa notificar mesmo sem o dado, peça ao time do Eitri um
+    texto alternativo na configuração.
 
 ### Resposta — `202 Accepted`
 
 Assim como no push livre, o processamento é assíncrono: o `202` confirma que a solicitação foi aceita, não que a notificação foi entregue. A resposta traz um `requestId` para rastreamento.
 
-O push pode não ser enviado — sem erro para o parceiro — quando o pedido não é encontrado na plataforma, o cliente não possui dispositivos registrados, ou não há mensagem configurada para aquele status. Nesses casos, informe o `requestId` ao suporte do Eitri para verificação.
+O push pode não ser enviado — sem erro para o parceiro — quando o pedido não é encontrado na plataforma, o cliente não possui dispositivos registrados, não há mensagem configurada para aquele status, ou a mensagem usa um placeholder sem valor. Nesses casos, informe o `requestId` ao suporte do Eitri para verificação.
 
 ### Erros
 
 | HTTP | Quando ocorre |
 | --- | --- |
-| 400 | `orderId` ou `orderStatus` ausente ou vazio |
+| 400 | `orderId` ou `orderStatus` ausente ou vazio; placeholder inexistente, com valor vazio ou recusado (`ORDER_ID`, `STORE_NAME`, `STATUS`) |
 | 401 | Token ausente, inválido, expirado ou credencial revogada |
 | 403 | Token sem o escopo necessário |
 | 404 | Loja do token não encontrada |

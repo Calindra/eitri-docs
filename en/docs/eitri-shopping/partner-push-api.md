@@ -182,7 +182,7 @@ An alternative to the previous endpoint for the most common case: telling the cu
 3. Resolves that customer's devices registered for the store.
 4. Builds the notification from the **message configured for that specific partner and status** and fires the push.
 
-This means notification texts are defined in the integration configuration with Eitri, not per request — to change them, talk to the Eitri team.
+This means notification texts are defined in the integration configuration with Eitri, not per request — to change them, talk to the Eitri team. What you can send per request are the **placeholder values** used in those texts (see below).
 
 Requires the `Authorization: Bearer <access_token>` header, exactly like the free-form push endpoint.
 
@@ -193,7 +193,10 @@ curl --request POST \
   --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...' \
   --data '{
     "orderId": "123",
-    "orderStatus": "CHANGE"
+    "orderStatus": "CHANGE",
+    "placeholders": {
+      "PICKUP_TOKEN": "A7X9"
+    }
   }'
 ```
 
@@ -203,20 +206,43 @@ curl --request POST \
 | --- | --- | --- | --- |
 | `orderId` | `string` | Yes | Order identifier in the store's e-commerce platform |
 | `orderStatus` | `string` | Yes | New order status, following the naming used by the store's platform |
+| `placeholders` | `object` | No | Values for the placeholders used in the configured message, by name (see below) |
 
 The store is always the one in the token — there is no store field in the body, and the same credential cannot look up orders from another store.
+
+### Placeholders
+
+The message configured for the status may contain placeholders shaped as `<NAME>`. Most are filled by
+Eitri from the order; some exist only on your side, and that is what the `placeholders` field is for:
+
+| Placeholder | Source |
+| --- | --- |
+| `PICKUP_TOKEN` | only you can provide it — pickup token, locker code, counter password |
+| `CUSTOMER_NAME` | filled from the order; the value you send wins |
+| `PRODUCT_NAME` | filled from the order; the value you send wins |
+| `CARRIER_NAME` | filled from the order once a carrier exists; the value you send wins |
+
+Send the name **without** the `<>` signs (with them is also accepted). `ORDER_ID`, `STORE_NAME` and
+`STATUS` are refused: they identify the order and the store, and always come from the notification
+itself.
+
+!!! warning "A placeholder with no value stops the notification"
+    If the configured message uses a placeholder and it has no value — neither from the order nor from
+    your `placeholders` — the notification is **not sent**, so the customer never gets a truncated
+    text ("Pick it up with token "). If that status must notify even without the data, ask the Eitri
+    team for a fallback text in the configuration.
 
 ### Response — `202 Accepted`
 
 As with the free-form push, processing is asynchronous: the `202` confirms the request was accepted, not that the notification was delivered. The response carries a `requestId` for tracing.
 
-The push may end up not being sent — with no error returned to the partner — when the order is not found in the platform, the customer has no registered devices, or there is no message configured for that status. In those cases, give the `requestId` to Eitri support so it can be checked.
+The push may end up not being sent — with no error returned to the partner — when the order is not found in the platform, the customer has no registered devices, there is no message configured for that status, or the message uses a placeholder with no value. In those cases, give the `requestId` to Eitri support so it can be checked.
 
 ### Errors
 
 | HTTP | When it happens |
 | --- | --- |
-| 400 | Missing or empty `orderId` or `orderStatus` |
+| 400 | Missing or empty `orderId` or `orderStatus`; unknown placeholder, empty value, or a refused one (`ORDER_ID`, `STORE_NAME`, `STATUS`) |
 | 401 | Missing, invalid or expired token, or revoked credential |
 | 403 | Token without the required scope |
 | 404 | Store from the token not found |

@@ -111,7 +111,11 @@ curl --request POST \
   --data '{
     "orderId": "266694368",
     "orderStatus": "DELIVERING",
-    "estimatedTime": "15:35"
+    "estimatedTime": "15:35",
+    "placeholders": {
+      "CUSTOMER_NAME": "Ana",
+      "CARRIER_NAME": "Correios"
+    }
   }'
 ```
 
@@ -120,10 +124,31 @@ curl --request POST \
 | `orderId` | Sim | Identificador do pedido, o mesmo usado pelo app ao iniciar a notificação |
 | `orderStatus` | Sim | Status configurado para a sua loja (ex.: `DELIVERING`) |
 | `estimatedTime` | Não | Horário previsto de entrega exibido na notificação (ex.: `15:35`) |
+| `placeholders` | Não | Valores dos placeholders usados nos textos configurados, por nome (ver abaixo) |
 
-O `estimatedTime` é o único conteúdo aceito no corpo — texto, ícone e progresso vêm da configuração
-da loja. Se o status configurado não tiver um nome amigável definido, é o próprio `orderStatus` que
+Fora do `estimatedTime` e dos `placeholders`, o conteúdo vem da configuração da loja — texto, ícone e
+progresso. Se o status configurado não tiver um nome amigável definido, é o próprio `orderStatus` que
 aparece na tela.
+
+**Placeholders**
+
+Os textos configurados podem conter placeholders no formato `<NOME>`, e é por `placeholders` que você
+informa o valor de cada um:
+
+| Placeholder | Conteúdo |
+| --- | --- |
+| `CUSTOMER_NAME` | primeiro nome do cliente |
+| `PRODUCT_NAME` | nome do produto |
+| `CARRIER_NAME` | transportadora |
+| `PICKUP_TOKEN` | token de retirada, código do armário, senha de balcão |
+
+Envie o nome sem os sinais `<>` (com eles também é aceito). `ORDER_ID`, `STORE_NAME` e `STATUS` são
+recusados: vêm do próprio pedido e da configuração da loja.
+
+!!! warning "Placeholder sem valor não atualiza a notificação"
+    Se o texto configurado usa um placeholder e ele não tem valor, a atualização **não é enviada**,
+    para o cliente não ver um texto truncado ("Oi , seu pedido..."). Se o status precisa aparecer
+    mesmo sem o dado, peça ao time do Eitri um texto alternativo na configuração.
 
 **Resposta — `202 Accepted`**
 
@@ -135,7 +160,8 @@ O processamento é assíncrono: o `202` significa que a solicitação foi aceita
 já foi atualizada. Guarde o `requestId` — é ele que você informa ao suporte do Eitri para rastrear um
 envio.
 
-`orderId` ou `orderStatus` vazio retorna `400`; token ausente, expirado ou sem o escopo
+`orderId` ou `orderStatus` vazio retorna `400`, e o mesmo vale para placeholder inexistente, com
+valor vazio ou recusado (`ORDER_ID`, `STORE_NAME`, `STATUS`); token ausente, expirado ou sem o escopo
 `live-notification:status` retorna `401`/`403`.
 
 **Quem recebe:** apenas os aparelhos que iniciaram a Live Notification **daquele pedido**. Outros

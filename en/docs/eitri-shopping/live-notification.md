@@ -112,7 +112,11 @@ curl --request POST \
   --data '{
     "orderId": "266694368",
     "orderStatus": "DELIVERING",
-    "estimatedTime": "15:35"
+    "estimatedTime": "15:35",
+    "placeholders": {
+      "CUSTOMER_NAME": "Ana",
+      "CARRIER_NAME": "Correios"
+    }
   }'
 ```
 
@@ -121,10 +125,31 @@ curl --request POST \
 | `orderId` | Yes | Order identifier, the same one the app used to start the notification |
 | `orderStatus` | Yes | Status configured for your store (e.g. `DELIVERING`) |
 | `estimatedTime` | No | Expected delivery time shown in the notification (e.g. `15:35`) |
+| `placeholders` | No | Values for the placeholders used in the configured texts, by name (see below) |
 
-`estimatedTime` is the only content accepted in the body — text, icon and progress come from the
-store configuration. If the configured status has no friendly name defined, `orderStatus` itself is
+Apart from `estimatedTime` and `placeholders`, the content comes from the store configuration — text,
+icon and progress. If the configured status has no friendly name defined, `orderStatus` itself is
 what shows on screen.
+
+**Placeholders**
+
+The configured texts may contain placeholders shaped as `<NAME>`, and `placeholders` is how you send
+the value for each one:
+
+| Placeholder | Content |
+| --- | --- |
+| `CUSTOMER_NAME` | customer first name |
+| `PRODUCT_NAME` | product name |
+| `CARRIER_NAME` | carrier |
+| `PICKUP_TOKEN` | pickup token, locker code, counter password |
+
+Send the name without the `<>` signs (with them is also accepted). `ORDER_ID`, `STORE_NAME` and
+`STATUS` are refused: they come from the order itself and from the store configuration.
+
+!!! warning "A placeholder with no value stops the update"
+    If the configured text uses a placeholder and it has no value, the update is **not sent**, so the
+    customer never sees a truncated text ("Hi , your order..."). If that status must show up even
+    without the data, ask the Eitri team for a fallback text in the configuration.
 
 **Response — `202 Accepted`**
 
@@ -135,7 +160,8 @@ what shows on screen.
 Processing is asynchronous: the `202` means the request was accepted, not that the notification has
 already been updated. Keep the `requestId` — that is what you give Eitri support to trace a send.
 
-An empty `orderId` or `orderStatus` returns `400`; a missing or expired token, or one without the
+An empty `orderId` or `orderStatus` returns `400`, and so does an unknown placeholder, an empty value
+or a refused one (`ORDER_ID`, `STORE_NAME`, `STATUS`); a missing or expired token, or one without the
 `live-notification:status` scope, returns `401`/`403`.
 
 **Who receives it:** only the devices that started the Live Notification **for that order**. Other
