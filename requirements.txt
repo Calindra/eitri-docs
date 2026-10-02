@@ -25,11 +25,11 @@ mkdocs-awesome-pages-plugin==2.10.1
 mkdocs-exclude-search==0.6.6
 mkdocs-get-deps==0.2.0
 mkdocs-glightbox==0.5.2
-mkdocs-material==9.7.1
+mkdocs-material==9.7.7
 mkdocs-material-extensions==1.3.1
 mkdocs-pygments==0.1.0
 mkdocs-redirects==1.2.2
-mkdocs-shadcn==0.9.8
+mkdocs-shadcn==0.12.1
 mkdocs-with-pdf==0.9.3
 natsort==8.4.0
 packaging==26.0

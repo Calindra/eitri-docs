@@ -8,6 +8,7 @@ theme:
   favicon: assets/favicon.svg
   language: en
   show_stargazers: false
+  katex_options: {}
   pygments_style:
     light: shadcn-light
     dark: github-dark
