@@ -1,20 +1,10 @@
 # Eitri-App Initialization with Parameters
 
-The initialization with parameters feature allows Eitri-App to be properly configured from the start of its execution in a development environment. It facilitates development by enabling specific parameters, such as a product ID or user email, to simulate different scenarios.
+Initialization parameters let the Eitri-App start already configured for a specific scenario in the development environment. You can pass, for example, a product ID or a user email to simulate different cases without changing the code on each run.
 
-This approach allows testing behavior variations, dynamically configuring information like product IDs or other specific parameters without the need to modify the base code with each execution.
+## Reading the parameters in the Eitri-App
 
-## Implementation
-
-### Single Eitri-App
-
-To pass initialization parameters when starting the Eitri-App, the developer can use the [`--initialization-params`](https://docs.eitri.tech/en/eitri-cli/#start) command in the CLI:
-
-```bash
-eitri start --initialization-params "productId=e4386d93-d6a7-4212-8501-2a99fc9a3f12&email=developer@eitri.tech"
-```
-
-Within the Eitri-App code, the internal Eitri API method (Eitri.getInitializationInfos) is used to obtain the parameters passed when the Eitri-App starts.
+Inside the Eitri-App, use `Eitri.getInitializationInfos()` to get the parameters sent at startup. They arrive already converted into an object:
 
 ```jsx
 export default function Home() {
@@ -24,6 +14,8 @@ export default function Home() {
 
   const getStartParams = async () => {
     const params = await Eitri.getInitializationInfos();
+    // productId=e4386d93&email=developer@eitri.tech
+    // => { productId: "e4386d93", email: "developer@eitri.tech" }
     console.log(params);
   };
 
@@ -34,56 +26,82 @@ export default function Home() {
 }
 ```
 
-### Eitri-App Start
+## Sending the parameters
 
-Read more about [`eitri app start`](https://docs.eitri.tech/en/quick-guides/initialization-params/).
+=== "Single Eitri-App"
 
-#### Requirements
+    Use the [`--initialization-params`](../concepts/eitri-cli.md#start) option of `eitri start`:
 
-- CLI version 1.18.0 or higher
+    ```bash
+    eitri start --initialization-params "productId=e4386d93-d6a7-4212-8501-2a99fc9a3f12&email=developer@eitri.tech"
+    ```
 
-#### How to use
+=== "Eitri-App Start"
 
-1. In the `app-config.yaml` file, add the `initialization-params` key to define the initialization parameters. The `initialization-params` key should be of type `string` with the desired value in **query-string** format.
+    Requires CLI version 1.18.0 or higher. In the `app-config.yaml` file of [`eitri app start`](eitri-app-start.md), add the `initialization-params` key with `type: "string"` and the value in **query string** format:
 
-```yaml
-application-id: "4e8448ad-44c3-4504-a03b-4e8fc7ce27dc"
-environment-id: "bcf3b8f1-95ee-47d5-9499-8fd7d4689ff0"
-eitri-apps:
-  - alias: equinox
-    path: "./eitri-app-equinox"
-    workspace: DEFAULT
-    focus: true
-  - alias: cronos
-    path: "./eitri-app-cronos"
-    workspace: cronos
+    ```yaml
+    application-id: "4e8448ad-44c3-4504-a03b-4e8fc7ce27dc"
+    environment-id: "bcf3b8f1-95ee-47d5-9499-8fd7d4689ff0"
+    eitri-apps:
+      - alias: equinox
+        path: "./eitri-app-equinox"
+        workspace: DEFAULT
+        focus: true
+      - alias: cronos
+        path: "./eitri-app-cronos"
+        workspace: cronos
 
-initialization-params:
-  type: "string"
-  value: "productId=e4386d93-d6a7-4212-8501-2a99fc9a3f12&foo=bar"
-```
+    initialization-params:
+      type: "string"
+      value: "productId=e4386d93-d6a7-4212-8501-2a99fc9a3f12&foo=bar"
+    ```
 
-2. Within the Eitri-App code, the internal Eitri API method (`Eitri.getInitializationInfos()`) is used to obtain the parameters passed when the Eitri-App starts.
+    The parameters are sent to the Eitri-App marked as `focus`.
 
-```jsx
-export default function Home() {
-  useEffect(() => {
-    getStartParams();
-  }, []);
+!!! warning "Query string only"
 
-  const getStartParams = async () => {
-    const params = await Eitri.getInitializationInfos();
-    console.log(params);
-  };
+    The parameters of `--initialization-params` and of the `initialization-params` key must be in **query string** format (`key=value&key2=value2`). JSON sent in this field does not reach the Eitri-App.
 
-  /**
-   * additional code omitted
-   * for readability
-   */
-}
-```
+## Parameters per tab (Bottom Tab Bar)
+
+When the `app-config.yaml` has [`bottom-tab-view-simulation`](bottom-bar-simulation.md), each tab can have its own parameters, and Eitri Play **ignores the global parameters**. Here, besides `string`, you can use the `json` type to send nested structures:
+
+=== "string"
+
+    ```yaml
+    bottom-tab-view-simulation:
+      eitri-apps:
+        - slug: "home"
+          title: "Home"
+          initialization-params:
+            type: "string"
+            value: "tabIndex=0&route=Categories"
+    ```
+
+=== "json"
+
+    ```yaml
+    bottom-tab-view-simulation:
+      eitri-apps:
+        - slug: "search"
+          title: "Search"
+          initialization-params:
+            type: "json"
+            value: '{"route":"Search","searchTerm":"bossa"}'
+    ```
+
+## Changing the parameters without restarting
+
+With `eitri start` or `eitri app start` running, type `p` in the terminal and press `enter` to change the parameters on the spot, with no need to stop the CLI:
+
+1. The CLI shows the current value so you can edit it. Leave it empty to remove the parameters.
+2. With `bottom-tab-view-simulation`, you first choose the **tab** and the **type** (`string` or `json`). Invalid JSON is rejected before it is sent.
+3. The CLI publishes the new parameters. **Scan the QR Code again or reopen the Eitri-App through the deep link** to apply them.
 
 !!! note
-**Retrieving parameters:** Initialization parameters are retrieved through the `Eitri.getInitializationInfos()` method.
 
-    **Value format:** Currently, only **query-string** format values are accepted for initialization parameters.
+    - The change only lasts for the current session: the `app-config.yaml` is not changed.
+    - In `eitri start`, the `p` key is not available with `--playground`.
+
+See all the shortcuts in [Keyboard shortcuts](../concepts/eitri-cli.md#keyboard-shortcuts).

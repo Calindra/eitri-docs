@@ -75,8 +75,9 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.tabbed:
-      alternate_style: true
+      alternate_style: false
   - pymdownx.details
+  - pymdownx.superfences
 
 plugins:
   - awesome-pages

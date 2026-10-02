@@ -1,6 +1,7 @@
 title: Concepts
 nav:
     - Eitri-App: eitri-app.md
+    - AI Agents: ai-agents.md
     - Design System: design-system.md
     - Eitri Bifrost: eitri-bifrost.md
     - Eitri CLI: eitri-cli.md
