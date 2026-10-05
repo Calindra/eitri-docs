@@ -37,6 +37,16 @@ O SDK do Eitri oferece diversas ferramentas para permitir que seus Eitri-apps re
 
 :   A Bifrost é um misto de tecnologia e magia que conecta de fato os mundos na mitologia nórdica e que representa bem o que o `Eitri Bifrost` faz na conexão entre seu app e o universo dos Eitri-apps, potencializando ambos à medida que permite que seu app usufrua das funcionalidades Eitri e ao mesmo tempo podendo habilitar seus Eitri-apps a usar funções que seriam nativamente do seu app.
 
+#### [`Desenvolvimento com IA`](conceitos/eitri-coding.md)
+
+:   O `Eitri Coding` traz skills que transformam assistentes de IA como Claude Code, Gemini CLI, Codex, Cursor e GitHub Copilot em especialistas em Eitri: eles escrevem Eitri-Apps com Luminus e Bifrost e os validam no device.
+
+!!! tip "Desenvolva Eitri-Apps com IA"
+
+    Instale as skills do **Eitri Coding** no seu assistente de IA e deixe que ele crie, rode e valide seus Eitri-Apps no device.
+
+    [→ Comece com o Eitri Coding](conceitos/eitri-coding.md){ .md-button .md-button--primary }
+
 ## E o meu Design System?
 
 É provável que seu app já possua uma identidade ou características visuais a serem respeitadas e por isso o Eitri permite que você configure algumas características básicas de Design System para que os Eitri-apps possam oferecer um aspecto condizente com seu app.

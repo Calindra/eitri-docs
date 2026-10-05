@@ -10,6 +10,10 @@ A biblioteca **Eitri Agents** traz tudo o que o Eitri-App precisa para isso: def
 
 [→ Documentação técnica do Eitri Agents](https://cdn.83io.com.br/library/eitri-agents/doc/latest/){:target="_blank" .md-button .md-button--primary }
 
+!!! info
+
+    Procurando IA para ajudar a *desenvolver* seus Eitri-Apps? Veja o [Eitri Coding](eitri-coding.md).
+
 ## Duas formas de usar
 
 === "Eitri Agents"

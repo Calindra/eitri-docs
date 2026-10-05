@@ -29,6 +29,9 @@ Agora que você tem sua conta no Eitri configurada e a CLI instalada, é hora de
 !!! info
     Os projetos de Apps Eitri já vem com sugestões de implementação de CI para automatizar o processo de geração de versão e até publicação nos ambientes mas você pode personaliza-las conforme necessário.
 
+!!! tip "Desenvolva com IA"
+    Usa Claude Code, Gemini CLI, Codex, Cursor ou GitHub Copilot? Instale as skills do [Eitri Coding](conceitos/eitri-coding.md) para que o seu assistente escreva Eitri-Apps seguindo as regras da plataforma e os valide no device.
+
 # Administrando Eitri-Apps
 Para gerenciar a versão publicada, efetuar o rollback para versões anteriores e administrar as permissões de seu Eitri-App, você pode acessar o painel de admin do Eitri, logando com sua conta de desenvolvedor:
 

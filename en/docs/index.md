@@ -38,6 +38,15 @@ Eitri SDK offers a lot of tools to allow your Eitri-apps to do amazing things:
 
 :   Bifrost is a mix of technology and magic that effectively connects the worlds in Nordic mythology and represents well what `Eitri Bifrost` does between your mobile app and the Eitri-apps universe. It empowers both of them, allowing your app to use Eitri features while making it possible to use functions of your app inside Eitri-apps.
 
+#### [`AI Coding`](concepts/eitri-coding.md)
+
+:   `Eitri Coding` brings skills that turn AI assistants such as Claude Code, Gemini CLI, Codex, Cursor, and GitHub Copilot into Eitri specialists: they write Eitri-Apps with Luminus and Bifrost and validate them on the device.
+
+!!! tip "Develop Eitri-Apps with AI"
+
+    Install the **Eitri Coding** skills in your AI assistant and let it create, run, and validate your Eitri-Apps on the device.
+
+    [→ Get started with Eitri Coding](concepts/eitri-coding.md){ .md-button .md-button--primary }
 
 ## How about my Design System?
 

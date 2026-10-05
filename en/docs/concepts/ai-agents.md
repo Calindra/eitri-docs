@@ -10,6 +10,10 @@ The **Eitri Agents** library brings everything an Eitri-App needs for that: agen
 
 [→ Eitri Agents technical documentation](https://cdn.83io.com.br/library/eitri-agents/doc/latest/){:target="_blank" .md-button .md-button--primary }
 
+!!! info
+
+    Looking for AI to help you *develop* Eitri-Apps? See [Eitri Coding](eitri-coding.md).
+
 ## Two ways to use it
 
 === "Eitri Agents"
