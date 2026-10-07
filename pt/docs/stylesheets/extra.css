@@ -337,3 +337,8 @@ header [data-orientation="vertical"][role="none"]:has(+ a[target="_blank"]) {
     display: none;
   }
 }
+
+/* The theme caps code blocks at 650px but leaves overflow visible, so long blocks spill over the next section. */
+article pre {
+  overflow: auto;
+}
