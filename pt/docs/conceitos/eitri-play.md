@@ -7,9 +7,11 @@ status: new
 Eitri Play permite que você visualize e teste seus apps diretamente em seu dispositivo ou emulador enquanto desenvolve.
 
 !!! info "Convites Eitri"
+    <br>
     Você pode utilizar o Eitri Play para testar o Eitri caso tenha recebido um convite.
 
 !!! warning "Conta Eitri"
+    <br>
     Para desenvolver com Eitri, você precisará de uma conta do Eitri para logar no Eitri Play.
 
 ## Download

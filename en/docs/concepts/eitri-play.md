@@ -7,9 +7,11 @@ status: new
 Eitri Play allows you to preview and test your apps while developing directly on your phone or emulator.
 
 !!! info "Eitri Invitations"
+    <br>
     You can use Eitri Play to test Eitri if you're invited to it.
 
 !!! warning "Eitri Account"
+    <br>
     To develop with Eitri, you will need an Eitri Account to login on Eitri Play.
 
 ## Download
