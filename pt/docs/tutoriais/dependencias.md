@@ -1,26 +1,42 @@
 # Gerenciando Dependências em Eitri-Apps
 
-Eitri-Apps permitem que você utilize várias dependências disponíveis na plataforma Eitri para estender a funcionalidade da sua aplicação. Este guia explica como declarar e usar essas dependências.
+Eitri-Apps permitem que você utilize várias dependências disponíveis na plataforma Eitri para estender a funcionalidade da sua aplicação. Este guia explica como listar, adicionar e usar essas dependências com a [Eitri CLI](../conceitos/eitri-cli.md#dependencies).
 
-## Dependências Suportadas e Versões
+## Consultando as dependências disponíveis
 
-Eitri-Apps suportam uma lista curada de bibliotecas de terceiros com controle de versão rigoroso para garantir estabilidade e compatibilidade. Sempre consulte a documentação oficial ou seu `eitri-app.conf.js` para as versões exatas suportadas.
+Eitri-Apps suportam uma lista curada de bibliotecas de terceiros, com versões controladas para garantir estabilidade e compatibilidade. Para ver as dependências disponíveis e suas versões, rode:
 
-Aqui está uma amostra de dependências comumente usadas:
+```bash
+eitri dependencies list
+```
 
-| Biblioteca                | Versão  | Biblioteca       | Versão |
-| :------------------------ | :------ | :--------------- | :----- |
-| **dayjs**                 | 1.11.19 | **eitri-i18n**   | 14.1.2 |
-| **qs**                    | 6.13.0  | **uuid**         | 11.1.0 |
-| **@fnando/cpf**           | 1.0.2   | **@fnando/cnpj** | 1.0.2  |
-| **@apollo/client**        | 4.1.3   | **recaptcha**    | 2      |
-| **react-icons**           | 5.5.0   | **liveshop**     | 1.0.0  |
-| **google-map-react**      | 2.2.5   |                  |        |
-| **@tanstack/react-query** | 4.41.0  |                  |        |
+!!! tip
+
+    A lista vem da própria CLI. Mantenha-a atualizada com [`eitri self-update`](../conceitos/eitri-cli.md#self-update) para ver as dependências mais recentes.
+
+## Adicionando dependências pela CLI
+
+Na raiz do seu Eitri-App (onde está o `eitri-app.conf.js`), rode:
+
+```bash
+eitri dependencies add
+```
+
+A CLI exibe as dependências disponíveis para você selecionar e as declara em `eitri-app-dependencies` no seu `eitri-app.conf.js`. Depois disso, basta [importá-las no seu código](#usando-dependencias-no-seu-codigo).
+
+## Consultando a documentação de uma dependência
+
+Para abrir no navegador a documentação de uma dependência, rode o comando abaixo e selecione a dependência:
+
+```bash
+eitri dependencies docs
+```
+
+Use `--no-open` para apenas exibir o link, sem abrir o navegador.
 
 ## Declarando Dependências (`eitri-app.conf.js`)
 
-Todas as dependências, sejam Eitri-Apps compartilhados ou bibliotecas padrão, devem ser declaradas no seu arquivo `eitri-app.conf.js`.
+Todas as dependências, sejam Eitri-Apps compartilhados ou bibliotecas padrão, ficam declaradas no seu arquivo `eitri-app.conf.js`. O `eitri dependencies add` já escreve nesse formato, mas você também pode declará-las manualmente, como é o caso dos Eitri-Apps compartilhados.
 
 ### Estrutura
 
@@ -40,6 +56,10 @@ module.exports = {
   },
 };
 ```
+
+!!! note
+
+    As versões acima são apenas ilustrativas. Consulte as versões suportadas com `eitri dependencies list`.
 
 ## Usando Dependências no Seu Código
 

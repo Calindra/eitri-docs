@@ -44,6 +44,7 @@ Adicione `--help` ou `-h` ao final de qualquer comando para ver como utilizá-lo
 | [`workspace`](#workspace) | Gerencia seus workspaces |
 | [`app`](#app) | Executa e gerencia vários Eitri-Apps de um aplicativo (`app-config.yaml`) |
 | [`dependencies`](#dependencies) | Lista, adiciona e abre a documentação das dependências do Eitri-App |
+| [`theme`](#theme) | Gerencia as versões do tema Luminus do aplicativo |
 | [`agents`](#agents) | Configura os [agentes de IA](ai-agents.md) do Eitri-App |
 | [`libs`](#libs) | Lista as versões das bibliotecas Eitri |
 | [`doctor`](#doctor) | Verifica as dependências da sua máquina |
@@ -419,6 +420,147 @@ Gerencia as dependências do Eitri-App. Veja [Dependências](../tutoriais/depend
 | Opção | Descrição |
 | --- | --- |
 | `--no-open` | Apenas exibe o link, sem abrir o navegador. |
+
+---
+
+### theme
+
+```bash
+eitri theme <comando> [opções]
+```
+
+Gerencia as versões do [tema](design-system.md#tema) Luminus (Tailwind + DaisyUI) do aplicativo a partir de um arquivo `tailwind.config.js`, sem precisar editá-lo no Console.
+
+| Comando | Descrição |
+| --- | --- |
+| [`create`](#theme-create) | Cria uma nova versão (DRAFT) do tema a partir do `tailwind.config.js` do diretório atual. |
+| [`list`](#theme-list) | Lista as versões do tema do aplicativo. |
+| [`show [build]`](#theme-show) | Exibe as cores e configurações de uma versão do tema. |
+| [`publish [build]`](#theme-publish) | Publica uma versão do tema. |
+| [`sync [build]`](#theme-sync) | Cria ou atualiza o `tailwind.config.js` do diretório atual com uma versão do tema. |
+
+Todos os comandos aceitam `--application-id <id>`. Sem ela, a CLI usa o `application-id` do `app-config.yaml` do diretório atual ou pergunta qual aplicativo usar. Nos comandos com `[build]`, informe o número do build exibido no `eitri theme list`.
+
+!!! warning
+
+    O tema é incluído no momento da geração de versão do Eitri-App. Depois de publicar uma versão do tema, gere uma nova versão do seu Eitri-App com o [`eitri push-version`](#push-version) para aplicá-la.
+
+#### Fluxo de trabalho
+
+```bash
+eitri theme sync          # baixa a versão publicada para o tailwind.config.js
+# edite o tailwind.config.js
+eitri theme create --name "Nova paleta"
+eitri theme publish       # escolhe entre as versões em DRAFT
+```
+
+#### O arquivo `tailwind.config.js`
+
+O arquivo precisa exportar o objeto com `module.exports = { ... }`. O Eitri usa apenas estas chaves de primeiro nível; qualquer outra é ignorada no `eitri theme create`:
+
+| Chave | Descrição |
+| --- | --- |
+| `daisyui` | Configuração do DaisyUI. **Obrigatória**, com `themes` contendo pelo menos um tema. |
+| `theme` | Tema do Tailwind (`colors`, `fontFamily`, `extend`, …). |
+| `safelist` | Classes que sempre entram no CSS. |
+
+```js
+module.exports = {
+  daisyui: {
+    themes: [
+      {
+        eitri: {
+          primary: "#e12d2d",
+          "primary-content": "#FFFFFF",
+          secondary: "#184595",
+          "base-100": "#FFFFFF",
+        },
+      },
+    ],
+  },
+  theme: {
+    extend: {
+      colors: {
+        "neutral-100": "#F9F9F9",
+      },
+    },
+  },
+};
+```
+
+!!! info
+
+    Os valores precisam ser JSON: funções (como `plugins`), `undefined` e instâncias de classes são recusados. É necessário ter o Node instalado para que a CLI leia o arquivo.
+
+#### theme create
+
+```bash
+eitri theme create [opções]
+```
+
+Cria uma nova versão do tema, com status DRAFT, a partir do `tailwind.config.js` do diretório atual.
+
+| Opção | Descrição |
+| --- | --- |
+| `--application-id <id>` | ID do aplicativo. |
+| `--name <nome>` | Nome da versão do tema. |
+| `--publish` | Publica a versão logo após criá-la. |
+
+#### theme list
+
+```bash
+eitri theme list [opções]
+```
+
+Lista as versões do tema do aplicativo, destacando a versão publicada atualmente.
+
+| Opção | Descrição |
+| --- | --- |
+| `--application-id <id>` | ID do aplicativo. |
+
+#### theme show
+
+```bash
+eitri theme show [build] [opções]
+```
+
+Exibe as cores e configurações de uma versão do tema. Sem o `build`, exibe a versão publicada.
+
+| Opção | Descrição |
+| --- | --- |
+| `--application-id <id>` | ID do aplicativo. |
+| `--json` | Imprime o JSON da versão, sem formatação visual. |
+
+```bash
+eitri theme show 3 --json > tema.json
+```
+
+#### theme publish
+
+```bash
+eitri theme publish [build] [opções]
+```
+
+Publica uma versão do tema. Sem o `build`, permite escolher entre as versões em DRAFT. A CLI pede confirmação antes de publicar, exceto quando a variável de ambiente `CI` está definida.
+
+| Opção | Descrição |
+| --- | --- |
+| `--application-id <id>` | ID do aplicativo. |
+
+#### theme sync
+
+```bash
+eitri theme sync [build] [opções]
+```
+
+Cria ou atualiza o `tailwind.config.js` do diretório atual com uma versão do tema. Sem o `build`, usa a versão publicada.
+
+Se o arquivo local tiver conteúdo diferente da versão escolhida, a CLI pede confirmação antes de sobrescrevê-lo. Diferenças apenas de formatação ou comentários não contam como alteração.
+
+| Opção | Descrição |
+| --- | --- |
+| `--application-id <id>` | ID do aplicativo. |
+| `-y, --yes` | Sobrescreve o arquivo local sem pedir confirmação. |
 
 ---
 
