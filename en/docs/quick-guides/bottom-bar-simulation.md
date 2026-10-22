@@ -34,7 +34,7 @@ bottom-tab-view-simulation:
 | `title`                 | `string` | ✅ Yes   | The title shown on the bottom tab for this app. |
 <!-- | `initialization-params` | `json`   | ❌ No    | Initialization params as JSON (see below).      | -->
 
-To customize the look of the bar (colors, icons, badges), add the optional `layout` key. See [Dynamic bottom bar](#dynamic-bottom-bar).
+To customize the look of the bar (colors, icons, badges), create a `dynamic-bottom-tab-view-spec.json` file at the project root. See [Dynamic bottom bar](#dynamic-bottom-bar).
 
 <!-- #### `initialization-params` JSON
 
@@ -73,32 +73,45 @@ bottom-tab-view-simulation:
 
 ## 🎨 Dynamic bottom bar
 
-By default, the simulation draws a simple bar with text-only tabs. Add the optional `layout` key, at the same level as `eitri-apps`, and the app renders the same **dynamic bottom bar** used by production apps, with your colors, icons, badges, border and sizes.
+By default, the simulation draws a simple bar with text-only tabs. Create a `dynamic-bottom-tab-view-spec.json` file at the project root, next to `app-config.yaml`, and the app renders the same **dynamic bottom bar** used by production apps, with your colors, icons, badges, border and sizes.
+
+The `bottom-tab-view-simulation` key in `app-config.yaml` is still required: it defines which Eitri-App each tab opens and each tab's `initialization-params`. The JSON file only defines the look.
+
+`app-config.yaml`:
 
 ```yaml
 bottom-tab-view-simulation:
-  eitri-apps:            # navigation: which Eitri-App each tab opens
+  eitri-apps:
     - slug: "eitri-app-slug"
       title: "Tab Title"
-  layout:
-    layout:              # appearance of the bar
-      theme: classic
-      backgroundColor: "#FFFFFF"
-    eitriApps:           # presentation of each tab, in the same order as eitri-apps
-      - title: "Tab Title"
-        icon: "https://example.com/icon_home.png"
 ```
 
-The `layout` key holds two nodes:
+`dynamic-bottom-tab-view-spec.json`:
 
-- `layout.layout`: how the bar looks.
-- `layout.eitriApps`: the title, icon and badge of each tab.
+```json
+{
+  "layout": {
+    "theme": "classic",
+    "backgroundColor": "#FFFFFF"
+  },
+  "eitriApps": [
+    {
+      "slug": "eitri-app-slug",
+      "title": "Tab Title",
+      "icon": "https://example.com/icon_home.png"
+    }
+  ]
+}
+```
 
-`slug` and `initialization-params` stay in `eitri-apps`.
+The file holds two nodes:
+
+- `layout`: how the bar looks.
+- `eitriApps`: the title, icon and badge of each tab, in the same order as `eitri-apps`.
 
 ### Appearance
 
-Fields under `layout.layout`.
+Fields under `layout`.
 
 | Field                | Type                         | Description                                                                                       |
 | -------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------- |
@@ -114,7 +127,7 @@ Fields under `layout.layout`.
 
 ### `classic` theme
 
-Fields under `layout.layout.themeCustomizations.classic`.
+Fields under `layout.themeCustomizations.classic`.
 
 | Field              | Type                    | Default   | Description                                                                 |
 | ------------------ | ----------------------- | --------- | --------------------------------------------------------------------------- |
@@ -130,13 +143,16 @@ The bar height can't be set directly. It follows the content: `paddingTop` + ico
 
 ### Tabs
 
-Fields of each item in `layout.eitriApps`.
+Fields of each item in `eitriApps`.
 
-| Field   | Type     | Description                                                                                   |
-| ------- | -------- | --------------------------------------------------------------------------------------------- |
-| `title` | `string` | Tab label. Takes precedence over the `title` in `eitri-apps`. An empty string hides the label. |
-| `icon`  | `string` | Icon URL (`https`).                                                                           |
-| `badge` | `string` | Initial badge text over the icon. Omit for no badge.                                          |
+| Field   | Type     | Required | Description                                                                                   |
+| ------- | -------- | -------- | --------------------------------------------------------------------------------------------- |
+| `slug`  | `string` | ✅ Yes   | Slug of the tab's Eitri-App. Use the same one as the matching tab in `eitri-apps`.            |
+| `title` | `string` | ✅ Yes   | Tab label. Takes precedence over the `title` in `eitri-apps`. An empty string hides the label. |
+| `icon`  | `string` | ❌ No    | Icon URL (`https`).                                                                           |
+| `badge` | `string` | ❌ No    | Initial badge text over the icon. Omit for no badge.                                          |
+
+If any item is missing `slug` or `title`, the whole file is rejected.
 
 !!! warning "Icon requirements"
     The bar repaints each icon with `selectedColor` / `unselectedColor`, so only the icon's shape matters.
@@ -147,6 +163,8 @@ Fields of each item in `layout.eitriApps`.
     - The URL must be **`https`**.
 
 ### ✅ Full example
+
+`app-config.yaml`:
 
 ```yaml
 bottom-tab-view-simulation:
@@ -171,30 +189,53 @@ bottom-tab-view-simulation:
       initialization-params:
         type: "string"
         value: "tabIndex=3"
-  layout:
-    layout:
-      theme: classic
-      backgroundColor: "#FFFFFF"
-      selectedColor: "#373737"
-      unselectedColor: "#8B8D98"
-      badgeBackground: "#E5484D"
-      badgeTextColor: "#FFFFFF"
-      themeCustomizations:
-        classic:
-          labels: shown
-          topBorder:
-            thickness: 1
-            color: "#DBDDE0"
-    eitriApps:
-      - title: "Home"
-        icon: "https://media-eitri-content.eitri.tech/default/icon_home_v1.png"
-      - title: "Categories"
-        icon: "https://media-eitri-content.eitri.tech/default/icon_menu_v1.png"
-      - title: "Cart"
-        icon: "https://media-eitri-content.eitri.tech/default/icon_cart_v1.png"
-        badge: "2"
-      - title: "Profile"
-        icon: "https://media-eitri-content.eitri.tech/default/icon_user_v1.png"
+```
+
+`dynamic-bottom-tab-view-spec.json`:
+
+```json
+{
+  "layout": {
+    "theme": "classic",
+    "backgroundColor": "#FFFFFF",
+    "selectedColor": "#373737",
+    "unselectedColor": "#8B8D98",
+    "badgeBackground": "#E5484D",
+    "badgeTextColor": "#FFFFFF",
+    "themeCustomizations": {
+      "classic": {
+        "labels": "shown",
+        "topBorder": {
+          "thickness": 1,
+          "color": "#DBDDE0"
+        }
+      }
+    }
+  },
+  "eitriApps": [
+    {
+      "slug": "my-store-home",
+      "title": "Home",
+      "icon": "https://media-eitri-content.eitri.tech/default/icon_home_v1.png"
+    },
+    {
+      "slug": "my-store-home",
+      "title": "Categories",
+      "icon": "https://media-eitri-content.eitri.tech/default/icon_menu_v1.png"
+    },
+    {
+      "slug": "my-store-cart",
+      "title": "Cart",
+      "icon": "https://media-eitri-content.eitri.tech/default/icon_cart_v1.png",
+      "badge": "2"
+    },
+    {
+      "slug": "my-store-account",
+      "title": "Profile",
+      "icon": "https://media-eitri-content.eitri.tech/default/icon_user_v1.png"
+    }
+  ]
+}
 ```
 
 ---
@@ -206,6 +247,8 @@ bottom-tab-view-simulation:
 <!-- - The `value` must always be a **valid string**, even when the type is `json`. -->
 - The tabs appear in the order they're listed.
 - You can repeat the same `slug` with different titles or parameters.
-- With `layout`, tabs are matched **by position**: keep `eitri-apps` and `layout.eitriApps` in the same order and with the same number of items.
-- If the app you're running on already has a dynamic bottom bar configured in its environment, that configuration takes precedence over the YAML. In that case, `layout: { layout: { theme: classic } }` is enough for the simulation to use the app's own bar.
-- Without `layout`, or on app versions without support for it, the simulation uses the default bar. The dynamic bottom bar requires Eitri Play 2.31.0 or later.
+- In the dynamic bottom bar, tabs are matched **by position**: keep `eitri-apps` (YAML) and `eitriApps` (JSON) in the same order and with the same number of items.
+- During `eitri app start`, the CLI watches `dynamic-bottom-tab-view-spec.json` and resends the layout on every change. To see it, scan the QR Code again or reopen the Eitri-App through the deeplink.
+- If the file is invalid, the CLI prints the error in the terminal and keeps the last valid layout.
+- If the app you're running on already has a dynamic bottom bar configured in its environment, that configuration takes precedence over the file. In that case, `{ "eitriApps": [], "layout": { "theme": "classic" } }` is enough for the simulation to use the app's own bar.
+- Without the file, or on app versions without support for it, the simulation uses the default bar. The dynamic bottom bar requires Eitri CLI 1.61.0 and Eitri Play 2.31.0 or later.

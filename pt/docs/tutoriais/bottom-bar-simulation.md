@@ -34,7 +34,7 @@ bottom-tab-view-simulation:
 | `title`                 | `string` | ✅ Sim      | Nome da aba exibida na bottom bar.                   |
 <!-- | `initialization-params` | `json`   | ❌ Não      | Parâmetros de inicialização como JSON (veja abaixo). | -->
 
-Para personalizar a aparência da barra (cores, ícones, badges), adicione a chave opcional `layout`. Veja [Bottom bar dinâmica](#bottom-bar-dinamica).
+Para personalizar a aparência da barra (cores, ícones, badges), crie o arquivo `dynamic-bottom-tab-view-spec.json` na raiz do projeto. Veja [Bottom bar dinâmica](#bottom-bar-dinamica).
 
 <!-- #### JSON `initialization-params`
 
@@ -73,32 +73,45 @@ bottom-tab-view-simulation:
 
 ## 🎨 Bottom bar dinâmica
 
-Por padrão, a simulação desenha uma barra simples, com abas só de texto. Adicione a chave opcional `layout`, no mesmo nível de `eitri-apps`, e o app passa a exibir a mesma **bottom bar dinâmica** dos apps em produção, com suas cores, ícones, badges, borda e tamanhos.
+Por padrão, a simulação desenha uma barra simples, com abas só de texto. Crie o arquivo `dynamic-bottom-tab-view-spec.json` na raiz do projeto, ao lado do `app-config.yaml`, e o app passa a exibir a mesma **bottom bar dinâmica** dos apps em produção, com suas cores, ícones, badges, borda e tamanhos.
+
+O `bottom-tab-view-simulation` do `app-config.yaml` continua obrigatório: ele define qual Eitri-App cada aba abre e os `initialization-params` de cada uma. O arquivo JSON define só a aparência.
+
+`app-config.yaml`:
 
 ```yaml
 bottom-tab-view-simulation:
-  eitri-apps:            # navegação: qual Eitri-App cada aba abre
+  eitri-apps:
     - slug: "slug-do-eitri-app"
       title: "Título da Aba"
-  layout:
-    layout:              # aparência da barra
-      theme: classic
-      backgroundColor: "#FFFFFF"
-    eitriApps:           # apresentação de cada aba, na mesma ordem de eitri-apps
-      - title: "Título da Aba"
-        icon: "https://exemplo.com/icon_home.png"
 ```
 
-A chave `layout` tem dois nós:
+`dynamic-bottom-tab-view-spec.json`:
 
-- `layout.layout`: a aparência da barra.
-- `layout.eitriApps`: o título, o ícone e o badge de cada aba.
+```json
+{
+  "layout": {
+    "theme": "classic",
+    "backgroundColor": "#FFFFFF"
+  },
+  "eitriApps": [
+    {
+      "slug": "slug-do-eitri-app",
+      "title": "Título da Aba",
+      "icon": "https://exemplo.com/icon_home.png"
+    }
+  ]
+}
+```
 
-`slug` e `initialization-params` continuam em `eitri-apps`.
+O arquivo tem dois nós:
+
+- `layout`: a aparência da barra.
+- `eitriApps`: o título, o ícone e o badge de cada aba, na mesma ordem de `eitri-apps`.
 
 ### Aparência
 
-Campos de `layout.layout`.
+Campos de `layout`.
 
 | Campo                | Tipo                         | Descrição                                                                                         |
 | -------------------- | ---------------------------- | ------------------------------------------------------------------------------------------------- |
@@ -114,7 +127,7 @@ Campos de `layout.layout`.
 
 ### Tema `classic`
 
-Campos de `layout.layout.themeCustomizations.classic`.
+Campos de `layout.themeCustomizations.classic`.
 
 | Campo              | Tipo                    | Padrão     | Descrição                                                                  |
 | ------------------ | ----------------------- | ---------- | -------------------------------------------------------------------------- |
@@ -130,13 +143,16 @@ Não dá para definir a altura da barra diretamente. Ela acompanha o conteúdo: 
 
 ### Abas
 
-Campos de cada item de `layout.eitriApps`.
+Campos de cada item de `eitriApps`.
 
-| Campo   | Tipo     | Descrição                                                                                       |
-| ------- | -------- | ----------------------------------------------------------------------------------------------- |
-| `title` | `string` | Título da aba. Tem prioridade sobre o `title` de `eitri-apps`. String vazia esconde o título.   |
-| `icon`  | `string` | URL do ícone (`https`).                                                                         |
-| `badge` | `string` | Texto inicial do badge sobre o ícone. Omita para não exibir badge.                              |
+| Campo   | Tipo     | Obrigatório | Descrição                                                                                       |
+| ------- | -------- | ----------- | ----------------------------------------------------------------------------------------------- |
+| `slug`  | `string` | ✅ Sim      | Slug do Eitri-App da aba. Use o mesmo da aba correspondente em `eitri-apps`.                    |
+| `title` | `string` | ✅ Sim      | Título da aba. Tem prioridade sobre o `title` de `eitri-apps`. String vazia esconde o título.   |
+| `icon`  | `string` | ❌ Não      | URL do ícone (`https`).                                                                         |
+| `badge` | `string` | ❌ Não      | Texto inicial do badge sobre o ícone. Omita para não exibir badge.                              |
+
+Se algum item não tiver `slug` ou `title`, o arquivo inteiro é rejeitado.
 
 !!! warning "Requisitos do ícone"
     A barra repinta cada ícone com `selectedColor` / `unselectedColor`, então só o formato do ícone importa.
@@ -147,6 +163,8 @@ Campos de cada item de `layout.eitriApps`.
     - A URL precisa ser **`https`**.
 
 ### ✅ Exemplo completo
+
+`app-config.yaml`:
 
 ```yaml
 bottom-tab-view-simulation:
@@ -171,30 +189,53 @@ bottom-tab-view-simulation:
       initialization-params:
         type: "string"
         value: "tabIndex=3"
-  layout:
-    layout:
-      theme: classic
-      backgroundColor: "#FFFFFF"
-      selectedColor: "#373737"
-      unselectedColor: "#8B8D98"
-      badgeBackground: "#E5484D"
-      badgeTextColor: "#FFFFFF"
-      themeCustomizations:
-        classic:
-          labels: shown
-          topBorder:
-            thickness: 1
-            color: "#DBDDE0"
-    eitriApps:
-      - title: "Início"
-        icon: "https://media-eitri-content.eitri.tech/default/icon_home_v1.png"
-      - title: "Categorias"
-        icon: "https://media-eitri-content.eitri.tech/default/icon_menu_v1.png"
-      - title: "Sacola"
-        icon: "https://media-eitri-content.eitri.tech/default/icon_cart_v1.png"
-        badge: "2"
-      - title: "Perfil"
-        icon: "https://media-eitri-content.eitri.tech/default/icon_user_v1.png"
+```
+
+`dynamic-bottom-tab-view-spec.json`:
+
+```json
+{
+  "layout": {
+    "theme": "classic",
+    "backgroundColor": "#FFFFFF",
+    "selectedColor": "#373737",
+    "unselectedColor": "#8B8D98",
+    "badgeBackground": "#E5484D",
+    "badgeTextColor": "#FFFFFF",
+    "themeCustomizations": {
+      "classic": {
+        "labels": "shown",
+        "topBorder": {
+          "thickness": 1,
+          "color": "#DBDDE0"
+        }
+      }
+    }
+  },
+  "eitriApps": [
+    {
+      "slug": "minha-loja-home",
+      "title": "Início",
+      "icon": "https://media-eitri-content.eitri.tech/default/icon_home_v1.png"
+    },
+    {
+      "slug": "minha-loja-home",
+      "title": "Categorias",
+      "icon": "https://media-eitri-content.eitri.tech/default/icon_menu_v1.png"
+    },
+    {
+      "slug": "minha-loja-cart",
+      "title": "Sacola",
+      "icon": "https://media-eitri-content.eitri.tech/default/icon_cart_v1.png",
+      "badge": "2"
+    },
+    {
+      "slug": "minha-loja-account",
+      "title": "Perfil",
+      "icon": "https://media-eitri-content.eitri.tech/default/icon_user_v1.png"
+    }
+  ]
+}
 ```
 
 ---
@@ -206,6 +247,8 @@ bottom-tab-view-simulation:
 - O valor do campo `value` **deve sempre ser uma string válida**, mesmo no caso de JSON. -->
 - As abas são exibidas na ordem em que são declaradas no YAML.
 - Você pode repetir o mesmo `slug` com títulos ou parâmetros diferentes.
-- Com `layout`, as abas são casadas **por posição**: mantenha `eitri-apps` e `layout.eitriApps` na mesma ordem e com a mesma quantidade de itens.
-- Se o app em que você está rodando já tem uma bottom bar dinâmica configurada no ambiente, essa configuração tem prioridade sobre o YAML. Nesse caso, `layout: { layout: { theme: classic } }` basta para a simulação usar a barra do próprio app.
-- Sem `layout`, ou em versões do app sem suporte, a simulação usa a barra padrão. A bottom bar dinâmica requer o Eitri Play 2.31.0 ou superior.
+- Na bottom bar dinâmica, as abas são casadas **por posição**: mantenha `eitri-apps` (YAML) e `eitriApps` (JSON) na mesma ordem e com a mesma quantidade de itens.
+- Durante o `eitri app start`, a CLI observa o `dynamic-bottom-tab-view-spec.json` e reenvia o layout a cada alteração. Para ver a mudança, escaneie o QR Code de novo ou reabra o Eitri-App pelo deeplink.
+- Se o arquivo for inválido, a CLI mostra o erro no terminal e mantém o último layout válido.
+- Se o app em que você está rodando já tem uma bottom bar dinâmica configurada no ambiente, essa configuração tem prioridade sobre o arquivo. Nesse caso, `{ "eitriApps": [], "layout": { "theme": "classic" } }` basta para a simulação usar a barra do próprio app.
+- Sem o arquivo, ou em versões do app sem suporte, a simulação usa a barra padrão. A bottom bar dinâmica requer a Eitri CLI 1.61.0 e o Eitri Play 2.31.0 ou superiores.
