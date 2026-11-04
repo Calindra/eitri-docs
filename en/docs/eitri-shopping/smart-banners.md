@@ -1,14 +1,14 @@
 # Smart Banners
 
-With the steps below, your store's website starts inviting mobile visitors to download the app, and only shows the invitation to people who don't have the app installed yet.
+With the steps below, your store's website starts inviting mobile visitors to use the app: people who don't have the app yet are invited to download it, and people who already have it get a button to open it.
 
 ## Where the banner appears
 
-The banner appears in two scenarios: in Chrome on Android and in Safari on iPhone. In both, people who already have the app installed don't see the banner.
+The banner appears in two scenarios: in Chrome on Android and in Safari on iPhone. In both, the banner knows whether the app is already installed: people who don't have it are offered the download, and people who do are offered to open the app.
 
 | Phone and browser | What the visitor sees | What you need to do |
 | --- | --- | --- |
-| Android, Chrome | A banner created by your website, with a link to Google Play | Ask Eitri for an app version that includes the website's domains, and add a manifest and a script to the website |
+| Android, Chrome | A banner created by your website, with a link to Google Play, or the "Open" button for people who already have the app | Ask Eitri for an app version that includes the website's domains, and add a manifest and a script to the website |
 | iPhone, Safari | Apple's standard banner, with a link to the App Store, or the "Open" button for people who already have the app | Add one line to the website's code |
 | Other browsers (Chrome on iPhone, social media apps, desktop) | Nothing | — |
 
@@ -30,7 +30,7 @@ Send the list of domains to Eitri right at the start. It is only used on Android
 
 On Android, the app and the website need to recognize each other. Eitri handles the app side; the website team does steps 2 to 4.
 
-**1. Ask Eitri for the new app version.** It includes your website's domains. Wait for it to be published on Google Play before testing. Anyone on an older version of the app keeps seeing the banner until they update.
+**1. Ask Eitri for the new app version.** It includes your website's domains. Wait for it to be published on Google Play before testing. Anyone on an older version of the app keeps seeing the "Download" button until they update.
 
 **2. Create a manifest file** on the website, for example at `/manifest.webmanifest`:
 
@@ -53,6 +53,8 @@ If the website already has a manifest, don't create another one: add the `relate
 
 **4. Add the banner and the script** from the complete example below. The website must use `https`.
 
+**"Open" button.** For people who already have the app, the script replaces the "Download" button with "Open", which takes them to the same page of the website inside the app. For this, the app needs App Links set up for the website's domains, as explained in [Deeplinks](deeplinks.md). Agree with Eitri on which pages the app can open. If the app doesn't recognize the link, the visitor is taken to the app's Google Play page.
+
 ## Step 2: iPhone
 
 On iPhone, nothing changes in the app. Just add this line to the `<head>` of every page where the banner will appear:
@@ -73,7 +75,7 @@ This way, anyone who taps "Open" goes straight to the same product or category i
 
 ## Complete example
 
-The code below covers Android and iPhone at once. Replace `123456789` with the App Store ID and `com.mystore.app` (it appears twice) with the package name. The look of `#app-banner` is up to the website team.
+The code below covers Android and iPhone at once. Replace `123456789` with the App Store ID and `com.mystore.app` (it appears three times) with the package name. The look of `#app-banner` is up to the website team.
 
 ```html
 <head>
@@ -101,7 +103,15 @@ The code below covers Android and iPhone at once. Replace `123456789` with the A
     (async () => {
       const banner = document.getElementById('app-banner');
       try { if (localStorage.getItem('app-banner-dismissed')) return; } catch {}
-      if (await isAppInstalledOnAndroid('com.mystore.app') !== false) return;
+      const installed = await isAppInstalledOnAndroid('com.mystore.app');
+      if (installed === null) return;
+
+      if (installed) {
+        const link = banner.querySelector('a');
+        link.textContent = 'Open';
+        link.href = `intent://${location.host}${location.pathname}${location.search}` +
+          `#Intent;scheme=https;package=com.mystore.app;S.browser_fallback_url=${encodeURIComponent(link.href)};end`;
+      }
 
       banner.hidden = false;
       banner.querySelector('button').onclick = () => {
@@ -113,7 +123,7 @@ The code below covers Android and iPhone at once. Replace `123456789` with the A
 </body>
 ```
 
-The website's banner only appears in Chrome on Android, for people who don't have the app. On iPhone, Safari takes care of the banner. Once the visitor closes the banner, it doesn't come back in that browser.
+The website's banner only appears in Chrome on Android: with "Download" for people who don't have the app, and with "Open" for people who do. On iPhone, Safari takes care of the banner. Once the visitor closes the banner, it doesn't come back in that browser.
 
 ## How to test
 
@@ -121,9 +131,10 @@ Test on real phones: the iPhone banner doesn't appear in simulators. On Android,
 
 ### Android, in Chrome
 
-1. Without the app installed, open the website: the banner appears.
-2. Install the app from Google Play, close Chrome and open the website again: the banner doesn't appear.
-3. Repeat on each of the website's domains, with and without `www`.
+1. Without the app installed, open the website: the banner appears with "Download".
+2. Install the app from Google Play, close Chrome and open the website again: the banner appears with "Open".
+3. Tap "Open" and check that the app opens on the right page.
+4. Repeat on each of the website's domains, with and without `www`.
 
 ### iPhone, in Safari
 
@@ -135,7 +146,9 @@ Once closed, the iPhone banner doesn't come back on that device. To test again, 
 
 ## Frequently asked questions
 
-**On Android, the banner appears for people who already have the app. What should I check?** Check, in this order: whether the installed app is up to date; whether the exact page address, with or without `www`, is in the list sent to Eitri; whether the package name in the manifest is correct; and whether the website uses `https`.
+**On Android, the banner shows "Download" to people who already have the app. What should I check?** Check, in this order: whether the installed app is up to date; whether the exact page address, with or without `www`, is in the list sent to Eitri; whether the package name in the manifest is correct; and whether the website uses `https`.
+
+**On Android, "Open" goes to Google Play instead of opening the app. Why?** The installed app didn't recognize the link. Check with Eitri that App Links are set up for the page's domain, and that the installed app is up to date.
 
 **On iPhone, the banner doesn't appear. Why?** It only appears in Safari and on real devices. It also doesn't appear if the visitor has closed it before or if the app isn't available in their country.
 
@@ -148,4 +161,5 @@ Once closed, the iPhone banner doesn't come back on that device. To test again, 
 ## References
 
 - [Get Installed Related Apps API](https://developer.chrome.com/docs/capabilities/get-installed-related-apps), Chrome documentation
+- [Android Intents with Chrome](https://developer.chrome.com/docs/android/intents), Chrome documentation
 - [Promoting apps with Smart App Banners](https://developer.apple.com/documentation/webkit/promoting-apps-with-smart-app-banners), Apple documentation
