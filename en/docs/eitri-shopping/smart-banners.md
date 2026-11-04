@@ -6,11 +6,9 @@ With the steps below, your store's website starts inviting mobile visitors to us
 
 The banner appears in two scenarios: in Chrome on Android and in Safari on iPhone. In both, the banner knows whether the app is already installed: people who don't have it are offered the download, and people who do are offered to open the app.
 
-| Phone and browser | What the visitor sees | What you need to do |
-| --- | --- | --- |
-| Android, Chrome | A banner created by your website, with a link to Google Play, or the "Open" button for people who already have the app | Ask Eitri for an app version that includes the website's domains, and add a manifest and a script to the website |
-| iPhone, Safari | Apple's standard banner, with a link to the App Store, or the "Open" button for people who already have the app | Add one line to the website's code |
-| Other browsers (Chrome on iPhone, social media apps, desktop) | Nothing | — |
+- **Android, in Chrome:** the visitor sees a banner created by your website, with a link to Google Play, or the "Open" button if they already have the app. You need to ask Eitri for an app version that includes the website's domains, and add a manifest and a script to the website.
+- **iPhone, in Safari:** the visitor sees Apple's standard banner, with a link to the App Store, or the "Open" button if they already have the app. You need to add one line to the website's code.
+- **Other browsers** (Chrome on iPhone, social media apps, desktop): the visitor sees nothing.
 
 This guide recommends not showing a banner in these other environments, so you don't offer the download to people who already have the app.
 
@@ -18,11 +16,9 @@ This guide recommends not showing a banner in these other environments, so you d
 
 You will need three pieces of information. In this guide's examples, replace the placeholder values with your store's.
 
-| Information | Where to find it | Example |
-| --- | --- | --- |
-| Android app package name | In the URL of the app's Google Play page, after `id=` (`play.google.com/store/apps/details?id=com.mystore.app`) | `com.mystore.app` |
-| App Store app ID | In the URL of the app's App Store page, the number after `id` (`apps.apple.com/us/app/my-store/id123456789`) | `123456789` |
-| Website domains | Every address where the banner will appear. With and without `www` count as different addresses | `www.mystore.com` |
+- **Android app package name**, for example `com.mystore.app`. It's in the URL of the app's Google Play page, after `id=`: `play.google.com/store/apps/details?id=com.mystore.app`.
+- **App Store app ID**, for example `123456789`. It's the number after `id` in the URL of the app's App Store page: `apps.apple.com/us/app/my-store/id123456789`.
+- **Website domains**, for example `www.mystore.com`. These are all the addresses where the banner will appear. With and without `www` count as different addresses.
 
 Send the list of domains to Eitri right at the start. It is only used on Android, where the app needs to recognize the website; iPhone doesn't depend on it.
 

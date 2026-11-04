@@ -6,11 +6,9 @@ Com os passos abaixo, o site da sua loja passa a convidar quem o visita pelo cel
 
 O banner aparece em dois cenários: no Chrome do Android e no Safari do iPhone. Nos dois, o banner sabe se o app já está instalado: para quem não tem, oferece o download; para quem tem, oferece abrir o app.
 
-| Celular e navegador | O que o visitante vê | O que você precisa fazer |
-| --- | --- | --- |
-| Android, Chrome | Um banner criado pelo seu site, com link para a Google Play, ou o botão "Abrir" para quem já tem o app | Pedir à Eitri uma versão do app com os domínios do site e adicionar um manifesto e um script ao site |
-| iPhone, Safari | O banner padrão da Apple, com link para a App Store, ou o botão "Abrir" para quem já tem o app | Adicionar uma linha ao código do site |
-| Outros navegadores (Chrome no iPhone, apps de redes sociais, computador) | Nada | — |
+- **Android, no Chrome:** o visitante vê um banner criado pelo seu site, com link para a Google Play, ou o botão "Abrir" se já tiver o app. Você precisa pedir à Eitri uma versão do app com os domínios do site e adicionar um manifesto e um script ao site.
+- **iPhone, no Safari:** o visitante vê o banner padrão da Apple, com link para a App Store, ou o botão "Abrir" se já tiver o app. Você precisa adicionar uma linha ao código do site.
+- **Outros navegadores** (Chrome no iPhone, apps de redes sociais, computador): o visitante não vê nada.
 
 A recomendação deste guia é não exibir banner nesses outros ambientes, para não oferecer o download a quem já tem o app.
 
@@ -18,11 +16,9 @@ A recomendação deste guia é não exibir banner nesses outros ambientes, para 
 
 Você vai precisar de três informações. Nos exemplos deste guia, troque os valores fictícios pelos da sua loja.
 
-| Informação | Onde encontrar | Exemplo |
-| --- | --- | --- |
-| Nome do pacote do app Android | No endereço da página do app na Google Play, depois de `id=` (`play.google.com/store/apps/details?id=com.minhaloja.app`) | `com.minhaloja.app` |
-| ID do app na App Store | No endereço da página do app na App Store, o número depois de `id` (`apps.apple.com/br/app/minha-loja/id123456789`) | `123456789` |
-| Domínios do site | Todos os endereços em que o banner vai aparecer. Com e sem `www` contam como endereços diferentes | `www.minhaloja.com.br` |
+- **Nome do pacote do app Android**, por exemplo `com.minhaloja.app`. Fica no endereço da página do app na Google Play, depois de `id=`: `play.google.com/store/apps/details?id=com.minhaloja.app`.
+- **ID do app na App Store**, por exemplo `123456789`. É o número depois de `id` no endereço da página do app na App Store: `apps.apple.com/br/app/minha-loja/id123456789`.
+- **Domínios do site**, por exemplo `www.minhaloja.com.br`. São todos os endereços em que o banner vai aparecer. Com e sem `www` contam como endereços diferentes.
 
 Envie a lista de domínios à Eitri logo no início. Ela só é usada no Android, onde o app precisa reconhecer o site; o iPhone não depende dela.
 
