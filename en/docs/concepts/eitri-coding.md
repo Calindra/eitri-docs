@@ -4,9 +4,13 @@ status: new
 
 # AI Skills with Eitri Coding
 
-**Eitri Coding** is a set of open-source **skills** that turns your AI coding assistant (Claude Code, Gemini CLI, Codex, Cursor, GitHub Copilot, and others) into a specialist in Eitri-App development. With it, the assistant writes code following Eitri's rules and also drives the app running on an Android device or iOS simulator to validate what it built.
+**Eitri Coding** is an open source plugin that turns your AI coding assistant into an Eitri-App development specialist. It brings three pieces together:
 
-The idea is to be **LLM-agnostic**: you pick the assistant, and the plugin delivers the same set of capabilities.
+- **Skills**: Eitri knowledge (Luminus, Bifrost, CLI, Eitri Shopping), device automation, and complete flows such as creating a whole app from a store URL.
+- **[Eitri Manager MCP](eitri-manager-mcp.md)**: a remote MCP server, already configured in the plugin, that gives the assistant access to the Eitri Console with your permissions (applications, environments, themes, mini-apps, revisions, builds, and production errors).
+- **Detection hook** (Claude Code): loads the specialist automatically when you open an Eitri project.
+
+The plugin installs natively in **Claude Code**, **Codex**, and **Hermes Agent**. In other assistants (Gemini CLI, Cursor, GitHub Copilot, and any assistant that supports [Agent Skills](https://agentskills.io){:target="_blank"}), you install the skills and, if you want, connect the MCP separately.
 
 [→ eitri-tech/eitri-coding repository](https://github.com/eitri-tech/eitri-coding){:target="_blank" .md-button .md-button--primary }
 [▶ Watch the demo](https://www.youtube.com/watch?v=apoOXtBtkew){:target="_blank" .md-button }
@@ -17,57 +21,107 @@ The idea is to be **LLM-agnostic**: you pick the assistant, and the plugin deliv
 
 ## What the assistant learns
 
-Without context, an LLM tends to write generic React or React Native code, which doesn't work in an Eitri-App. With the skills, the assistant knows:
+Without context, an LLM tends to write generic React or React Native code, which does not work in an Eitri-App. With the plugin, the assistant knows:
 
 - **Eitri Luminus**: uses only Luminus components (no raw HTML tags), with Tailwind and DaisyUI classes.
 - **Eitri Bifrost**: uses Bifrost APIs for navigation, storage, HTTP, camera, and other native features, instead of `fetch`, `localStorage`, or `navigator`.
-- **File-based routing** under `src/views/`, and the `eitri-app.conf.js` and `app-config.yaml` configuration.
-- **Runtime safety**: in a WebView, a `TypeError` blanks the screen instead of failing the build, so the code is defensive by default.
+- **File-based routing** under `src/views/` and the configuration of `eitri-app.conf.js` and `app-config.yaml`.
+- **Runtime safety**: in a WebView, a `TypeError` blanks the screen instead of breaking the build, so the code is defensive by default.
 - **The Eitri CLI flow**: `eitri start`, `eitri app start`, and `eitri push-version`.
-- **The device**: opens the app in Eitri Play, navigates, takes screenshots, and reads the WebView console errors, on Android (ADB) and on the iOS Simulator.
+- **The device**: opens the app in Eitri Play, navigates, takes screenshots, and reads the WebView console errors, on Android (ADB) and the iOS Simulator. Without a device, it renders the development build in a headless browser at phone size.
+- **The Eitri Console**: through the [Eitri Manager MCP](eitri-manager-mcp.md), it reads and changes remote config, themes, mini-apps, and revisions, and diagnoses native builds and production errors, always with a preview before each write.
 
 ## How it works
 
-Each capability is a **skill**: a folder with a `SKILL.md` file whose description tells the assistant *when* to load it. The assistant loads only the skills relevant to the task, on demand, so they don't take up context when they are not needed.
+Each capability is a **skill**: a folder with a `SKILL.md` file whose description tells the assistant *when* to load it. The assistant loads only the skills relevant to the task, on demand, so they take no context when they are not needed.
 
-`eitri-specialist` is the entry point: it sets the project rules and calls the other skills when the task requires it (a Luminus component question, a Bifrost API, interaction with the device, and so on).
+`eitri-specialist` is the entry point: it defines the project rules and triggers the other skills when the task calls for them (a Luminus component question, a Bifrost API, device interaction, and so on).
 
-In Claude Code, the plugin also has a hook that runs at the start of each session: if it finds an `eitri-app.conf.js` or `app-config.yaml` in the project, it instructs the assistant to load `eitri-specialist` before any change, **even if you never mention Eitri in the prompt**.
+In Claude Code, the plugin also has a hook that runs at the start of each session: if it finds an `eitri-app.conf.js` or `app-config.yaml` at the project root (or in an immediate subfolder), it instructs the assistant to load `eitri-specialist` before any change, **even if you never mention Eitri in the prompt**.
+
+The Eitri Manager MCP is declared in the plugin. After a one-time browser login, its tools are available in every session. See [Eitri Manager MCP](eitri-manager-mcp.md) for the full list and the safety rules.
 
 ## Included skills
 
 | Skill | When it is used | What it does |
 | --- | --- | --- |
-| `eitri-specialist` | Any task in an Eitri project | Entry point: project rules, routing, runtime safety, and CLI. Calls the other skills. |
-| `eitri-luminus` | Writing or reviewing views | Luminus component catalog, props, HTML → Luminus mapping, and the official docs as the source of truth. |
-| `eitri-bifrost` | Using native device features | Bifrost API reference (navigation, storage, HTTP, camera, QR code, geolocation, biometrics, notifications, deeplinks, tracking, and more), with permission flows and `canIUse` checks. |
+| `eitri-specialist` | Any task in an Eitri project | Entry point: project rules, routing, runtime safety, and CLI. Triggers the other skills. |
+| `eitri-luminus` | Writing or reviewing views | Catalog of Luminus components, props, HTML → Luminus mapping, and the official docs as the source of truth. |
+| `eitri-bifrost` | Using native device features | Reference for the Bifrost APIs (navigation, storage, HTTP, camera, QR code, geolocation, biometrics, notifications, deeplinks, tracking, and more), with the permission flow and `canIUse` checks. |
 | `eitri-shopping` | Commerce apps | How to use the Eitri Shopping libraries for VTEX, Wake, and Shopify (catalog, search, cart, checkout, customer, orders, and wishlist). |
-| `eitri-claude-design-migrate` | Porting screens from Claude Design | Turns HTML/JSX with inline styles into production-ready Eitri views with Luminus, Tailwind, and DaisyUI. |
-| `eitri-device` | Running and validating the app | Screenshots, taps, swipes, typing, tab switching, and inspection of the WebView DOM and console, on Android and the iOS Simulator. |
+| `eitri-device` | Running and validating the app | Screenshots, taps, swipes, typing, tab switching, and WebView DOM and console inspection, on Android and the iOS Simulator. Without a device, it renders a preview in a headless browser. |
+| `create-app` | Creating an app from a store URL | Creates the organization, application, mini-apps, remote config, theme, and icon in the Console, plus a local repository from the template, rebuilds the store's look, and publishes to `dev`. See [Create an app from a store](#create-an-app-from-a-store). |
+| `site-clone` | Cloning a site or using it as a reference | Captures a page with Playwright and rebuilds it in the project's framework (Eitri, FastStore, or React), with components, styles, images, and copy. |
+| `figma-scrape` | Receiving a Figma link | Extracts a Figma selection (URL with `node-id`) into a structured design bundle. |
+| `figma-to-eitri` | Implementing a Figma screen | Ports a Figma design (a `figma-scrape` bundle or a local `.fig` file) into Eitri views, following the project's CMS and theme. |
+| `eitri-claude-design-migrate` | Porting Claude Design screens | Turns HTML/JSX with inline styles into production-ready Eitri views, with Luminus, Tailwind, and DaisyUI. |
+| `eitri-typescript-migrate` | Migrating a workspace to TypeScript | Converts an Eitri-App or a multi-app bundle from JavaScript to TypeScript, file by file, with types for Luminus, Bifrost, and VTEX/Wake/Shopify payloads. |
 
 ## Installation
 
-Pick the assistant you use:
+Choose the assistant you use:
 
 === "Claude Code"
 
-    Claude Code is the officially supported assistant: the skills are installed as a plugin, together with the hook that detects Eitri projects.
+    Claude Code is the officially supported assistant: the plugin installs the skills, the hook that detects Eitri projects, and the Eitri Manager MCP.
 
-    Add the marketplace and install the plugin from inside Claude Code:
+    1. Add the marketplace and install the plugin from inside Claude Code:
 
-    ```
-    /plugin marketplace add eitri-tech/eitri-coding
-    /plugin install eitri-coding@eitri-plugins
-    ```
+        ```
+        /plugin marketplace add eitri-tech/eitri-coding
+        /plugin install eitri-coding@eitri-plugins
+        ```
 
-    Restart Claude Code. From then on, in any Eitri project, `eitri-specialist` is loaded automatically. To call a skill explicitly, use its name with the plugin prefix:
+    2. Restart Claude Code (or run `/reload-plugins`).
+
+    3. Log in to the MCP: run `/mcp`, select `plugin:eitri-coding:eitri-manager`, and choose **Authenticate**. The browser opens the Eitri Console login; sign in with your account and you're done. You only log in once.
+
+    From then on, in any Eitri project, `eitri-specialist` loads automatically. To call a skill explicitly, use its name with the plugin prefix:
 
     ```
     /eitri-coding:eitri-specialist
-    /eitri-coding:eitri-device
+    /eitri-coding:create-app
     ```
 
-    To update to the latest version, run `/plugin marketplace update eitri-plugins`.
+=== "Codex"
+
+    Codex installs the same plugin, with the skills and the Eitri Manager MCP:
+
+    ```bash
+    codex plugin marketplace add eitri-tech/eitri-coding
+    ```
+
+    Open `/plugins` in Codex, install **Eitri Coding**, and log in to the Eitri Console when Codex asks. Then start a new session.
+
+    Codex loads the skills automatically. To call one explicitly, type `$` followed by its name (for example, `$eitri-specialist`) or use `/skills`.
+
+    To update: `codex plugin marketplace upgrade eitri-plugins`.
+
+=== "Hermes Agent"
+
+    Install and enable the plugin:
+
+    ```bash
+    hermes plugins install eitri-tech/eitri-coding/plugins/eitri-coding
+    hermes plugins enable eitri-coding
+    ```
+
+    The MCP login needs `auth: oauth`, which the plugin package cannot set. Add the server to `~/.hermes/config.yaml` (this entry takes precedence over the plugin's):
+
+    ```yaml
+    mcp_servers:
+      eitri-manager:
+        url: https://api.eitri.tech/eitri-manager-mcp/mcp
+        auth: oauth
+    ```
+
+    And log in:
+
+    ```bash
+    hermes mcp login eitri-manager
+    ```
+
+    To update: `hermes plugins update eitri-coding`.
 
 === "Gemini CLI"
 
@@ -77,21 +131,11 @@ Pick the assistant you use:
     gemini skills install https://github.com/eitri-tech/eitri-coding --path plugins/eitri-coding/skills
     ```
 
-    By default they are installed for your user. To install only in the current project, add `--scope workspace`.
+    By default they are installed for your user. To install them only in the current project, add `--scope workspace`.
 
-    Gemini activates the skills automatically when the task matches their descriptions, and asks for confirmation before loading each one. Use `/skills list` to check what was installed.
+    Gemini activates the skills automatically when the task matches their description, and asks for confirmation before loading each one. Use `/skills list` to check what was installed.
 
-=== "Codex"
-
-    Codex reads skills from `~/.agents/skills` (all projects) or `.agents/skills` (only the current repository). Copy the skills there:
-
-    ```bash
-    git clone https://github.com/eitri-tech/eitri-coding.git /tmp/eitri-coding
-    mkdir -p ~/.agents/skills
-    cp -R /tmp/eitri-coding/plugins/eitri-coding/skills/* ~/.agents/skills/
-    ```
-
-    Codex loads the skills automatically. To call one explicitly, type `$` followed by its name (for example, `$eitri-specialist`) or use `/skills`.
+    To use the Console through the assistant, [connect the Eitri Manager MCP](eitri-manager-mcp.md#how-to-connect) separately.
 
 === "Cursor"
 
@@ -105,9 +149,11 @@ Pick the assistant you use:
 
     The agent applies the skills automatically. To call one explicitly, type `/` in the Agent chat and search for its name, for example `/eitri-specialist`.
 
+    To use the Console through the assistant, [connect the Eitri Manager MCP](eitri-manager-mcp.md#how-to-connect) separately.
+
 === "GitHub Copilot"
 
-    Agent mode in VS Code and JetBrains, the Copilot CLI, and the Copilot cloud agent read skills from `~/.copilot/skills` or `~/.agents/skills` (personal) and from `.github/skills` or `.agents/skills` (repository). Copy the skills there:
+    Agent mode in VS Code and JetBrains IDEs, Copilot CLI, and Copilot cloud agent read skills from `~/.copilot/skills` or `~/.agents/skills` (personal) and from `.github/skills` or `.agents/skills` (repository). Copy the skills there:
 
     ```bash
     git clone https://github.com/eitri-tech/eitri-coding.git /tmp/eitri-coding
@@ -117,26 +163,106 @@ Pick the assistant you use:
 
     To share the skills with the whole team, copy them to `.agents/skills` in the repository and commit them.
 
+    To use the Console through the assistant, [connect the Eitri Manager MCP](eitri-manager-mcp.md#how-to-connect) separately.
+
 === "Other assistants"
 
     Eitri Coding follows the open [Agent Skills](https://agentskills.io){:target="_blank"} standard. Any assistant that supports it can use the skills: copy the folders from `plugins/eitri-coding/skills/` to the skills directory it reads, usually `~/.agents/skills` or `.agents/skills`.
 
-    If the assistant doesn't support skills, point it to the `SKILL.md` files in the instructions file it reads (such as `AGENTS.md`).
+    If the assistant does not support skills, point to the `SKILL.md` files in the instructions file it reads (such as `AGENTS.md`).
+
+    If it supports remote MCP servers with OAuth, [connect the Eitri Manager MCP](eitri-manager-mcp.md#how-to-connect) too.
 
 !!! warning "Assistants other than Claude Code"
 
-    Only the Claude Code installation is official. On the other assistants the skills work, but with two differences:
+    The hook that loads `eitri-specialist` automatically exists only in Claude Code. In other assistants:
 
-    - **There is no automatic detection of Eitri projects.** Add the instruction below to the `AGENTS.md` (or `GEMINI.md`) at the root of your project, so the assistant always loads the specialist:
+    - **Ask for the skill by name** at the start of the session (for example, "use the eitri-specialist skill"), or add the instruction below to the `AGENTS.md` (or `GEMINI.md`) at the root of your project:
 
         ```markdown
         This is an Eitri project. Before writing, editing, running, or reviewing
         any code, load the `eitri-specialist` skill and follow its rules.
         ```
 
-    - **The device scripts point to the Claude Code installation folder.** When using `eitri-device`, tell the assistant where you copied the skills (for example, `~/.agents/skills/eitri-device/tools/`).
+    - **When the skills are copied by hand** (Gemini CLI, Cursor, Copilot, and others), the skills' scripts live in the folder you copied them to. When using `eitri-device`, `site-clone`, or `create-app`, tell the assistant where they are (for example, `~/.agents/skills/eitri-device/tools/`).
 
-## Interacting with the device
+## Updating
+
+=== "Claude Code"
+
+    Third-party marketplaces don't auto-update by default. You get new versions in one of two ways:
+
+    - **Manually**: `/plugin marketplace update eitri-plugins`, then `/plugin update eitri-coding@eitri-plugins` (or `claude plugin update eitri-coding@eitri-plugins` from the shell). Run `/reload-plugins` or restart.
+    - **Automatically**: `/plugin` → **Marketplaces** → `eitri-plugins` → **Enable auto-update**.
+
+    For a team repository, commit the snippet below to `.claude/settings.json` so every collaborator gets the marketplace, the plugin, and auto-update:
+
+    ```json
+    {
+      "extraKnownMarketplaces": {
+        "eitri-plugins": {
+          "source": { "source": "github", "repo": "eitri-tech/eitri-coding" },
+          "autoUpdate": true
+        }
+      },
+      "enabledPlugins": { "eitri-coding@eitri-plugins": true }
+    }
+    ```
+
+=== "Codex"
+
+    ```bash
+    codex plugin marketplace upgrade eitri-plugins
+    ```
+
+=== "Hermes Agent"
+
+    ```bash
+    hermes plugins update eitri-coding
+    ```
+
+=== "Copied skills"
+
+    Repeat the `git clone` and copy the folders from `plugins/eitri-coding/skills/` again, overwriting the previous ones.
+
+## Create an app from a store
+
+The `create-app` skill turns the URL of a **VTEX, Wake, or Shopify** store into a working Eitri app, ready to be viewed in Eitri Play. Just ask:
+
+```text
+Create an Eitri app for the store https://www.mystore.com
+```
+
+### Requirements
+
+- The **plugin installed** and the **Eitri Manager MCP login** done (see [Installation](#installation)).
+- The **Eitri CLI** installed (`npm i -g eitri-cli`) and logged in (`eitri login`). The skill updates the CLI to the latest version before it starts.
+- **Node.js 20** or later and **git**. On the first run, the skill installs Playwright and Chromium to capture the store.
+- To create a **new organization**, the platform administrator role. Without it, pick an organization you already belong to.
+- On **Shopify**, the public Storefront API token and the Customer Account API details. You can answer "later": the app is created with those fields empty and they are listed in the final report.
+
+### What happens
+
+1. **Detection**: the skill identifies the store's platform, account, name, language, and currency, and asks everything it could not find out in a single message (organization, app name, whether it is a demo app).
+2. **Preparation, with no Console writes**: it clones the platform's official template, captures the store's home, listing, product page, login, and cart, analyzes its integrations (reviews, videos, chat, analytics), extracts colors, fonts, logo, and icon, builds the bottom bar from the store's own tab bar, and generates the remote config.
+3. **Confirmation**: you get **one summary** of everything that will be created (organization, application, mini-app slugs, environments, config, theme, icon, bottom bar, integrations, and what the app will not reproduce) and approve once. Nothing is written to the Console before that.
+4. **Console creation**, through the MCP: organization and its icon, application (with the `dev` and `prod` environments), app icon, `eitri-shopping-<app>-<alias>` mini-apps, slug aliases, remote config, Luminus v2 theme, and v1 global CSS. Then the template's first publish to `dev`: **from here on the app already opens in Eitri Play** with the store's catalog, theme, and icon.
+5. **Visual fidelity**: screen by screen (home, listing, product, login, cart, and checkout), the assistant compares the store with the app side by side and adjusts the code until they look alike. Every mini-app ships English and Portuguese texts.
+6. **Handoff**: it publishes each mini-app to `dev` and writes an `EITRI_APP.md` at the repository root with the created ids, how to preview, each screen's status, what is still a placeholder, and what was left out.
+
+To see the app: open **Eitri Play** on your phone, log in with your Eitri account, and pick the organization → the application → `dev`.
+
+!!! tip "Interrupted run"
+
+    Every Console write is recorded in `.eitri/create-app.state.json` as soon as it happens. If the run stops midway, ask to continue: the skill reads that file and resumes where it left off, without creating a second organization, application, or mini-app.
+
+!!! warning
+
+    - Creating an app takes time and tokens: the visual fidelity phase is the longest one and can split the screens across several agents in parallel.
+    - There is no delete tool. To discard a test app, use the ids in `.eitri/create-app.state.json` and remove it in the Eitri Console (or ask an administrator).
+    - Store credentials are kept in `.eitri/secrets.json` and the resolved config in `.eitri/remote-config.json`, both gitignored.
+
+## Device interaction
 
 The `eitri-device` skill lets the assistant open the app, navigate, and check the result on its own. For that, you need:
 
@@ -151,7 +277,7 @@ The `eitri-device` skill lets the assistant open the app, navigate, and check th
 
 === "iOS (macOS only)"
 
-    - An iOS Simulator booted with Eitri Play installed.
+    - A running iOS Simulator, with Eitri Play installed.
     - The `idb` and WebKit Inspector tools:
 
         ```bash
@@ -159,68 +285,109 @@ The `eitri-device` skill lets the assistant open the app, navigate, and check th
         pip install fb-idb
         ```
 
+=== "No device"
+
+    With no device or emulator connected, the skill renders the development build in a headless browser at phone size and takes screenshots of it. It needs Node.js; on the first run, it installs Playwright and Chromium.
+
 !!! tip
 
-    Leave `eitri start` (or `eitri app start`) running and Eitri Play open on the device before asking the assistant to validate a screen. If the server is not running, the assistant starts it.
+    Keep `eitri start` (or `eitri app start`) running and Eitri Play open on the device before asking the assistant to validate a screen. If the server is not running, the assistant starts it.
+
+## Sites and designs as a reference
+
+- **`site-clone`**: give it a URL and ask to rebuild the page in your Eitri-App. The skill captures the page with Playwright (structure, styles, images, copy, and behavior at different widths) and rebuilds each block with Luminus. It needs Node.js; on the first run it installs Playwright and Chromium.
+- **`figma-scrape`** and **`figma-to-eitri`**: paste a Figma link with a `node-id` and say which screen it is. Extraction uses the Figma API with the token in the `FIGMA_TOKEN` environment variable. Without a token, export the file from Figma (**File → Save local copy**) and hand over the `.fig`: it is converted offline into the same bundle.
 
 ## Usage examples
 
-The prompts below work with any assistant that has the skills installed. They are written in plain language: you don't need to name the skill, the assistant picks the right one.
+The prompts below are in natural language: you don't need to name the skill, the assistant picks the right one.
+
+**Create an app from a store**
+
+```text
+Create an Eitri app for the store https://www.mystore.com. It is a demo
+app; use a new organization named after the store.
+```
 
 **Create a screen**
 
 ```text
-Create a profile view in src/views/Profile that loads the user's data
-from https://api.mystore.com/me and shows the name, e-mail, and avatar,
-with a loading state and an error state. Then open it on the device
-and send me a screenshot.
+Create a profile view in src/views/Profile that loads the user data from
+https://api.mystore.com/me and shows name, email, and avatar, with loading
+and error states. Then open it on the device and send me a screenshot.
 ```
 
 **Use a native feature**
 
 ```text
 Add a button to the Checkout screen that reads a coupon QR code with the
-camera and fills in the coupon field. Handle the case where the user
-denies camera permission.
+camera and fills in the coupon field. Handle the case where the user denies
+camera permission.
 ```
 
 **Reproduce and fix a bug on the device**
 
 ```text
 On the device, open the cart and tap "Checkout". The screen goes blank.
-Read the WebView console errors, find the cause, fix it, and confirm on
-the device that the screen renders.
+Read the WebView console errors, find the cause, fix it, and confirm on the
+device that the screen renders.
 ```
 
-**Port a screen from Claude Design**
+**Implement a Figma screen**
 
 ```text
-Port the screens in ./design-export (generated by Claude Design) to
-Eitri views using Luminus, Tailwind, and DaisyUI. Keep the color palette
-as Tailwind theme tokens.
+Implement the product screen from this Figma link in the PDP mini-app:
+https://www.figma.com/design/<file>/<name>?node-id=12-345
 ```
 
-**Integrate with the store's platform**
+**Port a Claude Design screen**
+
+```text
+Port the screens in ./design-export (generated by Claude Design) to Eitri
+views using Luminus, Tailwind, and DaisyUI. Keep the color palette as
+Tailwind theme tokens.
+```
+
+**Integrate with the store platform**
 
 ```text
 Find out which commerce platform this project uses and add a "Recently
-viewed" carousel on the Home screen using the Eitri Shopping SDK.
+viewed" carousel to the Home using the Eitri Shopping SDK.
+```
+
+**Change the remote config in the Console**
+
+```text
+In the My Store app, dev environment, change the remote config's headerLogo
+to https://cdn.mystore.com/logo.png. Show me the diff before applying it.
+```
+
+**Investigate a build or a production error**
+
+```text
+Why did the latest Android build of the My Store app fail?
+```
+
+```text
+What were the most frequent production errors of the My Store app in the
+last 7 days, and in which mini-apps?
 ```
 
 **Review code**
 
 ```text
-Review the views in src/views/ for Luminus and Bifrost correctness:
-raw HTML tags, fetch/localStorage usage, missing awaits, and code that
-could crash at runtime.
+Review the views in src/views/ for correct use of Luminus and Bifrost: raw
+HTML tags, use of fetch/localStorage, missing awaits, and code that can
+break at runtime.
 ```
 
 ## Tips for better results
 
-- **Open the assistant at the project root**, where `eitri-app.conf.js` or `app-config.yaml` is. That is how the specialist recognizes the project.
-- **Ask for on-device validation.** Ending the prompt with "confirm on the device" makes the assistant run the app and check the screen, instead of stopping at the code.
-- **Give the scope.** Name the view, the screen, or the flow. In multi-app workspaces, say which Eitri-App to change.
-- **Review before publishing.** The assistant knows that `version` in `eitri-app.conf.js` must be incremented before `eitri push-version`, but publishing a version is your call.
+- **Open the assistant at the project root**, where `eitri-app.conf.js` or `app-config.yaml` lives. That is how the specialist recognizes the project.
+- **Ask for validation on the device.** Ending the prompt with "confirm on the device" makes the assistant run the app and check the screen, instead of stopping at the code.
+- **Give it scope.** Name the view, screen, or flow. In workspaces with several apps, say which Eitri-App to change. In the Console, name the application and the environment.
+- **Read the preview before confirming.** Every MCP write first shows what will change (diff, possible exposed secrets, the version it replaces). In production, the assistant needs your explicit authorization.
+- **Review before publishing.** The assistant knows the `version` in `eitri-app.conf.js` must be bumped before `eitri push-version`, but publishing a version is your call.
 
 ## Contribute
 
