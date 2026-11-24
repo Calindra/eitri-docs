@@ -128,6 +128,22 @@
   border-left: 3px solid #5a9216 !important;
 }
 
+/* Índice da página (On This Page) - espaço entre a borda do item ativo e o texto.
+   A borda transparente nos inativos evita que o texto se desloque ao trocar de item. */
+#toc a[data-depth] {
+  border-left: 3px solid transparent;
+  padding-left: 0.625rem;
+}
+
+/* Recuo dos subníveis na margem, para a borda acompanhar o item */
+#toc a[data-depth="3"] {
+  margin-left: 1rem;
+}
+
+#toc a[data-depth="4"] {
+  margin-left: 1.5rem;
+}
+
 /* Seleção de texto */
 ::selection {
   background-color: rgba(157, 232, 43, 0.35);
@@ -341,4 +357,23 @@ header [data-orientation="vertical"][role="none"]:has(+ a[target="_blank"]) {
 /* The theme caps code blocks at 650px but leaves overflow visible, so long blocks spill over the next section. */
 article pre {
   overflow: auto;
+}
+
+/* Blocos de código (codehilite) sem fundo próprio: destaca-os do texto da página */
+article .highlight pre {
+  background-color: var(--code-block);
+  border-radius: var(--radius);
+  padding: 0.875rem 1rem;
+}
+
+article .highlight pre code {
+  background-color: transparent;
+}
+
+:root {
+  --code-block: #f2f2f2;
+}
+
+.dark {
+  --code-block: #141414;
 }

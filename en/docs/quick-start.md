@@ -29,7 +29,7 @@ Once you have installed Eitri CLI and logged in, it's time to create your first 
     Eitri App projects already come with suggested CI implementations to automate the version generation process and even publication to environments, but you can customize them as needed.
 
 !!! tip "Develop with AI"
-    Use Claude Code, Gemini CLI, Codex, Cursor, or GitHub Copilot? Install the [Eitri Coding](concepts/eitri-coding.md) skills so your assistant writes Eitri-Apps following the platform rules and validates them on the device.
+    Use Claude Code, Codex, Hermes Agent, Gemini CLI, Cursor, or GitHub Copilot? Install [Eitri Coding](concepts/eitri-coding.md) so your assistant writes Eitri-Apps following the platform rules, validates them on the device, and publishes revisions through the [Eitri MCP](concepts/eitri-mcp.md).
 
 
 # Managing Eitri-Apps
