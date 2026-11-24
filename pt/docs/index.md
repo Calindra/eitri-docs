@@ -39,7 +39,7 @@ O SDK do Eitri oferece diversas ferramentas para permitir que seus Eitri-apps re
 
 #### [`Desenvolvimento com IA`](conceitos/eitri-coding.md)
 
-:   O `Eitri Coding` é um plugin que transforma assistentes de IA como Claude Code, Codex, Hermes Agent, Gemini CLI, Cursor e GitHub Copilot em especialistas em Eitri: eles escrevem Eitri-Apps com Luminus e Bifrost, os validam no device e, pelo [MCP Eitri Manager](conceitos/eitri-manager-mcp.md), operam o Eitri Console e criam apps inteiros a partir da URL de uma loja.
+:   O `Eitri Coding` é um plugin que transforma assistentes de IA como Claude Code, Codex, Hermes Agent, Gemini CLI, Cursor e GitHub Copilot em especialistas em Eitri: eles escrevem Eitri-Apps com Luminus e Bifrost, os validam no device e, pelo [Eitri MCP](conceitos/eitri-mcp.md), operam o Eitri Console e criam apps inteiros a partir da URL de uma loja.
 
 !!! tip "Desenvolva Eitri-Apps com IA"
 

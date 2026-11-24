@@ -7,7 +7,7 @@ status: new
 **Eitri Coding** is an open source plugin that turns your AI coding assistant into an Eitri-App development specialist. It brings three pieces together:
 
 - **Skills**: Eitri knowledge (Luminus, Bifrost, CLI, Eitri Shopping), device automation, and complete flows such as creating a whole app from a store URL.
-- **[Eitri Manager MCP](eitri-manager-mcp.md)**: a remote MCP server, already configured in the plugin, that gives the assistant access to the Eitri Console with your permissions (applications, environments, themes, mini-apps, revisions, builds, and production errors).
+- **[Eitri MCP](eitri-mcp.md)**: a remote MCP server, already configured in the plugin, that gives the assistant access to the Eitri Console with your permissions (applications, environments, themes, mini-apps, revisions, builds, and production errors).
 - **Detection hook** (Claude Code): loads the specialist automatically when you open an Eitri project.
 
 The plugin installs natively in **Claude Code**, **Codex**, and **Hermes Agent**. In other assistants (Gemini CLI, Cursor, GitHub Copilot, and any assistant that supports [Agent Skills](https://agentskills.io){:target="_blank"}), you install the skills and, if you want, connect the MCP separately.
@@ -29,7 +29,7 @@ Without context, an LLM tends to write generic React or React Native code, which
 - **Runtime safety**: in a WebView, a `TypeError` blanks the screen instead of breaking the build, so the code is defensive by default.
 - **The Eitri CLI flow**: `eitri start`, `eitri app start`, and `eitri push-version`.
 - **The device**: opens the app in Eitri Play, navigates, takes screenshots, and reads the WebView console errors, on Android (ADB) and the iOS Simulator. Without a device, it renders the development build in a headless browser at phone size.
-- **The Eitri Console**: through the [Eitri Manager MCP](eitri-manager-mcp.md), it reads and changes remote config, themes, mini-apps, and revisions, and diagnoses native builds and production errors, always with a preview before each write.
+- **The Eitri Console**: through the [Eitri MCP](eitri-mcp.md), it reads and changes remote config, themes, mini-apps, and revisions, and diagnoses native builds and production errors, always with a preview before each write.
 
 ## How it works
 
@@ -37,9 +37,9 @@ Each capability is a **skill**: a folder with a `SKILL.md` file whose descriptio
 
 `eitri-specialist` is the entry point: it defines the project rules and triggers the other skills when the task calls for them (a Luminus component question, a Bifrost API, device interaction, and so on).
 
-In Claude Code, the plugin also has a hook that runs at the start of each session: if it finds an `eitri-app.conf.js` or `app-config.yaml` at the project root (or in an immediate subfolder), it instructs the assistant to load `eitri-specialist` before any change, **even if you never mention Eitri in the prompt**.
+In Claude Code, the plugin also has a hook that runs at the start of each session: if it finds an `eitri-app.conf.js` or `app-config.yaml` at the project root (or in an immediate subfolder), it instructs the assistant to load `eitri-specialist` before any change, **even if you never mention Eitri in the prompt**. In other assistants, ask for the skill by name at the start of the session (for example, "use the eitri-specialist skill") or put that instruction in the project's `AGENTS.md` (or `GEMINI.md`).
 
-The Eitri Manager MCP is declared in the plugin. After a one-time browser login, its tools are available in every session. See [Eitri Manager MCP](eitri-manager-mcp.md) for the full list and the safety rules.
+The Eitri MCP is declared in the plugin. After a one-time browser login, its tools are available in every session. See [Eitri MCP](eitri-mcp.md) for the full list and the safety rules.
 
 ## Included skills
 
@@ -63,7 +63,7 @@ Choose the assistant you use:
 
 === "Claude Code"
 
-    Claude Code is the officially supported assistant: the plugin installs the skills, the hook that detects Eitri projects, and the Eitri Manager MCP.
+    Claude Code is the officially supported assistant: the plugin installs the skills, the hook that detects Eitri projects, and the Eitri MCP.
 
     1. Add the marketplace and install the plugin from inside Claude Code:
 
@@ -85,7 +85,7 @@ Choose the assistant you use:
 
 === "Codex"
 
-    Codex installs the same plugin, with the skills and the Eitri Manager MCP:
+    Codex installs the same plugin, with the skills and the Eitri MCP:
 
     ```bash
     codex plugin marketplace add eitri-tech/eitri-coding
@@ -135,7 +135,7 @@ Choose the assistant you use:
 
     Gemini activates the skills automatically when the task matches their description, and asks for confirmation before loading each one. Use `/skills list` to check what was installed.
 
-    To use the Console through the assistant, [connect the Eitri Manager MCP](eitri-manager-mcp.md#how-to-connect) separately.
+    To use the Console through the assistant, [connect the Eitri MCP](eitri-mcp.md#how-to-connect) separately.
 
 === "Cursor"
 
@@ -149,7 +149,7 @@ Choose the assistant you use:
 
     The agent applies the skills automatically. To call one explicitly, type `/` in the Agent chat and search for its name, for example `/eitri-specialist`.
 
-    To use the Console through the assistant, [connect the Eitri Manager MCP](eitri-manager-mcp.md#how-to-connect) separately.
+    To use the Console through the assistant, [connect the Eitri MCP](eitri-mcp.md#how-to-connect) separately.
 
 === "GitHub Copilot"
 
@@ -163,7 +163,7 @@ Choose the assistant you use:
 
     To share the skills with the whole team, copy them to `.agents/skills` in the repository and commit them.
 
-    To use the Console through the assistant, [connect the Eitri Manager MCP](eitri-manager-mcp.md#how-to-connect) separately.
+    To use the Console through the assistant, [connect the Eitri MCP](eitri-mcp.md#how-to-connect) separately.
 
 === "Other assistants"
 
@@ -171,20 +171,7 @@ Choose the assistant you use:
 
     If the assistant does not support skills, point to the `SKILL.md` files in the instructions file it reads (such as `AGENTS.md`).
 
-    If it supports remote MCP servers with OAuth, [connect the Eitri Manager MCP](eitri-manager-mcp.md#how-to-connect) too.
-
-!!! warning "Assistants other than Claude Code"
-
-    The hook that loads `eitri-specialist` automatically exists only in Claude Code. In other assistants:
-
-    - **Ask for the skill by name** at the start of the session (for example, "use the eitri-specialist skill"), or add the instruction below to the `AGENTS.md` (or `GEMINI.md`) at the root of your project:
-
-        ```markdown
-        This is an Eitri project. Before writing, editing, running, or reviewing
-        any code, load the `eitri-specialist` skill and follow its rules.
-        ```
-
-    - **When the skills are copied by hand** (Gemini CLI, Cursor, Copilot, and others), the skills' scripts live in the folder you copied them to. When using `eitri-device`, `site-clone`, or `create-app`, tell the assistant where they are (for example, `~/.agents/skills/eitri-device/tools/`).
+    If it supports remote MCP servers with OAuth, [connect the Eitri MCP](eitri-mcp.md#how-to-connect) too.
 
 ## Updating
 
@@ -233,9 +220,18 @@ The `create-app` skill turns the URL of a **VTEX, Wake, or Shopify** store into 
 Create an Eitri app for the store https://www.mystore.com
 ```
 
+For a more refined result, call the skill directly and ask for fidelity on every screen. The run takes longer and uses more tokens:
+
+```text
+/eitri-coding:create-app create a fully integrated Eitri app for
+https://mystore.com in the organization mystore. Make sure to match the
+visuals and components as much 1:1 as possible, for Home, PDP, Checkout,
+Account and others
+```
+
 ### Requirements
 
-- The **plugin installed** and the **Eitri Manager MCP login** done (see [Installation](#installation)).
+- The **plugin installed** and the **Eitri MCP login** done (see [Installation](#installation)).
 - The **Eitri CLI** installed (`npm i -g eitri-cli`) and logged in (`eitri login`). The skill updates the CLI to the latest version before it starts.
 - **Node.js 20** or later and **git**. On the first run, the skill installs Playwright and Chromium to capture the store.
 - To create a **new organization**, the platform administrator role. Without it, pick an organization you already belong to.

@@ -2,9 +2,9 @@
 status: new
 ---
 
-# MCP Eitri Manager
+# Eitri MCP
 
-O **MCP Eitri Manager** é um servidor [MCP](https://modelcontextprotocol.io){:target="_blank"} remoto que dá ao seu assistente de IA acesso ao **Eitri Console**: aplicações, ambientes e configuração remota, temas, mini-apps, revisões, builds nativos e erros de produção. Com ele, você pede em linguagem natural ("troque o logo do header no ambiente dev", "por que o build iOS falhou?") e o assistente consulta ou altera o Console por você.
+O **Eitri MCP** é um servidor [MCP](https://modelcontextprotocol.io){:target="_blank"} remoto que dá ao seu assistente de IA acesso ao **Eitri Console**: aplicações, ambientes e configuração remota, temas, mini-apps, revisões, builds nativos e erros de produção. Com ele, você pede em linguagem natural ("troque o logo do header no ambiente dev", "por que o build iOS falhou?") e o assistente consulta ou altera o Console por você.
 
 ```text
 https://api.eitri.tech/eitri-manager-mcp/mcp
